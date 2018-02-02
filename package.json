@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.14",
-    "angular-animate": "^1.6.9",
+    "angular-animate": "~1.5.*",
     "bootstrap": "^4.0.0",
     "express": "^4.16.2",
     "font-awesome": "^4.7.0",
