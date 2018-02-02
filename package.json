@@ -17,7 +17,7 @@
     "protractor": "^4.0.9"
   },
   "scripts": {
-    "postinstall" : "node_modules/bower/bin/bower install",
+    "postinstall" : "node_modules/bower/lib/bin/bower install",
     "update-deps": "npm update",
     "postupdate-deps": "bower update",
     "prestart": "npm install",
