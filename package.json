@@ -17,7 +17,7 @@
     "protractor": "^4.0.9"
   },
   "scripts": {
-    "postinstall": "bower install",
+    "postinstall" : "node_modules/bower/bin/bower install",
     "update-deps": "npm update",
     "postupdate-deps": "bower update",
     "prestart": "npm install",
@@ -33,5 +33,9 @@
   },
   "dependencies": {
     "express": "^4.16.2"
-  }
+  },
+  "engines": {
+  "node": "6.10.0",
+  "npm": "5.6.0"
+}
 }
