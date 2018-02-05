@@ -24,7 +24,7 @@
                           <label class="checkbox-inline"><input type="checkbox" value="family">Family</label>
                         </div>
                         <div class="form-group">
-                        <input type="text" class="form-control" id="rider-name" name="rider-name" placeholder="Rider's Name*" required>
+                          <input type="text" class="form-control" id="rider-name" name="rider-name" placeholder="Rider's Name*" required>
                         </div>
                         <div class="form-group">
                           <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" required>
@@ -91,7 +91,6 @@
                       			<option value="WY">Wyoming</option>
                           </select>
                         </div>
-                      </div>
                       <div class="form-group">
                         <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" required>
                       </div>
@@ -125,8 +124,8 @@
                         <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                       </div>
                         
-                        <button ng-click="tab = 2" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next
-                    </div>
+                        <button ng-click="tab = 2" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                    </div><!--tab 1-->
                     
                     
                     
@@ -135,10 +134,10 @@
                       <div id="first-emergency">
                           <h2>First Emergency Contact</h2>
                             <div class="form-group">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Name*" required>
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Name*" required>
                             </div>
                             <div class="form-group">
-                            <input type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship* - Example:Daughter" required>
+                              <input type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship* - Example:Daughter" required>
                             </div>
                             <div class="form-group">
                               <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" required>
@@ -147,7 +146,6 @@
                               <input type="text" class="form-control" id="city" name="city" placeholder="City*" required>
                             </div>
                             <div class="form-group">
-                              <!-- <label for="state">Select a State*</label> -->
                               <select class="form-control" id="state">
                                 <option value="">Select a State*</option>
                                 <option value="">N/A</option>
@@ -205,22 +203,21 @@
                                 <option value="WY">Wyoming</option>
                               </select>
                             </div>
-                          </div>
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" required>
-                          </div>
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" required>
-                          </div>
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" required>
-                          </div>
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
-                          </div>
-                        </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" required>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" required>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" required>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                            </div>
+                          </div><!--first emergency-->
                         
-                        <div id="second-emergency">
+                          <div id="second-emergency">
                             <h2>Second Emergency Contact</h2>
                               <div class="form-group">
                               <input type="text" class="form-control" id="name" name="name" placeholder="Name*" required>
@@ -293,27 +290,24 @@
                                   <option value="WY">Wyoming</option>
                                 </select>
                               </div>
-                            </div>
-                            <div class="form-group">
-                              <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" required>
-                            </div>
-                            <div class="form-group">
-                              <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" required>
-                            </div>
-                            <div class="form-group">
-                              <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" required>
-                            </div>
-                            <div class="form-group">
-                              <input type="text" class="form-control" id="email" name="email" placeholder="Email">
-                            </div>
-                          </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" required>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" required>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" required>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                              </div>
+                            </div><!--second emergency contact-->
+                              
+                            <button ng-click="tab = 3" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                          </div><!--tab2-->
                         
-                        <button ng-click="tab = 3" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next
-                    </div>
-                    
-                    
-                    
-                    
+
                 <!-- <input type="submit" id="submit" class="btn btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%">
                 <input type="reset" class="btn btn-primary pull-right itn-green-bg" value="Reset"> -->
                 
