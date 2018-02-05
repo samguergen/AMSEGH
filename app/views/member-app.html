@@ -415,12 +415,12 @@
                           </div><!--tab3-->
                           
                           <div class="member-tabs" ng-if="tab===4">
-                            <h3>ITNAmerica respects your privacy and will keep all customer information confidential. The following information allows us to provide better service to our customers, and helps us better understand the circumstances that customers face when they apply to use the ITN for rides.</h3>
+                            <p><em>ITNAmerica respects your privacy and will keep all customer information confidential. The following information allows us to provide better service to our customers, and helps us better understand the circumstances that customers face when they apply to use the ITN for rides.</em></p>
                             
                             <h2>Customer Information</h2>
                             
                             <div class="form-group ta-center">
-                              <label for="send info">Gender: * </label>
+                              <label for="send info">Gender: * </label><br>
                               <label class="radio-inline"><input type="radio" value="female">Female</label>
                               <label class="radio-inline"><input type="radio" value="male">Male</label>
                             </div>
@@ -430,8 +430,8 @@
                             </div>
                             
                             <div class="form-group ta-center">
-                              <label for="send info">Marital Status: * </label>
-                              <label class="radio-inline"><input type="radio" value="marred">Married</label>
+                              <label for="send info">Marital Status: * </label><br>
+                              <label class="radio-inline"><input type="radio" value="married">Married</label>
                               <label class="radio-inline"><input type="radio" value="single">Single</label>
                               <label class="radio-inline"><input type="radio" value="partnered">Partnered</label>
                               <label class="radio-inline"><input type="radio" value="divorced">Divorced</label>
@@ -439,7 +439,7 @@
                             </div>
                             
                             <div class="form-group ta-center">
-                              <label for="send info">Living Arrangements: * </label>
+                              <label for="send info">Living Arrangements: * </label><br>
                               <label class="radio-inline"><input type="radio" value="alone">Live Alone</label>
                               <label class="radio-inline"><input type="radio" value="spouse">Live with Spouse</label>
                               <label class="radio-inline"><input type="radio" value="children">Live with Children</label>
@@ -448,7 +448,7 @@
                             </div>
                             
                             <div class="form-group ta-center">
-                              <label for="send info">Dwelling Arrangements: * </label>
+                              <label for="send info">Dwelling Arrangements: * </label><br>
                               <label class="radio-inline"><input type="radio" value="private-home">Private Home</label>
                               <label class="radio-inline"><input type="radio" value="assisted-living"> Assisted Living Facility</label>
                               <label class="radio-inline"><input type="radio" value="retirement-community"> Independent Living Retirement Community</label>
@@ -457,7 +457,7 @@
                             </div>
                             
                             <div class="form-group ta-center">
-                              <label for="send info">Languages Spoken: *</label>
+                              <label for="send info">Languages Spoken: *</label><br>
                               <label class="checkbox-inline"><input type="checkbox" value="english">English</label>
                               <label class="checkbox-inline"><input type="checkbox" value="french">French</label>
                               <label class="checkbox-inline"><input type="checkbox" value="spanish">Spanish</label>
@@ -465,16 +465,17 @@
                                 <input type="text" class="form-control" id="other-language" name="other-language" placeholder="other (specify)" ng-if="otherLanguage">
                             </div>
                             
-                            <label for="send info">Current primary means of getting around: * </label>
-                            <label class="radio-inline"><input type="radio" value="drive">Drive</label>
-                            <label class="radio-inline"><input type="radio" value="walk">Walk</label>
-                            <label class="radio-inline"><input type="radio" value="fam-friend">Ride with Family or Friend</label>
-                            <label class="radio-inline"><input type="radio" value="public-transportation">Public Transportation</label>
-                            <label class="radio-inline"><input type="radio" value="taxi">Taxi</label>
-                            <label class="radio-inline"><input type="radio" value="private-service">Private Service</label>
-                            <label class="radio-inline"><input type="radio" value="other-transportation" ng-click="otherTransportation = !otherDwelling">Other</label>
-                              <input type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
-                          </div>
+                            <div class="form-group ta-center">
+                              <label for="send info">Current primary means of getting around: * </label><br>
+                              <label class="radio-inline"><input type="radio" value="drive">Drive</label>
+                              <label class="radio-inline"><input type="radio" value="walk">Walk</label>
+                              <label class="radio-inline"><input type="radio" value="fam-friend">Ride with Family or Friend</label>
+                              <label class="radio-inline"><input type="radio" value="public-transportation">Public Transportation</label>
+                              <label class="radio-inline"><input type="radio" value="taxi">Taxi</label>
+                              <label class="radio-inline"><input type="radio" value="private-service">Private Service</label>
+                              <label class="radio-inline"><input type="radio" value="other-transportation" ng-click="otherTransportation = !otherDwelling">Other</label>
+                                <input type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
+                            </div>
                           
                           <button ng-click="tab = 4" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
 
