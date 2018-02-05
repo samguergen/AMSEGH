@@ -420,6 +420,16 @@
                             <h2>Customer Information</h2>
                             
                             <div class="form-group ta-center">
+                              <label for="send info">Gender: * </label>
+                              <label class="radio-inline"><input type="radio" value="female">Female</label>
+                              <label class="radio-inline"><input type="radio" value="male">Male</label>
+                            </div>
+                            
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="dob" name="dob" placeholder="Date of Birth: * - Example: mm/dd/yyyy" required>
+                            </div>
+                            
+                            <div class="form-group ta-center">
                               <label for="send info">Marital Status: * </label>
                               <label class="radio-inline"><input type="radio" value="marred">Married</label>
                               <label class="radio-inline"><input type="radio" value="single">Single</label>
@@ -434,19 +444,41 @@
                               <label class="radio-inline"><input type="radio" value="spouse">Live with Spouse</label>
                               <label class="radio-inline"><input type="radio" value="children">Live with Children</label>
                               <label class="radio-inline"><input type="radio" value="friend">Live with Friend</label>
-                              <label class="radio-inline"><input type="radio" value="other">Live with Other Family</label>
+                              <label class="radio-inline"><input type="radio" value="other-family">Live with Other Family</label>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="send info">Dwelling Arrangements: * </label>
-                              <label class="radio-inline"><input type="radio" value="alone">Live Alone</label>
-                              <label class="radio-inline"><input type="radio" value="spouse">Live with Spouse</label>
-                              <label class="radio-inline"><input type="radio" value="children">Live with Children</label>
-                              <label class="radio-inline"><input type="radio" value="friend">Live with Friend</label>
-                              <label class="radio-inline"><input type="radio" value="other">Live with Other Family</label>
+                              <label class="radio-inline"><input type="radio" value="private-home">Private Home</label>
+                              <label class="radio-inline"><input type="radio" value="assisted-living"> Assisted Living Facility</label>
+                              <label class="radio-inline"><input type="radio" value="retirement-community"> Independent Living Retirement Community</label>
+                              <label class="radio-inline"><input type="radio" value="other-dwelling" ng-click="otherDwelling = !otherDwelling">Other</label>
+                                <input type="text" class="form-control" id="other-dwelling" name="other-dwelling" placeholder="other (specify)" ng-if="otherDwelling">
                             </div>
-
+                            
+                            <div class="form-group ta-center">
+                              <label for="send info">Languages Spoken: *</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="english">English</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="french">French</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="spanish">Spanish</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="other-language" ng-click="otherLanguage = !otherLanguage">Other (specify)</label>
+                                <input type="text" class="form-control" id="other-language" name="other-language" placeholder="other (specify)" ng-if="otherLanguage">
+                            </div>
+                            
+                            <label for="send info">Current primary means of getting around: * </label>
+                            <label class="radio-inline"><input type="radio" value="drive">Drive</label>
+                            <label class="radio-inline"><input type="radio" value="walk">Walk</label>
+                            <label class="radio-inline"><input type="radio" value="fam-friend">Ride with Family or Friend</label>
+                            <label class="radio-inline"><input type="radio" value="public-transportation">Public Transportation</label>
+                            <label class="radio-inline"><input type="radio" value="taxi">Taxi</label>
+                            <label class="radio-inline"><input type="radio" value="private-service">Private Service</label>
+                            <label class="radio-inline"><input type="radio" value="other-transportation" ng-click="otherTransportation = !otherDwelling">Other</label>
+                              <input type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
                           </div>
+                          
+                          <button ng-click="tab = 4" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+
+                        </div><!--tab4-->
                         
 
                 <!-- <input type="submit" id="submit" class="btn btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%">
