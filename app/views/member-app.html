@@ -147,7 +147,7 @@
                         <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                       </div>
                         
-                        <button ng-click="tab = 2" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                        <button ng-click="tab = 2" class="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
                     </div><!--tab 1-->
                     
                     
@@ -352,7 +352,7 @@
                             </div><!--second emergency contact-->
                             
                             <button ng-click="tab = 1" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
-                            <button ng-click="tab = 3" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                            <button ng-click="tab = 3" class="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
                           </div><!--tab2-->
                         
                         
@@ -485,7 +485,7 @@
                             </div><!--sendinfo-->
                             
                             <button ng-click="tab = 2" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
-                            <button ng-click="tab = 4" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                            <button ng-click="tab = 4" class="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
                             
                           </div><!--tab3-->
                           
@@ -578,7 +578,7 @@
                             </div>
                           
                           <button ng-click="tab = 3" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
-                          <button ng-click="tab = 5" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                          <button ng-click="tab = 5" class="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
 
                         </div><!--tab4-->
                         
@@ -656,7 +656,7 @@
                           </div>
                           
                           <button ng-click="tab = 4" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
-                          <button ng-click="tab = 6" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                          <button ng-click="tab = 6" class="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
                           
                         </div><!--tab5-->
                         
@@ -839,7 +839,7 @@
                           </div>
                           
                           <button ng-click="tab = 5" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
-                          <button ng-click="tab = 7" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                          <button ng-click="tab = 7" class="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
                           
                         </div><!--tab6-->
                         
@@ -971,4 +971,181 @@
 });
 
   </script>
+  
+  <style>
+  /* COPYRIGHT PROGRESS UI */
+  .switch-list, .list-unstyled, ul.dropdown-menu, .stat-board, .nav-tabs, .breadcrumbs, .pagination, .pagination .pages, .steps, .tabs {
+  line-height: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  
+  
+.panel, .modal-content, .steps, .table-panel {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  padding: 24px;
+  position: relative; }
+  .panel.modal, .modal.modal-content, .modal.steps, .modal.table-panel {
+    max-width: 60vw; }
+    @media screen and (max-width: 64rem) {
+      .panel.modal, .modal.modal-content, .modal.steps, .modal.table-panel {
+        max-width: 94vw; } }
+        
+        .panel-default, .modal-content, .steps, .table-panel {
+  background: #fff;
+  border-color: #dee2e6;
+  border-bottom-color: #ced4da; }
+  .panel-default .panel-header, .modal-content .panel-header, .steps .panel-header, .table-panel .panel-header {
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 12px; }
+    .panel-default .panel-header.no-border, .modal-content .panel-header.no-border, .steps .panel-header.no-border, .table-panel .panel-header.no-border {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 12px; }
+    .panel-default .panel-header .panel-title-sub, .modal-content .panel-header .panel-title-sub, .steps .panel-header .panel-title-sub, .table-panel .panel-header .panel-title-sub {
+      padding-top: 18px; }
+      .panel-default .panel-header .panel-title-sub.no-padding, .modal-content .panel-header .panel-title-sub.no-padding, .steps .panel-header .panel-title-sub.no-padding, .table-panel .panel-header .panel-title-sub.no-padding {
+        padding-top: 0; }
+  
+  .steps {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  counter-reset: step;
+  padding: 12px; }
+  @media screen and (max-width: 32rem) {
+    .steps {
+      overflow: auto; } }
+
+.step {
+  box-flex: 2;
+  -moz-flex: 2 1 auto;
+  -ms-flex: 2 1 auto;
+  flex: 2 1 auto;
+  color: #ced4da;
+  min-height: 28px;
+  overflow: hidden;
+  position: relative; }
+  .step a {
+    background: #fff;
+    color: #ced4da;
+    cursor: default;
+    display: block;
+    float: left;
+    margin: 0 12px;
+    outline: none;
+    overflow: hidden;
+    pointer-events: none;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap; }
+    .step a::before {
+      border: 2px solid #ced4da;
+      border-radius: 50%;
+      color: #ced4da;
+      content: counter(step);
+      counter-increment: step;
+      display: block;
+      float: left;
+      font-weight: bold;
+      height: 28px;
+      margin-right: 12px;
+      text-align: center;
+      vertical-align: middle;
+      width: 28px; }
+    .step a:focus, .step a:hover {
+      color: #ced4da; }
+  .can-skip .step a,
+  .step.active a, .radio-list.as-buttons .radio-unit .radio:checked + label.step a,
+  .step.complete a,
+  .step.previous a {
+    color: #228ae6; }
+    .can-skip .step a:focus,
+    .can-skip .step a a:focus, .can-skip .step a:hover,
+    .can-skip .step a a:hover,
+    .step.active a:focus, .radio-list.as-buttons .radio-unit .radio:checked + label.step a:focus,
+    .step.active a a:focus, .radio-list.as-buttons .radio-unit .radio:checked + label.step a a:focus,
+    .step.active a:hover, .radio-list.as-buttons .radio-unit .radio:checked + label.step a:hover,
+    .step.active a a:hover, .radio-list.as-buttons .radio-unit .radio:checked + label.step a a:hover,
+    .step.complete a:focus,
+    .step.complete a a:focus,
+    .step.complete a:hover,
+    .step.complete a a:hover,
+    .step.previous a:focus,
+    .step.previous a a:focus,
+    .step.previous a:hover,
+    .step.previous a a:hover {
+      color: #1c7cd6; }
+  .can-skip .step:not(.active):not(.radio-list.as-buttons .radio-unit .radio:checked + label) a,
+  .step.complete:not(.active):not(.radio-list.as-buttons .radio-unit .radio:checked + label) a,
+  .step.previous:not(.active):not(.radio-list.as-buttons .radio-unit .radio:checked + label) a {
+    cursor: pointer;
+    pointer-events: auto; }
+  .step.complete a::before {
+    background-color: #40c057;
+    border-color: #37b24d;
+    color: #fff;
+    content: "\e207";
+    font-family: "Glyphicons Regular";
+    font-weight: normal; }
+  .step.active a::before, .radio-list.as-buttons .radio-unit .radio:checked + label.step a::before {
+    background-color: #228ae6;
+    border-color: #1c7cd6;
+    color: #fff;
+    content: counter(step);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-weight: bold; }
+  .step.invalid a::before {
+    background-color: #fa5252;
+    border-color: #f03e3e;
+    color: #fff;
+    content: "!";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-weight: 900; }
+  .step:last-child a {
+    border-right: 0; }
+  .step:last-of-type {
+    box-flex: 1;
+    -moz-flex: 1 auto;
+    -ms-flex: 1 auto;
+    flex: 1 auto;
+    margin-right: 0; }
+    .step:last-of-type a {
+      margin-right: 0; }
+  .step:not(:last-of-type)::after {
+    border-top: 1px solid #ced4da;
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 100%; }
+  @media screen and (max-width: 32rem) {
+    .step {
+      box-flex: 1;
+      -moz-flex: 1 100%;
+      -ms-flex: 1 100%;
+      flex: 1 100%;
+      content: "";
+      min-width: auto;
+      overflow: initial; }
+      .step a {
+        display: inline-block;
+        margin: 0;
+        padding-left: 12px;
+        text-indent: -9999em; }
+        .step a::before {
+          float: left;
+          text-indent: 0; }
+      .step::after {
+        left: calc(28px + (12px * 2)); }
+      .step:last-of-type {
+        margin-right: 0; } }
+  
+  </style>
 

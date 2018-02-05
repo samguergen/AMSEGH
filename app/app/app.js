@@ -106,6 +106,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
   // enable HTML5 Mode for SEO
   // $locationProvider.html5Mode(true);
+  // $locationProvider.html5mode({ enabled: true, requireBase: false });
 })
 
 myApp.controller('MainController', ['$scope', function ($scope)  {
