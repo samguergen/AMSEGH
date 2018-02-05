@@ -7,14 +7,13 @@
     <div class="jumbotron section" style="background: #c7dfe4">
       
       <div class="container">
-        <h3>Once you have completed the application we will send you a confirmation email. You can book your first ride by calling us on (678) 696-0360.</h3>
+        <p><em>Once you have completed the application we will send you a confirmation email. You can book your first ride by calling us on (678) 696-0360.<em></p>
         <hr align="center">
         <div class="col-sm-12">
             <div class="form-area" style="background: #c7dfe4;border:none">  
-                <!-- <form role="form"> -->
-                  <form novalidate ng-submit="submitMemberForm()">
+                  <form novalidate ng-submit="submitMemberForm()" role="membership form">
                     <br style="clear:both">
-                    <h3 style="margin-bottom: 25px; text-align: center">Application for Transportation Service</h3>
+                    <h2 style="margin-bottom: 25px; text-align: center">Application for Transportation Service</h2>
                     <!--add breadcrumb-->
                     
                     <div class="member-tabs" ng-if="tab===1">
@@ -420,7 +419,7 @@
                             <h2>Customer Information</h2>
                             
                             <div class="form-group ta-center">
-                              <label for="send info">Gender: * </label><br>
+                              <label for="gender">Gender: * </label><br>
                               <label class="radio-inline"><input type="radio" value="female">Female</label>
                               <label class="radio-inline"><input type="radio" value="male">Male</label>
                             </div>
@@ -430,7 +429,7 @@
                             </div>
                             
                             <div class="form-group ta-center">
-                              <label for="send info">Marital Status: * </label><br>
+                              <label for="marital status">Marital Status: * </label><br>
                               <label class="radio-inline"><input type="radio" value="married">Married</label>
                               <label class="radio-inline"><input type="radio" value="single">Single</label>
                               <label class="radio-inline"><input type="radio" value="partnered">Partnered</label>
@@ -439,7 +438,7 @@
                             </div>
                             
                             <div class="form-group ta-center">
-                              <label for="send info">Living Arrangements: * </label><br>
+                              <label for="living">Living Arrangements: * </label><br>
                               <label class="radio-inline"><input type="radio" value="alone">Live Alone</label>
                               <label class="radio-inline"><input type="radio" value="spouse">Live with Spouse</label>
                               <label class="radio-inline"><input type="radio" value="children">Live with Children</label>
@@ -448,7 +447,7 @@
                             </div>
                             
                             <div class="form-group ta-center">
-                              <label for="send info">Dwelling Arrangements: * </label><br>
+                              <label for="dwelling">Dwelling Arrangements: * </label><br>
                               <label class="radio-inline"><input type="radio" value="private-home">Private Home</label>
                               <label class="radio-inline"><input type="radio" value="assisted-living"> Assisted Living Facility</label>
                               <label class="radio-inline"><input type="radio" value="retirement-community"> Independent Living Retirement Community</label>
@@ -457,7 +456,7 @@
                             </div>
                             
                             <div class="form-group ta-center">
-                              <label for="send info">Languages Spoken: *</label><br>
+                              <label for="languages">Languages Spoken: *</label><br>
                               <label class="checkbox-inline"><input type="checkbox" value="english">English</label>
                               <label class="checkbox-inline"><input type="checkbox" value="french">French</label>
                               <label class="checkbox-inline"><input type="checkbox" value="spanish">Spanish</label>
@@ -466,7 +465,7 @@
                             </div>
                             
                             <div class="form-group ta-center">
-                              <label for="send info">Current primary means of getting around: * </label><br>
+                              <label for="transportation means">Current primary means of getting around: * </label><br>
                               <label class="radio-inline"><input type="radio" value="drive">Drive</label>
                               <label class="radio-inline"><input type="radio" value="walk">Walk</label>
                               <label class="radio-inline"><input type="radio" value="fam-friend">Ride with Family or Friend</label>
@@ -477,9 +476,219 @@
                                 <input type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
                             </div>
                           
-                          <button ng-click="tab = 4" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                          <button ng-click="tab = 5" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
 
                         </div><!--tab4-->
+                        
+                        <div class="member-tabs" ng-if="tab===5">
+                          
+                          <h2>Civic Engagement</h2>
+                          
+                          <div class="form-group ta-center">
+                            <label for="member of any organization">Are you a member of any of the following organizations?:</label><br>
+                            <label class="checkbox-inline"><input type="checkbox" value="aaa">AAA</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="elks">Elks</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="rotary">Rotary</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="aarp">AARP</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="kiwanis">Kiwanis</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="knights">Knights of Columbus</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="masons">Masons/Eastern Stars</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="frat">Fraternity/Sorority</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="other" ng-click="otherOrg = !otherOrg">Other (specify)</label>
+                              <input type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherOrg">
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
+                            <label class="radio-inline"><input type="radio" value="yes" ng-click="specifyUnions = !specifyUnions">Yes</label>
+                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                              <input type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="served in armed forces">Have you ever served on active duty in the U.S. Armed Forces, Military Reserves, or National Guard: *</label><br>
+                            <label class="radio-inline"><input type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="special needs">Special Needs and Mobility Assistance: *</label><br>
+                            <label class="checkbox-inline"><input type="checkbox" value="cane">Cane</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="wheelchair">Wheelchair</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="blind"> Blind/Seeing Eye</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="anxiety">Anxiety Disorder</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="driver">Driver Assistance Required</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="personal">Personal Assistant</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="vehicle">Full-Sized Vehicle Required</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="impaired">Visually Impaired</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="walker">Walker</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="alzheimer"> Alzheimer's/Dementia</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="bladder"> Bladder/Bowel Control Problems</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="deaf">Deaf</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="no-high">No High Vehicle</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="none">None of the above</label>
+                          </div>
+                          
+                          <button ng-click="tab = 6" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                          
+                        </div><!--tab5-->
+                        
+                        
+                        <div class="member-tabs" ng-if="tab===6">
+                          <h2>Driving Information</h2>
+                          
+                          <div class="form-group ta-center">
+                            <label for="license">Do you have a current driver's license?: *</label><br>
+                            <label class="radio-inline"><input type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="own vehicle">Do you own a vehicle?: *</label><br>
+                            <label class="radio-inline"><input type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="driver improvement">Have you tried any driver improvement activities or classes to help you keep driving safely longer?: *</label><br>
+                            <label class="radio-inline"><input type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="driven in last 10 years">Have you driven in the last ten years?: *</label><br>
+                            <label class="radio-inline"><input type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="currently driving">Do you currently drive?: *</label><br>
+                            <label class="radio-inline"><input type="radio" value="yes" ng-click="currentDriver = true">Yes</label>
+                            <label class="radio-inline"><input type="radio" value="no" ng-click="currentDriver = false">No</label>
+                          </div>
+                          
+                          <div ng-if="currentDriver">
+                            <h3>If you drive...</h3>
+                            
+                            <div class="form-group ta-center">
+                              <label for="how often do you drive">How often do you drive?:</label><br>
+                              <label class="radio-inline"><input type="radio" value="less_once_week">Less than once a week</label>
+                              <label class="radio-inline"><input type="radio" value="1_2_days"> 1-2 Days per week</label>
+                              <label class="radio-inline"><input type="radio" value="3_more"> 3 or more days per week</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="restricted your driving">Have you restricted your own driving?:</label><br>
+                              <label class="radio-inline"><input type="radio" value="yes">Yes</label>
+                              <label class="radio-inline"><input type="radio" value="no">No</label>
+                            </div>
+                            
+                            
+                            <h3>How often do you do the following:</h3>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid driving at night">Avoid driving at night?:</label><br>
+                              <label class="radio-inline"><input type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid highway driving">Avoid highway driving?:</label><br>
+                              <label class="radio-inline"><input type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid left turns on incoming traffic">Avoid making left turns across incoming traffic?:</label><br>
+                              <label class="radio-inline"><input type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid driving bad weather">Avoid driving in bad weather?:</label><br>
+                              <label class="radio-inline"><input type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid driving alone">Avoid driving alone?:</label><br>
+                              <label class="radio-inline"><input type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid driving high traffic">Avoid driving on high traffic roads?:</label><br>
+                              <label class="radio-inline"><input type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid driving unfamiliar areas">Avoid driving in unfamiliar areas?:</label><br>
+                              <label class="radio-inline"><input type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="pass up fun because of driving concerns">Pass up opportunities to go shopping, visit friends, etc., because of concerns about driving?:</label><br>
+                              <label class="radio-inline"><input type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                            </div>
+                            
+                          </div><!--currentDriver-->
+                          
+                          
+                          <div ng-if="!currentDriver">
+                            
+                            <h3>If you do not drive...</h3>
+                          
+                            <div class="form-group ta-center">
+                              <label for="avoid driving alone">Please check a reason:</label><br>
+                              <label class="checkbox-inline"><input type="checkbox" value="never_licensed">Never licensed</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="illness">Illness</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="traffic_accident">Traffic accident</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="doctor_order">Doctors orders</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="license_revoked">License revoked</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="license_expired">License expired</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="not_safe">Don't feel safe</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="family_request">Family Request</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="police_request">Police/Judge Request</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="expensive">Too expensive</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="need_repair">Car needs repair</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="other" ng-click="otherNoDrive = !otherNoDrive">Other (specify)</label>
+                                <input type="text" class="form-control" id="other" name="other" placeholder="Other (specify)" ng-if="otherNoDrive">
+                            </div> 
+
+                          </div><!--not currentDriver-->
+                          
+                          <h3>Rideshare</h3>
+                          
+                          <div class="form-group ta-center">
+                            <label for="reduce ITN cost with rideshare">Would you like to reduce the cost of ITN trips by sharing rides with others when it's convenient?: *</label><br>
+                            <label class="radio-inline"><input type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                          </div>
+                          
+                          <h3>Programs</h3>
+                          
+                          <div class="form-group ta-center">
+                            <label for="info on programs">Would you like information on any of these ITN programs?:</label><br>
+                            <label class="checkbox-inline"><input type="checkbox" value="healthymiles">HealthyMiles</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="cartrade">CarTrade™</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="rideandshop">Ride & Shop</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="gift_certificate">Gift Certificate</label>
+                          </div>
+                          
+                          <button ng-click="tab = 7" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                          
+                        </div><!--tab6-->
                         
 
                 <!-- <input type="submit" id="submit" class="btn btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%">
