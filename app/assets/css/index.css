@@ -1220,6 +1220,10 @@ padding: 50px;
   font-size:20px;
   margin-top: 30px;
 }
+.member-app .steps {
+  font-size: 20px;
+  border-radius: 15px;
+}
 .member-app .form-group ol li {margin-top:20px}
 .member-app .member-tabs {
   margin-top:50px;
