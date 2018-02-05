@@ -1208,6 +1208,12 @@ padding: 50px;
   margin-left: 5%;
 }
 
+.member-app .app-title {
+  margin-bottom: 25px; 
+  text-align: center; 
+  font-size: 30px;
+  color:black;
+}
 .member-app .form-area {
   background-color: #FAFAFA;
   padding: 10px 40px 60px;
