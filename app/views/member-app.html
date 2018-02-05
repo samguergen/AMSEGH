@@ -350,7 +350,8 @@
                                 <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                               </div>
                             </div><!--second emergency contact-->
-                              
+                            
+                            <button ng-click="tab = 1" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
                             <button ng-click="tab = 3" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
                           </div><!--tab2-->
                         
@@ -483,6 +484,7 @@
                               </div>
                             </div><!--sendinfo-->
                             
+                            <button ng-click="tab = 2" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
                             <button ng-click="tab = 4" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
                             
                           </div><!--tab3-->
@@ -575,6 +577,7 @@
                                 <input type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
                             </div>
                           
+                          <button ng-click="tab = 3" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
                           <button ng-click="tab = 5" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
 
                         </div><!--tab4-->
@@ -652,6 +655,7 @@
                             <label class="checkbox-inline"><input type="checkbox" value="none">None of the above</label>
                           </div>
                           
+                          <button ng-click="tab = 4" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
                           <button ng-click="tab = 6" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
                           
                         </div><!--tab5-->
@@ -834,6 +838,7 @@
                             <label class="checkbox-inline"><input type="checkbox" value="gift_certificate">Gift Certificate</label>
                           </div>
                           
+                          <button ng-click="tab = 5" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
                           <button ng-click="tab = 7" id="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
                           
                         </div><!--tab6-->
@@ -926,7 +931,7 @@
                             <label class="checkbox-inline"><input type="checkbox" value="agree" ng-click="">By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
                           </div>
 
-
+                          <button ng-click="tab = 6" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
                           <input type="submit" id="submit" class="btn btn-primary btn-lg pull-right itn-green-bg" value="Send" style="margin-left:2%">
                           <!-- <input type="reset" class="btn btn-primary pull-right itn-green-bg" value="Reset"> -->
                           
