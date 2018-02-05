@@ -1220,8 +1220,9 @@ padding: 50px;
   font-size:20px;
   margin-top: 30px;
 }
+.member-app .form-group ol li {margin-top:20px}
 .member-app .member-tabs {
-  margin-top:100px;
+  margin-top:50px;
 }
 .member-app .member-tabs input[type=radio] {margin-top:10px}
 .member-app .form-control {font-size:20px; height:50px}

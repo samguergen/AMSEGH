@@ -7,7 +7,8 @@
     <div class="jumbotron section" style="background: #c7dfe4">
       
       <div class="container">
-        <p><em>Once you have completed the application we will send you a confirmation email. You can book your first ride by calling us on (678) 696-0360.<em></p>
+        <p class="ta-center"><em>Once you have completed the application we will send you a confirmation email. <br>
+          You can book your first ride by calling us on (678) 696-0360.</em></p>
         <hr align="center">
         <div class="col-sm-12">
             <div class="form-area" style="background: #c7dfe4;border:none">  
@@ -690,9 +691,73 @@
                           
                         </div><!--tab6-->
                         
+                        
+                        
+                        <div class="member-tabs" ng-if="tab===7">
+                          <h3 class="mt-50 mb-25">Personal Transportation Account Agreement</h3>
+                          
+                          <p>A personal ITN transportation account is like a personal bank account. It is debited whenever you take an ITN ride, and when you make a payment to ITN, it is like making a deposit into your account.  At the end of each month, you receive a statement that details your rides and any other account activity, such as payments, gift certificates, Ride & Shop™ or Healthy Miles™, volunteer credits, CarTrade™ credits, or payment of membership dues.</p>
 
-                <!-- <input type="submit" id="submit" class="btn btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%">
-                <input type="reset" class="btn btn-primary pull-right itn-green-bg" value="Reset"> -->
+                          <p>ITN is a charitable nonprofit service supported by your fares and voluntary local community support. Because fares cover only half the true cost of rides, the ITN affiliate may include family members and any others you have listed as contacts in its fundraising campaigns, including the Family Membership Campaign, Walk for Rides and Annual Appeal. Participation in these campaigns is voluntary. A contact’s decision not to participate will not affect the quality of your service or your eligibility to use ITN for rides.</p>
+                          
+                          <p><strong>Your signature below indicates that you agree to the following policies:</strong></p>
+                          
+                          <div class="form-group">
+                            <ol>
+                              <li>You will maintain a balance in your account sufficient to cover your monthly rides;</li>
+                              <li>Your membership dues will be automatically debited on the anniversary of your membership;</li>
+                              <li>If you have an unpaid balance greater than $200 for longer than 60 days, your account will be paused until you have deposited sufficient funds to again achieve a positive balance;</li>
+                              <li>If there is no activity in your account for one year and we have made three documented unsuccessful attempts to reach you, you agree that the balance in our account will become a charitable gift to ITN;</li>
+                              <li>Your contacts may receive a limited number of mailings (via regular mail or e-mail) for the ITN affiliate’s fundraising events/campaigns, as well as up to four quarterly ITN Newsletters. Their names will not be shared with any other party or organization.</li>
+                            </ol>
+                          </div>
+                            
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="signature" name="signature" placeholder="Agreement Signature: * - (please print name)" required>
+                          </div>
+                          
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="date" name="date" placeholder="Agreement Date: * - Example: mm/dd/yyyy" required>
+                          </div>
+                            
+                          <div class="form-group">  
+                            <label class="checkbox-inline"><input type="checkbox" value="agree" ng-click="">By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
+                          </div>
+                          
+                          
+                          <h3 class="mt-50 mb-25">Informed Consent</h3>
+                          
+                          <p>The Independent Transportation Network (ITN) is a non-profit, community-based organization providing dignified, consumer-oriented transportation for seniors and people with visual impairments. </p>
+
+                          <p>As an ITNAmerica affiliate community, your ITN benefits from more than a decade of research to develop a model for economically sustainable transportation. Among the public and private organizations that have supported this research are the Federal Transit Administration, the Transportation Research Board (National Academies of Science), AARP, the Great Bay Foundation for Social Entrepreneurs, and the Atlantic Philanthropies. Thousands of private individuals and their families have participated in this research and development, without which, this service would not be possible.</p>
+
+                          <p>In the spirit of this public/private effort, to continue the development and analysis that will allow ITNAmerica to better understand the mobility needs of older Americans, their families and their communities, and to continuously improve the quality and sustainability of the service, we routinely collect data about riders and the rides we deliver. The identity of our riders is kept entirely confidential in all reports we use for these purposes.</p>
+
+                          <p>In addition to this routine data collection, ITNAmerica also conducts research. From time to time, we may ask you to participate in a research project. Your participation in the ITNAmerica research studies is voluntary and confidential. If you prefer not to participate in the research studies, your decision will not affect the quality of your service or your eligibility to use ITN for rides.</p>
+
+                          <p>Your signature indicates that you understand that routinely-collected ITNAmerica data will be used to study and improve transportation for seniors, and that you may, from time to time, be asked questions about your use of the service. We will do our best to provide rides for you and we will always strive to inform you when we cannot provide a ride. However, we are not responsible for any costs or expenses you may incur when we are unable to provide a ride for a specific time and place.</p>
+                          
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Customer Name: * - (please print name)" required>
+                          </div>
+                          
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Signature of customer or legal representative: *" required>
+                          </div>
+                          
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="date" name="date" placeholder="Date: * - Example: mm/dd/yyyy" required>
+                          </div>
+                            
+                          <div class="form-group">
+                            <label class="checkbox-inline"><input type="checkbox" value="agree" ng-click="">By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
+                          </div>
+
+
+                          <input type="submit" id="submit" class="btn btn-primary btn-lg pull-right itn-green-bg" value="Send" style="margin-left:2%">
+                          <!-- <input type="reset" class="btn btn-primary pull-right itn-green-bg" value="Reset"> -->
+                          
+                        </div><!--tab7-->
                 
                 </form>
             </div>
