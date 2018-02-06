@@ -44,108 +44,108 @@
                       
                         <div class="form-group ta-center">
                           <label for="Membership Type">Membership Type*  </label><br>
-                          <label class="radio-inline"><input type="radio" value="individual">Individual</label>
-                          <label class="radio-inline"><input type="radio" value="family">Family</label>
+                          <label class="radio-inline"><input type="radio" value="individual" ng-model="memberForm.membership">Individual</label>
+                          <label class="radio-inline"><input type="radio" value="family" ng-model="memberForm.membership">Family</label>
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control" id="rider-name" name="rider-name" placeholder="Rider's Name*" required>
+                          <input type="text" class="form-control" id="rider-name" name="rider-name" placeholder="Rider's Name*" ng-model="memberForm.riderName" required>
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" required>
+                          <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" ng-model="memberForm.streetAddress" required>
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control" id="city" name="city" placeholder="City*" required>
+                          <input type="text" class="form-control" id="city" name="city" placeholder="City*" ng-model="memberForm.city" required>
                         </div>
                         <div class="form-group">
                           <!-- <label for="state">Select a State*</label> -->
                           <select class="form-control" id="state">
-                            <option value="">Select a State*</option>
-                            <option value="">N/A</option>
-                      			<option value="AK">Alaska</option>
-                      			<option value="AL">Alabama</option>
-                      			<option value="AR">Arkansas</option>
-                      			<option value="AZ">Arizona</option>
-                      			<option value="CA">California</option>
-                      			<option value="CO">Colorado</option>
-                      			<option value="CT">Connecticut</option>
-                      			<option value="DC">District of Columbia</option>
-                      			<option value="DE">Delaware</option>
-                      			<option value="FL">Florida</option>
-                      			<option value="GA">Georgia</option>
-                      			<option value="HI">Hawaii</option>
-                      			<option value="IA">Iowa</option>
-                      			<option value="ID">Idaho</option>
-                      			<option value="IL">Illinois</option>
-                      			<option value="IN">Indiana</option>
-                      			<option value="KS">Kansas</option>
-                      			<option value="KY">Kentucky</option>
-                      			<option value="LA">Louisiana</option>
-                      			<option value="MA">Massachusetts</option>
-                      			<option value="MD">Maryland</option>
-                      			<option value="ME">Maine</option>
-                      			<option value="MI">Michigan</option>
-                      			<option value="MN">Minnesota</option>
-                      			<option value="MO">Missouri</option>
-                      			<option value="MS">Mississippi</option>
-                      			<option value="MT">Montana</option>
-                      			<option value="NC">North Carolina</option>
-                      			<option value="ND">North Dakota</option>
-                      			<option value="NE">Nebraska</option>
-                      			<option value="NH">New Hampshire</option>
-                      			<option value="NJ">New Jersey</option>
-                      			<option value="NM">New Mexico</option>
-                      			<option value="NV">Nevada</option>
-                      			<option value="NY">New York</option>
-                      			<option value="OH">Ohio</option>
-                      			<option value="OK">Oklahoma</option>
-                      			<option value="OR">Oregon</option>
-                      			<option value="PA">Pennsylvania</option>
-                      			<option value="PR">Puerto Rico</option>
-                      			<option value="RI">Rhode Island</option>
-                      			<option value="SC">South Carolina</option>
-                      			<option value="SD">South Dakota</option>
-                      			<option value="TN">Tennessee</option>
-                      			<option value="TX">Texas</option>
-                      			<option value="UT">Utah</option>
-                      			<option value="VA">Virginia</option>
-                      			<option value="VT">Vermont</option>
-                      			<option value="WA">Washington</option>
-                      			<option value="WI">Wisconsin</option>
-                      			<option value="WV">West Virginia</option>
-                      			<option value="WY">Wyoming</option>
+                            <option ng-model="memberForm.state" value="">Select a State*</option>
+                            <option ng-model="memberForm.state" value="">N/A</option>
+                      			<option ng-model="memberForm.state" value="AK">Alaska</option>
+                      			<option ng-model="memberForm.state" value="AL">Alabama</option>
+                      			<option ng-model="memberForm.state" value="AR">Arkansas</option>
+                      			<option ng-model="memberForm.state" value="AZ">Arizona</option>
+                      			<option ng-model="memberForm.state" value="CA">California</option>
+                      			<option ng-model="memberForm.state" value="CO">Colorado</option>
+                      			<option ng-model="memberForm.state" value="CT">Connecticut</option>
+                      			<option ng-model="memberForm.state" value="DC">District of Columbia</option>
+                      			<option ng-model="memberForm.state" value="DE">Delaware</option>
+                      			<option ng-model="memberForm.state" value="FL">Florida</option>
+                      			<option ng-model="memberForm.state" value="GA">Georgia</option>
+                      			<option ng-model="memberForm.state" value="HI">Hawaii</option>
+                      			<option ng-model="memberForm.state" value="IA">Iowa</option>
+                      			<option ng-model="memberForm.state" value="ID">Idaho</option>
+                      			<option ng-model="memberForm.state" value="IL">Illinois</option>
+                      			<option ng-model="memberForm.state" value="IN">Indiana</option>
+                      			<option ng-model="memberForm.state" value="KS">Kansas</option>
+                      			<option ng-model="memberForm.state" value="KY">Kentucky</option>
+                      			<option ng-model="memberForm.state" value="LA">Louisiana</option>
+                      			<option ng-model="memberForm.state" value="MA">Massachusetts</option>
+                      			<option ng-model="memberForm.state" value="MD">Maryland</option>
+                      			<option ng-model="memberForm.state" value="ME">Maine</option>
+                      			<option ng-model="memberForm.state" value="MI">Michigan</option>
+                      			<option ng-model="memberForm.state" value="MN">Minnesota</option>
+                      			<option ng-model="memberForm.state" value="MO">Missouri</option>
+                      			<option ng-model="memberForm.state" value="MS">Mississippi</option>
+                      			<option ng-model="memberForm.state" value="MT">Montana</option>
+                      			<option ng-model="memberForm.state" value="NC">North Carolina</option>
+                      			<option ng-model="memberForm.state" value="ND">North Dakota</option>
+                      			<option ng-model="memberForm.state" value="NE">Nebraska</option>
+                      			<option ng-model="memberForm.state" value="NH">New Hampshire</option>
+                      			<option ng-model="memberForm.state" value="NJ">New Jersey</option>
+                      			<option ng-model="memberForm.state" value="NM">New Mexico</option>
+                      			<option ng-model="memberForm.state" value="NV">Nevada</option>
+                      			<option ng-model="memberForm.state" value="NY">New York</option>
+                      			<option ng-model="memberForm.state" value="OH">Ohio</option>
+                      			<option ng-model="memberForm.state" value="OK">Oklahoma</option>
+                      			<option ng-model="memberForm.state" value="OR">Oregon</option>
+                      			<option ng-model="memberForm.state" value="PA">Pennsylvania</option>
+                      			<option ng-model="memberForm.state" value="PR">Puerto Rico</option>
+                      			<option ng-model="memberForm.state" value="RI">Rhode Island</option>
+                      			<option ng-model="memberForm.state" value="SC">South Carolina</option>
+                      			<option ng-model="memberForm.state" value="SD">South Dakota</option>
+                      			<option ng-model="memberForm.state" value="TN">Tennessee</option>
+                      			<option ng-model="memberForm.state" value="TX">Texas</option>
+                      			<option ng-model="memberForm.state" value="UT">Utah</option>
+                      			<option ng-model="memberForm.state" value="VA">Virginia</option>
+                      			<option ng-model="memberForm.state" value="VT">Vermont</option>
+                      			<option ng-model="memberForm.state" value="WA">Washington</option>
+                      			<option ng-model="memberForm.state" value="WI">Wisconsin</option>
+                      			<option ng-model="memberForm.state" value="WV">West Virginia</option>
+                      			<option ng-model="memberForm.state" value="WY">Wyoming</option>
                           </select>
                         </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" required>
+                        <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="memberForm.zip" required>
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="years" name="years" placeholder="Years at Address*" required>
+                        <input type="text" class="form-control" id="years" name="years" placeholder="Years at Address*" ng-model="memberForm.yearsAtAddress" required>
                       </div>
                       
                       <div class="form-group ta-center">
                         <label for="Mailing Adress Yes or No">Is this your Mailing Address?*:  </label><br>
-                        <label class="radio-inline"><input type="radio" value="yes">Yes</label>
-                        <label class="radio-inline"><input type="radio" value="no">No</label>
+                        <label class="radio-inline"><input type="radio" value="yes" ng-model="memberForm.isMailingAddress">Yes</label>
+                        <label class="radio-inline"><input type="radio" value="no" ng-model="memberForm.isMailingAddress">No</label>
                       </div>
                       <div class="form-group ta-center">
                         <label for="Billing Adress Yes or No">Is this your Billing Address?*:  </label><br>
-                        <label class="radio-inline"><input type="radio" value="yes">Yes</label>
-                        <label class="radio-inline"><input type="radio" value="no">No</label>
+                        <label class="radio-inline"><input type="radio" value="yes" ng-model="memberForm.isBillingAddress">Yes</label>
+                        <label class="radio-inline"><input type="radio" value="no" ng-model="memberForm.isBillingAddress">No</label>
                       </div>
                       <div class="form-group ta-center">
                         <label for="Year-round Residence Yes or No">Is this your Year-round Residence?*:  </label><br>
-                        <label class="radio-inline"><input type="radio" value="yes">Yes</label>
-                        <label class="radio-inline"><input type="radio" value="no">No</label>
+                        <label class="radio-inline"><input type="radio" value="yes" ng-model="memberForm.isYearRoundResidence">Yes</label>
+                        <label class="radio-inline"><input type="radio" value="no" ng-model="memberForm.isYearRoundResidence">No</label>
                       </div>
                       
                       <div class="form-group">
-                        <input type="text" class="form-control" id="primary-phone" name="primary-phone" placeholder="Primary Phone* - Example: xxx-xxx-xxxx" required>
+                        <input type="text" class="form-control" id="primary-phone" name="primary-phone" placeholder="Primary Phone* - Example: xxx-xxx-xxxx" ng-model="memberForm.isYearRoundResidence" ng-model="memberForm.primaryPhone" required>
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="secondary-phone" name="secondary-phone" placeholder="Secondary Phone">
+                        <input type="text" class="form-control" id="secondary-phone" name="secondary-phone" placeholder="Secondary Phone" ng-model="memberForm.secondaryPhone">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="memberForm.email">
                       </div>
                         
                         <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
@@ -181,172 +181,172 @@
                       <div id="first-emergency">
                           <h2>First Emergency Contact</h2>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="name" name="name" placeholder="Name*" required>
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Name*" ng-model="memberForm.firstEmergencyContact.name" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship* - Example:Daughter" required>
+                              <input type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship* - Example:Daughter" ng-model="memberForm.firstEmergencyContact.relationship" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" required>
+                              <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" ng-model="memberForm.firstEmergencyContact.street" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="city" name="city" placeholder="City*" required>
+                              <input type="text" class="form-control" id="city" name="city" placeholder="City*"  ng-model="memberForm.firstEmergencyContact.city" required>
                             </div>
                             <div class="form-group">
                               <select class="form-control" id="state">
-                                <option value="">Select a State*</option>
-                                <option value="">N/A</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AL">Alabama</option>
-                                <option value="AR">Arkansas</option>
-                                <option value="AZ">Arizona</option>
-                                <option value="CA">California</option>
-                                <option value="CO">Colorado</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="DC">District of Columbia</option>
-                                <option value="DE">Delaware</option>
-                                <option value="FL">Florida</option>
-                                <option value="GA">Georgia</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="IA">Iowa</option>
-                                <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
-                                <option value="IN">Indiana</option>
-                                <option value="KS">Kansas</option>
-                                <option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option>
-                                <option value="MA">Massachusetts</option>
-                                <option value="MD">Maryland</option>
-                                <option value="ME">Maine</option>
-                                <option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option>
-                                <option value="MO">Missouri</option>
-                                <option value="MS">Mississippi</option>
-                                <option value="MT">Montana</option>
-                                <option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option>
-                                <option value="NE">Nebraska</option>
-                                <option value="NH">New Hampshire</option>
-                                <option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option>
-                                <option value="NV">Nevada</option>
-                                <option value="NY">New York</option>
-                                <option value="OH">Ohio</option>
-                                <option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="PR">Puerto Rico</option>
-                                <option value="RI">Rhode Island</option>
-                                <option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option>
-                                <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
-                                <option value="UT">Utah</option>
-                                <option value="VA">Virginia</option>
-                                <option value="VT">Vermont</option>
-                                <option value="WA">Washington</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WY">Wyoming</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="">Select a State*</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="">N/A</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="AK">Alaska</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="AL">Alabama</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="AR">Arkansas</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="AZ">Arizona</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="CA">California</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="CO">Colorado</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="CT">Connecticut</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="DC">District of Columbia</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="DE">Delaware</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="FL">Florida</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="GA">Georgia</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="HI">Hawaii</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="IA">Iowa</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="ID">Idaho</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="IL">Illinois</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="IN">Indiana</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="KS">Kansas</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="KY">Kentucky</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="LA">Louisiana</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="MA">Massachusetts</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="MD">Maryland</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="ME">Maine</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="MI">Michigan</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="MN">Minnesota</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="MO">Missouri</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="MS">Mississippi</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="MT">Montana</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="NC">North Carolina</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="ND">North Dakota</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="NE">Nebraska</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="NH">New Hampshire</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="NJ">New Jersey</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="NM">New Mexico</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="NV">Nevada</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="NY">New York</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="OH">Ohio</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="OK">Oklahoma</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="OR">Oregon</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="PA">Pennsylvania</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="PR">Puerto Rico</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="RI">Rhode Island</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="SC">South Carolina</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="SD">South Dakota</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="TN">Tennessee</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="TX">Texas</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="UT">Utah</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="VA">Virginia</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="VT">Vermont</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="WA">Washington</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="WI">Wisconsin</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="WV">West Virginia</option>
+                                <option ng-model="memberForm.firstEmergencyContact.state" value="WY">Wyoming</option>
                               </select>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" required>
+                              <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="memberForm.firstEmergencyContact.name" ng-model="memberForm.firstEmergencyContact.zip" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" required>
+                              <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" ng-model="memberForm.firstEmergencyContact.homePhone" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" required>
+                              <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" ng-model="memberForm.firstEmergencyContact.cellPhone" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                              <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="memberForm.firstEmergencyContact.email">
                             </div>
                           </div><!--first emergency-->
                         
                           <div id="second-emergency">
                             <h2>Second Emergency Contact</h2>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name*" required>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name*" ng-model="memberForm.secondEmergencyContact.name" required>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship* - Example:Daughter" required>
+                                <input type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship* - Example:Daughter" ng-model="memberForm.secondEmergencyContact.relationship" required>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" required>
+                                <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" ng-model="memberForm.secondEmergencyContact.street" required>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="city" name="city" placeholder="City*" required>
+                                <input type="text" class="form-control" id="city" name="city" placeholder="City*" ng-model="memberForm.secondEmergencyContact.city" required>
                               </div>
                               <div class="form-group">
                                 <select class="form-control" id="state">
-                                  <option value="">Select a State*</option>
-                                  <option value="">N/A</option>
-                                  <option value="AK">Alaska</option>
-                                  <option value="AL">Alabama</option>
-                                  <option value="AR">Arkansas</option>
-                                  <option value="AZ">Arizona</option>
-                                  <option value="CA">California</option>
-                                  <option value="CO">Colorado</option>
-                                  <option value="CT">Connecticut</option>
-                                  <option value="DC">District of Columbia</option>
-                                  <option value="DE">Delaware</option>
-                                  <option value="FL">Florida</option>
-                                  <option value="GA">Georgia</option>
-                                  <option value="HI">Hawaii</option>
-                                  <option value="IA">Iowa</option>
-                                  <option value="ID">Idaho</option>
-                                  <option value="IL">Illinois</option>
-                                  <option value="IN">Indiana</option>
-                                  <option value="KS">Kansas</option>
-                                  <option value="KY">Kentucky</option>
-                                  <option value="LA">Louisiana</option>
-                                  <option value="MA">Massachusetts</option>
-                                  <option value="MD">Maryland</option>
-                                  <option value="ME">Maine</option>
-                                  <option value="MI">Michigan</option>
-                                  <option value="MN">Minnesota</option>
-                                  <option value="MO">Missouri</option>
-                                  <option value="MS">Mississippi</option>
-                                  <option value="MT">Montana</option>
-                                  <option value="NC">North Carolina</option>
-                                  <option value="ND">North Dakota</option>
-                                  <option value="NE">Nebraska</option>
-                                  <option value="NH">New Hampshire</option>
-                                  <option value="NJ">New Jersey</option>
-                                  <option value="NM">New Mexico</option>
-                                  <option value="NV">Nevada</option>
-                                  <option value="NY">New York</option>
-                                  <option value="OH">Ohio</option>
-                                  <option value="OK">Oklahoma</option>
-                                  <option value="OR">Oregon</option>
-                                  <option value="PA">Pennsylvania</option>
-                                  <option value="PR">Puerto Rico</option>
-                                  <option value="RI">Rhode Island</option>
-                                  <option value="SC">South Carolina</option>
-                                  <option value="SD">South Dakota</option>
-                                  <option value="TN">Tennessee</option>
-                                  <option value="TX">Texas</option>
-                                  <option value="UT">Utah</option>
-                                  <option value="VA">Virginia</option>
-                                  <option value="VT">Vermont</option>
-                                  <option value="WA">Washington</option>
-                                  <option value="WI">Wisconsin</option>
-                                  <option value="WV">West Virginia</option>
-                                  <option value="WY">Wyoming</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="">Select a State*</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="">N/A</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="AK">Alaska</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="AL">Alabama</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="AR">Arkansas</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="AZ">Arizona</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="CA">California</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="CO">Colorado</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="CT">Connecticut</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="DC">District of Columbia</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="DE">Delaware</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="FL">Florida</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="GA">Georgia</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="HI">Hawaii</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="IA">Iowa</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="ID">Idaho</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="IL">Illinois</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="IN">Indiana</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="KS">Kansas</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="KY">Kentucky</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="LA">Louisiana</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="MA">Massachusetts</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="MD">Maryland</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="ME">Maine</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="MI">Michigan</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="MN">Minnesota</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="MO">Missouri</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="MS">Mississippi</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="MT">Montana</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="NC">North Carolina</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="ND">North Dakota</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="NE">Nebraska</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="NH">New Hampshire</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="NJ">New Jersey</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="NM">New Mexico</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="NV">Nevada</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="NY">New York</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="OH">Ohio</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="OK">Oklahoma</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="OR">Oregon</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="PA">Pennsylvania</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="PR">Puerto Rico</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="RI">Rhode Island</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="SC">South Carolina</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="SD">South Dakota</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="TN">Tennessee</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="TX">Texas</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="UT">Utah</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="VA">Virginia</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="VT">Vermont</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="WA">Washington</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="WI">Wisconsin</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="WV">West Virginia</option>
+                                  <option ng-model="memberForm.secondEmergencyContact.state" value="WY">Wyoming</option>
                                 </select>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" required>
+                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="memberForm.secondEmergencyContact.zip" required>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" required>
+                                <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" ng-model="memberForm.secondEmergencyContact.homePhone" required>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" required>
+                                <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" ng-model="memberForm.secondEmergencyContact.cellPhone" required>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="memberForm.secondEmergencyContact.email">
                               </div>
                             </div><!--second emergency contact-->
                             

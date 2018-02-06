@@ -104,7 +104,6 @@ myApp.controller('MainController', ['$scope', function ($scope)  {
     } else {
       $scope.tab += 1;
     }
-    // console.log('inside test, tab is ', $scope.tab);
   }
   
   $scope.readMore = function(divId) {
