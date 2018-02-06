@@ -130,7 +130,7 @@ myApp.controller('MainController', ['$scope', function ($scope)  {
   }
   
   $scope.submitMemberForm = function(){
-    
+    console.log('form you are sending is ', $scope.memberForm);
   }
   
   
