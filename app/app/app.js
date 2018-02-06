@@ -7,98 +7,79 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
     
       .state('home', {
         url: '/',
-        templateUrl: 'views/home.html',
-        // controller: 'MainController'
+        templateUrl: 'views/home.html'
       })
       .state('become-member', {
         url: '/become-member',
-        templateUrl: 'views/become-member.html',
-        // controller: 'MainController'
+        templateUrl: 'views/become-member.html'
       })
       .state('community', {
         url: '/community',
-        templateUrl: 'views/community.html',
-        // controller: 'MainController'
+        templateUrl: 'views/community.html'
       })
       .state('contact', {
         url: '/contact',
-        templateUrl: 'views/contact.html',
-        // controller: 'MainController'
+        templateUrl: 'views/contact.html'
       })
       .state('donate', {
         url: '/donate',
-        templateUrl: 'views/donate.html',
-        // controller: 'MainController'
+        templateUrl: 'views/donate.html'
       })
       .state('faces', {
         url: '/faces-of-our-members',
-        templateUrl: 'views/faces.html',
-        // controller: 'MainController'
+        templateUrl: 'views/faces.html'
       })
       .state('family', {
         url: '/family-involvement',
-        templateUrl: 'views/family.html',
-        // controller: 'MainController'
+        templateUrl: 'views/family.html'
       })
       .state('faq', {
         url: '/faq',
-        templateUrl: 'views/faq.html',
-        // controller: 'MainController'
+        templateUrl: 'views/faq.html'
       })
       .state('member-app', {
         url: '/member-application',
-        templateUrl: 'views/member-app.html',
-        // controller: 'MainController'
+        templateUrl: 'views/member-app.html'
       })
       .state('member-programs', {
         url: '/member-programs',
-        templateUrl: 'views/member-programs.html',
-        // controller: 'MainController'
+        templateUrl: 'views/member-programs.html'
       })
       .state('news', {
         url: '/news',
-        templateUrl: 'views/news.html',
-        // controller: 'MainController'
+        templateUrl: 'views/news.html'
       })
       .state('non-rider-member', {
         url: '/non-rider-member',
-        templateUrl: 'views/non-rider-member.html',
-        // controller: 'MainController'
+        templateUrl: 'views/non-rider-member.html'
       })
       .state('organization', {
         url: '/organization',
-        templateUrl: 'views/organization.html',
-        // controller: 'MainController'
+        templateUrl: 'views/organization.html'
       })
       .state('pay-online', {
         url: '/pay-online',
-        templateUrl: 'views/pay-online.html',
-        // controller: 'MainController'
+        templateUrl: 'views/pay-online.html'
       })
       .state('rider-stories', {
         url: '/rider-stories',
-        templateUrl: 'views/rider-stories.html',
-        // controller: 'MainController'
+        templateUrl: 'views/rider-stories.html'
       })
       .state('what-we-do', {
         url: '/what-we-do',
-        templateUrl: 'views/what-we-do.html',
-        // controller: 'MainController'
+        templateUrl: 'views/what-we-do.html'
       })
       .state('corporate', {
         url: '/corporate',
-        templateUrl: 'views/corporate.html',
-        // controller: 'MainController'
+        templateUrl: 'views/corporate.html'
       })
       .state('volunteer-to-drive', {
         url: '/volunteer-to-drive',
-        templateUrl: 'views/volunteer-to-drive.html',
-        // controller: 'MainController'
+        templateUrl: 'views/volunteer-to-drive.html'
       })
       .state('add-pta-credit', {
         url: '/add-pta-credit',
-        templateUrl: 'views/add-pta-credit.html',
-        // controller: 'MainController'
+        templateUrl: 'views/add-pta-credit.html'
       })
 
   // default fall back route
@@ -114,9 +95,13 @@ myApp.controller('MainController', ['$scope', function ($scope)  {
   $scope.zoomLevel = 1;
   $scope.tab = 1;
   
+  $scope.test = function(tab){
+    tab += 1;
+    console.log('inside test, tab is ', tab);
+  }
+  
   $scope.readMore = function(divId) {
     var content = document.getElementById(divId);
-    var buttonText = content.nextElementSibling.nextElementSibling.nextElementSibling.innerText;
     if (content.style.display === "none") {
         content.style.display = "block";
         content.nextElementSibling.nextElementSibling.nextElementSibling.innerText = "READ LESS";
