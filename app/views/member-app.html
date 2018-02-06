@@ -691,26 +691,26 @@
                           
                           <div class="form-group ta-center">
                             <label for="license">Do you have a current driver's license?: *</label><br>
-                            <label class="radio-inline"><input type="radio" value="yes">Yes</label>
-                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="memberForm.drivingInfo.hasLicense" type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input ng-model="memberForm.drivingInfo.hasLicense" type="radio" value="no">No</label>
                           </div>
                           
                           <div class="form-group ta-center">
                             <label for="own vehicle">Do you own a vehicle?: *</label><br>
-                            <label class="radio-inline"><input type="radio" value="yes">Yes</label>
-                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="memberForm.drivingInfo.ownVehicle" type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input ng-model="memberForm.drivingInfo.ownVehicle" type="radio" value="no">No</label>
                           </div>
                           
                           <div class="form-group ta-center">
                             <label for="driver improvement">Have you tried any driver improvement activities or classes to help you keep driving safely longer?: *</label><br>
-                            <label class="radio-inline"><input type="radio" value="yes">Yes</label>
-                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="memberForm.drivingInfo.driverImprovementClasses" type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input ng-model="memberForm.drivingInfo.driverImprovementClasses" type="radio" value="no">No</label>
                           </div>
                           
                           <div class="form-group ta-center">
                             <label for="driven in last 10 years">Have you driven in the last ten years?: *</label><br>
-                            <label class="radio-inline"><input type="radio" value="yes">Yes</label>
-                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="memberForm.drivingInfo.drivenLast10Years" type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input ng-model="memberForm.drivingInfo.drivenLast10Years" type="radio" value="no">No</label>
                           </div>
                           
                           <div class="form-group ta-center">
@@ -724,15 +724,15 @@
                             
                             <div class="form-group ta-center">
                               <label for="how often do you drive">How often do you drive?:</label><br>
-                              <label class="radio-inline"><input type="radio" value="less_once_week">Less than once a week</label>
-                              <label class="radio-inline"><input type="radio" value="1_2_days"> 1-2 Days per week</label>
-                              <label class="radio-inline"><input type="radio" value="3_more"> 3 or more days per week</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.howOftenYouDrive"  type="radio" value="less_once_week">Less than once a week</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.howOftenYouDrive"  type="radio" value="1_2_days"> 1-2 Days per week</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.howOftenYouDrive"  type="radio" value="3_more"> 3 or more days per week</label>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="restricted your driving">Have you restricted your own driving?:</label><br>
-                              <label class="radio-inline"><input type="radio" value="yes">Yes</label>
-                              <label class="radio-inline"><input type="radio" value="no">No</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.restrictedOwnDriving"  type="radio" value="yes">Yes</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.restrictedOwnDriving"  type="radio" value="no">No</label>
                             </div>
                             
                             
@@ -740,58 +740,58 @@
                             
                             <div class="form-group ta-center">
                               <label for="avoid driving at night">Avoid driving at night?:</label><br>
-                              <label class="radio-inline"><input type="radio" value="always">Always</label>
-                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
-                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingAtNight" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingAtNight" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingAtNight" type="radio" value="never">Never</label>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="avoid highway driving">Avoid highway driving?:</label><br>
-                              <label class="radio-inline"><input type="radio" value="always">Always</label>
-                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
-                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidHighwayDriving"  type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidHighwayDriving"  type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidHighwayDriving"  type="radio" value="never">Never</label>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="avoid left turns on incoming traffic">Avoid making left turns across incoming traffic?:</label><br>
-                              <label class="radio-inline"><input type="radio" value="always">Always</label>
-                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
-                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidLeftTurnsIncomingTraffic" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidLeftTurnsIncomingTraffic" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidLeftTurnsIncomingTraffic" type="radio" value="never">Never</label>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="avoid driving bad weather">Avoid driving in bad weather?:</label><br>
-                              <label class="radio-inline"><input type="radio" value="always">Always</label>
-                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
-                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingBadWeather" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingBadWeather" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingBadWeather" type="radio" value="never">Never</label>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="avoid driving alone">Avoid driving alone?:</label><br>
-                              <label class="radio-inline"><input type="radio" value="always">Always</label>
-                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
-                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingAlone" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingAlone" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingAlone" type="radio" value="never">Never</label>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="avoid driving high traffic">Avoid driving on high traffic roads?:</label><br>
-                              <label class="radio-inline"><input type="radio" value="always">Always</label>
-                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
-                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingHighTrafficRoads" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingHighTrafficRoads" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingHighTrafficRoads" type="radio" value="never">Never</label>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="avoid driving unfamiliar areas">Avoid driving in unfamiliar areas?:</label><br>
-                              <label class="radio-inline"><input type="radio" value="always">Always</label>
-                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
-                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingUnfamiliarAreas" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingUnfamiliarAreas" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.avoidDrivingUnfamiliarAreas" type="radio" value="never">Never</label>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="pass up fun because of driving concerns">Pass up opportunities to go shopping, visit friends, etc., because of concerns about driving?:</label><br>
-                              <label class="radio-inline"><input type="radio" value="always">Always</label>
-                              <label class="radio-inline"><input type="radio" value="sometimes">Sometimes</label>
-                              <label class="radio-inline"><input type="radio" value="never">Never</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.passOpportunitiesBecauseDriveConcerns" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.passOpportunitiesBecauseDriveConcerns" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="memberForm.drivingInfo.passOpportunitiesBecauseDriveConcerns" type="radio" value="never">Never</label>
                             </div>
                             
                           </div><!--currentDriver-->
@@ -803,19 +803,19 @@
                           
                             <div class="form-group ta-center">
                               <label for="avoid driving alone">Please check a reason:</label><br>
-                              <label class="checkbox-inline"><input type="checkbox" value="never_licensed">Never licensed</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="illness">Illness</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="traffic_accident">Traffic accident</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="doctor_order">Doctors orders</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="license_revoked">License revoked</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="license_expired">License expired</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="not_safe">Don't feel safe</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="family_request">Family Request</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="police_request">Police/Judge Request</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="expensive">Too expensive</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="need_repair">Car needs repair</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.whyNoDrive" type="checkbox" value="never_licensed">Never licensed</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.whyNoDrive" type="checkbox" value="illness">Illness</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.whyNoDrive" type="checkbox" value="traffic_accident">Traffic accident</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.whyNoDrive" type="checkbox" value="doctor_order">Doctors orders</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.whyNoDrive" type="checkbox" value="license_revoked">License revoked</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.whyNoDrive" type="checkbox" value="license_expired">License expired</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.whyNoDrive" type="checkbox" value="not_safe">Don't feel safe</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.whyNoDrive" type="checkbox" value="family_request">Family Request</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.whyNoDrive" type="checkbox" value="police_request">Police/Judge Request</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.whyNoDrive" type="checkbox" value="expensive">Too expensive</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.whyNoDrive" type="checkbox" value="need_repair">Car needs repair</label>
                               <label class="checkbox-inline"><input type="checkbox" value="other" ng-click="otherNoDrive = !otherNoDrive">Other (specify)</label>
-                                <input type="text" class="form-control" id="other" name="other" placeholder="Other (specify)" ng-if="otherNoDrive">
+                                <input ng-model="memberForm.drivingInfo.whyNoDrive" type="text" class="form-control" id="other" name="other" placeholder="Other (specify)" ng-if="otherNoDrive">
                             </div> 
 
                           </div><!--not currentDriver-->
@@ -824,18 +824,18 @@
                           
                           <div class="form-group ta-center">
                             <label for="reduce ITN cost with rideshare">Would you like to reduce the cost of ITN trips by sharing rides with others when it's convenient?: *</label><br>
-                            <label class="radio-inline"><input type="radio" value="yes">Yes</label>
-                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="memberForm.drivingInfo.reduceCostWithRideshare" type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input ng-model="memberForm.drivingInfo.reduceCostWithRideshare" type="radio" value="no">No</label>
                           </div>
                           
                           <h3>Programs</h3>
                           
                           <div class="form-group ta-center">
                             <label for="info on programs">Would you like information on any of these ITN programs?:</label><br>
-                            <label class="checkbox-inline"><input type="checkbox" value="healthymiles">HealthyMiles</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="cartrade">CarTrade™</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="rideandshop">Ride & Shop</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="gift_certificate">Gift Certificate</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.wantInfoOnPrograms" type="checkbox" value="healthymiles">HealthyMiles</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.wantInfoOnPrograms" type="checkbox" value="cartrade">CarTrade™</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.wantInfoOnPrograms" type="checkbox" value="rideandshop">Ride & Shop</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.drivingInfo.wantInfoOnPrograms" type="checkbox" value="gift_certificate">Gift Certificate</label>
                           </div>
                           
                           <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
