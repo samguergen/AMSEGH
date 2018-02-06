@@ -384,103 +384,103 @@
                             
                             <div class="form-group ta-center">
                               <label for="Heard about ITN">How did you hear about ITN?: *</label><br>
-                              <label class="checkbox-inline"><input type="checkbox" value="family">Family</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="friend">Friend</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="speaker">Speaker</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="doctor">Doctor</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="radio">Radio</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="television">Television</label><br>
-                              <label class="checkbox-inline"><input type="checkbox" value="flier">Flier</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="phone">Phone</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="book">Book</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="agency">Agency on Aging</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="social-worker">Social Worker</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="Internet">Internet</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="current-member">Were you referred by a current member?</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.heardAboutItn" type="checkbox" value="family">Family</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.heardAboutItn" type="checkbox" value="friend">Friend</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.heardAboutItn" type="checkbox" value="speaker">Speaker</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.heardAboutItn" type="checkbox" value="doctor">Doctor</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.heardAboutItn" type="checkbox" value="radio">Radio</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.heardAboutItn" type="checkbox" value="television">Television</label><br>
+                              <label class="checkbox-inline"><input ng-model="memberForm.heardAboutItn" type="checkbox" value="flier">Flier</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.heardAboutItn" type="checkbox" value="phone">Phone</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.heardAboutItn" type="checkbox" value="book">Book</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.heardAboutItn" type="checkbox" value="agency">Agency on Aging</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.heardAboutItn" type="checkbox" value="social-worker">Social Worker</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.heardAboutItn" type="checkbox" value="Internet">Internet</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.heardAboutItn" type="checkbox" value="current-member">Were you referred by a current member?</label>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="send info">Would you like us to send information about ITN to a relative, friend, or business? * </label><br>
-                              <label class="radio-inline"><input type="radio" value="yes" ng-click="sendInfo = true">Yes</label>
-                              <label class="radio-inline"><input type="radio" value="no" ng-click="sendInfo = false">No</label>
+                              <label class="radio-inline"><input ng-model="memberForm.sendInfoToRelativeFriendBiz" type="radio" value="yes" ng-click="sendInfo = true">Yes</label>
+                              <label class="radio-inline"><input ng-model="memberForm.sendInfoToRelativeFriendBiz" type="radio" value="no" ng-click="sendInfo = false">No</label>
                             </div>
                             
                             <div ng-if="sendInfo">
                               <div class="form-group">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name: *" required>
+                                <input ng-model="memberForm.sendInfoTo.name" type="text" class="form-control" id="name" name="name" placeholder="Name: *" required>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship: *" required>
+                                <input ng-model="memberForm.sendInfoTo.relationship" type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship: *" required>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="street" name="street" placeholder="Street Address: *" required>
+                                <input ng-model="memberForm.sendInfoTo.street" type="text" class="form-control" id="street" name="street" placeholder="Street Address: *" required>
                               </div>
                               <div class="form-group">
                                 <select class="form-control" id="state">
-                                  <option value="">Select a State*</option>
-                                  <option value="">N/A</option>
-                                  <option value="AK">Alaska</option>
-                                  <option value="AL">Alabama</option>
-                                  <option value="AR">Arkansas</option>
-                                  <option value="AZ">Arizona</option>
-                                  <option value="CA">California</option>
-                                  <option value="CO">Colorado</option>
-                                  <option value="CT">Connecticut</option>
-                                  <option value="DC">District of Columbia</option>
-                                  <option value="DE">Delaware</option>
-                                  <option value="FL">Florida</option>
-                                  <option value="GA">Georgia</option>
-                                  <option value="HI">Hawaii</option>
-                                  <option value="IA">Iowa</option>
-                                  <option value="ID">Idaho</option>
-                                  <option value="IL">Illinois</option>
-                                  <option value="IN">Indiana</option>
-                                  <option value="KS">Kansas</option>
-                                  <option value="KY">Kentucky</option>
-                                  <option value="LA">Louisiana</option>
-                                  <option value="MA">Massachusetts</option>
-                                  <option value="MD">Maryland</option>
-                                  <option value="ME">Maine</option>
-                                  <option value="MI">Michigan</option>
-                                  <option value="MN">Minnesota</option>
-                                  <option value="MO">Missouri</option>
-                                  <option value="MS">Mississippi</option>
-                                  <option value="MT">Montana</option>
-                                  <option value="NC">North Carolina</option>
-                                  <option value="ND">North Dakota</option>
-                                  <option value="NE">Nebraska</option>
-                                  <option value="NH">New Hampshire</option>
-                                  <option value="NJ">New Jersey</option>
-                                  <option value="NM">New Mexico</option>
-                                  <option value="NV">Nevada</option>
-                                  <option value="NY">New York</option>
-                                  <option value="OH">Ohio</option>
-                                  <option value="OK">Oklahoma</option>
-                                  <option value="OR">Oregon</option>
-                                  <option value="PA">Pennsylvania</option>
-                                  <option value="PR">Puerto Rico</option>
-                                  <option value="RI">Rhode Island</option>
-                                  <option value="SC">South Carolina</option>
-                                  <option value="SD">South Dakota</option>
-                                  <option value="TN">Tennessee</option>
-                                  <option value="TX">Texas</option>
-                                  <option value="UT">Utah</option>
-                                  <option value="VA">Virginia</option>
-                                  <option value="VT">Vermont</option>
-                                  <option value="WA">Washington</option>
-                                  <option value="WI">Wisconsin</option>
-                                  <option value="WV">West Virginia</option>
-                                  <option value="WY">Wyoming</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="">Select a State*</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="">N/A</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="AK">Alaska</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="AL">Alabama</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="AR">Arkansas</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="AZ">Arizona</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="CA">California</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="CO">Colorado</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="CT">Connecticut</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="DC">District of Columbia</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="DE">Delaware</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="FL">Florida</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="GA">Georgia</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="HI">Hawaii</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="IA">Iowa</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="ID">Idaho</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="IL">Illinois</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="IN">Indiana</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="KS">Kansas</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="KY">Kentucky</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="LA">Louisiana</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="MA">Massachusetts</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="MD">Maryland</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="ME">Maine</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="MI">Michigan</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="MN">Minnesota</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="MO">Missouri</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="MS">Mississippi</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="MT">Montana</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="NC">North Carolina</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="ND">North Dakota</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="NE">Nebraska</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="NH">New Hampshire</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="NJ">New Jersey</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="NM">New Mexico</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="NV">Nevada</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="NY">New York</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="OH">Ohio</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="OK">Oklahoma</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="OR">Oregon</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="PA">Pennsylvania</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="PR">Puerto Rico</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="RI">Rhode Island</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="SC">South Carolina</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="SD">South Dakota</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="TN">Tennessee</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="TX">Texas</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="UT">Utah</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="VA">Virginia</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="VT">Vermont</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="WA">Washington</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="WI">Wisconsin</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="WV">West Virginia</option>
+                                  <option ng-model="memberForm.sendInfoTo.state" value="WY">Wyoming</option>
                                 </select>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code: *" required>
+                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code: *" ng-model="memberForm.sendInfoTo.zip" required>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone* - Example: xxx-xxx-xxxx" required>
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone* - Example: xxx-xxx-xxxx"  ng-model="memberForm.sendInfoTo.phone" required>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="email" name="email" placeholder="E-mail Address:">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Email Address:" ng-model="memberForm.sendInfoTo.email">
                               </div>
                             </div><!--sendinfo-->
                             
@@ -521,60 +521,60 @@
                             
                             <div class="form-group ta-center">
                               <label for="gender">Gender: * </label><br>
-                              <label class="radio-inline"><input type="radio" value="female">Female</label>
-                              <label class="radio-inline"><input type="radio" value="male">Male</label>
+                              <label class="radio-inline"><input type="radio" value="female" ng-model="memberForm.customerInfo.gender">Female</label>
+                              <label class="radio-inline"><input type="radio" value="male" ng-model="memberForm.customerInfo.gender">Male</label>
                             </div>
                             
                             <div class="form-group">
-                              <input type="text" class="form-control" id="dob" name="dob" placeholder="Date of Birth: * - Example: mm/dd/yyyy" required>
+                              <input type="text" class="form-control" id="dob" name="dob" placeholder="Date of Birth: * - Example: mm/dd/yyyy"   ng-model="memberForm.customerInfo.dateOfBirth" required>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="marital status">Marital Status: * </label><br>
-                              <label class="radio-inline"><input type="radio" value="married">Married</label>
-                              <label class="radio-inline"><input type="radio" value="single">Single</label>
-                              <label class="radio-inline"><input type="radio" value="partnered">Partnered</label>
-                              <label class="radio-inline"><input type="radio" value="divorced">Divorced</label>
-                              <label class="radio-inline"><input type="radio" value="widowed">Widowed</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.maritalStatus" type="radio" value="married">Married</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.maritalStatus" type="radio" value="single">Single</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.maritalStatus" type="radio" value="partnered">Partnered</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.maritalStatus" type="radio" value="divorced">Divorced</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.maritalStatus" type="radio" value="widowed">Widowed</label>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="living">Living Arrangements: * </label><br>
-                              <label class="radio-inline"><input type="radio" value="alone">Live Alone</label>
-                              <label class="radio-inline"><input type="radio" value="spouse">Live with Spouse</label>
-                              <label class="radio-inline"><input type="radio" value="children">Live with Children</label>
-                              <label class="radio-inline"><input type="radio" value="friend">Live with Friend</label>
-                              <label class="radio-inline"><input type="radio" value="other-family">Live with Other Family</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.livingArrangement" type="radio" value="alone">Live Alone</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.livingArrangement" type="radio" value="spouse">Live with Spouse</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.livingArrangement" type="radio" value="children">Live with Children</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.livingArrangement" type="radio" value="friend">Live with Friend</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.livingArrangement" type="radio" value="other-family">Live with Other Family</label>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="dwelling">Dwelling Arrangements: * </label><br>
-                              <label class="radio-inline"><input type="radio" value="private-home">Private Home</label>
-                              <label class="radio-inline"><input type="radio" value="assisted-living"> Assisted Living Facility</label>
-                              <label class="radio-inline"><input type="radio" value="retirement-community"> Independent Living Retirement Community</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.dwellingArrangement" type="radio" value="private-home">Private Home</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.dwellingArrangement" type="radio" value="assisted-living"> Assisted Living Facility</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.dwellingArrangement" type="radio" value="retirement-community"> Independent Living Retirement Community</label>
                               <label class="radio-inline"><input type="radio" value="other-dwelling" ng-click="otherDwelling = !otherDwelling">Other</label>
-                                <input type="text" class="form-control" id="other-dwelling" name="other-dwelling" placeholder="other (specify)" ng-if="otherDwelling">
+                                <input type="text" ng-model="memberForm.customerInfo.dwellingArrangement" class="form-control" id="other-dwelling" name="other-dwelling" placeholder="other (specify)" ng-if="otherDwelling">
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="languages">Languages Spoken: *</label><br>
-                              <label class="checkbox-inline"><input type="checkbox" value="english">English</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="french">French</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="spanish">Spanish</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.languages" type="checkbox" value="english">English</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.languages" type="checkbox" value="french">French</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.languages" type="checkbox" value="spanish">Spanish</label>
                               <label class="checkbox-inline"><input type="checkbox" value="other-language" ng-click="otherLanguage = !otherLanguage">Other (specify)</label>
-                                <input type="text" class="form-control" id="other-language" name="other-language" placeholder="other (specify)" ng-if="otherLanguage">
+                                <input type="text" ng-model="memberForm.customerInfo.languages" class="form-control" id="other-language" name="other-language" placeholder="other (specify)" ng-if="otherLanguage">
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="transportation means">Current primary means of getting around: * </label><br>
-                              <label class="radio-inline"><input type="radio" value="drive">Drive</label>
-                              <label class="radio-inline"><input type="radio" value="walk">Walk</label>
-                              <label class="radio-inline"><input type="radio" value="fam-friend">Ride with Family or Friend</label>
-                              <label class="radio-inline"><input type="radio" value="public-transportation">Public Transportation</label>
-                              <label class="radio-inline"><input type="radio" value="taxi">Taxi</label>
-                              <label class="radio-inline"><input type="radio" value="private-service">Private Service</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.currentTransportationMeans" type="radio" value="drive">Drive</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.currentTransportationMeans" type="radio" value="walk">Walk</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.currentTransportationMeans" type="radio" value="fam-friend">Ride with Family or Friend</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.currentTransportationMeans" type="radio" value="public-transportation">Public Transportation</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.currentTransportationMeans" type="radio" value="taxi">Taxi</label>
+                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.currentTransportationMeans" type="radio" value="private-service">Private Service</label>
                               <label class="radio-inline"><input type="radio" value="other-transportation" ng-click="otherTransportation = !otherDwelling">Other</label>
-                                <input type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
+                                <input ng-model="memberForm.customerInfo.currentTransportationMeans" type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
                             </div>
                           
                             <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
@@ -612,47 +612,47 @@
                           
                           <div class="form-group ta-center">
                             <label for="member of any organization">Are you a member of any of the following organizations?:</label><br>
-                            <label class="checkbox-inline"><input type="checkbox" value="aaa">AAA</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="elks">Elks</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="rotary">Rotary</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="aarp">AARP</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="kiwanis">Kiwanis</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="knights">Knights of Columbus</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="masons">Masons/Eastern Stars</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="frat">Fraternity/Sorority</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="aaa">AAA</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="elks">Elks</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="rotary">Rotary</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="aarp">AARP</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="kiwanis">Kiwanis</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="knights">Knights of Columbus</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="masons">Masons/Eastern Stars</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="frat">Fraternity/Sorority</label>
                             <label class="checkbox-inline"><input type="checkbox" value="other" ng-click="otherOrg = !otherOrg">Other (specify)</label>
-                              <input type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherOrg">
+                              <input ng-model="memberForm.customerInfo.memberOfOrganization" type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherOrg">
                           </div>
                           
                           <div class="form-group ta-center">
                             <label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
-                            <label class="radio-inline"><input type="radio" value="yes" ng-click="specifyUnions = !specifyUnions">Yes</label>
+                            <label class="radio-inline"><input ng-model="memberForm.customerInfo.memberOfProfessionalOrgOrUnion" type="radio" value="yes" ng-click="specifyUnions = !specifyUnions">Yes</label>
                             <label class="radio-inline"><input type="radio" value="no">No</label>
-                              <input type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
+                              <input ng-model="memberForm.customerInfo.memberOfProfessionalOrgOrUnion" type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
                           </div>
                           
                           <div class="form-group ta-center">
                             <label for="served in armed forces">Have you ever served on active duty in the U.S. Armed Forces, Military Reserves, or National Guard: *</label><br>
-                            <label class="radio-inline"><input type="radio" value="yes">Yes</label>
-                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="memberForm.customerInfo.servedInMilitary" type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input ng-model="memberForm.customerInfo.servedInMilitary" type="radio" value="no">No</label>
                           </div>
                           
                           <div class="form-group ta-center">
                             <label for="special needs">Special Needs and Mobility Assistance: *</label><br>
-                            <label class="checkbox-inline"><input type="checkbox" value="cane">Cane</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="wheelchair">Wheelchair</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="blind"> Blind/Seeing Eye</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="anxiety">Anxiety Disorder</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="driver">Driver Assistance Required</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="personal">Personal Assistant</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="vehicle">Full-Sized Vehicle Required</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="impaired">Visually Impaired</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="walker">Walker</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="alzheimer"> Alzheimer's/Dementia</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="bladder"> Bladder/Bowel Control Problems</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="deaf">Deaf</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="no-high">No High Vehicle</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="none">None of the above</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="cane">Cane</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="wheelchair">Wheelchair</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="blind"> Blind/Seeing Eye</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="anxiety">Anxiety Disorder</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="driver">Driver Assistance Required</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="personal">Personal Assistant</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="vehicle">Full-Sized Vehicle Required</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="impaired">Visually Impaired</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="walker">Walker</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="alzheimer"> Alzheimer's/Dementia</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="bladder"> Bladder/Bowel Control Problems</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="deaf">Deaf</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="no-high">No High Vehicle</label>
+                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="none">None of the above</label>
                           </div>
                           
                           <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
@@ -916,19 +916,19 @@
                           <p>Your signature indicates that you understand that routinely-collected ITNAmerica data will be used to study and improve transportation for seniors, and that you may, from time to time, be asked questions about your use of the service. We will do our best to provide rides for you and we will always strive to inform you when we cannot provide a ride. However, we are not responsible for any costs or expenses you may incur when we are unable to provide a ride for a specific time and place.</p>
                           
                           <div class="form-group">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Customer Name: * - (please print name)" required>
+                            <input ng-model="memberForm.agreement.name" type="text" class="form-control" id="name" name="name" placeholder="Customer Name: * - (please print name)" required>
                           </div>
                           
                           <div class="form-group">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Signature of customer or legal representative: *" required>
+                            <input ng-model="memberForm.agreement.signature" type="text" class="form-control" id="signature" name="signature" placeholder="Signature of customer or legal representative: *" required>
                           </div>
                           
                           <div class="form-group">
-                            <input type="text" class="form-control" id="date" name="date" placeholder="Date: * - Example: mm/dd/yyyy" required>
+                            <input ng-model="memberForm.agreement.date" type="text" class="form-control" id="date" name="date" placeholder="Date: * - Example: mm/dd/yyyy" required>
                           </div>
                             
                           <div class="form-group">
-                            <label class="checkbox-inline"><input type="checkbox" value="agree" ng-click="">By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="agree" ng-click="" required>By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
                           </div>
 
                           <button type="submit" class="btn btn-danger" ng-disabled="form.$invalid">Submit</button>
