@@ -95,9 +95,9 @@ myApp.controller('MainController', ['$scope', function ($scope)  {
   $scope.zoomLevel = 1;
   $scope.tab = 1;
   
-  $scope.test = function(tab){
-    tab += 1;
-    console.log('inside test, tab is ', tab);
+  $scope.test = function(){
+    $scope.tab += 1;
+    console.log('inside test, tab is ', $scope.tab);
   }
   
   $scope.readMore = function(divId) {
