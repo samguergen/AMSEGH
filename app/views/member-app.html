@@ -12,35 +12,36 @@
         <hr align="center">
         <div class="col-sm-12">
             <div class="form-area" style="background: #c7dfe4;border:none">  
-                  <form novalidate ng-submit="submitMemberForm()" role="membership form">
+                  <form novalidate ng-submit="submitMemberForm()" role="membership form" ng-model="memberForm">
                     <br style="clear:both">
                     <h2 class="app-title">Application for Transportation Service</h2>
                     
-                    <ol class="steps">
-                      <li class="step active">
-                        <a href="">Step 1</a>
-                      </li>
-                      <li class="step">
-                        <a href="" tabindex="-1">Step 2</a>
-                      </li>
-                      <li class="step">
-                        <a href="" tabindex="-1">Step 3</a>
-                      </li>
-                      <li class="step">
-                        <a href="" tabindex="-1">Step 4</a>
-                      </li>
-                      <li class="step">
-                        <a href="" tabindex="-1">Step 5</a>
-                      </li>
-                      <li class="step">
-                        <a href="" tabindex="-1">Step 6</a>
-                      </li>
-                      <li class="step">
-                        <a href="" tabindex="-1">Step 7</a>
-                      </li>
-                    </ol>
-                    
                     <div class="member-tabs" ng-if="tab===1">
+                      
+                      <ol class="steps">
+                        <li class="step active">
+                          <a href="">Step 1</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 2</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 3</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 4</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 5</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 6</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 7</a>
+                        </li>
+                      </ol>
+                      
                         <div class="form-group ta-center">
                           <label for="Membership Type">Membership Type*  </label><br>
                           <label class="radio-inline"><input type="radio" value="individual">Individual</label>
@@ -147,13 +148,11 @@
                         <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                       </div>
                         
-                        <button ng-click="test(1)" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                        <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                     </div><!--tab 1-->
                     
                     
-                    
-                    tab is: {{tab}}
-                    <div class="member-tabs" ng-show="tab===2">
+                    <div class="member-tabs" ng-if="tab===2">
                       
                       <ol class="steps">
                         <li class="step previous complete">
@@ -351,8 +350,9 @@
                               </div>
                             </div><!--second emergency contact-->
                             
-                            <button ng-click="tab = 1" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
-                            <button ng-click="tab = 3" class="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                            <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                            <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                            
                           </div><!--tab2-->
                         
                         
@@ -484,8 +484,8 @@
                               </div>
                             </div><!--sendinfo-->
                             
-                            <button ng-click="tab = 2" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
-                            <button ng-click="tab = 4" class="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                            <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                            <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                             
                           </div><!--tab3-->
                           
@@ -577,8 +577,8 @@
                                 <input type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
                             </div>
                           
-                          <button ng-click="tab = 3" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
-                          <button ng-click="tab = 5" class="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                            <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                            <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
 
                         </div><!--tab4-->
                         
@@ -655,8 +655,8 @@
                             <label class="checkbox-inline"><input type="checkbox" value="none">None of the above</label>
                           </div>
                           
-                          <button ng-click="tab = 4" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
-                          <button ng-click="tab = 6" class="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                          <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                          <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           
                         </div><!--tab5-->
                         
@@ -838,8 +838,8 @@
                             <label class="checkbox-inline"><input type="checkbox" value="gift_certificate">Gift Certificate</label>
                           </div>
                           
-                          <button ng-click="tab = 5" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
-                          <button ng-click="tab = 7" class="next-tab" class="btn btn-primary pull-right itn-green-bg" value="Next" style="margin-left:2%">Next</button>
+                          <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                          <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           
                         </div><!--tab6-->
                         
@@ -931,8 +931,8 @@
                             <label class="checkbox-inline"><input type="checkbox" value="agree" ng-click="">By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
                           </div>
 
-                          <button ng-click="tab = 6" id="previous-tab" class="btn btn-primary pull-right itn-green-bg" value="Previous" style="margin-left:2%">Previous</button>  
-                          <input type="submit" id="submit" class="btn btn-primary btn-lg pull-right itn-green-bg" value="Send" style="margin-left:2%">
+                          <button type="submit" class="btn btn-danger" ng-disabled="form.$invalid">Submit</button>
+                          <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           <!-- <input type="reset" class="btn btn-primary pull-right itn-green-bg" value="Reset"> -->
                           
                         </div><!--tab7-->

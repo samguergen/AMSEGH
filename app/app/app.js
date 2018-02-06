@@ -94,10 +94,17 @@ myApp.controller('MainController', ['$scope', function ($scope)  {
   console.log('inside main controller');
   $scope.zoomLevel = 1;
   $scope.tab = 1;
+  $scope.memberForm = {
+    
+  };
   
-  $scope.test = function(){
-    $scope.tab += 1;
-    console.log('inside test, tab is ', $scope.tab);
+  $scope.nextTabMemberApp = function(prev){
+    if (prev) {
+      $scope.tab -= 1;
+    } else {
+      $scope.tab += 1;
+    }
+    // console.log('inside test, tab is ', $scope.tab);
   }
   
   $scope.readMore = function(divId) {
@@ -122,5 +129,12 @@ myApp.controller('MainController', ['$scope', function ($scope)  {
     }
     
   }
+  
+  $scope.submitMemberForm = function(){
+    
+  }
+  
+  
+  
   
 }]);
