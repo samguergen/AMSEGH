@@ -73,7 +73,8 @@ nav .navbar-right a .fa-newspaper {color: #529ba8}
 nav .navbar-right a .glyphicon-envelope {color: #e05944;}
 nav .navbar-right a .fa-car {color: #529ba8;}
 nav .navbar-right a .glyphicon-heart {color: #e05944;}
-nav .navbar-right a .glyphicon-usd {color: #529ba8;}
+nav .navbar-right a .fa-hand-paper {color: #529ba8;}
+nav .navbar-right a .glyphicon-usd {color: #e05944;}
 
 nav .dropdown-menu {
   background: #399eaa;
@@ -1515,6 +1516,16 @@ h2,h3 {line-height:1.7}
 
 
 /* RESPONSIVE */
+
+@media (min-width:1210px) and (max-width: 1372px) {
+  .navbar .navbar-header {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    float: none;
+  }
+  .navbar-collapse {margin-bottom: 20px;}
+}
 
 @media (max-width: 1210px) {
   .navbar.navbar-default {
