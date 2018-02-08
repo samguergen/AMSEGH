@@ -94,9 +94,8 @@ myApp.controller('MainController', ['$scope', function ($scope)  {
   console.log('inside main controller');
   $scope.zoomLevel = 1;
   $scope.tab = 1;
-  $scope.memberForm = {
-    
-  };
+  $scope.memberForm = {};
+  $scope.loading = false;
   
   $scope.nextTabMemberApp = function(prev){
     if (prev) {
@@ -131,6 +130,16 @@ myApp.controller('MainController', ['$scope', function ($scope)  {
   
   $scope.submitMemberForm = function(){
     console.log('form you are sending is ', $scope.memberForm);
+    $scope.loading = true;
+    $http.post('/sendmail', {
+      from: 'CodeNx <admin@angularcode.com>',
+      to: 'sguergenenov@itnamerica.org',
+      subject: 'Message from AngularCode',
+      text: $scope.memberForm
+    }).then(res=>{
+        $scope.loading = false;
+        $scope.serverMessage = 'Email sent successfully';
+    });
   }
   
   
