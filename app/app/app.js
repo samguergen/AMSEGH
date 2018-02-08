@@ -90,7 +90,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
   // $locationProvider.html5mode({ enabled: true, requireBase: false });
 })
 
-myApp.controller('MainController', ['$scope', function ($scope)  {
+myApp.controller('MainController', ['$scope', '$http', function ($scope, $http)  {
   console.log('inside main controller');
   $scope.zoomLevel = 1;
   $scope.tab = 1;
