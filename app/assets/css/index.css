@@ -1317,6 +1317,22 @@ padding: 50px;
   text-shadow: 1px 1px black;
   color: #fc6d6d;
 }
+
+.volunteer-app {font-size:20px;}
+.volunteer-app #first-hero-volunteer-app {
+  background-image: url('../images/itn-people-images/clr-1.jpg') !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  height: 400px !important;
+  opacity: 0.5 !important;
+}
+.volunteer-app #first-hero-volunteer-app h1{
+  color:white !important;
+  text-shadow: 2px 2px #529ba8;
+  margin-top:170px !important;
+  margin-left: 5% !important;
+}
     
 #footer {
     width:100%;
