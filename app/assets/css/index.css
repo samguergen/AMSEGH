@@ -83,6 +83,7 @@ nav .dropdown-menu {
 }
 nav .dropdown-menu li {
   padding:5px;
+  padding-right: 20px;
 }
 nav .dropdown-menu li a:hover{
   background:#afcace;
