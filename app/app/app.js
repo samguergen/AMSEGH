@@ -77,6 +77,10 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         url: '/volunteer-to-drive',
         templateUrl: 'views/volunteer-to-drive.html'
       })
+      .state('volunteer-app', {
+        url: '/volunteer-app',
+        templateUrl: 'views/volunteer-app.html'
+      })
       .state('add-pta-credit', {
         url: '/add-pta-credit',
         templateUrl: 'views/add-pta-credit.html'
