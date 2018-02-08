@@ -1333,6 +1333,12 @@ padding: 50px;
   margin-top:170px !important;
   margin-left: 5% !important;
 }
+.volunteer-app .form-area {
+  padding-left: 5%;
+  padding-right: 5%;
+  background: #c7dfe4;
+  border:none;
+}
     
 #footer {
     width:100%;

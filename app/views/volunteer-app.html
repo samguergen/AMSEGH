@@ -1,4 +1,4 @@
-<div class="member-app">
+<div class="volunteer-app">
       
     <div class="jumbotron section first-hero" id="first-hero-volunteer-app">
       <h1>Online Volunteer Form</h1>
@@ -8,9 +8,9 @@
       
       <div class="container itn-green-bg">
         <div class="col-sm-12">
-            <div class="form-area" style="background: #c7dfe4;border:none">  
+            <div class="form-area">  
               
-              <h2 class="app-title mb-50">Volunteer Driver Application</h2>
+              <h2 class="app-title mt-25 mb-50">Volunteer Driver Application</h2>
               
               <div class="instructions">
                             
@@ -57,12 +57,12 @@
                   <li>Maintain confidentiality. Please do not share personal information. A professional manner is absolutely necessary.</li>
                 </ol>
                     
-                  <p>ITN<em>America</em> respects your privacy and will keep all volunteer information confidential. Personal information is used for aggregate reporting purposes only, to enable group distribution comparisons across affiliates and between the ITN<em>America</em> volunteer population and the US older population in general.</p>
+                  <p class="mt-50">ITN<em>America</em> respects your privacy and will keep all volunteer information confidential. Personal information is used for aggregate reporting purposes only, to enable group distribution comparisons across affiliates and between the ITN<em>America</em> volunteer population and the US older population in general.</p>
                   
                   <button role="start form" class="btn btn-lg pull-right" ng-click="showForm = true">Start Volunteer Form</button>
                 
               
-                  <form novalidate ng-submit="submitMemberForm()" role="membership form" ng-model="memberForm" ng-show="showForm">
+                  <form novalidate ng-submit="submitVolunteerForm()" role="volunteer form" ng-model="memberForm" ng-show="showForm">
                     <br style="clear:both">
                     
                     <div class="member-tabs" ng-if="tab===1">
@@ -91,13 +91,13 @@
                         </li>
                       </ol>
                       
-                        <div class="form-group ta-center">
-                          <label for="Membership Type">Membership Type*  </label><br>
-                          <label class="radio-inline"><input type="radio" value="individual" ng-model="memberForm.membership">Individual</label>
-                          <label class="radio-inline"><input type="radio" value="family" ng-model="memberForm.membership">Family</label>
-                        </div>
                         <div class="form-group">
-                          <input type="text" class="form-control" id="rider-name" name="rider-name" placeholder="Rider's Name*" ng-model="memberForm.riderName" required>
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Name*" ng-model="memberForm.riderName" required>
+                        </div>
+                        <div class="form-group ta-center">
+                          <label for="gender">Gender: * </label><br>
+                          <label class="radio-inline"><input type="radio" value="female" ng-model="memberForm.customerInfo.gender">Female</label>
+                          <label class="radio-inline"><input type="radio" value="male" ng-model="memberForm.customerInfo.gender">Male</label>
                         </div>
                         <div class="form-group">
                           <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" ng-model="memberForm.streetAddress" required>
@@ -106,7 +106,6 @@
                           <input type="text" class="form-control" id="city" name="city" placeholder="City*" ng-model="memberForm.city" required>
                         </div>
                         <div class="form-group">
-                          <!-- <label for="state">Select a State*</label> -->
                           <select class="form-control" id="state">
                             <option ng-model="memberForm.state" value="">Select a State*</option>
                             <option ng-model="memberForm.state" value="">N/A</option>
@@ -167,67 +166,22 @@
                       <div class="form-group">
                         <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="memberForm.zip" required>
                       </div>
+                    
                       <div class="form-group">
-                        <input type="text" class="form-control" id="years" name="years" placeholder="Years at Address*" ng-model="memberForm.yearsAtAddress" required>
-                      </div>
-                      
-                      <div class="form-group ta-center">
-                        <label for="Mailing Adress Yes or No">Is this your Mailing Address?*:  </label><br>
-                        <label class="radio-inline"><input type="radio" value="yes" ng-model="memberForm.isMailingAddress">Yes</label>
-                        <label class="radio-inline"><input type="radio" value="no" ng-model="memberForm.isMailingAddress">No</label>
-                      </div>
-                      <div class="form-group ta-center">
-                        <label for="Billing Adress Yes or No">Is this your Billing Address?*:  </label><br>
-                        <label class="radio-inline"><input type="radio" value="yes" ng-model="memberForm.isBillingAddress">Yes</label>
-                        <label class="radio-inline"><input type="radio" value="no" ng-model="memberForm.isBillingAddress">No</label>
-                      </div>
-                      <div class="form-group ta-center">
-                        <label for="Year-round Residence Yes or No">Is this your Year-round Residence?*:  </label><br>
-                        <label class="radio-inline"><input type="radio" value="yes" ng-model="memberForm.isYearRoundResidence">Yes</label>
-                        <label class="radio-inline"><input type="radio" value="no" ng-model="memberForm.isYearRoundResidence">No</label>
-                      </div>
-                      
-                      <div class="form-group">
-                        <input type="text" class="form-control" id="primary-phone" name="primary-phone" placeholder="Primary Phone* - Example: xxx-xxx-xxxx"  ng-model="memberForm.primaryPhone" required>
+                        <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx"  ng-model="memberForm.homePhone" required>
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="secondary-phone" name="secondary-phone" placeholder="Secondary Phone" ng-model="memberForm.secondaryPhone">
+                        <input type="text" class="form-control" id="work-phone" name="work-phone" placeholder="Work Phone* - Example: xxx-xxx-xxxx"  ng-model="memberForm.workPhone" required>
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="cell-phone" name="cell-phone" placeholder="Cell Phone* - Example: xxx-xxx-xxxx"  ng-model="memberForm.cellPhone" required>
                       </div>
                       <div class="form-group">
                         <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="memberForm.email">
                       </div>
-                        
-                        <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
-                    </div><!--tab 1-->
-                    
-                    
-                    <div class="member-tabs" ng-if="tab===2">
                       
-                      <ol class="steps">
-                        <li class="step previous complete">
-                          <a href="">Step 1</a>
-                        </li>
-                        <li class="step active">
-                          <a href="">Step 2</a>
-                        </li>
-                        <li class="step">
-                          <a href="" tabindex="-1">Step 3</a>
-                        </li>
-                        <li class="step">
-                          <a href="" tabindex="-1">Step 4</a>
-                        </li>
-                        <li class="step">
-                          <a href="" tabindex="-1">Step 5</a>
-                        </li>
-                        <li class="step">
-                          <a href="" tabindex="-1">Step 6</a>
-                        </li>
-                        <li class="step">
-                          <a href="" tabindex="-1">Step 7</a>
-                        </li>
-                      </ol>
                       
-                      <div id="first-emergency">
+                      <!-- <div id="first-emergency"> -->
                           <h2>First Emergency Contact</h2>
                             <div class="form-group">
                               <input type="text" class="form-control" id="name" name="name" placeholder="Name*" ng-model="memberForm.firstEmergencyContact.name" required>
@@ -306,12 +260,72 @@
                               <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" ng-model="memberForm.firstEmergencyContact.homePhone" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" ng-model="memberForm.firstEmergencyContact.cellPhone" required>
-                            </div>
-                            <div class="form-group">
                               <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="memberForm.firstEmergencyContact.email">
                             </div>
-                          </div><!--first emergency-->
+                          <!-- </div> -->
+                          <!--first emergency-->
+                      
+                      
+                        <h2>Driving Experience</h2>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="years" name="years" placeholder="Years of driving experience:" ng-model="memberForm.drivingExperience.years" required>
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="milesDrivenLastYr" name="milesDrivenLastYr" placeholder="Estimated miles driven last year:" ng-model="memberForm.drivingExperience.milesDrivenLastYr" required>
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="visionLastExamined" name="visionLastExamined" placeholder="When was your vision last examined: *  mm/dd/yyyy" ng-model="memberForm.drivingExperience.visionLastExamined" required>
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="send info">Is your vision adequate for driving: *</label><br>
+                            <label class="radio-inline"><input ng-model="memberForm.drivingExperience.adequateVision" type="radio" value="yes" ng-click="sendInfo = true">Yes</label>
+                            <label class="radio-inline"><input ng-model="memberForm.drivingExperience.adequateVision" type="radio" value="no" ng-click="sendInfo = false">No</label>
+                          </div>
+                          
+                          
+                        
+                          <div class="form-group ta-center">
+                            <label for="send info">Current Employment Status: *</label><br>
+                            <label class="radio-inline"><input ng-model="memberForm.currentEmployment" type="radio" value="none" ng-click="sendInfo = true">None</label>
+                            <label class="radio-inline"><input ng-model="memberForm.currentEmployment" type="radio" value="fulltime" ng-click="sendInfo = false">Full-time</label>
+                            <label class="radio-inline"><input ng-model="memberForm.currentEmployment" type="radio" value="parttime" ng-click="sendInfo = true">Part-time</label>
+                            <label class="radio-inline"><input ng-model="memberForm.currentEmployment" type="radio" value="betweenjobs" ng-click="sendInfo = false">Between Jobs</label>
+                            <label class="radio-inline"><input ng-model="memberForm.currentEmployment" type="radio" value="retired" ng-click="sendInfo = true">Retired</label>
+                          </div>
+                      
+                        
+                        <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                    </div><!--tab 1-->
+                    
+                    
+                    <div class="member-tabs" ng-if="tab===2">
+                      
+                      <ol class="steps">
+                        <li class="step previous complete">
+                          <a href="">Step 1</a>
+                        </li>
+                        <li class="step active">
+                          <a href="">Step 2</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 3</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 4</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 5</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 6</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 7</a>
+                        </li>
+                      </ol>
+                      
+
                         
                           <div id="second-emergency">
                             <h2>Second Emergency Contact</h2>
@@ -567,12 +581,7 @@
                             <p><em>ITNAmerica respects your privacy and will keep all customer information confidential. The following information allows us to provide better service to our customers, and helps us better understand the circumstances that customers face when they apply to use the ITN for rides.</em></p>
                             
                             <h2>Customer Information</h2>
-                            
-                            <div class="form-group ta-center">
-                              <label for="gender">Gender: * </label><br>
-                              <label class="radio-inline"><input type="radio" value="female" ng-model="memberForm.customerInfo.gender">Female</label>
-                              <label class="radio-inline"><input type="radio" value="male" ng-model="memberForm.customerInfo.gender">Male</label>
-                            </div>
+                          
                             
                             <div class="form-group">
                               <input type="text" class="form-control" id="dob" name="dob" placeholder="Date of Birth: * - Example: mm/dd/yyyy"   ng-model="memberForm.customerInfo.dateOfBirth" required>
