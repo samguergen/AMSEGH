@@ -193,6 +193,26 @@ nav .dropdown-menu li.divider{
   padding-right: 15px;
   padding-bottom:50px;
 }
+.post-features {
+  text-align: center;
+  font-size: 30px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:75px;
+}
+.post-features .each {
+  /*border: 5px dashed #fc6d6d;*/
+  color: #fc6d6d;
+  font-weight: bold;
+}
+.post-features hr {
+  border: none;
+  height: 5px;
+  color: #fc6d6d;
+  background-color: #fc6d6d;
+  margin:auto;
+}
 .homepage .mission {
   text-align: center;
   background-color: #399eaa;
@@ -247,7 +267,7 @@ nav .dropdown-menu li.divider{
 }
 .homepage .rider-stories .rider-stories-text h4 {
   line-height: 1.6;
-  font-size:20px;
+  font-size:25px;
   margin-bottom: 20px;
 }
 .homepage .rider-stories .rider-stories-text p {
@@ -1228,7 +1248,7 @@ padding: 50px;
   border-radius: 5px;
 }
 .member-app .form-group {
-  font-size:20px;
+  font-size:25px;
   margin-top: 30px;
 }
 .member-app .steps {
@@ -1240,11 +1260,11 @@ padding: 50px;
   margin-top:50px;
 }
 .member-app .member-tabs input[type=radio] {margin-top:10px}
-.member-app .form-control {font-size:20px; height:50px}
+.member-app .form-control {font-size:25px; height:50px}
 .member-app .checkbox-inline {line-height: 1}
 
 .volunteer-drive {
-  font-size:20px;
+  font-size:25px;
 }
 .volunteer-drive #first-hero-volunteer-drive {
   background-image: url('../images/itn-people-images/aa-3.jpg') !important;
@@ -1318,7 +1338,7 @@ padding: 50px;
   color: #fc6d6d;
 }
 
-.volunteer-app {font-size:20px;}
+.volunteer-app {font-size:25px;}
 .volunteer-app li {
     margin-top: 20px;
 }

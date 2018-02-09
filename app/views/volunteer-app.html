@@ -790,52 +790,43 @@
                             </li>
                           </ol>
                           
-                          <h2>Civic Engagement</h2>
+                          <h2>Vehicle Description Information</h2>
                           
-                          <div class="form-group ta-center">
-                            <label for="member of any organization">Are you a member of any of the following organizations?:</label><br>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="aaa">AAA</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="elks">Elks</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="rotary">Rotary</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="aarp">AARP</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="kiwanis">Kiwanis</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="knights">Knights of Columbus</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="masons">Masons/Eastern Stars</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.memberOfOrganization" type="checkbox" value="frat">Fraternity/Sorority</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="other" ng-click="otherOrg = !otherOrg">Other (specify)</label>
-                              <input ng-model="memberForm.customerInfo.memberOfOrganization" type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherOrg">
+                          
+                          <div class="form-group">
+                            <label for="signature">Your name *:</label><br>
+                            <input type="text" class="form-control" id="signature" name="signature" ng-model="memberForm.requestCriminalRecord.signature" required>
                           </div>
                           
-                          <div class="form-group ta-center">
-                            <label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
-                            <label class="radio-inline"><input ng-model="memberForm.customerInfo.memberOfProfessionalOrgOrUnion" type="radio" value="yes" ng-click="specifyUnions = !specifyUnions">Yes</label>
-                            <label class="radio-inline"><input type="radio" value="no">No</label>
-                              <input ng-model="memberForm.customerInfo.memberOfProfessionalOrgOrUnion" type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
+                          <div class="form-group">
+                            <label for="date">Vehicle owner's name (if you are not the owner) *:</label><br>
+                            <input type="text" class="form-control" id="date" name="date" ng-model="memberForm.requestCriminalRecord.date" required>
                           </div>
                           
-                          <div class="form-group ta-center">
-                            <label for="served in armed forces">Have you ever served on active duty in the U.S. Armed Forces, Military Reserves, or National Guard: *</label><br>
-                            <label class="radio-inline"><input ng-model="memberForm.customerInfo.servedInMilitary" type="radio" value="yes">Yes</label>
-                            <label class="radio-inline"><input ng-model="memberForm.customerInfo.servedInMilitary" type="radio" value="no">No</label>
+                          
+                          
+                          
+                          <div class="form-group">
+                            <label for="signature">Signature *:</label><br>
+                            <input type="text" class="form-control" id="signature" name="signature" ng-model="memberForm.requestCriminalRecord.signature" required>
                           </div>
                           
-                          <div class="form-group ta-center">
-                            <label for="special needs">Special Needs and Mobility Assistance: *</label><br>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="cane">Cane</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="wheelchair">Wheelchair</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="blind"> Blind/Seeing Eye</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="anxiety">Anxiety Disorder</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="driver">Driver Assistance Required</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="personal">Personal Assistant</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="vehicle">Full-Sized Vehicle Required</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="impaired">Visually Impaired</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="walker">Walker</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="alzheimer"> Alzheimer's/Dementia</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="bladder"> Bladder/Bowel Control Problems</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="deaf">Deaf</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="no-high">No High Vehicle</label>
-                            <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.specialNeeds" type="checkbox" value="none">None of the above</label>
+                          <div class="form-group">
+                            <label for="date">Date *:</label><br>
+                            <input type="text" class="form-control" id="date" name="date" ng-model="memberForm.requestCriminalRecord.date" required>
                           </div>
+                          
+                          <div class="form-group">
+                            <label for="signature">Signature *:</label><br>
+                            <input type="text" class="form-control" id="signature" name="signature" ng-model="memberForm.requestCriminalRecord.signature" required>
+                          </div>
+                          
+                          <div class="form-group">
+                            <label for="date">Date *:</label><br>
+                            <input type="text" class="form-control" id="date" name="date" ng-model="memberForm.requestCriminalRecord.date" required>
+                          </div>
+                          
+                
                           
                           <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                           <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
