@@ -664,72 +664,100 @@
                           
                             
                             <div class="form-group">
-                              <label for="marital status">Name *:</label><br>
+                              <label for="name">Name *:</label><br>
                               <input type="text" class="form-control" id="name" name="name" placeholder="Please print full name"   ng-model="memberForm.requestDriverRecord.name" required>
                             </div>
                             
                             <div class="form-group">
-                              <label for="marital status">Previous/maiden name (if applicable) * :</label><br>
+                              <label for="maiden name">Previous/maiden name (if applicable) * :</label><br>
                               <input type="text" class="form-control" id="maidenName" name="maidenName"   ng-model="memberForm.requestDriverRecord.maidenName" required>
                             </div>
                             
                             <div class="form-group">
-                              <label for="marital status">Date of Birth *:</label><br>
+                              <label for="date of birth">Date of Birth *:</label><br>
                               <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY"   ng-model="memberForm.requestDriverRecord.dob" required>
                             </div>
                             
                             <div class="form-group">
-                              <label for="marital status">Driver's License Number *:</label><br>
-                              <input type="text" class="form-control" id="dob" name="name" ng-model="memberForm.requestDriverRecord.licenseNumber" required>
+                              <label for="license number">Driver's License Number *:</label><br>
+                              <input type="text" class="form-control" id="licenseNumber" name="licenseNumber" ng-model="memberForm.requestDriverRecord.licenseNumber" required>
                             </div>
                             
                             <div class="form-group ta-center">
-                              <label for="marital status">Marital Status: * </label><br>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.maritalStatus" type="radio" value="married">Married</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.maritalStatus" type="radio" value="single">Single</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.maritalStatus" type="radio" value="partnered">Partnered</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.maritalStatus" type="radio" value="divorced">Divorced</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.maritalStatus" type="radio" value="widowed">Widowed</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.requestDriverRecord.authorize" type="checkbox" value="authorize" required>
+                                I authorize ITNLanier to request and receive my Driving Record from
+                                <input type="text" class="form-control" id="authorizeRecordFrom" name="authorizeRecordFrom" placeholder="Enter State Dept Name" ng-model="memberForm.requestDriverRecord.authorizeRecordFrom" required>
+                              </label>
+                            </div>
+                            
+                            
+                            <div class="form-group ta-center">
+                              <label class="checkbox-inline"><input ng-model="memberForm.requestDriverRecord.certifyNotConvicted" type="checkbox" value="certifyNotConvicted" required>
+                                I certify that I have not been convicted or forfeited bond or collateral because of a moving violation during the last three years.
+                              </label>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="license number">Signature *:</label><br>
+                              <input type="text" class="form-control" id="signature" name="signature" ng-model="memberForm.requestDriverRecord.signature" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="license number">Date *:</label><br>
+                              <input type="text" class="form-control" id="date" name="date" ng-model="memberForm.requestDriverRecord.date" required>
+                            </div>
+                            
+                            
+                            
+                            
+                            <h2>Authorization to Request Criminal Record History</h2>
+                          
+                            
+                            <div class="form-group">
+                              <label for="name">
+                                This authorization is required to check your Criminal History Record from</label>
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Insert State Department Name"   ng-model="memberForm.requestCriminalRecord.deptName" required>
+                            </div>
+                            
+                            <h4>Please fill in your complete name (please include any previous names used) and include date of birth, then sign below.</h4>
+                            
+                            <div class="form-group">
+                              <label for="name">Name *:</label><br>
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Please print full name"   ng-model="memberForm.requestCriminalRecord.name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="maiden name">Previous/maiden name (if applicable) * :</label><br>
+                              <input type="text" class="form-control" id="maidenName" name="maidenName"   ng-model="memberForm.requestCriminalRecord.maidenName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="date of birth">Date of Birth *:</label><br>
+                              <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY"   ng-model="memberForm.requestCriminalRecord.dob" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="license number">Social Security Number *:</label><br>
+                              <input type="text" class="form-control" id="licenseNumber" name="licenseNumber" ng-model="memberForm.requestCriminalRecord.licenseNumber" required>
                             </div>
                             
                             <div class="form-group ta-center">
-                              <label for="living">Living Arrangements: * </label><br>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.livingArrangement" type="radio" value="alone">Live Alone</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.livingArrangement" type="radio" value="spouse">Live with Spouse</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.livingArrangement" type="radio" value="children">Live with Children</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.livingArrangement" type="radio" value="friend">Live with Friend</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.livingArrangement" type="radio" value="other-family">Live with Other Family</label>
+                              <label class="checkbox-inline"><input ng-model="memberForm.requestCriminalRecord.authorize" type="checkbox" value="authorize" required>
+                                I authorize Independent Transportation Network® to request and receive any and all criminal history information about me held by the State Bureau of Identification. The purpose of this background check will be for volunteer purposes.
+                              </label>
                             </div>
                             
-                            <div class="form-group ta-center">
-                              <label for="dwelling">Dwelling Arrangements: * </label><br>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.dwellingArrangement" type="radio" value="private-home">Private Home</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.dwellingArrangement" type="radio" value="assisted-living"> Assisted Living Facility</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.dwellingArrangement" type="radio" value="retirement-community"> Independent Living Retirement Community</label>
-                              <label class="radio-inline"><input type="radio" value="other-dwelling" ng-click="otherDwelling = !otherDwelling">Other</label>
-                                <input type="text" ng-model="memberForm.customerInfo.dwellingArrangement" class="form-control" id="other-dwelling" name="other-dwelling" placeholder="other (specify)" ng-if="otherDwelling">
+                            <div class="form-group">
+                              <label for="license number">Signature *:</label><br>
+                              <input type="text" class="form-control" id="signature" name="signature" ng-model="memberForm.requestCriminalRecord.signature" required>
                             </div>
                             
-                            <div class="form-group ta-center">
-                              <label for="languages">Languages Spoken: *</label><br>
-                              <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.languages" type="checkbox" value="english">English</label>
-                              <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.languages" type="checkbox" value="french">French</label>
-                              <label class="checkbox-inline"><input ng-model="memberForm.customerInfo.languages" type="checkbox" value="spanish">Spanish</label>
-                              <label class="checkbox-inline"><input type="checkbox" value="other-language" ng-click="otherLanguage = !otherLanguage">Other (specify)</label>
-                                <input type="text" ng-model="memberForm.customerInfo.languages" class="form-control" id="other-language" name="other-language" placeholder="other (specify)" ng-if="otherLanguage">
+                            <div class="form-group">
+                              <label for="license number">Date *:</label><br>
+                              <input type="text" class="form-control" id="date" name="date" ng-model="memberForm.requestCriminalRecord.date" required>
                             </div>
                             
-                            <div class="form-group ta-center">
-                              <label for="transportation means">Current primary means of getting around: * </label><br>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.currentTransportationMeans" type="radio" value="drive">Drive</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.currentTransportationMeans" type="radio" value="walk">Walk</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.currentTransportationMeans" type="radio" value="fam-friend">Ride with Family or Friend</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.currentTransportationMeans" type="radio" value="public-transportation">Public Transportation</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.currentTransportationMeans" type="radio" value="taxi">Taxi</label>
-                              <label class="radio-inline"><input ng-model="memberForm.customerInfo.currentTransportationMeans" type="radio" value="private-service">Private Service</label>
-                              <label class="radio-inline"><input type="radio" value="other-transportation" ng-click="otherTransportation = !otherDwelling">Other</label>
-                                <input ng-model="memberForm.customerInfo.currentTransportationMeans" type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
-                            </div>
+                            
                           
                             <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                             <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
