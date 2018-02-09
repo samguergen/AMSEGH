@@ -658,13 +658,29 @@
                               </li>
                             </ol>
                             
-                            <p><em>ITNAmerica respects your privacy and will keep all customer information confidential. The following information allows us to provide better service to our customers, and helps us better understand the circumstances that customers face when they apply to use the ITN for rides.</em></p>
+                        
                             
-                            <h2>Customer Information</h2>
+                            <h2>Authorization to Request Driver Record</h2>
                           
                             
                             <div class="form-group">
-                              <input type="text" class="form-control" id="dob" name="dob" placeholder="Date of Birth: * - Example: mm/dd/yyyy"   ng-model="memberForm.customerInfo.dateOfBirth" required>
+                              <label for="marital status">Name *:</label><br>
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Please print full name"   ng-model="memberForm.requestDriverRecord.name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="marital status">Previous/maiden name (if applicable) * :</label><br>
+                              <input type="text" class="form-control" id="maidenName" name="maidenName"   ng-model="memberForm.requestDriverRecord.maidenName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="marital status">Date of Birth *:</label><br>
+                              <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY"   ng-model="memberForm.requestDriverRecord.dob" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="marital status">Driver's License Number *:</label><br>
+                              <input type="text" class="form-control" id="dob" name="name" ng-model="memberForm.requestDriverRecord.licenseNumber" required>
                             </div>
                             
                             <div class="form-group ta-center">
