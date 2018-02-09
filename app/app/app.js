@@ -102,6 +102,8 @@ myApp.controller('MainController', ['$scope', '$http', function ($scope, $http) 
   $scope.loading = false;
   $scope.zipPattern = new RegExp(/^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] *\d[A-Z]\d)$/);
   $scope.emailPattern = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/);
+  $scope.datePattern = new RegExp(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+  $scope.dobPattern = new RegExp(/^(\d{2})\/(\d{2})\/(\d{4})$/);
   
   $scope.nextTabMemberApp = function(prev){
     if (prev) {

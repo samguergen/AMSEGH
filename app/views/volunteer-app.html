@@ -65,7 +65,7 @@
                   
                 
               
-                  <form novalidate ng-submit="submitForm()" role="volunteer form" ng-model="formData" ng-show="showForm">
+                  <form novalidate name="itnForm" ng-submit="submitForm()" role="volunteer form" ng-model="formData" ng-show="showForm">
                     <br style="clear:both">
                     
                     <div class="member-tabs" ng-if="tab===1">
@@ -178,7 +178,7 @@
                       </div>
                       <div class="form-group">
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.email" ng-pattern="emailPattern">
-                        <div ng-messages="formData.email.$error">
+                        <div ng-messages="itnForm.email.$error">
                           <div ng-message="pattern">Please enter a valid email address!</div>
                         </div>
                       </div>
@@ -263,7 +263,7 @@
                             </div>
                             <div class="form-group">
                               <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.firstEmergencyContact.email" ng-pattern="emailPattern">
-                              <div ng-messages="formData.email.$error">
+                              <div ng-messages="itnForm.email.$error">
                                 <div ng-message="pattern">Please enter a valid email address!</div>
                               </div>
                             </div>
@@ -673,7 +673,10 @@
                             
                             <div class="form-group">
                               <label for="date of birth">Date of Birth *:</label><br>
-                              <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY"   ng-model="formData.requestDriverRecord.dob" required>
+                              <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY"   ng-model="formData.requestDriverRecord.dob" ng-pattern="dobPattern" required>
+                              <div ng-messages="itnForm.dob.$error">
+                                <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
+                              </div>
                             </div>
                             
                             <div class="form-group">
@@ -839,7 +842,10 @@
                             
                             <div class="form-group">
                               <label for="date of birth">Date of Birth *:</label><br>
-                              <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY"   ng-model="formData.requestCriminalRecord.dob" required>
+                              <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY"   ng-model="formData.requestCriminalRecord.dob" ng-pattern="dobPattern" required>
+                              <div ng-messages="itnForm.dob.$error">
+                                <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
+                              </div>
                             </div>
                             
                             <div class="form-group">

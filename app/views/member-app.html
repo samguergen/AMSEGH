@@ -12,7 +12,7 @@
         <hr align="center">
         <div class="col-sm-12">
             <div class="form-area" style="background: #c7dfe4;border:none">  
-                  <form novalidate ng-submit="submitForm()" role="membership form" ng-model="formData">
+                  <form name="itnForm" novalidate ng-submit="submitForm()" role="membership form" ng-model="formData">
                     <br style="clear:both">
                     <h2 class="app-title">Application for Transportation Service</h2>
                     
@@ -146,7 +146,7 @@
                       </div>
                       <div class="form-group">
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.email" ng-pattern="emailPattern">
-                        <div ng-messages="formData.email.$error">
+                        <div ng-messages="itnForm.email.$error">
                           <div ng-message="pattern">Please enter a valid email address!</div>
                         </div>
                       </div>
@@ -264,7 +264,7 @@
                             </div>
                             <div class="form-group">
                               <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.firstEmergencyContact.email" ng-pattern="emailPattern">
-                              <div ng-messages="formData.email.$error">
+                              <div ng-messages="itnForm.email.$error">
                                 <div ng-message="pattern">Please enter a valid email address!</div>
                               </div>
                             </div>
@@ -353,7 +353,7 @@
                               </div>
                               <div class="form-group">
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.secondEmergencyContact.email" ng-pattern="emailPattern">
-                                <div ng-messages="formData.email.$error">
+                                <div ng-messages="itnForm.email.$error">
                                   <div ng-message="pattern">Please enter a valid email address!</div>
                                 </div>
                               </div>
@@ -490,7 +490,7 @@
                               </div>
                               <div class="form-group">
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.sendInfoTo.email" ng-pattern="emailPattern">
-                                <div ng-messages="formData.email.$error">
+                                <div ng-messages="itnForm.email.$error">
                                   <div ng-message="pattern">Please enter a valid email address!</div>
                                 </div>
                               </div>
@@ -538,7 +538,11 @@
                             </div>
                             
                             <div class="form-group">
-                              <input type="text" class="form-control" id="dob" name="dob" placeholder="Date of Birth: * - Example: mm/dd/yyyy"   ng-model="formData.customerInfo.dateOfBirth" required>
+                              <label for="dob">Date of Birth: * - </label><br>
+                              <input type="text" class="form-control" id="dob" name="dob" placeholder="Example: mm/dd/yyyy" ng-model="formData.customerInfo.dateOfBirth" ng-pattern="dobPattern" required>
+                              <div ng-messages="itnForm.dob.$error">
+                                <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
+                              </div>
                             </div>
                             
                             <div class="form-group ta-center">
