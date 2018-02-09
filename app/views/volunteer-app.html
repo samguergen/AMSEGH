@@ -181,7 +181,6 @@
                       </div>
                       
                       
-                      <!-- <div id="first-emergency"> -->
                           <h2>First Emergency Contact</h2>
                             <div class="form-group">
                               <input type="text" class="form-control" id="name" name="name" placeholder="Name*" ng-model="formData.firstEmergencyContact.name" required>
@@ -289,7 +288,7 @@
                         
                           <div class="form-group ta-center">
                             <label for="send info">Current Employment Status: *</label><br>
-                            <label class="radio-inline"><input ng-model="formData.currentEmployment" type="radio" value="none" ng-click="occupation = false">None</label>
+                            <label class="radio-inline"><input ng-model="formData.currentEmployment" type="radio" value="none" ng-click="occupation = false" required>None</label>
                             <label class="radio-inline"><input ng-model="formData.currentEmployment" type="radio" value="fulltime" ng-click="occupation = true">Full-time</label>
                             <label class="radio-inline"><input ng-model="formData.currentEmployment" type="radio" value="parttime" ng-click="occupation = true">Part-time</label>
                             <label class="radio-inline"><input ng-model="formData.currentEmployment" type="radio" value="betweenjobs" ng-click="occupation = true">Between Jobs</label>
