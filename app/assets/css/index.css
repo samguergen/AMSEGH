@@ -1319,6 +1319,9 @@ padding: 50px;
 }
 
 .volunteer-app {font-size:20px;}
+.volunteer-app li {
+    margin-top: 20px;
+}
 .volunteer-app #first-hero-volunteer-app {
   background-image: url('../images/itn-people-images/clr-1.jpg') !important;
   background-position: center center !important;
@@ -1333,11 +1336,16 @@ padding: 50px;
   margin-top:170px !important;
   margin-left: 5% !important;
 }
+.volunteer-app .app-title {
+  margin-top:25px;
+  margin-bottom:50px;
+  padding-top:50px;
+}
 .volunteer-app .form-area {
   padding-left: 5%;
   padding-right: 5%;
+  padding-bottom:80px;
   background: #c7dfe4;
-  border:none;
 }
     
 #footer {
@@ -1474,6 +1482,7 @@ padding: 50px;
   border-radius:5px;
   padding:2%;
 }
+.border-road {border: 5px dashed white}
 .mt-100 {margin-top:100px !important}
 .mt-50 {margin-top:50px !important}
 .mt-25 {margin-top:25px !important}
@@ -1506,6 +1515,8 @@ padding: 50px;
   margin-left:auto;
   margin-right:auto;
 }
+.br-5 {border-radius: 5px;}
+.br-15 {border-radius: 15px;}
 
 
 /* OFFICIAL WIDGETS */

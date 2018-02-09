@@ -6,13 +6,13 @@
     
     <div class="jumbotron section" style="background: #c7dfe4; border: 15px ridge white;">
       
-      <div class="container itn-green-bg">
+      <div class="container br-15">
         <div class="col-sm-12">
-            <div class="form-area">  
+            <div class="form-area br-15 border-road">  
               
-              <h2 class="app-title mt-25 mb-50">Volunteer Driver Application</h2>
+              <h2 class="app-title">Volunteer Driver Application</h2>
               
-              <div class="instructions">
+              <div class="instructions" ng-hide="showForm">
                             
                 <h3>Main Duty</h3>
                 <p>Drive ITN customers (seniors and people with visual impairments) wherever they want to go within the service area. Medical appointments, shopping, and to visit friends are frequent destinations.</p>
@@ -60,6 +60,9 @@
                   <p class="mt-50">ITN<em>America</em> respects your privacy and will keep all volunteer information confidential. Personal information is used for aggregate reporting purposes only, to enable group distribution comparisons across affiliates and between the ITN<em>America</em> volunteer population and the US older population in general.</p>
                   
                   <button role="start form" class="btn btn-lg pull-right" ng-click="showForm = true">Start Volunteer Form</button>
+                  
+                </div><!--instructions-->
+                  
                 
               
                   <form novalidate ng-submit="submitVolunteerForm()" role="volunteer form" ng-model="memberForm" ng-show="showForm">
