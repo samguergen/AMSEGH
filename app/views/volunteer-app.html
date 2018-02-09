@@ -1101,9 +1101,6 @@
                           </div>
                           
                           
-                          
-                          
-                          
                           <div class="form-group">
                             <label for="signature">Signature *:</label><br>
                             <input type="text" class="form-control" id="signature" name="signature" placeholder="Type your full name" ng-model="memberForm.vehicleDescription.signature" required>
@@ -1121,12 +1118,86 @@
                                 By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.
                             </label>
                           </div>
-                
+                          
+                          <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                           <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           
                         </div><!--tab5-->
                         
-                    <button type="submit" class="btn btn-danger" ng-disabled="form.$invalid" ng-show="tab===5">Submit</button>
+                        
+                        
+                        
+                        <div class="member-tabs" ng-if="tab===6">
+                          
+                          <ol class="steps">
+                            <li class="step previous complete">
+                              <a href="">Step 1</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 2</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 3</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 4</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 5</a>
+                            </li>
+                            <li class="step active">
+                              <a href="">Step 6</a>
+                            </li>
+                            <li class="step">
+                              <a href="" tabindex="-1">Step 7</a>
+                            </li>
+                          </ol>
+                          
+                          
+                          <h2>Volunteer Driver Change of Status</h2>
+
+                          <p>It is the responsibility of the Volunteer Driver to notify the Independent Transportation Network® of any changes in relevant driver information.
+                          Please notify your ITN Representative of any incidents or changes related to the list below, and submit copies of new documents before their expiration dates.</p>
+
+                          <ul>
+                            <li>Change of insurance policy, agent, or carrier</li>
+                            <li>Accidents</li>
+                            <li>Moving Violations</li>
+                            <li>New/different vehicles</li>
+                            <li>Criminal convictions</li>
+                            <li>Significant medical issues that affect driving</li>
+                            <li>Change in license status</li>
+                          </ul>
+
+                          <p>I understand that I need to report any changes in the above to ITN, and agree to do so in a timely manner.</p>
+                          
+                          <div class="form-group">
+                            <label for="signature">Volunteer Driver Signature *:</label><br>
+                            <input type="text" class="form-control" id="signature" name="signature" placeholder="Type your full name" ng-model="memberForm.changeOfStatus.signature" required>
+                          </div>
+                          
+                          <div class="form-group">
+                            <label for="date">Date *:</label><br>
+                            <input type="text" class="form-control" id="date" name="date" ng-model="memberForm.changeOfStatus.date" placeholder="mm/dd/yyyy" required>
+                          </div>
+                          
+                          
+                          <div class="form-group">
+                            <label for="itn Signature">ITN<em>America</em> Signature *:</label><br>
+                            <input type="text" class="form-control" id="itnSignature" name="itnSignature" ng-model="memberForm.changeOfStatus.itnSignature">
+                          </div>
+                          
+                          <div class="form-group">
+                            <label for="itn date">Date *:</label><br>
+                            <input type="text" class="form-control" id="itnDate" name="itnDate" ng-model="memberForm.changeOfStatus.itnDate">
+                          </div>
+                          
+                        <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                        
+                        </div><!--tab6-->
+                        
+                        
+                    <button type="submit" class="btn btn-danger" ng-disabled="form.$invalid" ng-show="tab===6">Submit</button>
                 
                 </form>
               </div><!--instructions-->
