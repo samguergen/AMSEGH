@@ -100,6 +100,7 @@ myApp.controller('MainController', ['$scope', '$http', function ($scope, $http) 
   $scope.tab = 1;
   $scope.formData = {};
   $scope.loading = false;
+  $scope.zipPattern = new RegExp(/^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] *\d[A-Z]\d)$/);
   
   $scope.nextTabMemberApp = function(prev){
     if (prev) {

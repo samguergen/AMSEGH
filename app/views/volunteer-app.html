@@ -164,7 +164,7 @@
                           </select>
                         </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.zip" required>
+                        <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.zip" ng-pattern="zipPattern" required>
                       </div>
                     
                       <div class="form-group">
@@ -253,7 +253,7 @@
                               </select>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.firstEmergencyContact.name" ng-model="formData.firstEmergencyContact.zip" required>
+                              <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.firstEmergencyContact.name" ng-model="formData.firstEmergencyContact.zip" ng-pattern="zipPattern" required>
                             </div>
                             <div class="form-group">
                               <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" ng-model="formData.firstEmergencyContact.homePhone" required>
