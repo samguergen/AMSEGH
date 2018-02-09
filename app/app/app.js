@@ -147,6 +147,19 @@ myApp.controller('MainController', ['$scope', '$http', function ($scope, $http) 
   }
   
   
+  $scope.submitVolunteerForm = function(){
+    console.log('form you are sending is ', $scope.volunteerForm);
+    $scope.loading = true;
+    $http.post('/sendmail', {
+      from: 'CodeNx <admin@angularcode.com>',
+      to: 'sguergenenov@itnamerica.org',
+      subject: 'Message from AngularCode',
+      text: $scope.memberForm
+    }).then(res=>{
+        $scope.loading = false;
+        $scope.serverMessage = 'Email sent successfully';
+    });
+  }
   
   
 }]);

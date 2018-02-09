@@ -65,7 +65,7 @@
                   
                 
               
-                  <form novalidate ng-submit="submitVolunteerForm()" role="volunteer form" ng-model="memberForm" ng-show="showForm">
+                  <form novalidate ng-submit="submitVolunteerForm()" role="volunteer form" ng-model="volunteerForm" ng-show="showForm">
                     <br style="clear:both">
                     
                     <div class="member-tabs" ng-if="tab===1">
@@ -95,175 +95,175 @@
                       </ol>
                       
                         <div class="form-group">
-                          <input type="text" class="form-control" id="name" name="name" placeholder="Name*" ng-model="memberForm.riderName" required>
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Name*" ng-model="volunteerForm.riderName" required>
                         </div>
                         <div class="form-group ta-center">
                           <label for="gender">Gender: * </label><br>
-                          <label class="radio-inline"><input type="radio" value="female" ng-model="memberForm.customerInfo.gender" required>Female</label>
-                          <label class="radio-inline"><input type="radio" value="male" ng-model="memberForm.customerInfo.gender">Male</label>
+                          <label class="radio-inline"><input type="radio" value="female" ng-model="volunteerForm.customerInfo.gender" required>Female</label>
+                          <label class="radio-inline"><input type="radio" value="male" ng-model="volunteerForm.customerInfo.gender">Male</label>
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" ng-model="memberForm.streetAddress" required>
+                          <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" ng-model="volunteerForm.streetAddress" required>
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control" id="city" name="city" placeholder="City*" ng-model="memberForm.city" required>
+                          <input type="text" class="form-control" id="city" name="city" placeholder="City*" ng-model="volunteerForm.city" required>
                         </div>
                         <div class="form-group">
                           <select class="form-control" id="state">
-                            <option ng-model="memberForm.state" value="">Select a State*</option>
-                            <option ng-model="memberForm.state" value="">N/A</option>
-                      			<option ng-model="memberForm.state" value="AK">Alaska</option>
-                      			<option ng-model="memberForm.state" value="AL">Alabama</option>
-                      			<option ng-model="memberForm.state" value="AR">Arkansas</option>
-                      			<option ng-model="memberForm.state" value="AZ">Arizona</option>
-                      			<option ng-model="memberForm.state" value="CA">California</option>
-                      			<option ng-model="memberForm.state" value="CO">Colorado</option>
-                      			<option ng-model="memberForm.state" value="CT">Connecticut</option>
-                      			<option ng-model="memberForm.state" value="DC">District of Columbia</option>
-                      			<option ng-model="memberForm.state" value="DE">Delaware</option>
-                      			<option ng-model="memberForm.state" value="FL">Florida</option>
-                      			<option ng-model="memberForm.state" value="GA">Georgia</option>
-                      			<option ng-model="memberForm.state" value="HI">Hawaii</option>
-                      			<option ng-model="memberForm.state" value="IA">Iowa</option>
-                      			<option ng-model="memberForm.state" value="ID">Idaho</option>
-                      			<option ng-model="memberForm.state" value="IL">Illinois</option>
-                      			<option ng-model="memberForm.state" value="IN">Indiana</option>
-                      			<option ng-model="memberForm.state" value="KS">Kansas</option>
-                      			<option ng-model="memberForm.state" value="KY">Kentucky</option>
-                      			<option ng-model="memberForm.state" value="LA">Louisiana</option>
-                      			<option ng-model="memberForm.state" value="MA">Massachusetts</option>
-                      			<option ng-model="memberForm.state" value="MD">Maryland</option>
-                      			<option ng-model="memberForm.state" value="ME">Maine</option>
-                      			<option ng-model="memberForm.state" value="MI">Michigan</option>
-                      			<option ng-model="memberForm.state" value="MN">Minnesota</option>
-                      			<option ng-model="memberForm.state" value="MO">Missouri</option>
-                      			<option ng-model="memberForm.state" value="MS">Mississippi</option>
-                      			<option ng-model="memberForm.state" value="MT">Montana</option>
-                      			<option ng-model="memberForm.state" value="NC">North Carolina</option>
-                      			<option ng-model="memberForm.state" value="ND">North Dakota</option>
-                      			<option ng-model="memberForm.state" value="NE">Nebraska</option>
-                      			<option ng-model="memberForm.state" value="NH">New Hampshire</option>
-                      			<option ng-model="memberForm.state" value="NJ">New Jersey</option>
-                      			<option ng-model="memberForm.state" value="NM">New Mexico</option>
-                      			<option ng-model="memberForm.state" value="NV">Nevada</option>
-                      			<option ng-model="memberForm.state" value="NY">New York</option>
-                      			<option ng-model="memberForm.state" value="OH">Ohio</option>
-                      			<option ng-model="memberForm.state" value="OK">Oklahoma</option>
-                      			<option ng-model="memberForm.state" value="OR">Oregon</option>
-                      			<option ng-model="memberForm.state" value="PA">Pennsylvania</option>
-                      			<option ng-model="memberForm.state" value="PR">Puerto Rico</option>
-                      			<option ng-model="memberForm.state" value="RI">Rhode Island</option>
-                      			<option ng-model="memberForm.state" value="SC">South Carolina</option>
-                      			<option ng-model="memberForm.state" value="SD">South Dakota</option>
-                      			<option ng-model="memberForm.state" value="TN">Tennessee</option>
-                      			<option ng-model="memberForm.state" value="TX">Texas</option>
-                      			<option ng-model="memberForm.state" value="UT">Utah</option>
-                      			<option ng-model="memberForm.state" value="VA">Virginia</option>
-                      			<option ng-model="memberForm.state" value="VT">Vermont</option>
-                      			<option ng-model="memberForm.state" value="WA">Washington</option>
-                      			<option ng-model="memberForm.state" value="WI">Wisconsin</option>
-                      			<option ng-model="memberForm.state" value="WV">West Virginia</option>
-                      			<option ng-model="memberForm.state" value="WY" required>Wyoming</option>
+                            <option ng-model="volunteerForm.state" value="">Select a State*</option>
+                            <option ng-model="volunteerForm.state" value="">N/A</option>
+                      			<option ng-model="volunteerForm.state" value="AK">Alaska</option>
+                      			<option ng-model="volunteerForm.state" value="AL">Alabama</option>
+                      			<option ng-model="volunteerForm.state" value="AR">Arkansas</option>
+                      			<option ng-model="volunteerForm.state" value="AZ">Arizona</option>
+                      			<option ng-model="volunteerForm.state" value="CA">California</option>
+                      			<option ng-model="volunteerForm.state" value="CO">Colorado</option>
+                      			<option ng-model="volunteerForm.state" value="CT">Connecticut</option>
+                      			<option ng-model="volunteerForm.state" value="DC">District of Columbia</option>
+                      			<option ng-model="volunteerForm.state" value="DE">Delaware</option>
+                      			<option ng-model="volunteerForm.state" value="FL">Florida</option>
+                      			<option ng-model="volunteerForm.state" value="GA">Georgia</option>
+                      			<option ng-model="volunteerForm.state" value="HI">Hawaii</option>
+                      			<option ng-model="volunteerForm.state" value="IA">Iowa</option>
+                      			<option ng-model="volunteerForm.state" value="ID">Idaho</option>
+                      			<option ng-model="volunteerForm.state" value="IL">Illinois</option>
+                      			<option ng-model="volunteerForm.state" value="IN">Indiana</option>
+                      			<option ng-model="volunteerForm.state" value="KS">Kansas</option>
+                      			<option ng-model="volunteerForm.state" value="KY">Kentucky</option>
+                      			<option ng-model="volunteerForm.state" value="LA">Louisiana</option>
+                      			<option ng-model="volunteerForm.state" value="MA">Massachusetts</option>
+                      			<option ng-model="volunteerForm.state" value="MD">Maryland</option>
+                      			<option ng-model="volunteerForm.state" value="ME">Maine</option>
+                      			<option ng-model="volunteerForm.state" value="MI">Michigan</option>
+                      			<option ng-model="volunteerForm.state" value="MN">Minnesota</option>
+                      			<option ng-model="volunteerForm.state" value="MO">Missouri</option>
+                      			<option ng-model="volunteerForm.state" value="MS">Mississippi</option>
+                      			<option ng-model="volunteerForm.state" value="MT">Montana</option>
+                      			<option ng-model="volunteerForm.state" value="NC">North Carolina</option>
+                      			<option ng-model="volunteerForm.state" value="ND">North Dakota</option>
+                      			<option ng-model="volunteerForm.state" value="NE">Nebraska</option>
+                      			<option ng-model="volunteerForm.state" value="NH">New Hampshire</option>
+                      			<option ng-model="volunteerForm.state" value="NJ">New Jersey</option>
+                      			<option ng-model="volunteerForm.state" value="NM">New Mexico</option>
+                      			<option ng-model="volunteerForm.state" value="NV">Nevada</option>
+                      			<option ng-model="volunteerForm.state" value="NY">New York</option>
+                      			<option ng-model="volunteerForm.state" value="OH">Ohio</option>
+                      			<option ng-model="volunteerForm.state" value="OK">Oklahoma</option>
+                      			<option ng-model="volunteerForm.state" value="OR">Oregon</option>
+                      			<option ng-model="volunteerForm.state" value="PA">Pennsylvania</option>
+                      			<option ng-model="volunteerForm.state" value="PR">Puerto Rico</option>
+                      			<option ng-model="volunteerForm.state" value="RI">Rhode Island</option>
+                      			<option ng-model="volunteerForm.state" value="SC">South Carolina</option>
+                      			<option ng-model="volunteerForm.state" value="SD">South Dakota</option>
+                      			<option ng-model="volunteerForm.state" value="TN">Tennessee</option>
+                      			<option ng-model="volunteerForm.state" value="TX">Texas</option>
+                      			<option ng-model="volunteerForm.state" value="UT">Utah</option>
+                      			<option ng-model="volunteerForm.state" value="VA">Virginia</option>
+                      			<option ng-model="volunteerForm.state" value="VT">Vermont</option>
+                      			<option ng-model="volunteerForm.state" value="WA">Washington</option>
+                      			<option ng-model="volunteerForm.state" value="WI">Wisconsin</option>
+                      			<option ng-model="volunteerForm.state" value="WV">West Virginia</option>
+                      			<option ng-model="volunteerForm.state" value="WY" required>Wyoming</option>
                           </select>
                         </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="memberForm.zip" required>
+                        <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="volunteerForm.zip" required>
                       </div>
                     
                       <div class="form-group">
-                        <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx"  ng-model="memberForm.homePhone" required>
+                        <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx"  ng-model="volunteerForm.homePhone" required>
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="work-phone" name="work-phone" placeholder="Work Phone* - Example: xxx-xxx-xxxx"  ng-model="memberForm.workPhone" >
+                        <input type="text" class="form-control" id="work-phone" name="work-phone" placeholder="Work Phone* - Example: xxx-xxx-xxxx"  ng-model="volunteerForm.workPhone" >
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="cell-phone" name="cell-phone" placeholder="Cell Phone* - Example: xxx-xxx-xxxx"  ng-model="memberForm.cellPhone" >
+                        <input type="text" class="form-control" id="cell-phone" name="cell-phone" placeholder="Cell Phone* - Example: xxx-xxx-xxxx"  ng-model="volunteerForm.cellPhone" >
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="memberForm.email">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="volunteerForm.email">
                       </div>
                       
                       
                       <!-- <div id="first-emergency"> -->
                           <h2>First Emergency Contact</h2>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="name" name="name" placeholder="Name*" ng-model="memberForm.firstEmergencyContact.name" required>
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Name*" ng-model="volunteerForm.firstEmergencyContact.name" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship* - Example:Daughter" ng-model="memberForm.firstEmergencyContact.relationship" required>
+                              <input type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship* - Example:Daughter" ng-model="volunteerForm.firstEmergencyContact.relationship" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" ng-model="memberForm.firstEmergencyContact.street" required>
+                              <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" ng-model="volunteerForm.firstEmergencyContact.street" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="city" name="city" placeholder="City*"  ng-model="memberForm.firstEmergencyContact.city" required>
+                              <input type="text" class="form-control" id="city" name="city" placeholder="City*"  ng-model="volunteerForm.firstEmergencyContact.city" required>
                             </div>
                             <div class="form-group">
                               <select class="form-control" id="state">
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="">Select a State*</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="">N/A</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="AK">Alaska</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="AL">Alabama</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="AR">Arkansas</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="AZ">Arizona</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="CA">California</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="CO">Colorado</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="CT">Connecticut</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="DC">District of Columbia</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="DE">Delaware</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="FL">Florida</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="GA">Georgia</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="HI">Hawaii</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="IA">Iowa</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="ID">Idaho</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="IL">Illinois</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="IN">Indiana</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="KS">Kansas</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="KY">Kentucky</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="LA">Louisiana</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="MA">Massachusetts</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="MD">Maryland</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="ME">Maine</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="MI">Michigan</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="MN">Minnesota</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="MO">Missouri</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="MS">Mississippi</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="MT">Montana</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="NC">North Carolina</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="ND">North Dakota</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="NE">Nebraska</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="NH">New Hampshire</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="NJ">New Jersey</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="NM">New Mexico</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="NV">Nevada</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="NY">New York</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="OH">Ohio</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="OK">Oklahoma</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="OR">Oregon</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="PA">Pennsylvania</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="PR">Puerto Rico</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="RI">Rhode Island</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="SC">South Carolina</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="SD">South Dakota</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="TN">Tennessee</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="TX">Texas</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="UT">Utah</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="VA">Virginia</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="VT">Vermont</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="WA">Washington</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="WI">Wisconsin</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="WV">West Virginia</option>
-                                <option ng-model="memberForm.firstEmergencyContact.state" value="WY" required>Wyoming</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="">Select a State*</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="">N/A</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="AK">Alaska</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="AL">Alabama</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="AR">Arkansas</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="AZ">Arizona</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="CA">California</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="CO">Colorado</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="CT">Connecticut</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="DC">District of Columbia</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="DE">Delaware</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="FL">Florida</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="GA">Georgia</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="HI">Hawaii</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="IA">Iowa</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="ID">Idaho</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="IL">Illinois</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="IN">Indiana</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="KS">Kansas</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="KY">Kentucky</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="LA">Louisiana</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="MA">Massachusetts</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="MD">Maryland</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="ME">Maine</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="MI">Michigan</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="MN">Minnesota</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="MO">Missouri</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="MS">Mississippi</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="MT">Montana</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="NC">North Carolina</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="ND">North Dakota</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="NE">Nebraska</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="NH">New Hampshire</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="NJ">New Jersey</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="NM">New Mexico</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="NV">Nevada</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="NY">New York</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="OH">Ohio</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="OK">Oklahoma</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="OR">Oregon</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="PA">Pennsylvania</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="PR">Puerto Rico</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="RI">Rhode Island</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="SC">South Carolina</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="SD">South Dakota</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="TN">Tennessee</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="TX">Texas</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="UT">Utah</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="VA">Virginia</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="VT">Vermont</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="WA">Washington</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="WI">Wisconsin</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="WV">West Virginia</option>
+                                <option ng-model="volunteerForm.firstEmergencyContact.state" value="WY" required>Wyoming</option>
                               </select>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="memberForm.firstEmergencyContact.name" ng-model="memberForm.firstEmergencyContact.zip" required>
+                              <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="volunteerForm.firstEmergencyContact.name" ng-model="volunteerForm.firstEmergencyContact.zip" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" ng-model="memberForm.firstEmergencyContact.homePhone" required>
+                              <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" ng-model="volunteerForm.firstEmergencyContact.homePhone" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="memberForm.firstEmergencyContact.email">
+                              <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="volunteerForm.firstEmergencyContact.email">
                             </div>
                           <!-- </div> -->
                           <!--first emergency-->
@@ -271,20 +271,20 @@
                       
                         <h2>Driving Experience</h2>
                           <div class="form-group">
-                            <input type="text" class="form-control" id="years" name="years" placeholder="Years of driving experience:" ng-model="memberForm.drivingExperience.years">
+                            <input type="text" class="form-control" id="years" name="years" placeholder="Years of driving experience:" ng-model="volunteerForm.drivingExperience.years">
                           </div>
                           <div class="form-group">
-                            <input type="text" class="form-control" id="milesDrivenLastYr" name="milesDrivenLastYr" placeholder="Estimated miles driven last year:" ng-model="memberForm.drivingExperience.milesDrivenLastYr">
+                            <input type="text" class="form-control" id="milesDrivenLastYr" name="milesDrivenLastYr" placeholder="Estimated miles driven last year:" ng-model="volunteerForm.drivingExperience.milesDrivenLastYr">
                           </div>
                           <div class="form-group">
-                            <input type="text" class="form-control" id="visionLastExamined" name="visionLastExamined" placeholder="When was your vision last examined: *  mm/dd/yyyy" ng-model="memberForm.drivingExperience.visionLastExamined" required>
+                            <input type="text" class="form-control" id="visionLastExamined" name="visionLastExamined" placeholder="When was your vision last examined: *  mm/dd/yyyy" ng-model="volunteerForm.drivingExperience.visionLastExamined" required>
                           </div>
                           
                           <div class="form-group ta-center">
                             <label for="send info">Is your vision adequate for driving: *</label><br>
-                            <label class="radio-inline"><input ng-model="memberForm.drivingExperience.adequateVision" type="radio" value="yes" ng-click="limitations = false" required>Yes</label>
-                            <label class="radio-inline"><input ng-model="memberForm.drivingExperience.adequateVision" type="radio" value="no" ng-click="limitations = true">No</label>
-                              <input type="text" class="form-control" id="limitations" name="limitations" placeholder="Please list any limitations: *" ng-model="memberForm.drivingExperience.adequateVision"
+                            <label class="radio-inline"><input ng-model="volunteerForm.drivingExperience.adequateVision" type="radio" value="yes" ng-click="limitations = false" required>Yes</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.drivingExperience.adequateVision" type="radio" value="no" ng-click="limitations = true">No</label>
+                              <input type="text" class="form-control" id="limitations" name="limitations" placeholder="Please list any limitations: *" ng-model="volunteerForm.drivingExperience.adequateVision"
                               ng-show="limitations">
                           </div>
                           
@@ -292,12 +292,12 @@
                         
                           <div class="form-group ta-center">
                             <label for="send info">Current Employment Status: *</label><br>
-                            <label class="radio-inline"><input ng-model="memberForm.currentEmployment" type="radio" value="none" ng-click="occupation = false">None</label>
-                            <label class="radio-inline"><input ng-model="memberForm.currentEmployment" type="radio" value="fulltime" ng-click="occupation = true">Full-time</label>
-                            <label class="radio-inline"><input ng-model="memberForm.currentEmployment" type="radio" value="parttime" ng-click="occupation = true">Part-time</label>
-                            <label class="radio-inline"><input ng-model="memberForm.currentEmployment" type="radio" value="betweenjobs" ng-click="occupation = true">Between Jobs</label>
-                            <label class="radio-inline"><input ng-model="memberForm.currentEmployment" type="radio" value="retired" ng-click="occupation = true">Retired</label>
-                              <input type="text" class="form-control" id="occupation" name="occupation" placeholder="Please list any limitations: *" ng-model="memberForm.occupation" ng-show="occuptation">
+                            <label class="radio-inline"><input ng-model="volunteerForm.currentEmployment" type="radio" value="none" ng-click="occupation = false">None</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.currentEmployment" type="radio" value="fulltime" ng-click="occupation = true">Full-time</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.currentEmployment" type="radio" value="parttime" ng-click="occupation = true">Part-time</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.currentEmployment" type="radio" value="betweenjobs" ng-click="occupation = true">Between Jobs</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.currentEmployment" type="radio" value="retired" ng-click="occupation = true">Retired</label>
+                              <input type="text" class="form-control" id="occupation" name="occupation" placeholder="Please list any limitations: *" ng-model="volunteerForm.occupation" ng-show="occuptation">
                           </div>
                       
                         
@@ -335,88 +335,88 @@
                       
                       <div class="form-group ta-center">
                         <label for="criminal conviction">Have you had any past criminal convictions, or do you have any charges pending against you in a court of law?*</label><br>
-                        <label class="radio-inline"><input type="radio" value="female" ng-model="memberForm.criminalConviction" ng-click="crimConvic = true" required>Female</label>
-                        <label class="radio-inline"><input type="radio" value="male" ng-model="memberForm.criminalConviction" ng-click="crimConvic = true">Male</label>
-                        <textarea class="form-control" rows="5" id="limitations" name="limitations" placeholder="List convictions: *" ng-model="memberForm.criminalConvictionDetail"
+                        <label class="radio-inline"><input type="radio" value="female" ng-model="volunteerForm.criminalConviction" ng-click="crimConvic = true" required>Female</label>
+                        <label class="radio-inline"><input type="radio" value="male" ng-model="volunteerForm.criminalConviction" ng-click="crimConvic = true">Male</label>
+                        <textarea class="form-control" rows="5" id="limitations" name="limitations" placeholder="List convictions: *" ng-model="volunteerForm.criminalConvictionDetail"
                         ng-show="crimConvic"></textarea>
                       </div>
                       
                       <div class="form-group ta-center">
                         <label for="moving violation">Have you been convicted of any moving violations in the past three years? * </label><br>
-                        <label class="radio-inline"><input type="radio" value="female" ng-model="memberForm.movingViolation" required>Female</label>
-                        <label class="radio-inline"><input type="radio" value="male" ng-model="memberForm.movingViolation">Male</label>
+                        <label class="radio-inline"><input type="radio" value="female" ng-model="volunteerForm.movingViolation" required>Female</label>
+                        <label class="radio-inline"><input type="radio" value="male" ng-model="volunteerForm.movingViolation">Male</label>
                       </div>
 
                       <h3>First Reference</h3>
                       
                       <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name *;" ng-model="memberForm.firstReference.name" required>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name *;" ng-model="volunteerForm.firstReference.name" required>
                       </div>
                       
                       <div class="form-group">
-                        <textarea class="form-control" rows="5" id="phoneOrMailing" name="phoneOrMailing" placeholder="Phone (or Mailing Address): *" ng-model="memberForm.firstReference.phoneOrMailing" required></textarea>
+                        <textarea class="form-control" rows="5" id="phoneOrMailing" name="phoneOrMailing" placeholder="Phone (or Mailing Address): *" ng-model="volunteerForm.firstReference.phoneOrMailing" required></textarea>
                       </div>
                       
                       <div class="form-group">
-                        <textarea class="form-control" rows="5" id="acquainted" name="acquainted" placeholder="How are you acquainted: *" ng-model="memberForm.firstReference.acquainted" required></textarea>
+                        <textarea class="form-control" rows="5" id="acquainted" name="acquainted" placeholder="How are you acquainted: *" ng-model="volunteerForm.firstReference.acquainted" required></textarea>
                       </div>
                       
                       <div class="form-group">
-                        <input type="text" class="form-control" id="yearAcquaintance" name="yearAcquaintance" placeholder="Years of acquaintance:" ng-model="memberForm.firstReference.yearAcquaintance" required>
+                        <input type="text" class="form-control" id="yearAcquaintance" name="yearAcquaintance" placeholder="Years of acquaintance:" ng-model="volunteerForm.firstReference.yearAcquaintance" required>
                       </div>
                       
                       
                       <h3>Second Reference</h3>
                       
                       <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name *;" ng-model="memberForm.secondReference.name" required>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name *;" ng-model="volunteerForm.secondReference.name" required>
                       </div>
                       
                       <div class="form-group">
-                        <textarea class="form-control" rows="5" id="phoneOrMailing" name="phoneOrMailing" placeholder="Phone (or Mailing Address): *" ng-model="memberForm.secondReference.phoneOrMailing" required></textarea>
+                        <textarea class="form-control" rows="5" id="phoneOrMailing" name="phoneOrMailing" placeholder="Phone (or Mailing Address): *" ng-model="volunteerForm.secondReference.phoneOrMailing" required></textarea>
                       </div>
                       
                       <div class="form-group">
-                        <textarea class="form-control" rows="5" id="acquainted" name="acquainted" placeholder="How are you acquainted: *" ng-model="memberForm.secondReference.acquainted" required></textarea>
+                        <textarea class="form-control" rows="5" id="acquainted" name="acquainted" placeholder="How are you acquainted: *" ng-model="volunteerForm.secondReference.acquainted" required></textarea>
                       </div>
                       
                       <div class="form-group">
-                        <input type="text" class="form-control" id="yearAcquaintance" name="yearAcquaintance" placeholder="Years of acquaintance:" ng-model="memberForm.secondReference.yearAcquaintance" required>
+                        <input type="text" class="form-control" id="yearAcquaintance" name="yearAcquaintance" placeholder="Years of acquaintance:" ng-model="volunteerForm.secondReference.yearAcquaintance" required>
                       </div>
                       
                       
                       <h3>Third Reference</h3>
                       
                       <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name *;" ng-model="memberForm.thirdReference.name" required>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name *;" ng-model="volunteerForm.thirdReference.name" required>
                       </div>
                       
                       <div class="form-group">
-                        <textarea class="form-control" rows="5" id="phoneOrMailing" name="phoneOrMailing" placeholder="Phone (or Mailing Address): *" ng-model="memberForm.thirdReference.phoneOrMailing" required></textarea>
+                        <textarea class="form-control" rows="5" id="phoneOrMailing" name="phoneOrMailing" placeholder="Phone (or Mailing Address): *" ng-model="volunteerForm.thirdReference.phoneOrMailing" required></textarea>
                       </div>
                       
                       <div class="form-group">
-                        <textarea class="form-control" rows="5" id="acquainted" name="acquainted" placeholder="How are you acquainted: *" ng-model="memberForm.thirdReference.acquainted" required></textarea>
+                        <textarea class="form-control" rows="5" id="acquainted" name="acquainted" placeholder="How are you acquainted: *" ng-model="volunteerForm.thirdReference.acquainted" required></textarea>
                       </div>
                       
                       <div class="form-group">
-                        <input type="text" class="form-control" id="yearAcquaintance" name="yearAcquaintance" placeholder="Years of acquaintance:" ng-model="memberForm.thirdReference.yearAcquaintance" required>
+                        <input type="text" class="form-control" id="yearAcquaintance" name="yearAcquaintance" placeholder="Years of acquaintance:" ng-model="volunteerForm.thirdReference.yearAcquaintance" required>
                       </div>
                       
                       <p>This information is correct to the best of my knowledge. I give the Independent Transportation Network permission to check on this information, and to contact references.</p>
 
                       <div class="form-group">
                         <label for="signature">Signature (type your full name): *</label><br>
-                        <input type="text" class="form-control" id="signature" name="signature" placeholder="type your full name" ng-model="memberForm.references.signature" required>
+                        <input type="text" class="form-control" id="signature" name="signature" placeholder="type your full name" ng-model="volunteerForm.references.signature" required>
                       </div>
                       
                       <div class="form-group">
                         <label for="signature">Date: *</label><br>
-                        <input type="text" class="form-control" id="date" name="date" placeholder="mm/dd/yyyy" ng-model="memberForm.references.date" required>
+                        <input type="text" class="form-control" id="date" name="date" placeholder="mm/dd/yyyy" ng-model="volunteerForm.references.date" required>
                       </div>
 
                       <div class="form-group">
-                        <label class="checkbox-inline"><input ng-model="memberForm.references.agree" type="checkbox" value="family" required>By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
+                        <label class="checkbox-inline"><input ng-model="volunteerForm.references.agree" type="checkbox" value="family" required>By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
                       </div>
 
 
@@ -456,17 +456,17 @@
                             
                             <div class="form-group">
                               <label for="prior affiliation with ITN">Do you have any prior affiliation with ITN:</label><br>
-                              <input type="text" class="form-control" id="affiliation" name="affiliation" ng-model="memberForm.volunteering.priorAffiliationWithITN">
+                              <input type="text" class="form-control" id="affiliation" name="affiliation" ng-model="volunteerForm.volunteering.priorAffiliationWithITN">
                             </div>
                             
                             <div class="form-group">
                               <label for="learn about ITN">How did you learn about ITN:</label><br>
-                              <input type="text" class="form-control" id="learnAboutITN" name="learnAboutITN"  ng-model="memberForm.volunteering.learnAboutITN">
+                              <input type="text" class="form-control" id="learnAboutITN" name="learnAboutITN"  ng-model="volunteerForm.volunteering.learnAboutITN">
                             </div>
                             
                             <div class="form-group">
                               <label for="volunteered before">Have you volunteered before:</label><br>
-                              <input type="text" class="form-control" id="volunteeredBefore" name="volunteeredBefore"  ng-model="memberForm.volunteering.volunteeredBefore">
+                              <input type="text" class="form-control" id="volunteeredBefore" name="volunteeredBefore"  ng-model="volunteerForm.volunteering.volunteeredBefore">
                             </div>
                             
                             <h3>Please rank your reasons for wanting to drive for the ITN, with " 1 " the most important reason, and " 6 " being the least:</h3>
@@ -553,25 +553,25 @@
                 
                 <div class="form-group">
                   <label for="learn about ITN">Highest grade/degree completed:</label><br>
-                  <input type="text" class="form-control" id="highestDegree" name="highestDegree"  ng-model="memberForm.education.highestDegree">
+                  <input type="text" class="form-control" id="highestDegree" name="highestDegree"  ng-model="volunteerForm.education.highestDegree">
                 </div>
                 
                 <div class="form-group">
                   <label for="learn about ITN">First aid training, if any:</label><br>
-                  <input type="text" class="form-control" id="firstAidTraining" name="firstAidTraining"  ng-model="memberForm.education.firstAidTraining">
+                  <input type="text" class="form-control" id="firstAidTraining" name="firstAidTraining"  ng-model="volunteerForm.education.firstAidTraining">
                 </div>
                 
                 <h2>Ethnic Background</h2>
                 
                 <div class="form-group ta-center">
-                  <label class="checkbox-inline"><input ng-model="memberForm.ethnicBackground" type="checkbox" value="aaa">African American</label>
-                  <label class="checkbox-inline"><input ng-model="memberForm.ethnicBackground" type="checkbox" value="elks">Asian</label>
-                  <label class="checkbox-inline"><input ng-model="memberForm.ethnicBackground" type="checkbox" value="rotary">Caucasian</label>
-                  <label class="checkbox-inline"><input ng-model="memberForm.ethnicBackground" type="checkbox" value="aarp">Hispanic/Latino</label>
-                  <label class="checkbox-inline"><input ng-model="memberForm.ethnicBackground" type="checkbox" value="kiwanis">Hispanic/Pacific Islander</label>
-                  <label class="checkbox-inline"><input ng-model="memberForm.ethnicBackground" type="checkbox" value="knights">Native American/Alaska Native</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.ethnicBackground" type="checkbox" value="aaa">African American</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.ethnicBackground" type="checkbox" value="elks">Asian</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.ethnicBackground" type="checkbox" value="rotary">Caucasian</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.ethnicBackground" type="checkbox" value="aarp">Hispanic/Latino</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.ethnicBackground" type="checkbox" value="kiwanis">Hispanic/Pacific Islander</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.ethnicBackground" type="checkbox" value="knights">Native American/Alaska Native</label>
                   <label class="checkbox-inline"><input type="checkbox" value="other" ng-click="otherOrg = !otherBg">Other (specify)</label>
-                    <input ng-model="memberForm.ethnicBackground" type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherBg">
+                    <input ng-model="volunteerForm.ethnicBackground" type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherBg">
                 </div>
 
 
@@ -580,29 +580,29 @@
                 
                 <div class="form-group ta-center">
                   <label for="member of any organization">Are you a member of any of the following organizations?:</label><br>
-                  <label class="checkbox-inline"><input ng-model="memberForm.memberOfOrganization" type="checkbox" value="aaa">AAA</label>
-                  <label class="checkbox-inline"><input ng-model="memberForm.memberOfOrganization" type="checkbox" value="elks">Elks</label>
-                  <label class="checkbox-inline"><input ng-model="memberForm.memberOfOrganization" type="checkbox" value="rotary">Rotary</label>
-                  <label class="checkbox-inline"><input ng-model="memberForm.memberOfOrganization" type="checkbox" value="aarp">AARP</label>
-                  <label class="checkbox-inline"><input ng-model="memberForm.memberOfOrganization" type="checkbox" value="kiwanis">Kiwanis</label>
-                  <label class="checkbox-inline"><input ng-model="memberForm.memberOfOrganization" type="checkbox" value="knights">Knights of Columbus</label>
-                  <label class="checkbox-inline"><input ng-model="memberForm.memberOfOrganization" type="checkbox" value="masons">Masons/Eastern Stars</label>
-                  <label class="checkbox-inline"><input ng-model="memberForm.memberOfOrganization" type="checkbox" value="frat">Fraternity/Sorority</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.memberOfOrganization" type="checkbox" value="aaa">AAA</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.memberOfOrganization" type="checkbox" value="elks">Elks</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.memberOfOrganization" type="checkbox" value="rotary">Rotary</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.memberOfOrganization" type="checkbox" value="aarp">AARP</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.memberOfOrganization" type="checkbox" value="kiwanis">Kiwanis</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.memberOfOrganization" type="checkbox" value="knights">Knights of Columbus</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.memberOfOrganization" type="checkbox" value="masons">Masons/Eastern Stars</label>
+                  <label class="checkbox-inline"><input ng-model="volunteerForm.memberOfOrganization" type="checkbox" value="frat">Fraternity/Sorority</label>
                   <label class="checkbox-inline"><input type="checkbox" value="other" ng-click="otherOrg = !otherOrg">Other (specify)</label>
-                    <input ng-model="memberForm.memberOfOrganization" type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherOrg">
+                    <input ng-model="volunteerForm.memberOfOrganization" type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherOrg">
                 </div>
                 
                 <div class="form-group ta-center">
                   <label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
-                  <label class="radio-inline"><input ng-model="memberForm.customerInfo.memberOfProfessionalOrgOrUnion" type="radio" value="yes" ng-click="specifyUnions = !specifyUnions">Yes</label>
+                  <label class="radio-inline"><input ng-model="volunteerForm.customerInfo.memberOfProfessionalOrgOrUnion" type="radio" value="yes" ng-click="specifyUnions = !specifyUnions">Yes</label>
                   <label class="radio-inline"><input type="radio" value="no">No</label>
-                    <input ng-model="memberForm.memberOfProfessionalOrgOrUnion" type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
+                    <input ng-model="volunteerForm.memberOfProfessionalOrgOrUnion" type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
                 </div>
                 
                 <div class="form-group ta-center">
                   <label for="served in armed forces">Have you ever served on active duty in the U.S. Armed Forces, Military Reserves, or National Guard: *</label><br>
-                  <label class="radio-inline"><input ng-model="memberForm.servedInMilitary" type="radio" value="yes">Yes</label>
-                  <label class="radio-inline"><input ng-model="memberForm.customerInfo.servedInMilitary" type="radio" value="no">No</label>
+                  <label class="radio-inline"><input ng-model="volunteerForm.servedInMilitary" type="radio" value="yes">Yes</label>
+                  <label class="radio-inline"><input ng-model="volunteerForm.customerInfo.servedInMilitary" type="radio" value="no">No</label>
                 </div>
                 
                 
@@ -615,19 +615,19 @@
                   <label for="hours available">What hours are you available on these days? <br>
                     <em>Example: Between 10AM - 12PM</em></label><br>
                   <label for="Monday">Monday</label><br>
-                  <input type="text" class="form-control" id="monday" name="monday"  ng-model="memberForm.hoursAvailable.monday">
+                  <input type="text" class="form-control" id="monday" name="monday"  ng-model="volunteerForm.hoursAvailable.monday">
                   <label for="Tuesday">Tuesday</label><br>
-                  <input type="text" class="form-control" id="tuesday" name="tuesday"  ng-model="memberForm.hoursAvailable.tuesday">
+                  <input type="text" class="form-control" id="tuesday" name="tuesday"  ng-model="volunteerForm.hoursAvailable.tuesday">
                   <label for="Wednesday">Wednesday</label><br>
-                  <input type="text" class="form-control" id="wednesday" name="wednesday"  ng-model="memberForm.hoursAvailable.wednesday">
+                  <input type="text" class="form-control" id="wednesday" name="wednesday"  ng-model="volunteerForm.hoursAvailable.wednesday">
                   <label for="Thursday">Thursday</label><br>
-                  <input type="text" class="form-control" id="thursday" name="thursday"  ng-model="memberForm.hoursAvailable.thursday">
+                  <input type="text" class="form-control" id="thursday" name="thursday"  ng-model="volunteerForm.hoursAvailable.thursday">
                   <label for="Friday">Friday</label><br>
-                  <input type="text" class="form-control" id="friday" name="friday"  ng-model="memberForm.hoursAvailable.friday">
+                  <input type="text" class="form-control" id="friday" name="friday"  ng-model="volunteerForm.hoursAvailable.friday">
                   <label for="Saturday">Saturday</label><br>
-                  <input type="text" class="form-control" id="saturday" name="saturday"  ng-model="memberForm.hoursAvailable.saturday">
+                  <input type="text" class="form-control" id="saturday" name="saturday"  ng-model="volunteerForm.hoursAvailable.saturday">
                   <label for="Sunday">Sunday</label><br>
-                  <input type="text" class="form-control" id="sunday" name="sunday"  ng-model="memberForm.hoursAvailable.sunday">
+                  <input type="text" class="form-control" id="sunday" name="sunday"  ng-model="volunteerForm.hoursAvailable.sunday">
                 </div>
                 
                 <p>Each week the dispatcher contacts volunteers to provide the names, times, and directions for your rides.</p>
@@ -671,81 +671,81 @@
                             
                             <div class="form-group">
                               <label for="name">Name *:</label><br>
-                              <input type="text" class="form-control" id="name" name="name" placeholder="Please print full name"   ng-model="memberForm.requestDriverRecord.name" required>
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Please print full name"   ng-model="volunteerForm.requestDriverRecord.name" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="maiden name">Previous/Maiden name (if applicable) * :</label><br>
-                              <input type="text" class="form-control" id="maidenName" name="maidenName"   ng-model="memberForm.requestDriverRecord.maidenName" required>
+                              <input type="text" class="form-control" id="maidenName" name="maidenName"   ng-model="volunteerForm.requestDriverRecord.maidenName" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="date of birth">Date of Birth *:</label><br>
-                              <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY"   ng-model="memberForm.requestDriverRecord.dob" required>
+                              <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY"   ng-model="volunteerForm.requestDriverRecord.dob" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="license number">Driver's License Number *:</label><br>
-                              <input type="text" class="form-control" id="licenseNumber" name="licenseNumber" ng-model="memberForm.requestDriverRecord.licenseNumber" required>
+                              <input type="text" class="form-control" id="licenseNumber" name="licenseNumber" ng-model="volunteerForm.requestDriverRecord.licenseNumber" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="license number">I authorize ITNLanier to request and receive my Driving Record from *:</label>
                               <select class="form-control" id="authorize">
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="">Select a State*</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="">N/A</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="AK">Alaska</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="AL">Alabama</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="AR">Arkansas</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="AZ">Arizona</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="CA">California</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="CO">Colorado</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="CT">Connecticut</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="DC">District of Columbia</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="DE">Delaware</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="FL">Florida</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="GA">Georgia</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="HI">Hawaii</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="IA">Iowa</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="ID">Idaho</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="IL">Illinois</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="IN">Indiana</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="KS">Kansas</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="KY">Kentucky</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="LA">Louisiana</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="MA">Massachusetts</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="MD">Maryland</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="ME">Maine</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="MI">Michigan</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="MN">Minnesota</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="MO">Missouri</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="MS">Mississippi</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="MT">Montana</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="NC">North Carolina</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="ND">North Dakota</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="NE">Nebraska</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="NH">New Hampshire</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="NJ">New Jersey</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="NM">New Mexico</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="NV">Nevada</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="NY">New York</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="OH">Ohio</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="OK">Oklahoma</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="OR">Oregon</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="PA">Pennsylvania</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="PR">Puerto Rico</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="RI">Rhode Island</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="SC">South Carolina</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="SD">South Dakota</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="TN">Tennessee</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="TX">Texas</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="UT">Utah</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="VA">Virginia</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="VT">Vermont</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="WA">Washington</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="WI">Wisconsin</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="WV">West Virginia</option>
-                                <option ng-model="memberForm.requestDriverRecord.authorize" value="WY" required>Wyoming</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="">Select a State*</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="">N/A</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="AK">Alaska</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="AL">Alabama</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="AR">Arkansas</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="AZ">Arizona</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="CA">California</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="CO">Colorado</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="CT">Connecticut</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="DC">District of Columbia</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="DE">Delaware</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="FL">Florida</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="GA">Georgia</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="HI">Hawaii</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="IA">Iowa</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="ID">Idaho</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="IL">Illinois</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="IN">Indiana</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="KS">Kansas</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="KY">Kentucky</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="LA">Louisiana</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="MA">Massachusetts</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="MD">Maryland</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="ME">Maine</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="MI">Michigan</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="MN">Minnesota</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="MO">Missouri</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="MS">Mississippi</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="MT">Montana</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="NC">North Carolina</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="ND">North Dakota</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="NE">Nebraska</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="NH">New Hampshire</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="NJ">New Jersey</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="NM">New Mexico</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="NV">Nevada</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="NY">New York</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="OH">Ohio</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="OK">Oklahoma</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="OR">Oregon</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="PA">Pennsylvania</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="PR">Puerto Rico</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="RI">Rhode Island</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="SC">South Carolina</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="SD">South Dakota</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="TN">Tennessee</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="TX">Texas</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="UT">Utah</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="VA">Virginia</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="VT">Vermont</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="WA">Washington</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="WI">Wisconsin</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="WV">West Virginia</option>
+                                <option ng-model="volunteerForm.requestDriverRecord.authorize" value="WY" required>Wyoming</option>
                               </select>
                             </div>
                             
@@ -753,16 +753,16 @@
                             
                             <div class="form-group">
                               <label for="signature">Signature *:</label><br>
-                              <input type="text" class="form-control" id="signature" name="signature" ng-model="memberForm.requestDriverRecord.signature" placeholder="Type your full name" required>
+                              <input type="text" class="form-control" id="signature" name="signature" ng-model="volunteerForm.requestDriverRecord.signature" placeholder="Type your full name" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="date">Date *:</label><br>
-                              <input type="text" class="form-control" id="date" name="date" ng-model="memberForm.requestDriverRecord.date" placeholder="mm/dd/yyyy" required>
+                              <input type="text" class="form-control" id="date" name="date" ng-model="volunteerForm.requestDriverRecord.date" placeholder="mm/dd/yyyy" required>
                             </div>
                             
                             <div class="form-group ta-center">
-                              <label class="checkbox-inline"><input ng-model="memberForm.requestDriverRecord.authorize" type="checkbox" value="authorize" required>
+                              <label class="checkbox-inline"><input ng-model="volunteerForm.requestDriverRecord.authorize" type="checkbox" value="authorize" required>
                                 *
                                   By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.
                               </label>
@@ -776,60 +776,60 @@
                             <div class="form-group">
                               <label for="license number">This authorization is required to check your Criminal History Record from</label>
                               <select class="form-control" id="authorize">
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="">Select a State*</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="">N/A</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="AK">Alaska</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="AL">Alabama</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="AR">Arkansas</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="AZ">Arizona</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="CA">California</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="CO">Colorado</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="CT">Connecticut</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="DC">District of Columbia</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="DE">Delaware</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="FL">Florida</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="GA">Georgia</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="HI">Hawaii</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="IA">Iowa</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="ID">Idaho</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="IL">Illinois</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="IN">Indiana</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="KS">Kansas</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="KY">Kentucky</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="LA">Louisiana</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="MA">Massachusetts</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="MD">Maryland</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="ME">Maine</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="MI">Michigan</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="MN">Minnesota</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="MO">Missouri</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="MS">Mississippi</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="MT">Montana</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="NC">North Carolina</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="ND">North Dakota</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="NE">Nebraska</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="NH">New Hampshire</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="NJ">New Jersey</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="NM">New Mexico</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="NV">Nevada</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="NY">New York</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="OH">Ohio</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="OK">Oklahoma</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="OR">Oregon</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="PA">Pennsylvania</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="PR">Puerto Rico</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="RI">Rhode Island</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="SC">South Carolina</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="SD">South Dakota</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="TN">Tennessee</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="TX">Texas</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="UT">Utah</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="VA">Virginia</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="VT">Vermont</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="WA">Washington</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="WI">Wisconsin</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="WV">West Virginia</option>
-                                <option ng-model="memberForm.requestCriminalRecord.authorize" value="WY" required>Wyoming</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="">Select a State*</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="">N/A</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="AK">Alaska</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="AL">Alabama</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="AR">Arkansas</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="AZ">Arizona</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="CA">California</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="CO">Colorado</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="CT">Connecticut</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="DC">District of Columbia</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="DE">Delaware</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="FL">Florida</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="GA">Georgia</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="HI">Hawaii</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="IA">Iowa</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="ID">Idaho</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="IL">Illinois</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="IN">Indiana</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="KS">Kansas</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="KY">Kentucky</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="LA">Louisiana</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="MA">Massachusetts</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="MD">Maryland</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="ME">Maine</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="MI">Michigan</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="MN">Minnesota</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="MO">Missouri</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="MS">Mississippi</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="MT">Montana</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="NC">North Carolina</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="ND">North Dakota</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="NE">Nebraska</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="NH">New Hampshire</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="NJ">New Jersey</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="NM">New Mexico</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="NV">Nevada</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="NY">New York</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="OH">Ohio</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="OK">Oklahoma</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="OR">Oregon</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="PA">Pennsylvania</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="PR">Puerto Rico</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="RI">Rhode Island</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="SC">South Carolina</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="SD">South Dakota</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="TN">Tennessee</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="TX">Texas</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="UT">Utah</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="VA">Virginia</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="VT">Vermont</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="WA">Washington</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="WI">Wisconsin</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="WV">West Virginia</option>
+                                <option ng-model="volunteerForm.requestCriminalRecord.authorize" value="WY" required>Wyoming</option>
                               </select>
                             </div>
                             
@@ -837,39 +837,39 @@
                             
                             <div class="form-group">
                               <label for="name">Name *:</label><br>
-                              <input type="text" class="form-control" id="name" name="name" placeholder="Please type full name"   ng-model="memberForm.requestCriminalRecord.name" required>
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Please type full name"   ng-model="volunteerForm.requestCriminalRecord.name" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="maiden name">Previous/maiden name (if applicable) * :</label><br>
-                              <input type="text" class="form-control" id="maidenName" name="maidenName"   ng-model="memberForm.requestCriminalRecord.maidenName" required>
+                              <input type="text" class="form-control" id="maidenName" name="maidenName"   ng-model="volunteerForm.requestCriminalRecord.maidenName" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="date of birth">Date of Birth *:</label><br>
-                              <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY"   ng-model="memberForm.requestCriminalRecord.dob" required>
+                              <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY"   ng-model="volunteerForm.requestCriminalRecord.dob" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="social security number">Social Security Number *:</label><br>
-                              <input type="text" class="form-control" id="socialSecurity" name="socialSecurity" placeholder="xxx-xx-xxxx" ng-model="memberForm.requestCriminalRecord.socialSecurity" required>
+                              <input type="text" class="form-control" id="socialSecurity" name="socialSecurity" placeholder="xxx-xx-xxxx" ng-model="volunteerForm.requestCriminalRecord.socialSecurity" required>
                             </div>
                             
                             <p><strong>I authorize Independent Transportation Network® to request and receive any and all criminal history information about me held by the State Bureau of Identification. The purpose of this background check will be for volunteer purposes.</strong></p>
                             
                             <div class="form-group">
                               <label for="signature">Signature *:</label><br>
-                              <input type="text" class="form-control" id="signature" name="signature" placeholder="Type your full name" ng-model="memberForm.requestCriminalRecord.signature" required>
+                              <input type="text" class="form-control" id="signature" name="signature" placeholder="Type your full name" ng-model="volunteerForm.requestCriminalRecord.signature" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="date">Date *:</label><br>
-                              <input type="text" class="form-control" id="date" name="date" ng-model="memberForm.requestCriminalRecord.date" required>
+                              <input type="text" class="form-control" id="date" name="date" ng-model="volunteerForm.requestCriminalRecord.date" required>
                             </div>
                             
                             
                             <div class="form-group ta-center">
-                              <label class="checkbox-inline"><input ng-model="memberForm.requestCriminalRecord.authorize" type="checkbox" value="authorize" required>
+                              <label class="checkbox-inline"><input ng-model="volunteerForm.requestCriminalRecord.authorize" type="checkbox" value="authorize" required>
                                 *
                                   By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.
                               </label>
@@ -916,111 +916,111 @@
                           
                           <div class="form-group ta-center">
                             <label for="own vehicle">Do you own the vehicle?: *</label><br>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.vehicleOWner" type="radio" value="yes" required>Yes</label>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.vehicleOWner" type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.vehicleOWner" type="radio" value="yes" required>Yes</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.vehicleOWner" type="radio" value="no">No</label>
                           </div>
                           
                           <h3>Vehicle Description</h3>
                           
                           <div class="form-group">
                             <label for="make">Make *:</label><br>
-                            <input type="text" class="form-control" id="make" name="make" ng-model="memberForm.vehicleDescription.make" required>
+                            <input type="text" class="form-control" id="make" name="make" ng-model="volunteerForm.vehicleDescription.make" required>
                           </div>
                           
                           <div class="form-group">
                             <label for="model">Model *:</label><br>
-                            <input type="text" class="form-control" id="model" name="model" ng-model="memberForm.vehicleDescription.model" required>
+                            <input type="text" class="form-control" id="model" name="model" ng-model="volunteerForm.vehicleDescription.model" required>
                           </div>
                           
                           <div class="form-group">
                             <label for="type">Type:</label><br>
-                            <input type="text" class="form-control" id="type" name="type" ng-model="memberForm.vehicleDescription.type" placeholder="Example: Sedan">
+                            <input type="text" class="form-control" id="type" name="type" ng-model="volunteerForm.vehicleDescription.type" placeholder="Example: Sedan">
                           </div>
                           
                           <div class="form-group">
                             <label for="year">Year *:</label><br>
-                            <input type="text" class="form-control" id="year" name="year" ng-model="memberForm.vehicleDescription.year" required>
+                            <input type="text" class="form-control" id="year" name="year" ng-model="volunteerForm.vehicleDescription.year" required>
                           </div>
                           
                           <div class="form-group">
                             <label for="registration Plate">Registration plate *:</label><br>
-                            <input type="text" class="form-control" id="registrationPlate" name="registrationPlate" ng-model="memberForm.vehicleDescription.registrationPlate" required>
+                            <input type="text" class="form-control" id="registrationPlate" name="registrationPlate" ng-model="volunteerForm.vehicleDescription.registrationPlate" required>
                           </div>
                           
                           <div class="form-group">
                             <label for="color">Color :</label><br>
-                            <input type="text" class="form-control" id="color" name="color" ng-model="memberForm.vehicleDescription.color">
+                            <input type="text" class="form-control" id="color" name="color" ng-model="volunteerForm.vehicleDescription.color">
                           </div>
                           
                           <div class="form-group">
                             <label for="number Of Doors">Number of doors *:</label><br>
-                            <input type="text" class="form-control" id="numberOfDoors" name="numberOfDoors" ng-model="memberForm.vehicleDescription.numberOfDoors" required>
+                            <input type="text" class="form-control" id="numberOfDoors" name="numberOfDoors" ng-model="volunteerForm.vehicleDescription.numberOfDoors" required>
                           </div>
                           
                           <div class="form-group">
                             <label for="registration Expiration">Registration expiration date: *</label><br>
-                            <input type="text" class="form-control" id="registrationExpiration" name="registrationExpiration" ng-model="memberForm.vehicleDescription.registrationExpiration" placeholder="mm/dd/yyyy" required>
+                            <input type="text" class="form-control" id="registrationExpiration" name="registrationExpiration" ng-model="volunteerForm.vehicleDescription.registrationExpiration" placeholder="mm/dd/yyyy" required>
                           </div>
                           
                           <div class="form-group">
                             <label for="insurance Company">Insurance company: *</label><br>
-                            <input type="text" class="form-control" id="insuranceCompany" name="insuranceCompany" ng-model="memberForm.vehicleDescription.insuranceCompany" required>
+                            <input type="text" class="form-control" id="insuranceCompany" name="insuranceCompany" ng-model="volunteerForm.vehicleDescription.insuranceCompany" required>
                           </div>
                           
                           <div class="form-group">
                             <label for="agent">Agent: *</label><br>
-                            <input type="text" class="form-control" id="agent" name="agent" ng-model="memberForm.vehicleDescription.agent" required>
+                            <input type="text" class="form-control" id="agent" name="agent" ng-model="volunteerForm.vehicleDescription.agent" required>
                           </div>
                           
                           <div class="form-group">
                             <label for="agent address">Agent Address: *</label><br>
-                            <textarea class="form-control" rows="5" id="agentAddress" name="agentAddress" ng-model="memberForm.vehicleDescription.agentAddress" required></textarea>
+                            <textarea class="form-control" rows="5" id="agentAddress" name="agentAddress" ng-model="volunteerForm.vehicleDescription.agentAddress" required></textarea>
                           </div>
                           
                           <div class="form-group">
                             <label for="agent Phone">Agent Phone</label><br>
-                            <input type="text" class="form-control" id="agentPhone" name="agentPhone" ng-model="memberForm.vehicleDescription.agentPhone" placeholder="Example: xxx-xxx-xxxx">
+                            <input type="text" class="form-control" id="agentPhone" name="agentPhone" ng-model="volunteerForm.vehicleDescription.agentPhone" placeholder="Example: xxx-xxx-xxxx">
                           </div>
                           
                           <div class="form-group ta-center">
                             <label for="can transport walker or wheelchair">Are you able to transport a folding walker or wheel chair: *</label><br>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.canTransportWalkerWheelChair" type="radio" value="yes" require>Yes</label>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.canTransportWalkerWheelChairownVehicle" type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.canTransportWalkerWheelChair" type="radio" value="yes" require>Yes</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.canTransportWalkerWheelChairownVehicle" type="radio" value="no">No</label>
                           </div>
                           
                           <div class="form-group">
                             <label for="agent address">Please describe the general condition of the vehicle(s) and any known defects: *</label><br>
-                            <textarea class="form-control" rows="5" id="generalCondition" name="generalCondition" ng-model="memberForm.vehicleDescription.generalCondition"
+                            <textarea class="form-control" rows="5" id="generalCondition" name="generalCondition" ng-model="volunteerForm.vehicleDescription.generalCondition"
                             required></textarea>
                           </div>
                           
                           <div class="form-group">
                             <label for="passenger capacity">Passenger capacity: *</label><br>
-                            <input type="text" class="form-control" id="passengerCapacity" name="passengerCapacity" ng-model="memberForm.vehicleDescription.passengerCapacity" placeholder="number of people" required>people
+                            <input type="text" class="form-control" id="passengerCapacity" name="passengerCapacity" ng-model="volunteerForm.vehicleDescription.passengerCapacity" placeholder="number of people" required>people
                           </div>
                           
                           <div class="form-group ta-center">
                             <label for="can Transport Pets">Are you willing to transport properly restrained pets: *</label><br>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.canTransportPets" type="radio" value="yes" required>Yes</label>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.canTransportPets" type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.canTransportPets" type="radio" value="yes" required>Yes</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.canTransportPets" type="radio" value="no">No</label>
                           </div>
                           
                           <div class="form-group ta-center">
                             <label for="has large trunk">Do you have a large trunk: *</label><br>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.hasLargeTrunk" type="radio" value="yes" required>Yes</label>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.hasLargeTrunk" type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.hasLargeTrunk" type="radio" value="yes" required>Yes</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.hasLargeTrunk" type="radio" value="no">No</label>
                           </div>
                           
                           <div class="form-group ta-center">
                             <label for="has covered truck bed">Covered truck bed: *</label><br>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.hasCoveredTruckBed" type="radio" value="yes" required>Yes</label>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.hasCoveredTruckBed" type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.hasCoveredTruckBed" type="radio" value="yes" required>Yes</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.hasCoveredTruckBed" type="radio" value="no">No</label>
                           </div>
                           
                           <div class="form-group ta-center">
                             <label for="only vehicle">Is this the only vehicle you will be using: *</label><br>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.onlyVehicle" ng-click="secondVehicle = true" type="radio" value="yes" required>Yes</label>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.onlyVehicle" ng-click="secondVehicle = false" type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.onlyVehicle" ng-click="secondVehicle = true" type="radio" value="yes" required>Yes</label>
+                            <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.onlyVehicle" ng-click="secondVehicle = false" type="radio" value="no">No</label>
                           </div>
                           
                           
@@ -1028,73 +1028,73 @@
                             
                             <div class="form-group">
                               <label for="make">Make *:</label><br>
-                              <input type="text" class="form-control" id="make" name="make" ng-model="memberForm.vehicleDescription.secondVehicle.make" required>
+                              <input type="text" class="form-control" id="make" name="make" ng-model="volunteerForm.vehicleDescription.secondVehicle.make" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="model">Model *:</label><br>
-                              <input type="text" class="form-control" id="model" name="model" ng-model="memberForm.vehicleDescription.secondVehicle.model" required>
+                              <input type="text" class="form-control" id="model" name="model" ng-model="volunteerForm.vehicleDescription.secondVehicle.model" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="type">Type:</label><br>
-                              <input type="text" class="form-control" id="type" name="type" ng-model="memberForm.vehicleDescription.secondVehicle.type" placeholder="Example: Sedan">
+                              <input type="text" class="form-control" id="type" name="type" ng-model="volunteerForm.vehicleDescription.secondVehicle.type" placeholder="Example: Sedan">
                             </div>
                             
                             <div class="form-group">
                               <label for="year">Year *:</label><br>
-                              <input type="text" class="form-control" id="year" name="year" ng-model="memberForm.vehicleDescription.secondVehicle.year" required>
+                              <input type="text" class="form-control" id="year" name="year" ng-model="volunteerForm.vehicleDescription.secondVehicle.year" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="registration Plate">Registration plate *:</label><br>
-                              <input type="text" class="form-control" id="registrationPlate" name="registrationPlate" ng-model="memberForm.vehicleDescription.secondVehicle.registrationPlate" required>
+                              <input type="text" class="form-control" id="registrationPlate" name="registrationPlate" ng-model="volunteerForm.vehicleDescription.secondVehicle.registrationPlate" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="color">Color :</label><br>
-                              <input type="text" class="form-control" id="color" name="color" ng-model="memberForm.vehicleDescription.secondVehicle.color">
+                              <input type="text" class="form-control" id="color" name="color" ng-model="volunteerForm.vehicleDescription.secondVehicle.color">
                             </div>
                             
                             <div class="form-group">
                               <label for="number Of Doors">Number of doors *:</label><br>
-                              <input type="text" class="form-control" id="numberOfDoors" name="numberOfDoors" ng-model="memberForm.vehicleDescription.secondVehicle.numberOfDoors" required>
+                              <input type="text" class="form-control" id="numberOfDoors" name="numberOfDoors" ng-model="volunteerForm.vehicleDescription.secondVehicle.numberOfDoors" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="registration Expiration">Registration expiration date: *</label><br>
-                              <input type="text" class="form-control" id="registrationExpiration" name="registrationExpiration" ng-model="memberForm.vehicleDescription.secondVehicle.registrationExpiration" placeholder="mm/dd/yyyy" required>
+                              <input type="text" class="form-control" id="registrationExpiration" name="registrationExpiration" ng-model="volunteerForm.vehicleDescription.secondVehicle.registrationExpiration" placeholder="mm/dd/yyyy" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="insurance Company">Insurance company: *</label><br>
-                              <input type="text" class="form-control" id="insuranceCompany" name="insuranceCompany" ng-model="memberForm.vehicleDescription.secondVehicle.insuranceCompany" required>
+                              <input type="text" class="form-control" id="insuranceCompany" name="insuranceCompany" ng-model="volunteerForm.vehicleDescription.secondVehicle.insuranceCompany" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="agent">Agent: *</label><br>
-                              <input type="text" class="form-control" id="agent" name="agent" ng-model="memberForm.vehicleDescription.secondVehicle.agent" required>
+                              <input type="text" class="form-control" id="agent" name="agent" ng-model="volunteerForm.vehicleDescription.secondVehicle.agent" required>
                             </div>
                             
                             <div class="form-group">
                               <label for="agent address">Agent Address: *</label><br>
-                              <textarea class="form-control" rows="5" id="agentAddress" name="agentAddress" ng-model="memberForm.vehicleDescription.secondVehicle.agentAddress" required></textarea>
+                              <textarea class="form-control" rows="5" id="agentAddress" name="agentAddress" ng-model="volunteerForm.vehicleDescription.secondVehicle.agentAddress" required></textarea>
                             </div>
                             
                             <div class="form-group">
                               <label for="agent Phone">Agent Phone</label><br>
-                              <input type="text" class="form-control" id="agentPhone" name="agentPhone" ng-model="memberForm.vehicleDescription.secondVehicle.agentPhone" placeholder="Example: xxx-xxx-xxxx">
+                              <input type="text" class="form-control" id="agentPhone" name="agentPhone" ng-model="volunteerForm.vehicleDescription.secondVehicle.agentPhone" placeholder="Example: xxx-xxx-xxxx">
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="can transport walker or wheelchair">Are you able to transport a folding walker or wheel chair: *</label><br>
-                              <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.secondVehicle.canTransportWalkerWheelChair" type="radio" value="yes" require>Yes</label>
-                              <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.secondVehicle.canTransportWalkerWheelChairownVehicle" type="radio" value="no">No</label>
+                              <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.secondVehicle.canTransportWalkerWheelChair" type="radio" value="yes" require>Yes</label>
+                              <label class="radio-inline"><input ng-model="volunteerForm.vehicleDescription.secondVehicle.canTransportWalkerWheelChairownVehicle" type="radio" value="no">No</label>
                             </div>
                             
                             <div class="form-group">
                               <label for="agent address">Please describe the general condition of the vehicle(s) and any known defects: *</label><br>
-                              <textarea class="form-control" rows="5" id="generalCondition" name="generalCondition" ng-model="memberForm.vehicleDescription.secondVehicle.generalCondition"
+                              <textarea class="form-control" rows="5" id="generalCondition" name="generalCondition" ng-model="volunteerForm.vehicleDescription.secondVehicle.generalCondition"
                               required></textarea>
                             </div>
                             
@@ -1103,17 +1103,17 @@
                           
                           <div class="form-group">
                             <label for="signature">Signature *:</label><br>
-                            <input type="text" class="form-control" id="signature" name="signature" placeholder="Type your full name" ng-model="memberForm.vehicleDescription.signature" required>
+                            <input type="text" class="form-control" id="signature" name="signature" placeholder="Type your full name" ng-model="volunteerForm.vehicleDescription.signature" required>
                           </div>
                           
                           <div class="form-group">
                             <label for="date">Date *:</label><br>
-                            <input type="text" class="form-control" id="date" name="date" ng-model="memberForm.vehicleDescription.date" placeholder="mm/dd/yyyy" required>
+                            <input type="text" class="form-control" id="date" name="date" ng-model="volunteerForm.vehicleDescription.date" placeholder="mm/dd/yyyy" required>
                           </div>
                           
                           
                           <div class="form-group ta-center">
-                            <label class="checkbox-inline"><input ng-model="memberForm.vehicleDescription.authorize" type="checkbox" value="authorize" required>
+                            <label class="checkbox-inline"><input ng-model="volunteerForm.vehicleDescription.authorize" type="checkbox" value="authorize" required>
                               *
                                 By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.
                             </label>
@@ -1173,23 +1173,23 @@
                           
                           <div class="form-group">
                             <label for="signature">Volunteer Driver Signature *:</label><br>
-                            <input type="text" class="form-control" id="signature" name="signature" placeholder="Type your full name" ng-model="memberForm.changeOfStatus.signature" required>
+                            <input type="text" class="form-control" id="signature" name="signature" placeholder="Type your full name" ng-model="volunteerForm.changeOfStatus.signature" required>
                           </div>
                           
                           <div class="form-group">
                             <label for="date">Date *:</label><br>
-                            <input type="text" class="form-control" id="date" name="date" ng-model="memberForm.changeOfStatus.date" placeholder="mm/dd/yyyy" required>
+                            <input type="text" class="form-control" id="date" name="date" ng-model="volunteerForm.changeOfStatus.date" placeholder="mm/dd/yyyy" required>
                           </div>
                           
                           
                           <div class="form-group">
                             <label for="itn Signature">ITN<em>America</em> Signature *:</label><br>
-                            <input type="text" class="form-control" id="itnSignature" name="itnSignature" ng-model="memberForm.changeOfStatus.itnSignature">
+                            <input type="text" class="form-control" id="itnSignature" name="itnSignature" ng-model="volunteerForm.changeOfStatus.itnSignature">
                           </div>
                           
                           <div class="form-group">
                             <label for="itn date">Date *:</label><br>
-                            <input type="text" class="form-control" id="itnDate" name="itnDate" ng-model="memberForm.changeOfStatus.itnDate">
+                            <input type="text" class="form-control" id="itnDate" name="itnDate" ng-model="volunteerForm.changeOfStatus.itnDate">
                           </div>
                           
                         <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
