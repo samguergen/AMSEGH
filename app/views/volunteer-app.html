@@ -972,9 +972,10 @@
                             <input type="text" class="form-control" id="agent" name="agent" ng-model="memberForm.vehicleDescription.agent" required>
                           </div>
                           
-                          
-                          
-                          
+                          <div class="form-group">
+                            <label for="agent address">Agent Address: *</label><br>
+                            <textarea class="form-control" rows="5" id="agentAddress" name="agentAddress" ng-model="memberForm.vehicleDescription.agentAddress" required></textarea>
+                          </div>
                           
                           <div class="form-group">
                             <label for="agent Phone">Agent Phone</label><br>
@@ -987,10 +988,11 @@
                             <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.canTransportWalkerWheelChairownVehicle" type="radio" value="no">No</label>
                           </div>
                           
-                          
-                          
-                          
-                          
+                          <div class="form-group">
+                            <label for="agent address">Please describe the general condition of the vehicle(s) and any known defects: *</label><br>
+                            <textarea class="form-control" rows="5" id="generalCondition" name="generalCondition" ng-model="memberForm.vehicleDescription.generalCondition"
+                            required></textarea>
+                          </div>
                           
                           <div class="form-group">
                             <label for="passenger capacity">Passenger capacity: *</label><br>
@@ -1017,9 +1019,90 @@
                           
                           <div class="form-group ta-center">
                             <label for="only vehicle">Is this the only vehicle you will be using: *</label><br>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.onlyVehicle" type="radio" value="yes" required>Yes</label>
-                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.onlyVehicle" type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.onlyVehicle" ng-click="secondVehicle = true" type="radio" value="yes" required>Yes</label>
+                            <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.onlyVehicle" ng-click="secondVehicle = false" type="radio" value="no">No</label>
                           </div>
+                          
+                          
+                          <div ng-show="secondVehicle">
+                            
+                            <div class="form-group">
+                              <label for="make">Make *:</label><br>
+                              <input type="text" class="form-control" id="make" name="make" ng-model="memberForm.vehicleDescription.secondVehicle.make" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="model">Model *:</label><br>
+                              <input type="text" class="form-control" id="model" name="model" ng-model="memberForm.vehicleDescription.secondVehicle.model" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="type">Type:</label><br>
+                              <input type="text" class="form-control" id="type" name="type" ng-model="memberForm.vehicleDescription.secondVehicle.type" placeholder="Example: Sedan">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="year">Year *:</label><br>
+                              <input type="text" class="form-control" id="year" name="year" ng-model="memberForm.vehicleDescription.secondVehicle.year" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="registration Plate">Registration plate *:</label><br>
+                              <input type="text" class="form-control" id="registrationPlate" name="registrationPlate" ng-model="memberForm.vehicleDescription.secondVehicle.registrationPlate" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="color">Color :</label><br>
+                              <input type="text" class="form-control" id="color" name="color" ng-model="memberForm.vehicleDescription.secondVehicle.color">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="number Of Doors">Number of doors *:</label><br>
+                              <input type="text" class="form-control" id="numberOfDoors" name="numberOfDoors" ng-model="memberForm.vehicleDescription.secondVehicle.numberOfDoors" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="registration Expiration">Registration expiration date: *</label><br>
+                              <input type="text" class="form-control" id="registrationExpiration" name="registrationExpiration" ng-model="memberForm.vehicleDescription.secondVehicle.registrationExpiration" placeholder="mm/dd/yyyy" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="insurance Company">Insurance company: *</label><br>
+                              <input type="text" class="form-control" id="insuranceCompany" name="insuranceCompany" ng-model="memberForm.vehicleDescription.secondVehicle.insuranceCompany" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="agent">Agent: *</label><br>
+                              <input type="text" class="form-control" id="agent" name="agent" ng-model="memberForm.vehicleDescription.secondVehicle.agent" required>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="agent address">Agent Address: *</label><br>
+                              <textarea class="form-control" rows="5" id="agentAddress" name="agentAddress" ng-model="memberForm.vehicleDescription.secondVehicle.agentAddress" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="agent Phone">Agent Phone</label><br>
+                              <input type="text" class="form-control" id="agentPhone" name="agentPhone" ng-model="memberForm.vehicleDescription.secondVehicle.agentPhone" placeholder="Example: xxx-xxx-xxxx">
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="can transport walker or wheelchair">Are you able to transport a folding walker or wheel chair: *</label><br>
+                              <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.secondVehicle.canTransportWalkerWheelChair" type="radio" value="yes" require>Yes</label>
+                              <label class="radio-inline"><input ng-model="memberForm.vehicleDescription.secondVehicle.canTransportWalkerWheelChairownVehicle" type="radio" value="no">No</label>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="agent address">Please describe the general condition of the vehicle(s) and any known defects: *</label><br>
+                              <textarea class="form-control" rows="5" id="generalCondition" name="generalCondition" ng-model="memberForm.vehicleDescription.secondVehicle.generalCondition"
+                              required></textarea>
+                            </div>
+                            
+                          </div>
+                          
+                          
+                          
+                          
                           
                           <div class="form-group">
                             <label for="signature">Signature *:</label><br>
