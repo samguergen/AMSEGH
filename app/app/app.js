@@ -98,7 +98,7 @@ myApp.controller('MainController', ['$scope', '$http', function ($scope, $http) 
   console.log('inside main controller');
   $scope.zoomLevel = 1;
   $scope.tab = 1;
-  $scope.memberForm = {};
+  $scope.formData = {};
   $scope.loading = false;
   
   $scope.nextTabMemberApp = function(prev){
@@ -132,29 +132,14 @@ myApp.controller('MainController', ['$scope', '$http', function ($scope, $http) 
     
   }
   
-  $scope.submitMemberForm = function(){
-    console.log('form you are sending is ', $scope.memberForm);
+  $scope.submitForm = function(){
+    console.log('form you are sending is ', $scope.formData);
     $scope.loading = true;
     $http.post('/sendmail', {
       from: 'CodeNx <admin@angularcode.com>',
       to: 'sguergenenov@itnamerica.org',
       subject: 'Message from AngularCode',
-      text: $scope.memberForm
-    }).then(res=>{
-        $scope.loading = false;
-        $scope.serverMessage = 'Email sent successfully';
-    });
-  }
-  
-  
-  $scope.submitVolunteerForm = function(){
-    console.log('form you are sending is ', $scope.volunteerForm);
-    $scope.loading = true;
-    $http.post('/sendmail', {
-      from: 'CodeNx <admin@angularcode.com>',
-      to: 'sguergenenov@itnamerica.org',
-      subject: 'Message from AngularCode',
-      text: $scope.memberForm
+      text: $scope.formData
     }).then(res=>{
         $scope.loading = false;
         $scope.serverMessage = 'Email sent successfully';
