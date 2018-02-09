@@ -116,7 +116,7 @@
                           </select>
                         </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.zip" required>
+                        <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.zip" ng-pattern="zipPattern" required>
                       </div>
                       <div class="form-group">
                         <input type="text" class="form-control" id="years" name="years" placeholder="Years at Address*" ng-model="formData.yearsAtAddress" required>
@@ -145,7 +145,10 @@
                         <input type="text" class="form-control" id="secondary-phone" name="secondary-phone" placeholder="Secondary Phone" ng-model="formData.secondaryPhone">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.email">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.email" ng-pattern="emailPattern">
+                        <div ng-messages="formData.email.$error">
+                          <div ng-message="pattern">Please enter a valid email address!</div>
+                        </div>
                       </div>
                         
                         <button ng-click="nextTabMemberApp()" class="next-tab btn btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
@@ -251,7 +254,7 @@
                               </select>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.firstEmergencyContact.name" ng-model="formData.firstEmergencyContact.zip" required>
+                              <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.firstEmergencyContact.name" ng-model="formData.firstEmergencyContact.zip" ng-pattern="zipPattern" required>
                             </div>
                             <div class="form-group">
                               <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" ng-model="formData.firstEmergencyContact.homePhone" required>
@@ -260,7 +263,10 @@
                               <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" ng-model="formData.firstEmergencyContact.cellPhone" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.firstEmergencyContact.email">
+                              <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.firstEmergencyContact.email" ng-pattern="emailPattern">
+                              <div ng-messages="formData.email.$error">
+                                <div ng-message="pattern">Please enter a valid email address!</div>
+                              </div>
                             </div>
                           </div><!--first emergency-->
                         
@@ -337,7 +343,7 @@
                                 </select>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.secondEmergencyContact.zip" required>
+                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.secondEmergencyContact.zip" ng-pattern="zipPattern" required>
                               </div>
                               <div class="form-group">
                                 <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" ng-model="formData.secondEmergencyContact.homePhone" required>
@@ -346,7 +352,10 @@
                                 <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" ng-model="formData.secondEmergencyContact.cellPhone" required>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.secondEmergencyContact.email">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.secondEmergencyContact.email" ng-pattern="emailPattern">
+                                <div ng-messages="formData.email.$error">
+                                  <div ng-message="pattern">Please enter a valid email address!</div>
+                                </div>
                               </div>
                             </div><!--second emergency contact-->
                             
@@ -474,13 +483,16 @@
                                 </select>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code: *" ng-model="formData.sendInfoTo.zip" required>
+                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code: *" ng-model="formData.sendInfoTo.zip" ng-pattern="zipPattern" required>
                               </div>
                               <div class="form-group">
                                 <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone* - Example: xxx-xxx-xxxx"  ng-model="formData.sendInfoTo.phone" required>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Email Address:" ng-model="formData.sendInfoTo.email">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.sendInfoTo.email" ng-pattern="emailPattern">
+                                <div ng-messages="formData.email.$error">
+                                  <div ng-message="pattern">Please enter a valid email address!</div>
+                                </div>
                               </div>
                             </div><!--sendinfo-->
                             

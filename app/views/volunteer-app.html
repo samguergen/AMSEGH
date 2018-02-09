@@ -177,7 +177,10 @@
                         <input type="text" class="form-control" id="cell-phone" name="cell-phone" placeholder="Cell Phone* - Example: xxx-xxx-xxxx"  ng-model="formData.cellPhone" >
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.email">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.email" ng-pattern="emailPattern">
+                        <div ng-messages="formData.email.$error">
+                          <div ng-message="pattern">Please enter a valid email address!</div>
+                        </div>
                       </div>
                       
                       
@@ -259,10 +262,12 @@
                               <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" ng-model="formData.firstEmergencyContact.homePhone" required>
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.firstEmergencyContact.email">
+                              <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.firstEmergencyContact.email" ng-pattern="emailPattern">
+                              <div ng-messages="formData.email.$error">
+                                <div ng-message="pattern">Please enter a valid email address!</div>
+                              </div>
                             </div>
-                          <!-- </div> -->
-                          <!--first emergency-->
+
                       
                       
                         <h2>Driving Experience</h2>
