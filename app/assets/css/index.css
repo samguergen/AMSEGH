@@ -515,7 +515,6 @@ nav .dropdown-menu li.divider{
   background-size: cover !important;
   background-repeat: no-repeat !important;
   height: 400px !important;
-  opacity: 0.5 !important;
 }
 
 .corporate #first-hero-corporate h1{
@@ -750,6 +749,11 @@ nav .dropdown-menu li.divider{
    font-size: 18px !important;
    line-height: 2.2;
  }
+ .faq .questions-list ul li a {
+   font-weight:bold;
+   color:black;
+   text-decoration:underline
+ }
  .faq .qa-wrapper {
    background-image: url('../images/backgrounds/background-faq.jpg');
  }
@@ -855,6 +859,8 @@ nav .dropdown-menu li.divider{
   color: #fc6d6d;
   background-color: #fc6d6d;
   width: 50%;
+  margin-left:auto;
+  margin-right:auto;
 }
 .rider-stories .fa-quote-left, .rider-stories .fa-quote-right {
   font-size: 50px;
@@ -934,7 +940,6 @@ nav .dropdown-menu li.divider{
 }
 .member-programs .intro-wrapper {
   background:#afcace;
-  color:white;
 }
 .member-programs .intro {
   width: 90%;
@@ -1116,7 +1121,7 @@ padding: 50px;
   text-align: center;
   line-height: 2;
   font-size: 26px;
-  color:#399eaa
+  /*color:#399eaa*/
 }
 .non-rider hr, .contact hr {
   width:35%;
@@ -1277,7 +1282,6 @@ padding: 50px;
   margin-right: auto;
 }
 .volunteer-drive .benefits-volunteer {
-  color: #399eaa;
   font-weight:bold;
   font-size:25px;
   border-top: 5px dashed white;
@@ -1286,7 +1290,6 @@ padding: 50px;
   text-align: center;
   line-height: 2;
   font-size: 35px;
-  color: #399eaa;
 }
 .volunteer-drive .benefits-volunteer .row-wrap {
   padding: 15px;
