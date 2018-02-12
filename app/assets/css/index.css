@@ -289,6 +289,8 @@ nav .dropdown-menu li.divider{
 
 /* SERVICES */
 
+.services .jumbotron {padding: 0;}
+.services .section {padding-bottom: 30px !important}
 .services .first-hero {
   background-image: url('../images/dark/man_on_bench.jpg');
   background-position: center center;
@@ -296,46 +298,39 @@ nav .dropdown-menu li.divider{
   background-repeat: no-repeat;
   height: 400px;
 }
-
 .services .first-hero h1{
   color:white;
   text-shadow: 2px 2px #529ba8;
   margin-top:170px;
   margin-left: 5%;
 }
-
 .services .operate {
   background: white;
 }
-
 .services .operate h2 {
   color: #9b557e;
   font-weight: bold;
   margin-bottom:50px;
   text-align:center;
 }
-
 .services .operate img {
   height: 300px;
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
-
 .services .operate h3 {
   color: #9b557e;
   font-weight: bold;
   text-align: center;
   margin-top: 4%;
 }
-
 .services .jumbo-title {
   background-color: #399eaa;
   color: white;
   text-align: center;
   padding: 2%;
 }
-
 .services .service-features {
   background: white;
   width: 80%;
@@ -343,7 +338,6 @@ nav .dropdown-menu li.divider{
   margin-right: auto;
   margin-bottom: 5%;
 }
-
 .services .service-features .col-sm-4 {
   text-align:center;
   padding: 2%;
@@ -359,7 +353,6 @@ nav .dropdown-menu li.divider{
   font-weight: bold;
   font-size: 18px;
 }
-
 .services .operating-radius {
   text-align:center;
 }
@@ -376,12 +369,13 @@ nav .dropdown-menu li.divider{
 }
 .services .dignified h2 {
   text-align:center;
+  /*color:black;*/
 }
 .services .dignified p {
   text-align:justify;
   font-size: 22px;
-  color: white;
   font-weight: bold;
+  /*color:black;*/
 }
 .services .dignified .img-circle {
   border-radius: 100%;
