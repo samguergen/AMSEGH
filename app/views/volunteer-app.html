@@ -511,6 +511,7 @@
                       <div class="form-group">
                       <label for="serve community">Additional income:</label>
                       <select class="form-control" id="reasons">
+                        <option ng-model="formData.reasons.serveCommunity">None</option>
                         <option ng-model="formData.reasons.additionalIncome">1</option>
                         <option ng-model="formData.reasons.additionalIncome">2</option>
                         <option ng-model="formData.reasons.additionalIncome">3</option>
@@ -606,8 +607,8 @@
                 
                 <h3>Volunteer Driver Weekly Schedule</h3>
                 
-                <h5>ITNLanier will work with your schedule.</h5>
-                <h6>We provide transportation 24 hours a day 7 days a week.</h6>
+                <p>ITNLanier will work with your schedule.</p>
+                <p>We provide transportation 24 hours a day 7 days a week.</p>
                 
                 <div class="form-group">
                   <label for="hours available">What hours are you available on these days? <br>
@@ -771,7 +772,7 @@
                             
                             
                             
-                            <h2>Authorization to Request Criminal Record History</h2>
+                            <h2 class="mt-50">Authorization to Request Criminal Record History</h2>
                           
                             
                             <div class="form-group">
@@ -859,7 +860,7 @@
                               <input type="text" class="form-control" id="socialSecurity" name="socialSecurity" placeholder="xxx-xx-xxxx" ng-model="formData.requestCriminalRecord.socialSecurity" required>
                             </div>
                             
-                            <p><strong>I authorize Independent Transportation Network® to request and receive any and all criminal history information about me held by the State Bureau of Identification. The purpose of this background check will be for volunteer purposes.</strong></p>
+                            <p class="mt-50"><strong>I authorize Independent Transportation Network® to request and receive any and all criminal history information about me held by the State Bureau of Identification. The purpose of this background check will be for volunteer purposes.</strong></p>
                             
                             <div class="form-group">
                               <label for="signature">Signature *:</label><br>

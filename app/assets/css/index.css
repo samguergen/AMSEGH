@@ -1226,13 +1226,13 @@ padding: 50px;
   margin-left: 5%;
 }
 
-.member-app .app-title {
+.member-app .app-title, .volunteer-app .app-title {
   margin-bottom: 25px; 
   text-align: center; 
   font-size: 30px;
   color:black;
 }
-.member-app .form-area {
+.member-app .form-area, .volunteer-app .form-area {
   background-color: #FAFAFA;
   padding: 10px 40px 60px;
   margin: 10px 0px 60px;
@@ -1240,7 +1240,7 @@ padding: 50px;
   border: 2px solid #8f8fb66b;
   border-radius: 5px;
 }
-.member-app .form-group {
+.member-app .form-group, .volunteer-app .form-group {
   font-size:25px;
   margin-top: 30px;
 }
@@ -1249,12 +1249,12 @@ padding: 50px;
   border-radius: 15px;
 }
 .member-app .form-group ol li {margin-top:20px}
-.member-app .member-tabs {
+.member-app .member-tabs, .volunteer-app .member-tabs {
   margin-top:50px;
 }
-.member-app .member-tabs input[type=radio] {margin-top:10px}
-.member-app .form-control {font-size:25px; height:50px}
-.member-app .checkbox-inline {line-height: 1}
+.member-app .member-tabs input[type=radio], .volunteer-app .member-tabs input[type=radio] {margin-top:10px}
+.member-app .form-control, .volunteer-app .form-control {font-size:25px; height:50px}
+.member-app .checkbox-inline, .volunteer-app .checkbox-inline {line-height: 1}
 
 .volunteer-drive {
   font-size:25px;
@@ -1328,7 +1328,7 @@ padding: 50px;
   color: #fc6d6d;
 }
 
-.volunteer-app {font-size:25px;}
+.volunteer-app, .volunteer-app p {font-size:25px;}
 .volunteer-app li {
     margin-top: 20px;
 }
@@ -1355,6 +1355,10 @@ padding: 50px;
   padding-right: 5%;
   padding-bottom:80px;
   background: #c7dfe4;
+}
+
+.volunteer-app .steps {
+  margin-bottom:100px !important;
 }
     
 #footer {
