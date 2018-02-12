@@ -222,7 +222,7 @@ nav .dropdown-menu li.divider{
 .homepage .mission h4 {
   margin-top:25px;
   line-height: 1.7;
-  font-size:25px;
+  font-size:30px;
 }
 .homepage .progress {
   height: 300px;
@@ -258,6 +258,7 @@ nav .dropdown-menu li.divider{
   font-size:50px;
   margin-bottom:3%;
 }
+.homepage .rider-stories h5 {font-size:20px}
 .homepage .rider-stories .rider-stories-text {
   background: #f8fafa;
   color: #666666;
@@ -285,6 +286,7 @@ nav .dropdown-menu li.divider{
   padding-right: 8%;
   text-align: justify;
   margin-bottom: 20px;
+  font-size:25px;
 }
 
 /* SERVICES */
@@ -310,6 +312,7 @@ nav .dropdown-menu li.divider{
 .services .operate h2 {
   color: #9b557e;
   font-weight: bold;
+  margin-top:50px;
   margin-bottom:50px;
   text-align:center;
 }
@@ -351,7 +354,7 @@ nav .dropdown-menu li.divider{
 .services .service-features .col-sm-4 .icon-legend {
   margin-top: 7%;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 25px;
 }
 .services .operating-radius {
   text-align:center;
@@ -369,13 +372,11 @@ nav .dropdown-menu li.divider{
 }
 .services .dignified h2 {
   text-align:center;
-  /*color:black;*/
 }
 .services .dignified p {
   text-align:justify;
-  font-size: 22px;
+  font-size: 25px;
   font-weight: bold;
-  /*color:black;*/
 }
 .services .dignified .img-circle {
   border-radius: 100%;
@@ -392,11 +393,9 @@ nav .dropdown-menu li.divider{
   background-size: cover;
   background-repeat: no-repeat;
   height: 400px;
-  /*opacity: 0.6;*/
 }
 .news .first-hero h1 {
   color:white;
-  /*color: #fcedea;*/
   text-shadow: 2px 2px #529ba8;
   margin-top: 170px;
   margin-left: 5%;
@@ -406,6 +405,7 @@ nav .dropdown-menu li.divider{
   padding-top: 75px;
   padding-bottom: 75px;
   background: #fcedea;
+  font-size:25px
 }
 .news .news-content h3 {
   font-size:30px;
@@ -423,7 +423,7 @@ nav .dropdown-menu li.divider{
   color: #b95856;
   font-weight: bold;
   line-height: 2;
-  font-size: 18px;  
+  font-size: 25px;  
 }
 
 .news .news-content ul li a{color: #b95856;}
@@ -642,6 +642,8 @@ nav .dropdown-menu li.divider{
     font-size:30px; 
     font-style:italic; 
     line-height: 150px;
+    color:black;
+    font-weight:bold;
 }
 .organization #start img.itn-icon {
   display: block;
@@ -675,7 +677,7 @@ nav .dropdown-menu li.divider{
   font-weight: bold;
   font-style: italic;
   line-height:2;
-  font-size: 18px;
+  font-size: 23px;
 }
 #board .row button {
   color: #ef4034 !important;
@@ -692,7 +694,7 @@ nav .dropdown-menu li.divider{
   /*display:none;*/
   -webkit-transition:all linear 0.5s;
   transition:all linear 0.5s;
-  font-size: 20px;
+  font-size: 25px;
   line-height: 1.5;
   padding: 5px;
   margin-top: 20px;
@@ -709,6 +711,10 @@ nav .dropdown-menu li.divider{
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 0 !important;
+}
+.org-section .national p {
+  font-weight: bold;
+  font-size: 25px;
 }
 .org-section .technology {
   background-image: url('../images/backgrounds/technology.jpg');
@@ -746,7 +752,7 @@ nav .dropdown-menu li.divider{
    list-style-type: none;
  }
  .faq .questions-list ul li {
-   font-size: 18px !important;
+   font-size: 25px !important;
    line-height: 2.2;
  }
  .faq .questions-list ul li a {
@@ -761,7 +767,7 @@ nav .dropdown-menu li.divider{
    float:left;
  }
 .faq .question {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: bold;
   position: relative;
   line-height: 120px;
@@ -800,7 +806,7 @@ nav .dropdown-menu li.divider{
  border-radius: 10px;
  display:inline-block;
 }
-
+.faq .answer p, .faq .answer ul li{font-size:25px}
 .faq .answer:after {
    content: '';
    position: absolute;
@@ -1556,10 +1562,10 @@ padding: 50px;
 
 h2,h3 {line-height:1.7}
 .jumbotron ul {
-  font-size: 21px;
+  font-size: 25px;
   font-weight: 200;
 }
-
+input {font-size:25px}
 
 /* RESPONSIVE */
 
