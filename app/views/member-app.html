@@ -911,7 +911,10 @@
                           </div>
                           
                           <div class="form-group">
-                            <input type="text" class="form-control" id="date" name="date" placeholder="Agreement Date: * - Example: mm/dd/yyyy" required>
+                            <input type="text" class="form-control" id="date" name="date" placeholder="Agreement Date: * - Example: mm/dd/yyyy" ng-pattern="datePattern" required>
+                            <div ng-messages="itnForm.date.$error">
+                              <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
+                            </div>
                           </div>
                             
                           <div class="form-group">  
@@ -940,7 +943,10 @@
                           </div>
                           
                           <div class="form-group">
-                            <input ng-model="formData.agreement.date" type="text" class="form-control" id="date" name="date" placeholder="Date: * - Example: mm/dd/yyyy" required>
+                            <input ng-model="formData.agreement.date" type="text" class="form-control" id="date" name="date" ng-pattern="datePattern" placeholder="Date: * - Example: mm/dd/yyyy" required>
+                            <div ng-messages="itnForm.date.$error">
+                              <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
+                            </div>
                           </div>
                             
                           <div class="form-group">
