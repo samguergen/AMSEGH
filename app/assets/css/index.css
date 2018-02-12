@@ -1242,7 +1242,7 @@ padding: 50px;
 }
 .member-app .form-group, .volunteer-app .form-group {
   font-size:25px;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .member-app .steps {
   font-size: 20px;
@@ -1328,7 +1328,7 @@ padding: 50px;
   color: #fc6d6d;
 }
 
-.volunteer-app, .volunteer-app p {font-size:25px;}
+.volunteer-app, .volunteer-app p, .member-app, .member-app p {font-size:25px;}
 .volunteer-app li {
     margin-top: 20px;
 }
@@ -1357,7 +1357,7 @@ padding: 50px;
   background: #c7dfe4;
 }
 
-.volunteer-app .steps {
+.volunteer-app .steps, .member-app .steps {
   margin-bottom:100px !important;
 }
     
