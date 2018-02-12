@@ -250,6 +250,7 @@ nav .dropdown-menu li.divider{
 }
 .homepage .rider-stories {
   background: #afcace;
+  background:#399eaa;
 }
 .homepage .rider-stories h1 {
   color:white;
@@ -261,8 +262,8 @@ nav .dropdown-menu li.divider{
   background: #f8fafa;
   color: #666666;
   padding: 26px 39px;
-  border: 5px solid #529ba8;
-  border-radius: 4px;
+  border: 5px solid #afcace !important;
+  border-radius: 15px;
   margin: 2%;
 }
 .homepage .rider-stories .rider-stories-text h4 {
@@ -289,7 +290,7 @@ nav .dropdown-menu li.divider{
 /* SERVICES */
 
 .services .first-hero {
-  background-image: url('../images/itn-people-faded/man_on_bench.png');
+  background-image: url('../images/dark/man_on_bench.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -392,7 +393,7 @@ nav .dropdown-menu li.divider{
 
 
 .news .first-hero {
-  background-image: url('../images/itn-people-faded/seniors-social-coffee.png');
+  background-image: url('../images/dark/seniors-social-coffee2.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -435,7 +436,7 @@ nav .dropdown-menu li.divider{
 
 
 .contact .first-hero {
-  background-image: url('../images/itn-people-faded/ITNLanier_mirror.png');
+  background-image: url('../images/dark/aa-6.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -443,7 +444,7 @@ nav .dropdown-menu li.divider{
   /*opacity: 0.5;*/
 }
 .contact #first-hero-contact h1 {
-  color:#529ba8 !important;
+  color:White;
   text-shadow: 2px 2px #529ba8;
   margin-top:170px;
   margin-left: 5%;
@@ -460,7 +461,7 @@ nav .dropdown-menu li.divider{
   background:white;
 }
 .donate .first-hero {
-  background-image: url('../images/itn-people-faded/woman-coffee.png');
+  background-image: url('../images/dark/woman-coffee.jpg');
   background-position: center center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -515,7 +516,7 @@ nav .dropdown-menu li.divider{
 }
 
 .corporate #first-hero-corporate {
-  background-image: url('../images/itn-people-images/hands4-itn.jpg') !important;
+  background-image: url('../images/dark/hands4-itn.jpg') !important;
   background-position: center center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -606,7 +607,7 @@ nav .dropdown-menu li.divider{
 }
 
 .organization #first-hero-org {
-  background-image: url('../images/itn-people-faded/ITNLanier_mirror.png');
+  background-image: url('../images/dark/ITNLanier_mirror2.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -614,7 +615,6 @@ nav .dropdown-menu li.divider{
   /*opacity:0.5;*/
 }
 .organization #first-hero-org h1{
-  /*color:#399eaa !important;*/
   color:White;
   text-shadow: 2px 2px #529ba8;
   margin-top:170px !important;
@@ -727,16 +727,13 @@ nav .dropdown-menu li.divider{
 
 
  .faq #first-hero-faq {
-   /*background-image: url('../images/backgrounds/background-faq.jpg');*/
-   background-image: url('../images/itn-people-faded/woman-cheek.png');
+   background-image: url('../images/dark/woman-cheek.jpg');
    background-position: center center;
    background-size: cover;
    background-repeat: no-repeat;
    height: 400px;
-   /*opacity:0.5;*/
  }
  .faq #first-hero-faq h1{
-   /*color:#399eaa !important;*/
    color:white;
    text-shadow: 2px 2px #529ba8;
    margin-top:170px !important;
@@ -820,7 +817,7 @@ nav .dropdown-menu li.divider{
 }
 
 .rider-stories #first-hero-rider {
-  background-image: url('../images/itn-people-faded/smiling-old-woman.png');
+  background-image: url('../images/dark/smiling-old-woman.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -828,8 +825,7 @@ nav .dropdown-menu li.divider{
   /*opacity:0.5;*/
 }
 .rider-stories #first-hero-rider h1{
-  color:white !important;
-  color:#399eaa !important;
+  color:White;
   text-shadow: 2px 2px #529ba8;
   margin-top:170px !important;
   margin-left: 5% !important;
@@ -878,7 +874,7 @@ nav .dropdown-menu li.divider{
 }
 
 .faces #first-hero-faces {
-  background-image: url('../images/itn-people-faded/smiling-old-woman2.png');
+  background-image: url('../images/dark/aa-2.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -911,6 +907,8 @@ nav .dropdown-menu li.divider{
   font-style: italic;
 }
 .faces hr {
+  margin-left:auto;
+  margin-right:auto;
   border: none;
   height: 3px;
   color: #fc6d6d;
@@ -928,16 +926,14 @@ nav .dropdown-menu li.divider{
 }
 
 .member-programs #first-hero-member {
-  background-image: url('../images/itn-people-faded/group.png');
+  background-image: url('../images/dark/group.png');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 400px;
-  /*opacity:0.5;*/
 }
 .member-programs #first-hero-member h1{
-  /*color:white !important;*/
-  color:#399eaa !important;
+  color:white;
   text-shadow: 2px 2px #529ba8;
   margin-top:170px !important;
   margin-left: 5% !important;
@@ -984,7 +980,7 @@ nav .dropdown-menu li.divider{
 }
 
 .family #first-hero-family {
-  background-image: url('../images/itn-people-faded/old-young.png');
+  background-image: url('../images/dark/old-young.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1056,7 +1052,7 @@ padding: 50px;
 }
 
 .pay-online #first-hero-pay-online {
-  background-image: url('../images/itn-people-faded/people-paying.png');
+  background-image: url('../images/dark/people-paying.jpg');
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1110,16 +1106,14 @@ padding: 50px;
 }
 
 .non-rider #first-hero-rider {
-  background-image: url('../images/itn-people-faded/young-dude3.png');
+  background-image: url('../images/dark/young-dude3.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 400px;
-  /*opacity:0.5;*/
 }
 .non-rider #first-hero-rider h1{
-  color:#399eaa !important;
-  /*color:white;*/
+  color:white;
   text-shadow: 2px 2px #529ba8;
   margin-top:170px !important;
   margin-left: 5% !important;
@@ -1147,20 +1141,20 @@ padding: 50px;
 
 
 .become-member #first-hero-become {
-  background-image: url('../images/itn-people-faded/old-aa-woman-reverse.png');
+  background-image: url('../images/dark/old-aa-woman-reverse.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 400px;
 }
 .become-member #first-hero-become h1 {
-  color:#399eaa !important;
+  color:white;
   text-shadow: 2px 2px #529ba8;
   margin-top:170px !important;
   margin-left: 5% !important;
 }
 .become-member #first-hero-become h3 {
-  color:#399eaa !important;
+  color:white;
   margin-left: 5% !important;
 }
 .become-member .intro {
@@ -1219,7 +1213,7 @@ padding: 50px;
 }
 
 .member-app #first-hero-online-app {
-  background-image: url('../images/itn-people-faded/man-fruits2.png');
+  background-image: url('../images/dark/man-fruits.jpeg');
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1267,12 +1261,11 @@ padding: 50px;
   font-size:25px;
 }
 .volunteer-drive #first-hero-volunteer-drive {
-  background-image: url('../images/itn-people-images/aa-3.jpg') !important;
+  background-image: url('../images/dark/aa-3.jpg') !important;
   background-position: center center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   height: 400px !important;
-  opacity: 0.5 !important;
 }
 .volunteer-drive #first-hero-volunteer-drive h1{
   color:white !important;
@@ -1343,12 +1336,11 @@ padding: 50px;
     margin-top: 20px;
 }
 .volunteer-app #first-hero-volunteer-app {
-  background-image: url('../images/itn-people-images/clr-1.jpg') !important;
+  background-image: url('../images/dark/asian.jpg') !important;
   background-position: center center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   height: 400px !important;
-  opacity: 0.5 !important;
 }
 .volunteer-app #first-hero-volunteer-app h1{
   color:white !important;
