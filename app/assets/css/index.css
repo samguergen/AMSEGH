@@ -1635,6 +1635,9 @@ h2,h3 {line-height:1.7}
     margin-top:0;
     margin-bottom:25px;
   }
+  nav .dropdown li a {
+        text-align: left !important;
+  }
 }
 
 @media (min-width: 768px) {
