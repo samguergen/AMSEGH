@@ -1565,7 +1565,12 @@ h2,h3 {line-height:1.7}
   font-size: 25px;
   font-weight: 200;
 }
-input {font-size:25px}
+form input[type=text], form textarea.form-control {font-size:25px;}
+.form-control::-webkit-input-placeholder { color: black; font-style:italic}  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: black; font-style:italic}  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: black; font-style:italic}  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: black; font-style:italic}  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: black; font-style:italic}  /* Microsoft Edge */
 
 /* RESPONSIVE */
 
