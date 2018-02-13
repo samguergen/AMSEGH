@@ -1130,7 +1130,7 @@ padding: 50px;
   font-size: 26px;
   /*color:#399eaa*/
 }
-.non-rider hr, .contact hr {
+.non-rider hr, .contact hr, .corporate hr {
   width:35%;
   border: none;
   height: 5px;
@@ -1239,7 +1239,7 @@ padding: 50px;
   font-size: 30px;
   color:black;
 }
-.member-app .form-area, .volunteer-app .form-area {
+form .form-area {
   background-color: #FAFAFA;
   padding: 10px 40px 60px;
   margin: 10px 0px 60px;
@@ -1247,20 +1247,24 @@ padding: 50px;
   border: 2px solid #8f8fb66b;
   border-radius: 5px;
 }
-.member-app .form-group, .volunteer-app .form-group {
+form .form-group {
   font-size:25px;
-  margin-top: 50px;
+  margin-top: 35px;
 }
-.member-app .steps {
+.member-app .steps, .volunteer-app .steps {
   font-size: 20px;
   border-radius: 15px;
 }
-.member-app .form-group ol li {margin-top:20px}
-.member-app .member-tabs, .volunteer-app .member-tabs {
+form .form-group ol li {margin-top:20px}
+form .member-tabs {
   margin-top:50px;
 }
-.member-app .member-tabs input[type=radio], .volunteer-app .member-tabs input[type=radio] {margin-top:10px}
-.member-app .form-control, .volunteer-app .form-control {font-size:25px; height:50px}
+form .member-tabs input[type=radio] {margin-top:10px}
+form input[type=text] {
+  font-size:25px;
+  height:50px;
+}
+form textarea.form-control {font-size:25px}
 .member-app .checkbox-inline, .volunteer-app .checkbox-inline {line-height: 1}
 
 .volunteer-drive {
@@ -1544,6 +1548,8 @@ padding: 50px;
 .btn-lg {
   background: #529ba8;
   border-color: white;
+  padding: 16px 20px;
+  font-size: 22px;
 }
 .itn-title h2 {
   color: #399eaa
@@ -1566,7 +1572,8 @@ h2,h3 {line-height:1.7}
   font-size: 25px;
   font-weight: 200;
 }
-form input[type=text], form textarea.form-control {font-size:25px;}
+.jumbotron p {font-size:25px}
+
 .form-control::-webkit-input-placeholder { color: black; font-style:italic}  /* WebKit, Blink, Edge */
 .form-control:-moz-placeholder { color: black; font-style:italic}  /* Mozilla Firefox 4 to 18 */
 .form-control::-moz-placeholder { color: black; font-style:italic}  /* Mozilla Firefox 19+ */
