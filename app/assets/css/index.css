@@ -48,33 +48,33 @@ nav .navbar-header img {
   /*margin-top: 25px;*/
   height: 60px;
 }
-nav .navbar-right {
+nav .navbar-nav {
   margin-top: 25px;
   margin-right: 2%;
 }
-nav .navbar-right li:hover {
+nav .navbar-nav li:hover {
   background: #399eaa;
   border-radius:5px;
   color:white;
   font-weight: bold;
 }
-nav .navbar-right a {
+nav .navbar-nav a {
   transition: color 0.5s ease;
   -moz-transition: color 0.5s ease;
   -webkit-transition: color 0.5s ease;
   color: rgb(64,64,64) !important;
 }
-/*nav .navbar-right a:hover{color: #e05944 !important;}*/
-nav .navbar-right a:hover { color: white !important}
-nav .navbar-right a:hover i, nav .navbar-right a:hover span { color: white !important}
-nav .navbar-right a .glyphicon-home {color: #529ba8;}
-nav .navbar-right a .glyphicon-info-sign {color: #e05944}
-nav .navbar-right a .fa-newspaper {color: #529ba8}
-nav .navbar-right a .glyphicon-envelope {color: #e05944;}
-nav .navbar-right a .fa-car {color: #529ba8;}
-nav .navbar-right a .glyphicon-heart {color: #e05944;}
-nav .navbar-right a .fa-hand-paper {color: #529ba8;}
-nav .navbar-right a .glyphicon-usd {color: #e05944;}
+/*nav .navbar-nav a:hover{color: #e05944 !important;}*/
+nav .navbar-nav a:hover { color: white !important}
+nav .navbar-nav a:hover i, nav .navbar-nav a:hover span { color: white !important}
+nav .navbar-nav a .glyphicon-home {color: #529ba8;}
+nav .navbar-nav a .glyphicon-info-sign {color: #e05944}
+nav .navbar-nav a .fa-newspaper {color: #529ba8}
+nav .navbar-nav a .glyphicon-envelope {color: #e05944;}
+nav .navbar-nav a .fa-car {color: #529ba8;}
+nav .navbar-nav a .glyphicon-heart {color: #e05944;}
+nav .navbar-nav a .fa-hand-paper {color: #529ba8;}
+nav .navbar-nav a .glyphicon-usd {color: #e05944;}
 
 nav .dropdown-menu {
   background: #399eaa;
@@ -97,6 +97,16 @@ nav .dropdown-menu li a {
 nav .dropdown-menu li.divider{
   padding: 0 !important;
 }
+.navbar a {font-size:20px;}
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
 .jumbotron {margin-bottom: 0 !important;}
 
 .main {
@@ -1593,43 +1603,10 @@ h2,h3 {line-height:1.7}
 
 /* RESPONSIVE */
 
-@media (min-width:1210px) and (max-width: 1372px) {
-  .navbar .navbar-header {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2%;
-    float: none;
-  }
-  .navbar-collapse {margin-bottom: 20px;}
-}
 
 @media (max-width: 1210px) {
-  .navbar.navbar-default {
-    border: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-  .navbar-header {
-    float: left;
-    width: 100%;
-    text-align: center;
-  }
-  .navbar-right {
-    width:90%;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom: 20px;
-    margin-left:0;
-  }
-  
-  .carousel-inner .item, .carousel-inner .item img {
-    height:400px;
-  }
-  
-  .family #gift-cert-img1, .family #gift-cert-img2 {
-    visibility:hidden;
-  }
-
+  .carousel-inner .item, .carousel-inner .item img {height:400px;}
+  .family #gift-cert-img1, .family #gift-cert-img2 {visibility:hidden;}
 }
 
 @media (max-width: 768px) {
@@ -1638,37 +1615,31 @@ h2,h3 {line-height:1.7}
     border: 0px;
     text-align: center;
   }
-  .navbar-nav li:nth-last-child(2) {
-    margin-left:0;
-  }
   button.navbar-toggle {
     left: 50%;
     top: 20px;
   }
-  .carousel-inner .item .carousel-statement {
-    font-size:30px;
-  }
+  .navbar-collapse {margin-top:0;}
+  .carousel-inner .item .carousel-statement {font-size:30px;}
   .homepage .progress {height: 500px;}
 }
 
-
-@media (min-width: 768px) and (max-width: 1210px) {
-  
+@media (min-width: 768px) and (max-width: 1533px) {
   .navbar-header {
-    float: none !important;
-    /*width: 18% !important;*/
-    /*margin-bottom: 40px;*/
-    margin-bottom:-20px;
     margin-left:auto !important;
     margin-right:auto !important;
+    display:block;
+    float:none;
   }
-  nav .navbar-right {
-    margin-top: 0px !important;
+  nav .navbar-nav {
+    margin-top:0;
+    margin-bottom:25px;
   }
-  
 }
 
-
-/*@media (min-width: 768px) and (max-width: 1110px) {
-
-}*/
+@media (min-width: 768px) {
+  nav .navbar-nav>li {
+   float:none;
+   display:inline-block;
+  }
+}
