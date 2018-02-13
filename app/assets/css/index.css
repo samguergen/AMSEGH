@@ -216,6 +216,7 @@ nav .dropdown-menu li.divider{
   /*border: 5px dashed #fc6d6d;*/
   color: #fc6d6d;
   font-weight: bold;
+  margin-bottom:50px;
 }
 .post-features hr {
   border: none;
@@ -267,7 +268,7 @@ nav .dropdown-menu li.divider{
   color:white;
   text-align:center;
   font-size:50px;
-  margin-bottom:3%;
+  margin-bottom:50px;
 }
 .homepage .rider-stories h5 {font-size:20px}
 .homepage .rider-stories .rider-stories-text {
@@ -1647,4 +1648,29 @@ h2,h3 {line-height:1.7}
   nav .navbar-nav ul .dropdown li a {
         text-align: left !important;
   }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  
+  .homepage .item #volunteer-help {
+    object-position: 19% 50%;
+  }
+  .homepage .progress {height: 700px;}
+  .homepage .progress .progress-steps .col-sm-4 {
+    border: 3px dashed;
+    margin-top: 25px;
+  }
+  .homepage .rider-stories .container {
+    width:100%;
+    padding:0;
+  } 
+  .regeneron .container {
+    width:100%;
+  }
+  .regeneron .container .reg-img{
+    margin-top:50px;
+    margin-bottom:50px;
+  }  
 }
