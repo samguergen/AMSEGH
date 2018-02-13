@@ -1244,6 +1244,10 @@ padding: 50px;
   font-size: 30px;
   color:black;
 }
+form select#state {
+    font-size: 25px;
+    height: 50px;
+}
 form .form-area {
   background-color: #FAFAFA;
   padding: 10px 40px 60px;
@@ -1264,8 +1268,8 @@ form .form-group ol li {margin-top:20px}
 form .member-tabs {
   margin-top:50px;
 }
-form .member-tabs input[type=radio] {margin-top:10px}
-form input[type=text] {
+form input[type=radio] {margin-top:10px}
+form input[type=text], form input#email {
   font-size:25px;
   height:50px;
 }
