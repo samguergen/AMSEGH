@@ -15,17 +15,22 @@
         
         <div class="jumbotron section container featurettes">
           <hr class="featurette-divider">
+          
           <div class="row featurette">
             <div class="col-sm-7 mt-50">
-              <!-- <h2 class="featurette-heading">CarTrade™<span class="text-muted"> Program</span></h2> -->
+              
               <div class="itn-title">
                 <h2>CarTrade™</h2>
                 <hr align="left" width="35%">
-              </div>
-              <p>The CarTrade™ program allows seniors to make use of an unused car and exchange the value of the car for ride credits.</p>
-              <p>Receive a possible tax deduction or ITN ride credits for yourself or others when you donate or trade your car.</p>
-              <p><a ui-sref="contact">Find out how you can trade you car by contacting us</a></p>
-            </div>
+              </div><!--itn-title-->
+              
+              <div class="lead">
+                <p>The CarTrade™ program allows seniors to make use of an unused car and exchange the value of the car for ride credits.</p>
+                <p>Receive a possible tax deduction or ITN ride credits for yourself or others when you donate or trade your car.</p>
+                <p><a ui-sref="contact">Find out how you can trade you car by contacting us</a></p>
+              </div><!--description-->
+            </div><!--col-sm-7-->  
+              
             <div class="col-sm-5 mt-50">
               <img class="featurette-image img-responsive center-block" src="assets/images/icons/car-trade.jpg" alt="Generic placeholder image">
             </div>
@@ -33,23 +38,28 @@
 
           <hr class="featurette-divider">
 
+
+
           <div class="row featurette">
-            <div class="col-md-7 col-md-push-5" style="text-align:right">
-              <!-- <h2 class="featurette-heading">Gift<span class="text-muted"> Certificate</span></h2> -->
-              <div class="itn-title">
+            <div class="col-md-7 featurette-right">
+              <div class="itn-title pull-right">
                 <h2>Gift Certicate</h2>
                 <hr align="right" width="35%">
-              </div>
-              <p class="lead">Friends and family can give you a lift by purchasing ITN gift certificates for birthdays, Mother's Day, or any occasion.</p>
-              <p><button class="btn btn-lg mt-25" ng-click="giftCertInfo = !giftCertInfo">Buy a gift certificate here.</button></p>
+              </div><!--itn-title-->
+              
+              <div class="lead pull-right">
+                <p>Friends and family can give you a lift by purchasing ITN gift certificates for birthdays, Mother's Day, or any occasion.</p>
+                <p><button class="btn btn-lg mt-25" ng-click="giftCertInfo = !giftCertInfo">Buy a gift certificate here.</button></p>
               
               <div class="gift-cert-info" ng-show="giftCertInfo == true">
                 <p>A gift certificate for transportation is an original gift that can be used to take fun trips or necessary ones. They are a great way to help your parent or friend fund their Personal Transportation Account™. Celebrate Mother's Day, birthdays, and special holidays with a gift certificate in any amount, sent in a beautiful card by ITN<em>Lanier</em>. <br>
                 <a href="#contact-form">Call or e-mail to order.</a></p>
 
                 <p>If you are trying to encourage safe, alternative transportation for your loved one, consider a gift certificate to pay for membership and their first ride. Our trained drivers will transport your loved one with special care -- opening doors, carrying packages, and offering friendly assistance as needed.</p>
-              </div>
-            </div>
+              </div><!--gift-cert-info-->
+            </div><!--lead-->
+            </div><!--col-md-7-->
+            
             <div class="col-md-5 col-md-pull-7">
               <img class="featurette-image img-responsive center-block" src="assets/images/icons/gift-certificate.jpg" alt="Generic placeholder image">
             </div>
@@ -57,7 +67,9 @@
           
           <hr class="featurette-divider">
           
-        </div><!--jumbo container-->
+          
+          
+        </div><!--jumbo container featurettes-->
       
     </div><!--container-wrapper-->
   </div><!--member-programs-->
@@ -67,37 +79,55 @@
     <div class="jumbotron section shop-ride" style="background:white">
       <div class="container" style="width: 70%;">
         <div class="row">
-          <div class="col-sm-7 itn-title">
-            <h2>Ride & Shop</h2>
-            <hr align="left" width="35%">
-            <p>The Ride & Shop™ program brings paying customers right to the door, then helps them with their packages when they leave.</p>
-            <p>ITN riders can receive discounts rides at these businesses.</p>
-          </div>
+          <div class="col-sm-7"> 
+            <div class="itn-title">
+              <h2>Ride & Shop</h2>
+              <hr align="left" width="35%">
+            </div><!--itn-title-->
+            
+            <div class="lead">
+              <p>The Ride & Shop™ program brings paying customers right to the door, then helps them with their packages when they leave.</p>
+              <p>ITN riders can receive discounts rides at these businesses.</p>
+            </div><!--lead-->
+        </div><!--col-sm-7-->
+        
           <div class="col-sm-5 image">
             <img src="assets/images/icons/shop-ride.jpg" class="center-block" alt="ride and shop icon"/>
-          </div>
-        </div>
+          </div><!--image-->
+        </div><!--row-->
         
         <hr class="featurette-divider">
+        
         
         <div class="row">
           <div class="col-sm-5 image">
             <img src="assets/images/icons/healthymiles.jpg" alt="healthy miles icon"/>
-          </div>
-          <div class="col-sm-7 itn-title" style="text-align:right">
-            <h2>HealthyMiles</h2>
-            <hr align="right" width="35%">
-            <p>HealthyMiles ensures patients can get to your office, whether you’re a doctor, physical therapist, chiropractor or massage therapist. </p>
-            <p>ITN riders can receive discounted rides to these businesses.</p>
-          </div>
-        </div>
+          </div><!--image-->
+          
+          <div class="col-sm-7 featurette-right">
+            <div class="itn-title">
+              <h2>HealthyMiles</h2>
+              <hr align="right" width="35%">
+            </div><!--itn-title-->
+            
+            <div class="lead pull-right">
+              <p>HealthyMiles ensures patients can get to your office, whether you’re a doctor, physical therapist, chiropractor or massage therapist. </p>
+              <p>ITN riders can receive discounted rides to these businesses.</p>
+            </div><!--lead-->
+          </div><!--col-sm-7-->
+        </div><!--row-->
         
         <hr class="featurette-divider">
         
+        
         <div class="row">
-          <div class="col-sm-7 itn-title">
+          <div class="col-sm-7">
+            <div class="itn-title">
             <h2>Additional Benefits</h2>
             <hr align="left" width="35%">
+          </div><!--itn-title-->
+          
+          <div class="lead">
             <ul>
                 The following programs are additional benefits of membership:
                 <li><strong>Reach Out Program</strong><br> 
@@ -105,10 +135,12 @@
                 <li><strong>Birthday Gift</strong><br> 
                   Every ITN riding member receives a $5 birthday gift certificate to use towards transportation.</li>
             </ul>
-          </div>
+          </div><!--lead-->
+        </div><!--col-sm-7-->
+          
           <div class="col-sm-5 image">
             <img src="assets/images/icons/icon-yay.png" style="height: 200px;" class="center-block" alt="icon users cheering"/>
-          </div>
+          </div><!--image-->
         </div>
         
       </div><!--container-->
@@ -139,24 +171,24 @@
         <div class="col-sm-6">
           <div class="container descr-box">
             <h3>Interested in getting your company or organization involved</h3>
-            <p>It is simple for a business to join the Ride & Shop™ program, and ITN takes care of all the administrative cost and paperwork.</p>
-            <p>Contact us and get involved</p>
+            <p>It’s easy to sign up for Ride & Shop™ and HealthyMiles, and ITN<em>Lanier</em> takes care of all the administrative costs and paperwork.</p>
+            <!-- <p>Contact us and get involved</p> -->
           </div>
         </div>
         <div class="col-sm-6">
           <div class="container descr-box">
           <h3>Other ways to get involved</h3>
-            <p>It’s easy to sign up for Ride & Shop™ and HealthyMiles, and ITN<em>Lanier</em> takes care of all the administrative costs and paperwork.</p>
-            <p>There are other ways to get involved too, from donating small gifts for volunteers to office supplies, gift certificates for car washes, etc. Contact us for more ideas and information.</p>
-            <p>Contact us to join. </p>
+            <p>There are other ways to get involved too, from donating small gifts for volunteers to office supplies, gift certificates for car washes, etc. </p>
+              <!-- Contact us for more ideas and information. -->
           </div>
         </div>
       </div><!--container-->
     </div><!--section-->
     
-    <div class="jumbotron section" style="background:white; margin-bottom:25px">
+    <div class="jumbotron section programs-contact" style="background:white; margin-bottom:25px">
       <div class="container">
         <p style="text-align:center">Please contact us below for details.</p>
+        <hr align="center">
         
         <div class="form-area" style="width:70%;margin:auto;margin-top:50px" id="contact-form">  
               <form action="mailto:info@itnlanier.org" method="post" enctype="text/plain">

@@ -546,7 +546,7 @@ nav .dropdown-menu li.divider{
   margin-top:100px;
 }
 
-
+.community {line-height:1.7;}
 .community #first-hero-community {
   background-image: url('../images/itn-people-faded/women-car.png') !important;
   background-position: center center !important;
@@ -947,6 +947,8 @@ nav .dropdown-menu li.divider{
 }
 .member-programs .intro-wrapper {
   background:#afcace;
+  background: #399eaa;
+  color: white;
 }
 .member-programs .intro {
   width: 90%;
@@ -963,6 +965,7 @@ nav .dropdown-menu li.divider{
   padding: 5%;
   margin-top: 75px;
 }
+.member-programs .lead {line-height: 1.7;}
 .featurettes {
   background: white;
   width: 70%;
@@ -978,6 +981,8 @@ nav .dropdown-menu li.divider{
   margin: 80px 0; /* Space out the Bootstrap <hr> more */
   border-top-color: #d5d5d5;
 }
+.featurette-right {text-align:right}
+.featurette-right hr {float:right}
 /* Thin out the marketing headings */
 .featurette-heading {
   font-weight: 300;
@@ -1043,7 +1048,7 @@ padding: 50px;
 .family .text-carousel p {
   color:#399eaa;
   font-weight:bold;
-  font-size: 23px;
+  font-size: 25px;
 }
 .family .text-carousel img {
   position:absolute;
@@ -1130,7 +1135,7 @@ padding: 50px;
   font-size: 26px;
   /*color:#399eaa*/
 }
-.non-rider hr, .contact hr, .corporate hr {
+.non-rider hr, .contact hr, .corporate hr, .programs-contact hr {
   width:35%;
   border: none;
   height: 5px;
@@ -1139,11 +1144,11 @@ padding: 50px;
   margin-left: auto;
   margin-right: auto;
 }
-.non-rider input[type="text"], .contact input[type="text"] {
+/*.non-rider input[type="text"], .contact input[type="text"] {
   height: 50px !important;
   margin-top: 20px;
   margin-bottom: 10px;
-}
+}*/
 
 
 .become-member #first-hero-become {
@@ -1550,6 +1555,8 @@ form textarea.form-control {font-size:25px}
   border-color: white;
   padding: 16px 20px;
   font-size: 22px;
+  color:white;
+  font-weight:bold;
 }
 .itn-title h2 {
   color: #399eaa
