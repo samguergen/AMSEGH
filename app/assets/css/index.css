@@ -462,7 +462,7 @@ nav .dropdown-menu li.divider{
   height: 400px !important;
 }
 .donate .first-hero h1{
-  color:#529ba8;
+  color:White;
   text-shadow: 2px 2px #529ba8;
   margin-top:170px;
   margin-left: 5%;
@@ -471,18 +471,19 @@ nav .dropdown-menu li.divider{
   background: #fc6d6d;
   color:white;
 }
-.donate .donate-intro p{  font-size:25px; }
+.donate .donate-intro p{  font-size:30px; }
 .donate .nav-tabs {
   margin-left:5%;
   margin-right:5%;
   font-weight: bold;
 }
-.donate .nav-tabs li a { font-size:20px }
+.donate .nav-tabs li a { font-size:30px }
 .donate .donate-type {
   background: #f8fafa;
   padding: 25px;
   margin-top:25px;
 }
+.donate .donate-type p {font-size:25px}
 .donate h2 {
   color: #399eaa
 }
@@ -493,7 +494,7 @@ nav .dropdown-menu li.divider{
   background-color: #fc6d6d;
 }
 .donate .description {
-  margin-top: 100px;
+  margin-top: 150px;
 }
 .donate .description #checkbook-icon {
   vertical-align:top; 
