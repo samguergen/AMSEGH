@@ -1698,7 +1698,7 @@ h2,h3 {line-height:1.7}
   .rider-stories .card {padding:10px;}
   .news .news-content img {margin-left:0}
   .news .news-content h3 {visibility:hidden}
-  .news .newsletter-content ul li {
+  .news .newsletter-content ul li, .pressroom ul li {
     margin-bottom: 25px;
     border: 2px solid #e05944;
     padding: 10px;
