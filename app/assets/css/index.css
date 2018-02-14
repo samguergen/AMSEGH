@@ -412,6 +412,7 @@ nav .dropdown-menu li.divider{
   margin-top: 170px;
   margin-left: 5%;
 }
+.news .newsletter .newsletter-content {white-space:nowrap}
 .news .news-content {
   min-height: 400px;
   padding-top: 75px;
@@ -1695,5 +1696,15 @@ h2,h3 {line-height:1.7}
   .faces iframe {width: 250px;}
   .rider-stories .intro, .rider-stories .cards-wrapper {width:100%}
   .rider-stories .card {padding:10px;}
+  .news .news-content img {margin-left:0}
+  .news .news-content h3 {visibility:hidden}
+  .news .newsletter-content ul li {
+    margin-bottom: 25px;
+    border: 2px solid #e05944;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .news .newsletter .newsletter-content {white-space:normal}
   
 }
