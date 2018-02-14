@@ -1656,7 +1656,7 @@ h2,h3 {line-height:1.7}
 
 /* MOBILE */
 
-@media (max-width: 768px) {
+@media (max-width: 375px) {
   
   .homepage .item #volunteer-help {
     object-position: 19% 50%;
