@@ -1706,5 +1706,6 @@ h2,h3 {line-height:1.7}
     text-align: center;
   }
   .news .newsletter .newsletter-content {white-space:normal}
+  .contact .jumbotron, .contact .form-area {padding:0}
   
 }
