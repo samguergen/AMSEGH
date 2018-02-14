@@ -47,7 +47,7 @@
                           <label class="radio-inline"><input type="radio" value="individual" ng-model="formData.membership">Individual</label>
                           <label class="radio-inline"><input type="radio" value="family" ng-model="formData.membership">Family</label>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                           <input type="text" class="form-control" id="rider-name" name="rider-name" placeholder="Rider's Name*" ng-model="formData.riderName" required>
                         </div>
                         <div class="form-group">
@@ -57,7 +57,6 @@
                           <input type="text" class="form-control" id="city" name="city" placeholder="City*" ng-model="formData.city" required>
                         </div>
                         <div class="form-group">
-                          <!-- <label for="state">Select a State*</label> -->
                           <select class="form-control" id="state">
                             <option ng-model="formData.state" value="">Select a State*</option>
                             <option ng-model="formData.state" value="">N/A</option>
@@ -149,7 +148,7 @@
                         <div ng-messages="itnForm.email.$error">
                           <div ng-message="pattern">Please enter a valid email address!</div>
                         </div>
-                      </div>
+                      </div> -->
                         
                         <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                         <button type="submit" style="background:#e05944" class="btn btn-lg btn-danger" ng-disabled="form.$invalid">Submit</button>
