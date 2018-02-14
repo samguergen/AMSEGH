@@ -654,7 +654,7 @@ nav .dropdown-menu li.divider{
 .organization #start .start-itn {
     font-size:30px; 
     font-style:italic; 
-    line-height: 150px;
+    /*line-height: 150px;*/
     color:black;
     font-weight:bold;
 }
@@ -678,14 +678,14 @@ nav .dropdown-menu li.divider{
 }
 #board .row img {
   /*transform: scale(1.5);*/
-  height:250px;
+  height:300px;
 }
 #board .row h2{
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
   font-size:26px;
-  margin-top: 70px;
+  /*margin-top: 70px;*/
 }
 #board .row .title {
   font-weight: bold;
@@ -718,6 +718,13 @@ nav .dropdown-menu li.divider{
 }
 .org-section {
   overflow:hidden;
+}
+.org-section #flying-bird {
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  display: block;
 }
 .org-section .national {
   background-image: url('../images/backgrounds/map_generic_light.png');
