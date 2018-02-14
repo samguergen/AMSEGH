@@ -80,6 +80,11 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
       .state('volunteer-app', {
         url: '/volunteer-app',
         templateUrl: 'views/volunteer-app.html'
+            // resolve: {
+            //     formData: function ($scope) {
+            //         $scope.formData = {};
+            //     },
+            //   }
       })
       .state('newsletters', {
         url: '/newsletters',
@@ -98,7 +103,22 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
   // $locationProvider.html5mode({ enabled: true, requireBase: false });
 })
 
-myApp.controller('MainController', ['$scope', '$http', function ($scope, $http)  {
+
+// myApp.run(function($rootScope, $scope) { 
+//   $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams) {
+//     $scope.formData = {};
+//     // if (fromState.name === "") { 
+//     //   // The initial transition comes from "root", which uses the empty string as a name.
+//     //   alert("initial state: " + toState.name);
+//     // }
+//   });
+// });
+
+
+
+
+
+myApp.controller('MainController', ['$scope', '$transitions','$http', function ($scope, $transitions, $http)  {
   console.log('inside main controller');
   $scope.zoomLevel = 1;
   $scope.tab = 1;
@@ -109,6 +129,16 @@ myApp.controller('MainController', ['$scope', '$http', function ($scope, $http) 
   $scope.datePattern = new RegExp(/^(\d{2})\/(\d{2})\/(\d{4})$/);
   $scope.dobPattern = new RegExp(/^(\d{2})\/(\d{2})\/(\d{4})$/);
   
+  // $transitions.onStart({}, function($transition, $scope){
+  //     console.log('changing state');
+  //     $scope.formData = {};
+  //     $scope.tab = 1;
+  // });
+  
+  $scope.resetFormData = function(){
+    $scope.formData = {}
+  }
+
   $scope.nextTabMemberApp = function(prev){
     if (prev) {
       $scope.tab -= 1;

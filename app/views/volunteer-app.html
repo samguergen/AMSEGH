@@ -1,4 +1,4 @@
-<div class="volunteer-app">
+<div class="volunteer-app" ng-init="resetFormData()">
       
     <div class="jumbotron section first-hero" id="first-hero-volunteer-app">
       <h1>Online Volunteer Form</h1>
@@ -1221,7 +1221,7 @@
             </div><!--form area-->
           </div><!--col sm 12-->
           
-          SERVER RESPONSE: {{serverMessage}}
+          <p style="color:red; margin-top:50px"><strong>{{serverMessage}}</strong></p>
           
         </div><!--container-->
       
