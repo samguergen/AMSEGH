@@ -637,7 +637,7 @@ nav .dropdown-menu li.divider{
 .organization .nav-tabs li {
   padding-top: 15px;
   padding-bottom: 15px;
-  font-size: 20px;
+  font-size: 25px;
 }
 .organization .container {
   border-radius: 5px;
@@ -677,7 +677,8 @@ nav .dropdown-menu li.divider{
   margin-top: 100px;
 }
 #board .row img {
-  transform: scale(1.5);
+  /*transform: scale(1.5);*/
+  height:250px;
 }
 #board .row h2{
   font-family: 'Lato', sans-serif;
@@ -1669,9 +1670,7 @@ h2,h3 {line-height:1.7}
     width:100%;
     padding:0;
   } 
-  .regeneron .container {
-    width:100%;
-  }
+  .regeneron .container {width:100%;}
   .regeneron .container .reg-img{
     margin-top:50px;
     margin-bottom:50px;
@@ -1683,4 +1682,7 @@ h2,h3 {line-height:1.7}
     margin-left:45%;
     margin-top:5px;
   }
+  
+  .services .service-features .col-sm-4 {margin-top:25px;}
+  .services .dignified p {text-align:center}
 }
