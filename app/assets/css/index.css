@@ -1689,7 +1689,9 @@ h2,h3 {line-height:1.7}
     margin-left:45%;
     margin-top:5px;
   }
-  
   .services .service-features .col-sm-4 {margin-top:25px;}
   .services .dignified p {text-align:center}
+  .faces .container {width:90%}
+  .faces iframe {width: 250px;}
+  
 }
