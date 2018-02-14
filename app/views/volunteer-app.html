@@ -563,14 +563,14 @@
                 <h2>Ethnic Background</h2>
                 
                 <div class="form-group ta-center">
-                  <label class="checkbox-inline"><input ng-model="formData.ethnicBackground" type="checkbox" value="aaa">African American</label>
-                  <label class="checkbox-inline"><input ng-model="formData.ethnicBackground" type="checkbox" value="elks">Asian</label>
-                  <label class="checkbox-inline"><input ng-model="formData.ethnicBackground" type="checkbox" value="rotary">Caucasian</label>
-                  <label class="checkbox-inline"><input ng-model="formData.ethnicBackground" type="checkbox" value="aarp">Hispanic/Latino</label>
-                  <label class="checkbox-inline"><input ng-model="formData.ethnicBackground" type="checkbox" value="kiwanis">Hispanic/Pacific Islander</label>
-                  <label class="checkbox-inline"><input ng-model="formData.ethnicBackground" type="checkbox" value="knights">Native American/Alaska Native</label>
+                  <label class="checkbox-inline"><input ng-model="formData.ethnicBackground.aaa" type="checkbox" value="aaa">African American</label>
+                  <label class="checkbox-inline"><input ng-model="formData.ethnicBackground.asian" type="checkbox" value="elks">Asian</label>
+                  <label class="checkbox-inline"><input ng-model="formData.ethnicBackground.caucasian" type="checkbox" value="rotary">Caucasian</label>
+                  <label class="checkbox-inline"><input ng-model="formData.ethnicBackground.latino" type="checkbox" value="aarp">Hispanic/Latino</label>
+                  <label class="checkbox-inline"><input ng-model="formData.ethnicBackground.pacificIslander" type="checkbox" value="kiwanis">Hispanic/Pacific Islander</label>
+                  <label class="checkbox-inline"><input ng-model="formData.ethnicBackground.nativeOrAlaskaNative" type="checkbox" value="knights">Native American/Alaska Native</label>
                   <label class="checkbox-inline"><input type="checkbox" value="other" ng-click="otherOrg = !otherBg">Other (specify)</label>
-                    <input ng-model="formData.ethnicBackground" type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherBg">
+                    <input ng-model="formData.ethnicBackground.other" type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherBg">
                 </div>
 
 
@@ -579,16 +579,16 @@
                 
                 <div class="form-group ta-center">
                   <label for="member of any organization">Are you a member of any of the following organizations?:</label><br>
-                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization" type="checkbox" value="aaa">AAA</label>
-                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization" type="checkbox" value="elks">Elks</label>
-                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization" type="checkbox" value="rotary">Rotary</label>
-                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization" type="checkbox" value="aarp">AARP</label>
-                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization" type="checkbox" value="kiwanis">Kiwanis</label>
-                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization" type="checkbox" value="knights">Knights of Columbus</label>
-                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization" type="checkbox" value="masons">Masons/Eastern Stars</label>
-                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization" type="checkbox" value="frat">Fraternity/Sorority</label>
+                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization.aaa" type="checkbox" value="aaa">AAA</label>
+                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization.elks" type="checkbox" value="elks">Elks</label>
+                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization.rotary" type="checkbox" value="rotary">Rotary</label>
+                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization.aarp" type="checkbox" value="aarp">AARP</label>
+                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization.kiwanis" type="checkbox" value="kiwanis">Kiwanis</label>
+                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization.knightsOfColumbus" type="checkbox" value="knights">Knights of Columbus</label>
+                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization.masonsEasternStars" type="checkbox" value="masons">Masons/Eastern Stars</label>
+                  <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization.fraternitySorority" type="checkbox" value="frat">Fraternity/Sorority</label>
                   <label class="checkbox-inline"><input type="checkbox" value="other" ng-click="otherOrg = !otherOrg">Other (specify)</label>
-                    <input ng-model="formData.memberOfOrganization" type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherOrg">
+                    <input ng-model="formData.memberOfOrganization.other" type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherOrg">
                 </div>
                 
                 <div class="form-group ta-center">

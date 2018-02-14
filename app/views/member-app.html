@@ -395,19 +395,19 @@
                             
                             <div class="form-group ta-center">
                               <label for="Heard about ITN">How did you hear about ITN?: *</label><br>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn" type="checkbox" value="family">Family</label>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn" type="checkbox" value="friend">Friend</label>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn" type="checkbox" value="speaker">Speaker</label>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn" type="checkbox" value="doctor">Doctor</label>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn" type="checkbox" value="radio">Radio</label>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn" type="checkbox" value="television">Television</label><br>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn" type="checkbox" value="flier">Flier</label>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn" type="checkbox" value="phone">Phone</label>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn" type="checkbox" value="book">Book</label>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn" type="checkbox" value="agency">Agency on Aging</label>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn" type="checkbox" value="social-worker">Social Worker</label>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn" type="checkbox" value="Internet">Internet</label>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn" type="checkbox" value="current-member">Were you referred by a current member?</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.family" type="checkbox" value="family">Family</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.friend" type="checkbox" value="friend">Friend</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.speaker" type="checkbox" value="speaker">Speaker</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.doctor" type="checkbox" value="doctor">Doctor</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.radio" type="checkbox" value="radio">Radio</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.tv" type="checkbox" value="television">Television</label><br>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.flier" type="checkbox" value="flier">Flier</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.phone" type="checkbox" value="phone">Phone</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.book" type="checkbox" value="book">Book</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.agencyOnAging" type="checkbox" value="agency">Agency on Aging</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.socialWorker" type="checkbox" value="social-worker">Social Worker</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.internet" type="checkbox" value="Internet">Internet</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.currentMember" type="checkbox" value="current-member">Were you referred by a current member?</label>
                             </div>
                             
                             <div class="form-group ta-center">
@@ -571,16 +571,16 @@
                               <label class="radio-inline"><input ng-model="formData.customerInfo.dwellingArrangement" type="radio" value="assisted-living"> Assisted Living Facility</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.dwellingArrangement" type="radio" value="retirement-community"> Independent Living Retirement Community</label>
                               <label class="radio-inline"><input type="radio" value="other-dwelling" ng-click="otherDwelling = !otherDwelling">Other</label>
-                                <input type="text" ng-model="formData.customerInfo.dwellingArrangement" class="form-control" id="other-dwelling" name="other-dwelling" placeholder="other (specify)" ng-if="otherDwelling">
+                                <input type="text" ng-model="formData.customerInfo.dwellingArrangement.other" class="form-control" id="other-dwelling" name="other-dwelling" placeholder="other (specify)" ng-if="otherDwelling">
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="languages">Languages Spoken: *</label><br>
-                              <label class="checkbox-inline"><input ng-model="formData.customerInfo.languages" type="checkbox" value="english">English</label>
-                              <label class="checkbox-inline"><input ng-model="formData.customerInfo.languages" type="checkbox" value="french">French</label>
-                              <label class="checkbox-inline"><input ng-model="formData.customerInfo.languages" type="checkbox" value="spanish">Spanish</label>
+                              <label class="checkbox-inline"><input ng-model="formData.customerInfo.languages.english" type="checkbox" value="english">English</label>
+                              <label class="checkbox-inline"><input ng-model="formData.customerInfo.languages.french" type="checkbox" value="french">French</label>
+                              <label class="checkbox-inline"><input ng-model="formData.customerInfo.languages.spanish" type="checkbox" value="spanish">Spanish</label>
                               <label class="checkbox-inline"><input type="checkbox" value="other-language" ng-click="otherLanguage = !otherLanguage">Other (specify)</label>
-                                <input type="text" ng-model="formData.customerInfo.languages" class="form-control" id="other-language" name="other-language" placeholder="other (specify)" ng-if="otherLanguage">
+                                <input type="text" ng-model="formData.customerInfo.languages.other" class="form-control" id="other-language" name="other-language" placeholder="other (specify)" ng-if="otherLanguage">
                             </div>
                             
                             <div class="form-group ta-center">
@@ -592,7 +592,7 @@
                               <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="taxi">Taxi</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="private-service">Private Service</label>
                               <label class="radio-inline"><input type="radio" value="other-transportation" ng-click="otherTransportation = !otherDwelling">Other</label>
-                                <input ng-model="formData.customerInfo.currentTransportationMeans" type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
+                                <input ng-model="formData.customerInfo.currentTransportationMeans.other" type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
                             </div>
                           
                             <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
@@ -630,16 +630,16 @@
                           
                           <div class="form-group ta-center">
                             <label for="member of any organization">Are you a member of any of the following organizations?:</label><br>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization" type="checkbox" value="aaa">AAA</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization" type="checkbox" value="elks">Elks</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization" type="checkbox" value="rotary">Rotary</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization" type="checkbox" value="aarp">AARP</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization" type="checkbox" value="kiwanis">Kiwanis</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization" type="checkbox" value="knights">Knights of Columbus</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization" type="checkbox" value="masons">Masons/Eastern Stars</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization" type="checkbox" value="frat">Fraternity/Sorority</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.aaa" type="checkbox" value="aaa">AAA</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.elks" type="checkbox" value="elks">Elks</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.rotary" type="checkbox" value="rotary">Rotary</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.aarp" type="checkbox" value="aarp">AARP</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.kiwanis" type="checkbox" value="kiwanis">Kiwanis</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.knightsOfColumbus" type="checkbox" value="knights">Knights of Columbus</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.masonsEasternStars" type="checkbox" value="masons">Masons/Eastern Stars</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.fraternitySorority" type="checkbox" value="frat">Fraternity/Sorority</label>
                             <label class="checkbox-inline"><input type="checkbox" value="other" ng-click="otherOrg = !otherOrg">Other (specify)</label>
-                              <input ng-model="formData.customerInfo.memberOfOrganization" type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherOrg">
+                              <input ng-model="formData.customerInfo.memberOfOrganization.other" type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherOrg">
                           </div>
                           
                           <div class="form-group ta-center">
@@ -657,20 +657,20 @@
                           
                           <div class="form-group ta-center">
                             <label for="special needs">Special Needs and Mobility Assistance: *</label><br>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="cane">Cane</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="wheelchair">Wheelchair</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="blind"> Blind/Seeing Eye</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="anxiety">Anxiety Disorder</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="driver">Driver Assistance Required</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="personal">Personal Assistant</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="vehicle">Full-Sized Vehicle Required</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="impaired">Visually Impaired</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="walker">Walker</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="alzheimer"> Alzheimer's/Dementia</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="bladder"> Bladder/Bowel Control Problems</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="deaf">Deaf</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="no-high">No High Vehicle</label>
-                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds" type="checkbox" value="none">None of the above</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.cane" type="checkbox" value="cane">Cane</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.wheelchair" type="checkbox" value="wheelchair">Wheelchair</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.blind" type="checkbox" value="blind"> Blind/Seeing Eye</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.anxiety" type="checkbox" value="anxiety">Anxiety Disorder</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.driverAssistance" type="checkbox" value="driver">Driver Assistance Required</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.personalAssistance" type="checkbox" value="personal">Personal Assistant</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.fullSizedVehicle" type="checkbox" value="vehicle">Full-Sized Vehicle Required</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.visuallyImpaired" type="checkbox" value="impaired">Visually Impaired</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.walker" type="checkbox" value="walker">Walker</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.alzheimer" type="checkbox" value="alzheimer"> Alzheimer's/Dementia</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.bladderProblems" type="checkbox" value="bladder"> Bladder/Bowel Control Problems</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.deaf" type="checkbox" value="deaf">Deaf</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.noHighVehicle" type="checkbox" value="no-high">No High Vehicle</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.none" type="checkbox" value="none">None of the above</label>
                           </div>
                           
                           <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
@@ -821,19 +821,19 @@
                           
                             <div class="form-group ta-center">
                               <label for="avoid driving alone">Please check a reason:</label><br>
-                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive" type="checkbox" value="never_licensed">Never licensed</label>
-                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive" type="checkbox" value="illness">Illness</label>
-                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive" type="checkbox" value="traffic_accident">Traffic accident</label>
-                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive" type="checkbox" value="doctor_order">Doctors orders</label>
-                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive" type="checkbox" value="license_revoked">License revoked</label>
-                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive" type="checkbox" value="license_expired">License expired</label>
-                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive" type="checkbox" value="not_safe">Don't feel safe</label>
-                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive" type="checkbox" value="family_request">Family Request</label>
-                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive" type="checkbox" value="police_request">Police/Judge Request</label>
-                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive" type="checkbox" value="expensive">Too expensive</label>
-                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive" type="checkbox" value="need_repair">Car needs repair</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.neverLicensed" type="checkbox" value="never_licensed">Never licensed</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.illness" type="checkbox" value="illness">Illness</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.trafficAccident" type="checkbox" value="traffic_accident">Traffic accident</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.doctorsOrder" type="checkbox" value="doctor_order">Doctors orders</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.licenseRevoked" type="checkbox" value="license_revoked">License revoked</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.licenseExpired" type="checkbox" value="license_expired">License expired</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.notSafe" type="checkbox" value="not_safe">Don't feel safe</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.familyRequest" type="checkbox" value="family_request">Family Request</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.policeJudgeRequest" type="checkbox" value="police_request">Police/Judge Request</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.tooExpensive" type="checkbox" value="expensive">Too expensive</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.carNeedRepair" type="checkbox" value="need_repair">Car needs repair</label>
                               <label class="checkbox-inline"><input type="checkbox" value="other" ng-click="otherNoDrive = !otherNoDrive">Other (specify)</label>
-                                <input ng-model="formData.drivingInfo.whyNoDrive" type="text" class="form-control" id="other" name="other" placeholder="Other (specify)" ng-if="otherNoDrive">
+                                <input ng-model="formData.drivingInfo.whyNoDrive.other" type="text" class="form-control" id="other" name="other" placeholder="Other (specify)" ng-if="otherNoDrive">
                             </div> 
 
                           </div><!--not currentDriver-->
@@ -850,10 +850,10 @@
                           
                           <div class="form-group ta-center">
                             <label for="info on programs">Would you like information on any of these ITN programs?:</label><br>
-                            <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms" type="checkbox" value="healthymiles">HealthyMiles</label>
-                            <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms" type="checkbox" value="cartrade">CarTrade™</label>
-                            <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms" type="checkbox" value="rideandshop">Ride & Shop</label>
-                            <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms" type="checkbox" value="gift_certificate">Gift Certificate</label>
+                            <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms.healthyMiles" type="checkbox" value="healthymiles">HealthyMiles</label>
+                            <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms.carTrade" type="checkbox" value="cartrade">CarTrade™</label>
+                            <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms.rideAndShop" type="checkbox" value="rideandshop">Ride & Shop</label>
+                            <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms.giftCertificate" type="checkbox" value="gift_certificate">Gift Certificate</label>
                           </div>
                           
                           <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
