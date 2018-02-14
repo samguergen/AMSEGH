@@ -145,8 +145,8 @@ myApp.controller('MainController', ['$scope', '$http', function ($scope, $http) 
     $scope.loading = true;
     $http.post('/sendmail', {
       // from: '"Client 👻" <foo@example.com>',
-      from: 'CodeNx <admin@angularcode.com>',
-      to: 'sguergenenov@itnamerica.org',
+      from: '"ITN Web User" <donotreply@itnamerica.com>',
+      to: 'samguergen@gmail.com',
       subject: 'New application received',
       text: $scope.formData
     }).then(res=>{

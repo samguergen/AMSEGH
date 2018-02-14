@@ -47,10 +47,10 @@
                           <label class="radio-inline"><input type="radio" value="individual" ng-model="formData.membership">Individual</label>
                           <label class="radio-inline"><input type="radio" value="family" ng-model="formData.membership">Family</label>
                         </div>
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                           <input type="text" class="form-control" id="rider-name" name="rider-name" placeholder="Rider's Name*" ng-model="formData.riderName" required>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                           <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" ng-model="formData.streetAddress" required>
                         </div>
                         <div class="form-group">
@@ -142,13 +142,13 @@
                       </div>
                       <div class="form-group">
                         <input type="text" class="form-control" id="secondary-phone" name="secondary-phone" placeholder="Secondary Phone" ng-model="formData.secondaryPhone">
-                      </div>
+                      </div>-->
                       <div class="form-group">
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.email" ng-pattern="emailPattern">
                         <div ng-messages="itnForm.email.$error">
                           <div ng-message="pattern">Please enter a valid email address!</div>
                         </div>
-                      </div> -->
+                      </div> 
                         
                         <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                         <button type="submit" style="background:#e05944" class="btn btn-lg btn-danger" ng-disabled="form.$invalid">Submit</button>
