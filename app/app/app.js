@@ -145,12 +145,12 @@ myApp.controller('MainController', ['$scope', '$http', function ($scope, $http) 
     $scope.loading = true;
     $http.post('/sendmail', {
       from: 'CodeNx <admin@angularcode.com>',
-      to: 'sguergenenov@itnamerica.org',
-      subject: 'Message from AngularCode',
+      to: 'samguergen@gmail.com',
+      subject: 'New application received',
       text: $scope.formData
     }).then(res=>{
         $scope.loading = false;
-        $scope.serverMessage = 'Email sent successfully';
+        $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
     });
   }
   
