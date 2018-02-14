@@ -23,10 +23,11 @@ app.post('/sendmail', function(req, res){
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: '"Fred Foo 👻" <foo@example.com>', // sender address
-        to: 'samguergen@gmail.com, baz@example.com', // list of receivers
-        subject: 'Hello ✔', // Subject line
-        text: 'Hello world?', // plain text body
+        from: '"Client 👻" <foo@example.com>', // sender address
+        to: req.body.to, // list of receivers req.body.from
+        subject: req.body.subject, // Subject line   
+        // text: req.body.text, // plain text body req.body.from
+        text: JSON.stringify(req.body.text), // plain text body req.body.from
         html: '<b>Hello world?</b>' // html body
     };
 
