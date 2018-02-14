@@ -140,14 +140,18 @@ myApp.controller('MainController', ['$scope', '$http', function ($scope, $http) 
     
   }
   
-  $scope.submitForm = function(){
+  $scope.submitForm = function(volunteer){
+    var emailSubject = 'New membership application received';
+    if (volunteer) {
+      emailSubject = 'New volunteer application received';
+    }
     console.log('form you are sending is ', $scope.formData);
     $scope.loading = true;
     $http.post('/sendmail', {
-      // from: '"Client 👻" <foo@example.com>',
       from: '"ITN Web User" <donotreply@itnamerica.com>',
-      to: 'samguergen@gmail.com',
-      subject: 'New application received',
+      to: 'info@itnlanier.org',
+      // to: 'samguergen@gmail.com',
+      subject: emailSubject,
       text: $scope.formData
     }).then(res=>{
         $scope.loading = false;
