@@ -1693,5 +1693,7 @@ h2,h3 {line-height:1.7}
   .services .dignified p {text-align:center}
   .faces .container {width:90%}
   .faces iframe {width: 250px;}
+  .rider-stories .intro, .rider-stories .cards-wrapper {width:100%}
+  .rider-stories .card {padding:10px;}
   
 }
