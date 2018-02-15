@@ -594,6 +594,7 @@ nav .dropdown-menu li.divider{
   margin-top:25px;
   margin-bottom:50px;
 }
+.community .shop-ride .container {width:70%}
 .community .shop-ride .row {
   margin-top:50px;
 }
@@ -1668,6 +1669,10 @@ h2,h3 {line-height:1.7}
 
 @media (max-width: 375px) {
   
+  .rider-stories .intro, .rider-stories .cards-wrapper, .corporate .form-area, .member-programs .featurettes, .community .shop-ride .container {
+    width:100%;
+  }
+  
   .homepage .item #volunteer-help {
     object-position: 19% 50%;
   }
@@ -1696,7 +1701,6 @@ h2,h3 {line-height:1.7}
   .services .dignified p {text-align:center}
   .faces .container {width:90%}
   .faces iframe {width: 250px;}
-  .rider-stories .intro, .rider-stories .cards-wrapper {width:100%}
   .rider-stories .card {padding:10px;}
   .news .news-content img {margin-left:0}
   .news .news-content h3 {visibility:hidden}
@@ -1738,7 +1742,6 @@ h2,h3 {line-height:1.7}
   }
   .corporate .corp-icon img {margin:0}
   .corporate .regeneron {text-align:center}
-  .corporate .form-area {width:100%}
   .become-member .membership-btns .btn {
     margin-left:-10%;
     font-size:15px
@@ -1755,4 +1758,5 @@ h2,h3 {line-height:1.7}
   form input, form textarea.form-control {font-size:15px !important}
   
   .non-rider .btn-lg {margin-bottom:25px}
+  
 }
