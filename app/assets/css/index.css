@@ -615,6 +615,7 @@ nav .dropdown-menu li.divider{
 .community ul li {
   margin-top:25px;
 }
+.programs-contact .form-area {width:70%}
 
 .organization #first-hero-org {
   background-image: url('../images/dark/ITNLanier_mirror2.jpg');
@@ -1758,5 +1759,13 @@ h2,h3 {line-height:1.7}
   form input, form textarea.form-control {font-size:15px !important}
   
   .non-rider .btn-lg {margin-bottom:25px}
+  
+  .community img, .member-programs img {display:none}
+  .community .featurette-divider, .member-programs .featurette-divider {margin:0}
+  .community .shop-ride .row {margin-top:0}
+  .healthy-row {margin-top:-50px !important}
+  .community .shop-ride {margin-top:100px}
+  .community .description .descr-box {margin-bottom:25px}
+  .programs-contact .form-area {width:100%}
   
 }
