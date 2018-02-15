@@ -1668,7 +1668,7 @@ h2,h3 {line-height:1.7}
 
 /* MOBILE */
 
-@media (max-width: 375px) {
+@media (max-width: 450px) {
   
   .navbar-collapse {
     max-height: 1000px;
