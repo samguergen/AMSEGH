@@ -778,7 +778,7 @@ nav .dropdown-menu li.divider{
    list-style-type: none;
  }
  .faq .questions-list ul li {
-   font-size: 25px !important;
+   font-size: 25px;
    line-height: 2.2;
  }
  .faq .questions-list ul li a {
@@ -1759,7 +1759,6 @@ h2,h3 {line-height:1.7}
   form input, form textarea.form-control {font-size:15px !important}
   
   .non-rider .btn-lg {margin-bottom:25px}
-  
   .community img, .member-programs img {display:none}
   .community .featurette-divider, .member-programs .featurette-divider {margin:0}
   .community .shop-ride .row {margin-top:0}
@@ -1767,5 +1766,19 @@ h2,h3 {line-height:1.7}
   .community .shop-ride {margin-top:100px}
   .community .description .descr-box {margin-bottom:25px}
   .programs-contact .form-area {width:100%}
+  .faq .questions-list ul li {
+    line-height:1.2;
+    font-size:18px;
+    margin-top:10px;
+  }
+  .faq .question, .faq .answer p, .faq .answer ul li {font-size:18px;}
+  .faq .question {
+    line-height:1.5;
+    padding:15px;
+  }
+  .faq .question:after, .faq .answer:after {visibility:hidden}
+  .faq .answer {
+    padding:15px;
+  }
   
 }
