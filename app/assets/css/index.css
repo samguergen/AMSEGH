@@ -464,6 +464,7 @@ nav .dropdown-menu li.divider{
     border: 2px solid #8f8fb66b;
     border-radius: 5px;
 }
+.donate .form-area {width:70%}
 .donate .section {
   background:white;
 }
@@ -1714,4 +1715,20 @@ h2,h3 {line-height:1.7}
     font-size:15px
   }
   .volunteer-drive .description {color:black}
+  .donate .donate-intro {text-align:center}
+  #donate-card {height:400px}
+  #donate-card .title {margin-top:-300px}
+  #donate-card .description form {margin-left:-10%}
+  #donate-check {height:650px}
+  #donate-check .description {margin-top:0}
+  #donate-car .title {
+    margin-top: -1100px;
+    float: left;
+  }
+  .donate .form-area {
+    background:none;
+    border:none;
+    padding:0;
+    width:100%;
+  }
 }
