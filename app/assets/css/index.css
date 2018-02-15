@@ -1709,5 +1709,9 @@ h2,h3 {line-height:1.7}
   .contact .jumbotron, .contact .form-area {padding:0}
   .pay-online .pay-online-form {margin-top:50px}
   .pay-online .pay-online-content form {margin-right:-50px}
-  
+  .volunteer-drive .membership-btns .btn {
+    margin-left:-40%;
+    font-size:15px
+  }
+  .volunteer-drive .description {color:black}
 }
