@@ -1780,5 +1780,8 @@ h2,h3 {line-height:1.7}
   .faq .answer {
     padding:15px;
   }
+  .family .carousel-inner .item {height:auto}
+  .family .carousel-inner .item .carousel-content {width:200px}
+  .family .text-carousel {height:auto}
   
 }
