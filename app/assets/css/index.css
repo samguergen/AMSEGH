@@ -1670,6 +1670,10 @@ h2,h3 {line-height:1.7}
 
 @media (max-width: 375px) {
   
+  .navbar-collapse {
+    max-height: 1000px;
+  }
+  
   .rider-stories .intro, .rider-stories .cards-wrapper, .corporate .form-area, .member-programs .featurettes, .community .shop-ride .container {
     width:100%;
   }
