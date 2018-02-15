@@ -1745,4 +1745,12 @@ h2,h3 {line-height:1.7}
   }
   .become-member .two-ways {background:white !important}
   .become-member .service-features .col-sm-4 {margin-top:25px}
+  .member-app .steps {display:none}
+  .volunteer-app .form-area {
+    padding:0;
+    border:none;
+    text-align:center;
+  }
+  .volunteer-app .jumbotron {padding:0}
+  form input, form textarea.form-control {font-size:15px !important}
 }
