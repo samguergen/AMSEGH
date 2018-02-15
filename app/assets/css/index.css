@@ -1739,5 +1739,10 @@ h2,h3 {line-height:1.7}
   .corporate .corp-icon img {margin:0}
   .corporate .regeneron {text-align:center}
   .corporate .form-area {width:100%}
-  
+  .become-member .membership-btns .btn {
+    margin-left:-10%;
+    font-size:15px
+  }
+  .become-member .two-ways {background:white !important}
+  .become-member .service-features .col-sm-4 {margin-top:25px}
 }
