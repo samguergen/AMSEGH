@@ -559,6 +559,7 @@ nav .dropdown-menu li.divider{
   margin-left: -90%;
   margin-top:100px;
 }
+.corporate .form-area {width:70%}
 
 .community {line-height:1.7;}
 .community #first-hero-community {
@@ -1731,4 +1732,12 @@ h2,h3 {line-height:1.7}
     padding:0;
     width:100%;
   }
+  .corporate .description .container {
+    width:100%;
+    text-align:center;
+  }
+  .corporate .corp-icon img {margin:0}
+  .corporate .regeneron {text-align:center}
+  .corporate .form-area {width:100%}
+  
 }
