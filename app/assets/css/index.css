@@ -1751,7 +1751,7 @@ h2,h3 {line-height:1.7}
     margin-left:-10%;
     font-size:15px
   }
-  .become-member .two-ways {background:white !important}
+  .become-member .two-ways, .volunteer-drive .two-ways {background:white !important}
   .become-member .service-features .col-sm-4 {margin-top:25px}
   .member-app .steps {display:none}
   .volunteer-app .form-area {
