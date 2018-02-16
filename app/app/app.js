@@ -179,7 +179,6 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     $scope.loading = true;
     $http.post('/sendmail', {
       from: '"ITN Web User" <donotreply@itnamerica.com>',
-      // to: 'info@itnlanier.org',
       to: 'samguergen@gmail.com',
       subject: emailSubject,
       text: $scope.formData
