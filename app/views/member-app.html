@@ -51,9 +51,917 @@
                           <input type="text" class="form-control" id="rider-name" name="rider-name" placeholder="Rider's Name*" ng-model="formData.riderName" required>
                         </div>
 
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" ng-model="formData.streetAddress" required>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="city" name="city" placeholder="City*" ng-model="formData.city" required>
+                        </div>
+                        <div class="form-group">
+                          <select class="form-control" id="state">
+                            <option ng-model="formData.state" value="">Select a State*</option>
+                            <option ng-model="formData.state" value="">N/A</option>
+                            <option ng-model="formData.state" value="AK">Alaska</option>
+                            <option ng-model="formData.state" value="AL">Alabama</option>
+                            <option ng-model="formData.state" value="AR">Arkansas</option>
+                            <option ng-model="formData.state" value="AZ">Arizona</option>
+                            <option ng-model="formData.state" value="CA">California</option>
+                            <option ng-model="formData.state" value="CO">Colorado</option>
+                            <option ng-model="formData.state" value="CT">Connecticut</option>
+                            <option ng-model="formData.state" value="DC">District of Columbia</option>
+                            <option ng-model="formData.state" value="DE">Delaware</option>
+                            <option ng-model="formData.state" value="FL">Florida</option>
+                            <option ng-model="formData.state" value="GA">Georgia</option>
+                            <option ng-model="formData.state" value="HI">Hawaii</option>
+                            <option ng-model="formData.state" value="IA">Iowa</option>
+                            <option ng-model="formData.state" value="ID">Idaho</option>
+                            <option ng-model="formData.state" value="IL">Illinois</option>
+                            <option ng-model="formData.state" value="IN">Indiana</option>
+                            <option ng-model="formData.state" value="KS">Kansas</option>
+                            <option ng-model="formData.state" value="KY">Kentucky</option>
+                            <option ng-model="formData.state" value="LA">Louisiana</option>
+                            <option ng-model="formData.state" value="MA">Massachusetts</option>
+                            <option ng-model="formData.state" value="MD">Maryland</option>
+                            <option ng-model="formData.state" value="ME">Maine</option>
+                            <option ng-model="formData.state" value="MI">Michigan</option>
+                            <option ng-model="formData.state" value="MN">Minnesota</option>
+                            <option ng-model="formData.state" value="MO">Missouri</option>
+                            <option ng-model="formData.state" value="MS">Mississippi</option>
+                            <option ng-model="formData.state" value="MT">Montana</option>
+                            <option ng-model="formData.state" value="NC">North Carolina</option>
+                            <option ng-model="formData.state" value="ND">North Dakota</option>
+                            <option ng-model="formData.state" value="NE">Nebraska</option>
+                            <option ng-model="formData.state" value="NH">New Hampshire</option>
+                            <option ng-model="formData.state" value="NJ">New Jersey</option>
+                            <option ng-model="formData.state" value="NM">New Mexico</option>
+                            <option ng-model="formData.state" value="NV">Nevada</option>
+                            <option ng-model="formData.state" value="NY">New York</option>
+                            <option ng-model="formData.state" value="OH">Ohio</option>
+                            <option ng-model="formData.state" value="OK">Oklahoma</option>
+                            <option ng-model="formData.state" value="OR">Oregon</option>
+                            <option ng-model="formData.state" value="PA">Pennsylvania</option>
+                            <option ng-model="formData.state" value="PR">Puerto Rico</option>
+                            <option ng-model="formData.state" value="RI">Rhode Island</option>
+                            <option ng-model="formData.state" value="SC">South Carolina</option>
+                            <option ng-model="formData.state" value="SD">South Dakota</option>
+                            <option ng-model="formData.state" value="TN">Tennessee</option>
+                            <option ng-model="formData.state" value="TX">Texas</option>
+                            <option ng-model="formData.state" value="UT">Utah</option>
+                            <option ng-model="formData.state" value="VA">Virginia</option>
+                            <option ng-model="formData.state" value="VT">Vermont</option>
+                            <option ng-model="formData.state" value="WA">Washington</option>
+                            <option ng-model="formData.state" value="WI">Wisconsin</option>
+                            <option ng-model="formData.state" value="WV">West Virginia</option>
+                            <option ng-model="formData.state" value="WY">Wyoming</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                        <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.zip" ng-pattern="zipPattern" required>
+                        </div>
+                        <div class="form-group">
+                        <input type="text" class="form-control" id="years" name="years" placeholder="Years at Address*" ng-model="formData.yearsAtAddress" required>
+                        </div>
+
+                        <div class="form-group ta-center">
+                        <label for="Mailing Adress Yes or No">Is this your Mailing Address?*:  </label><br>
+                        <label class="radio-inline"><input type="radio" value="yes" ng-model="formData.isMailingAddress">Yes</label>
+                        <label class="radio-inline"><input type="radio" value="no" ng-model="formData.isMailingAddress">No</label>
+                        </div>
+                        <div class="form-group ta-center">
+                        <label for="Billing Adress Yes or No">Is this your Billing Address?*:  </label><br>
+                        <label class="radio-inline"><input type="radio" value="yes" ng-model="formData.isBillingAddress">Yes</label>
+                        <label class="radio-inline"><input type="radio" value="no" ng-model="formData.isBillingAddress">No</label>
+                        </div>
+                        <div class="form-group ta-center">
+                        <label for="Year-round Residence Yes or No">Is this your Year-round Residence?*:  </label><br>
+                        <label class="radio-inline"><input type="radio" value="yes" ng-model="formData.isYearRoundResidence">Yes</label>
+                        <label class="radio-inline"><input type="radio" value="no" ng-model="formData.isYearRoundResidence">No</label>
+                        </div>
+
+                        <div class="form-group">
+                        <input type="text" class="form-control" id="primary-phone" name="primary-phone" placeholder="Primary Phone* - Example: xxx-xxx-xxxx"  ng-model="formData.primaryPhone" required>
+                        </div>
+                        <div class="form-group">
+                        <input type="text" class="form-control" id="secondary-phone" name="secondary-phone" placeholder="Secondary Phone" ng-model="formData.secondaryPhone">
+                        </div>
+                        <div class="form-group">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.email" ng-pattern="emailPattern">
+                        <div ng-messages="itnForm.email.$error">
+                          <div ng-message="pattern">Please enter a valid email address!</div>
+                        </div>
+                        </div> 
+
+                        <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+
+                        </div><!--tab 1-->
+
+
+
+
+                        <div class="member-tabs" ng-if="tab===2">
+
+                        <ol class="steps">
+                        <li class="step previous complete">
+                          <a href="">Step 1</a>
+                        </li>
+                        <li class="step active">
+                          <a href="">Step 2</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 3</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 4</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 5</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 6</a>
+                        </li>
+                        <li class="step">
+                          <a href="" tabindex="-1">Step 7</a>
+                        </li>
+                        </ol>
+
+                        <div id="first-emergency">
+                          <h2>First Emergency Contact</h2>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Name*" ng-model="formData.firstEmergencyContact.name" required>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship* - Example:Daughter" ng-model="formData.firstEmergencyContact.relationship" required>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" ng-model="formData.firstEmergencyContact.street" required>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="city" name="city" placeholder="City*"  ng-model="formData.firstEmergencyContact.city" required>
+                            </div>
+                            <div class="form-group">
+                              <select class="form-control" id="state">
+                                <option ng-model="formData.firstEmergencyContact.state" value="">Select a State*</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="">N/A</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="AK">Alaska</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="AL">Alabama</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="AR">Arkansas</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="AZ">Arizona</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="CA">California</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="CO">Colorado</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="CT">Connecticut</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="DC">District of Columbia</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="DE">Delaware</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="FL">Florida</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="GA">Georgia</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="HI">Hawaii</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="IA">Iowa</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="ID">Idaho</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="IL">Illinois</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="IN">Indiana</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="KS">Kansas</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="KY">Kentucky</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="LA">Louisiana</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="MA">Massachusetts</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="MD">Maryland</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="ME">Maine</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="MI">Michigan</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="MN">Minnesota</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="MO">Missouri</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="MS">Mississippi</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="MT">Montana</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="NC">North Carolina</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="ND">North Dakota</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="NE">Nebraska</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="NH">New Hampshire</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="NJ">New Jersey</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="NM">New Mexico</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="NV">Nevada</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="NY">New York</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="OH">Ohio</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="OK">Oklahoma</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="OR">Oregon</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="PA">Pennsylvania</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="PR">Puerto Rico</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="RI">Rhode Island</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="SC">South Carolina</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="SD">South Dakota</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="TN">Tennessee</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="TX">Texas</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="UT">Utah</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="VA">Virginia</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="VT">Vermont</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="WA">Washington</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="WI">Wisconsin</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="WV">West Virginia</option>
+                                <option ng-model="formData.firstEmergencyContact.state" value="WY">Wyoming</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.firstEmergencyContact.zip" ng-model="formData.firstEmergencyContact.zip" ng-pattern="zipPattern" required>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" ng-model="formData.firstEmergencyContact.homePhone" required>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" ng-model="formData.firstEmergencyContact.cellPhone" required>
+                            </div>
+                            <div class="form-group">
+                              <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.firstEmergencyContact.email" ng-pattern="emailPattern">
+                              <div ng-messages="itnForm.email.$error">
+                                <div ng-message="pattern">Please enter a valid email address!</div>
+                              </div>
+                            </div>
+                          </div><!--first emergency-->
+
+                          <div id="second-emergency" class="mt-50">
+                            <h2>Second Emergency Contact</h2>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name*" ng-model="formData.secondEmergencyContact.name" required>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship* - Example:Daughter" ng-model="formData.secondEmergencyContact.relationship" required>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" ng-model="formData.secondEmergencyContact.street" required>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="city" name="city" placeholder="City*" ng-model="formData.secondEmergencyContact.city" required>
+                              </div>
+                              <div class="form-group">
+                                <select class="form-control" id="state">
+                                  <option ng-model="formData.secondEmergencyContact.state" value="">Select a State*</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="">N/A</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="AK">Alaska</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="AL">Alabama</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="AR">Arkansas</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="AZ">Arizona</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="CA">California</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="CO">Colorado</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="CT">Connecticut</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="DC">District of Columbia</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="DE">Delaware</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="FL">Florida</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="GA">Georgia</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="HI">Hawaii</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="IA">Iowa</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="ID">Idaho</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="IL">Illinois</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="IN">Indiana</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="KS">Kansas</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="KY">Kentucky</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="LA">Louisiana</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="MA">Massachusetts</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="MD">Maryland</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="ME">Maine</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="MI">Michigan</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="MN">Minnesota</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="MO">Missouri</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="MS">Mississippi</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="MT">Montana</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="NC">North Carolina</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="ND">North Dakota</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="NE">Nebraska</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="NH">New Hampshire</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="NJ">New Jersey</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="NM">New Mexico</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="NV">Nevada</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="NY">New York</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="OH">Ohio</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="OK">Oklahoma</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="OR">Oregon</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="PA">Pennsylvania</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="PR">Puerto Rico</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="RI">Rhode Island</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="SC">South Carolina</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="SD">South Dakota</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="TN">Tennessee</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="TX">Texas</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="UT">Utah</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="VA">Virginia</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="VT">Vermont</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="WA">Washington</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="WI">Wisconsin</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="WV">West Virginia</option>
+                                  <option ng-model="formData.secondEmergencyContact.state" value="WY">Wyoming</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.secondEmergencyContact.zip" ng-pattern="zipPattern" required>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" ng-model="formData.secondEmergencyContact.homePhone" required>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" ng-model="formData.secondEmergencyContact.cellPhone" required>
+                              </div>
+                              <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.secondEmergencyContact.email" ng-pattern="emailPattern">
+                                <div ng-messages="itnForm.email.$error">
+                                  <div ng-message="pattern">Please enter a valid email address!</div>
+                                </div>
+                              </div>
+                            </div><!--second emergency contact-->
+                            
+                            <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                            <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                            
+                          </div><!--tab2-->
+
+
+                          <div class="member-tabs" ng-if="tab === 3">
+                            
+                            <ol class="steps">
+                              <li class="step previous complete">
+                                <a href="">Step 1</a>
+                              </li>
+                              <li class="step previous complete">
+                                <a href="">Step 2</a>
+                              </li>
+                              <li class="step active">
+                                <a href="">Step 3</a>
+                              </li>
+                              <li class="step">
+                                <a href="" tabindex="-1">Step 4</a>
+                              </li>
+                              <li class="step">
+                                <a href="" tabindex="-1">Step 5</a>
+                              </li>
+                              <li class="step">
+                                <a href="" tabindex="-1">Step 6</a>
+                              </li>
+                              <li class="step">
+                                <a href="" tabindex="-1">Step 7</a>
+                              </li>
+                            </ol>
+                            
+                            <div class="form-group ta-center">
+                              <label for="Heard about ITN">How did you hear about ITN?: *</label><br>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.family" type="checkbox" value="family">Family</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.friend" type="checkbox" value="friend">Friend</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.speaker" type="checkbox" value="speaker">Speaker</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.doctor" type="checkbox" value="doctor">Doctor</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.radio" type="checkbox" value="radio">Radio</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.tv" type="checkbox" value="television">Television</label><br>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.flier" type="checkbox" value="flier">Flier</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.phone" type="checkbox" value="phone">Phone</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.book" type="checkbox" value="book">Book</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.agencyOnAging" type="checkbox" value="agency">Agency on Aging</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.socialWorker" type="checkbox" value="social-worker">Social Worker</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.internet" type="checkbox" value="Internet">Internet</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.currentMember" type="checkbox" value="current-member">Were you referred by a current member?</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="send info">Would you like us to send information about ITN to a relative, friend, or business? * </label><br>
+                              <label class="radio-inline"><input ng-model="formData.sendInfoToRelativeFriendBiz" type="radio" value="yes" ng-click="sendInfo = true">Yes</label>
+                              <label class="radio-inline"><input ng-model="formData.sendInfoToRelativeFriendBiz" type="radio" value="no" ng-click="sendInfo = false">No</label>
+                            </div>
+                            
+                            <div ng-if="sendInfo">
+                              <div class="form-group">
+                                <input ng-model="formData.sendInfoTo.name" type="text" class="form-control" id="name" name="name" placeholder="Name: *" required>
+                              </div>
+                              <div class="form-group">
+                                <input ng-model="formData.sendInfoTo.relationship" type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship: *" required>
+                              </div>
+                              <div class="form-group">
+                                <input ng-model="formData.sendInfoTo.street" type="text" class="form-control" id="street" name="street" placeholder="Street Address: *" required>
+                              </div>
+                              <div class="form-group">
+                                <select class="form-control" id="state">
+                                  <option ng-model="formData.sendInfoTo.state" value="">Select a State*</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="">N/A</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="AK">Alaska</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="AL">Alabama</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="AR">Arkansas</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="AZ">Arizona</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="CA">California</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="CO">Colorado</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="CT">Connecticut</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="DC">District of Columbia</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="DE">Delaware</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="FL">Florida</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="GA">Georgia</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="HI">Hawaii</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="IA">Iowa</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="ID">Idaho</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="IL">Illinois</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="IN">Indiana</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="KS">Kansas</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="KY">Kentucky</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="LA">Louisiana</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="MA">Massachusetts</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="MD">Maryland</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="ME">Maine</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="MI">Michigan</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="MN">Minnesota</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="MO">Missouri</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="MS">Mississippi</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="MT">Montana</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="NC">North Carolina</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="ND">North Dakota</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="NE">Nebraska</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="NH">New Hampshire</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="NJ">New Jersey</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="NM">New Mexico</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="NV">Nevada</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="NY">New York</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="OH">Ohio</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="OK">Oklahoma</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="OR">Oregon</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="PA">Pennsylvania</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="PR">Puerto Rico</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="RI">Rhode Island</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="SC">South Carolina</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="SD">South Dakota</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="TN">Tennessee</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="TX">Texas</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="UT">Utah</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="VA">Virginia</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="VT">Vermont</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="WA">Washington</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="WI">Wisconsin</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="WV">West Virginia</option>
+                                  <option ng-model="formData.sendInfoTo.state" value="WY">Wyoming</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code: *" ng-model="formData.sendInfoTo.zip" ng-pattern="zipPattern" required>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone* - Example: xxx-xxx-xxxx"  ng-model="formData.sendInfoTo.phone" required>
+                              </div>
+                              <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.sendInfoTo.email" ng-pattern="emailPattern">
+                                <div ng-messages="itnForm.email.$error">
+                                  <div ng-message="pattern">Please enter a valid email address!</div>
+                                </div>
+                              </div>
+                            </div><!--sendinfo-->
+                            
+                            <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                            <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                            
+                          </div><!--tab3-->
+                          
+                          <div class="member-tabs" ng-if="tab===4">
+                            
+                            <ol class="steps">
+                              <li class="step previous complete">
+                                <a href="">Step 1</a>
+                              </li>
+                              <li class="step previous complete">
+                                <a href="">Step 2</a>
+                              </li>
+                              <li class="step previous complete">
+                                <a href="">Step 3</a>
+                              </li>
+                              <li class="step active">
+                                <a href="">Step 4</a>
+                              </li>
+                              <li class="step">
+                                <a href="" tabindex="-1">Step 5</a>
+                              </li>
+                              <li class="step">
+                                <a href="" tabindex="-1">Step 6</a>
+                              </li>
+                              <li class="step">
+                                <a href="" tabindex="-1">Step 7</a>
+                              </li>
+                            </ol>
+                            
+                            <p><em>ITNAmerica respects your privacy and will keep all customer information confidential. The following information allows us to provide better service to our customers, and helps us better understand the circumstances that customers face when they apply to use the ITN for rides.</em></p>
+                            
+                            <h2>Customer Information</h2>
+                            
+                            <div class="form-group ta-center">
+                              <label for="gender">Gender: * </label><br>
+                              <label class="radio-inline"><input type="radio" value="female" ng-model="formData.customerInfo.gender">Female</label>
+                              <label class="radio-inline"><input type="radio" value="male" ng-model="formData.customerInfo.gender">Male</label>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="dob">Date of Birth: * - </label><br>
+                              <input type="text" class="form-control" id="dob" name="dob" placeholder="Example: mm/dd/yyyy" ng-model="formData.customerInfo.dateOfBirth" ng-pattern="dobPattern" required>
+                              <div ng-messages="itnForm.dob.$error">
+                                <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
+                              </div>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="marital status">Marital Status: * </label><br>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.maritalStatus" type="radio" value="married">Married</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.maritalStatus" type="radio" value="single">Single</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.maritalStatus" type="radio" value="partnered">Partnered</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.maritalStatus" type="radio" value="divorced">Divorced</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.maritalStatus" type="radio" value="widowed">Widowed</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="living">Living Arrangements: * </label><br>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.livingArrangement" type="radio" value="alone">Live Alone</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.livingArrangement" type="radio" value="spouse">Live with Spouse</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.livingArrangement" type="radio" value="children">Live with Children</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.livingArrangement" type="radio" value="friend">Live with Friend</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.livingArrangement" type="radio" value="other-family">Live with Other Family</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="dwelling">Dwelling Arrangements: * </label><br>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.dwellingArrangement" type="radio" value="private-home">Private Home</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.dwellingArrangement" type="radio" value="assisted-living"> Assisted Living Facility</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.dwellingArrangement" type="radio" value="retirement-community"> Independent Living Retirement Community</label>
+                              <label class="radio-inline"><input type="radio" value="other-dwelling" ng-click="otherDwelling = !otherDwelling">Other</label>
+                                <input type="text" ng-model="formData.customerInfo.dwellingArrangement.other" class="form-control" id="other-dwelling" name="other-dwelling" placeholder="other (specify)" ng-if="otherDwelling">
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="languages">Languages Spoken: *</label><br>
+                              <label class="checkbox-inline"><input ng-model="formData.customerInfo.languages.english" type="checkbox" value="english">English</label>
+                              <label class="checkbox-inline"><input ng-model="formData.customerInfo.languages.french" type="checkbox" value="french">French</label>
+                              <label class="checkbox-inline"><input ng-model="formData.customerInfo.languages.spanish" type="checkbox" value="spanish">Spanish</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="other-language" ng-click="otherLanguage = !otherLanguage">Other (specify)</label>
+                                <input type="text" ng-model="formData.customerInfo.languages.other" class="form-control" id="other-language" name="other-language" placeholder="other (specify)" ng-if="otherLanguage">
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="transportation means">Current primary means of getting around: * </label><br>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="drive">Drive</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="walk">Walk</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="fam-friend">Ride with Family or Friend</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="public-transportation">Public Transportation</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="taxi">Taxi</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="private-service">Private Service</label>
+                              <label class="radio-inline"><input type="radio" value="other-transportation" ng-click="otherTransportation = !otherDwelling">Other</label>
+                                <input ng-model="formData.customerInfo.currentTransportationMeans.other" type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
+                            </div>
+                          
+                            <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                            <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+
+                        </div><!--tab4-->
+
+                        <div class="member-tabs" ng-if="tab===5">
+                          
+                          <ol class="steps">
+                            <li class="step previous complete">
+                              <a href="">Step 1</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 2</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 3</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 4</a>
+                            </li>
+                            <li class="step active">
+                              <a href="">Step 5</a>
+                            </li>
+                            <li class="step">
+                              <a href="" tabindex="-1">Step 6</a>
+                            </li>
+                            <li class="step">
+                              <a href="" tabindex="-1">Step 7</a>
+                            </li>
+                          </ol>
+                          
+                          <h2>Civic Engagement</h2>
+                          
+                          <div class="form-group ta-center">
+                            <label for="member of any organization">Are you a member of any of the following organizations?:</label><br>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.aaa" type="checkbox" value="aaa">AAA</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.elks" type="checkbox" value="elks">Elks</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.rotary" type="checkbox" value="rotary">Rotary</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.aarp" type="checkbox" value="aarp">AARP</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.kiwanis" type="checkbox" value="kiwanis">Kiwanis</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.knightsOfColumbus" type="checkbox" value="knights">Knights of Columbus</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.masonsEasternStars" type="checkbox" value="masons">Masons/Eastern Stars</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.memberOfOrganization.fraternitySorority" type="checkbox" value="frat">Fraternity/Sorority</label>
+                            <label class="checkbox-inline"><input type="checkbox" value="other" ng-click="otherOrg = !otherOrg">Other (specify)</label>
+                              <input ng-model="formData.customerInfo.memberOfOrganization.other" type="text" class="form-control" id="other" name="other" placeholder="other (specify)" ng-if="otherOrg">
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
+                            <label class="radio-inline"><input ng-model="formData.customerInfo.memberOfProfessionalOrgOrUnion" type="radio" value="yes" ng-click="specifyUnions = !specifyUnions">Yes</label>
+                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                              <input ng-model="formData.customerInfo.memberOfProfessionalOrgOrUnion" type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="served in armed forces">Have you ever served on active duty in the U.S. Armed Forces, Military Reserves, or National Guard: *</label><br>
+                            <label class="radio-inline"><input ng-model="formData.customerInfo.servedInMilitary" type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input ng-model="formData.customerInfo.servedInMilitary" type="radio" value="no">No</label>
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="special needs">Special Needs and Mobility Assistance: *</label><br>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.cane" type="checkbox" value="cane">Cane</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.wheelchair" type="checkbox" value="wheelchair">Wheelchair</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.blind" type="checkbox" value="blind"> Blind/Seeing Eye</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.anxiety" type="checkbox" value="anxiety">Anxiety Disorder</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.driverAssistance" type="checkbox" value="driver">Driver Assistance Required</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.personalAssistance" type="checkbox" value="personal">Personal Assistant</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.fullSizedVehicle" type="checkbox" value="vehicle">Full-Sized Vehicle Required</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.visuallyImpaired" type="checkbox" value="impaired">Visually Impaired</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.walker" type="checkbox" value="walker">Walker</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.alzheimer" type="checkbox" value="alzheimer"> Alzheimer's/Dementia</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.bladderProblems" type="checkbox" value="bladder"> Bladder/Bowel Control Problems</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.deaf" type="checkbox" value="deaf">Deaf</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.noHighVehicle" type="checkbox" value="no-high">No High Vehicle</label>
+                            <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.none" type="checkbox" value="none">None of the above</label>
+                          </div>
+                          
+                          <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                          <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                          
+                        </div><!--tab5-->
+
+
+                        <div class="member-tabs" ng-if="tab===6">
+                          
+                          <ol class="steps">
+                            <li class="step previous complete">
+                              <a href="">Step 1</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 2</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 3</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 4</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 5</a>
+                            </li>
+                            <li class="step active">
+                              <a href="">Step 6</a>
+                            </li>
+                            <li class="step">
+                              <a href="" tabindex="-1">Step 7</a>
+                            </li>
+                          </ol>
+                          
+                          <h2>Driving Information</h2>
+                          
+                          <div class="form-group ta-center">
+                            <label for="license">Do you have a current driver's license?: *</label><br>
+                            <label class="radio-inline"><input ng-model="formData.drivingInfo.hasLicense" type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input ng-model="formData.drivingInfo.hasLicense" type="radio" value="no">No</label>
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="own vehicle">Do you own a vehicle?: *</label><br>
+                            <label class="radio-inline"><input ng-model="formData.drivingInfo.ownVehicle" type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input ng-model="formData.drivingInfo.ownVehicle" type="radio" value="no">No</label>
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="driver improvement">Have you tried any driver improvement activities or classes to help you keep driving safely longer?: *</label><br>
+                            <label class="radio-inline"><input ng-model="formData.drivingInfo.driverImprovementClasses" type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input ng-model="formData.drivingInfo.driverImprovementClasses" type="radio" value="no">No</label>
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="driven in last 10 years">Have you driven in the last ten years?: *</label><br>
+                            <label class="radio-inline"><input ng-model="formData.drivingInfo.drivenLast10Years" type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input ng-model="formData.drivingInfo.drivenLast10Years" type="radio" value="no">No</label>
+                          </div>
+                          
+                          <div class="form-group ta-center">
+                            <label for="currently driving">Do you currently drive?: *</label><br>
+                            <label class="radio-inline"><input type="radio" value="yes" ng-click="currentDriver = true">Yes</label>
+                            <label class="radio-inline"><input type="radio" value="no" ng-click="currentDriver = false">No</label>
+                          </div>
+                          
+                          <div ng-if="currentDriver">
+                            <h3>If you drive...</h3>
+                            
+                            <div class="form-group ta-center">
+                              <label for="how often do you drive">How often do you drive?:</label><br>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.howOftenYouDrive"  type="radio" value="less_once_week">Less than once a week</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.howOftenYouDrive"  type="radio" value="1_2_days"> 1-2 Days per week</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.howOftenYouDrive"  type="radio" value="3_more"> 3 or more days per week</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="restricted your driving">Have you restricted your own driving?:</label><br>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.restrictedOwnDriving"  type="radio" value="yes">Yes</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.restrictedOwnDriving"  type="radio" value="no">No</label>
+                            </div>
+                            
+                            
+                            <h3>How often do you do the following:</h3>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid driving at night">Avoid driving at night?:</label><br>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingAtNight" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingAtNight" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingAtNight" type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid highway driving">Avoid highway driving?:</label><br>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidHighwayDriving"  type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidHighwayDriving"  type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidHighwayDriving"  type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid left turns on incoming traffic">Avoid making left turns across incoming traffic?:</label><br>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidLeftTurnsIncomingTraffic" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidLeftTurnsIncomingTraffic" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidLeftTurnsIncomingTraffic" type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid driving bad weather">Avoid driving in bad weather?:</label><br>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingBadWeather" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingBadWeather" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingBadWeather" type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid driving alone">Avoid driving alone?:</label><br>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingAlone" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingAlone" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingAlone" type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid driving high traffic">Avoid driving on high traffic roads?:</label><br>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingHighTrafficRoads" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingHighTrafficRoads" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingHighTrafficRoads" type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="avoid driving unfamiliar areas">Avoid driving in unfamiliar areas?:</label><br>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingUnfamiliarAreas" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingUnfamiliarAreas" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.avoidDrivingUnfamiliarAreas" type="radio" value="never">Never</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="pass up fun because of driving concerns">Pass up opportunities to go shopping, visit friends, etc., because of concerns about driving?:</label><br>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.passOpportunitiesBecauseDriveConcerns" type="radio" value="always">Always</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.passOpportunitiesBecauseDriveConcerns" type="radio" value="sometimes">Sometimes</label>
+                              <label class="radio-inline"><input ng-model="formData.drivingInfo.passOpportunitiesBecauseDriveConcerns" type="radio" value="never">Never</label>
+                            </div>
+                            
+                          </div><!--currentDriver-->
+                          
+                          
+                          <div ng-if="!currentDriver">
+                            
+                            <h3>If you do not drive...</h3>
+                          
+                            <div class="form-group ta-center">
+                              <label for="avoid driving alone">Please check a reason:</label><br>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.neverLicensed" type="checkbox" value="never_licensed">Never licensed</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.illness" type="checkbox" value="illness">Illness</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.trafficAccident" type="checkbox" value="traffic_accident">Traffic accident</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.doctorsOrder" type="checkbox" value="doctor_order">Doctors orders</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.licenseRevoked" type="checkbox" value="license_revoked">License revoked</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.licenseExpired" type="checkbox" value="license_expired">License expired</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.notSafe" type="checkbox" value="not_safe">Don't feel safe</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.familyRequest" type="checkbox" value="family_request">Family Request</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.policeJudgeRequest" type="checkbox" value="police_request">Police/Judge Request</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.tooExpensive" type="checkbox" value="expensive">Too expensive</label>
+                              <label class="checkbox-inline"><input ng-model="formData.drivingInfo.whyNoDrive.carNeedRepair" type="checkbox" value="need_repair">Car needs repair</label>
+                              <label class="checkbox-inline"><input type="checkbox" value="other" ng-click="otherNoDrive = !otherNoDrive">Other (specify)</label>
+                                <input ng-model="formData.drivingInfo.whyNoDrive.other" type="text" class="form-control" id="other" name="other" placeholder="Other (specify)" ng-if="otherNoDrive">
+                            </div> 
+
+                          </div><!--not currentDriver-->
+                          
+                          <h3>Rideshare</h3>
+                          
+                          <div class="form-group ta-center">
+                            <label for="reduce ITN cost with rideshare">Would you like to reduce the cost of ITN trips by sharing rides with others when it's convenient?: *</label><br>
+                            <label class="radio-inline"><input ng-model="formData.drivingInfo.reduceCostWithRideshare" type="radio" value="yes">Yes</label>
+                            <label class="radio-inline"><input ng-model="formData.drivingInfo.reduceCostWithRideshare" type="radio" value="no">No</label>
+                          </div>
+                          
+                          <h3>Programs</h3>
+                          
+                          <div class="form-group ta-center">
+                            <label for="info on programs">Would you like information on any of these ITN programs?:</label><br>
+                            <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms.healthyMiles" type="checkbox" value="healthymiles">HealthyMiles</label>
+                            <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms.carTrade" type="checkbox" value="cartrade">CarTrade™</label>
+                            <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms.rideAndShop" type="checkbox" value="rideandshop">Ride & Shop</label>
+                            <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms.giftCertificate" type="checkbox" value="gift_certificate">Gift Certificate</label>
+                          </div>
+                          
+                          <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                          <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                          
+                        </div><!--tab6-->
+
+
+
+
+                        <div class="member-tabs" ng-if="tab===7">
+                          
+                          <ol class="steps">
+                            <li class="step previous complete">
+                              <a href="">Step 1</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 2</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 3</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 4</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 5</a>
+                            </li>
+                            <li class="step previous complete">
+                              <a href="">Step 6</a>
+                            </li>
+                            <li class="step active">
+                              <a href="">Step 7</a>
+                            </li>
+                          </ol>
+                          
+                          <h3 class="mt-50 mb-25">Personal Transportation Account Agreement</h3>
+                          
+                          <p>A personal ITN transportation account is like a personal bank account. It is debited whenever you take an ITN ride, and when you make a payment to ITN, it is like making a deposit into your account.  At the end of each month, you receive a statement that details your rides and any other account activity, such as payments, gift certificates, Ride & Shop™ or Healthy Miles™, volunteer credits, CarTrade™ credits, or payment of membership dues.</p>
+
+                          <p>ITN is a charitable nonprofit service supported by your fares and voluntary local community support. Because fares cover only half the true cost of rides, the ITN affiliate may include family members and any others you have listed as contacts in its fundraising campaigns, including the Family Membership Campaign, Walk for Rides and Annual Appeal. Participation in these campaigns is voluntary. A contact’s decision not to participate will not affect the quality of your service or your eligibility to use ITN for rides.</p>
+                          
+                          <p><strong>Your signature below indicates that you agree to the following policies:</strong></p>
+                          
+                          <div class="form-group">
+                            <ol>
+                              <li>You will maintain a balance in your account sufficient to cover your monthly rides;</li>
+                              <li>Your membership dues will be automatically debited on the anniversary of your membership;</li>
+                              <li>If you have an unpaid balance greater than $200 for longer than 60 days, your account will be paused until you have deposited sufficient funds to again achieve a positive balance;</li>
+                              <li>If there is no activity in your account for one year and we have made three documented unsuccessful attempts to reach you, you agree that the balance in our account will become a charitable gift to ITN;</li>
+                              <li>Your contacts may receive a limited number of mailings (via regular mail or e-mail) for the ITN affiliate’s fundraising events/campaigns, as well as up to four quarterly ITN Newsletters. Their names will not be shared with any other party or organization.</li>
+                            </ol>
+                          </div>
+                            
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="signature" name="signature" placeholder="Agreement Signature: * - (please print name)" required>
+                          </div>
+                          
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="date" name="date" placeholder="Agreement Date: * - Example: mm/dd/yyyy" ng-pattern="datePattern" required>
+                            <div ng-messages="itnForm.date.$error">
+                              <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
+                            </div>
+                          </div>
+                            
+                          <div class="form-group">  
+                            <label class="checkbox-inline"><input type="checkbox" value="agree" ng-click="">By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
+                          </div>
+                          
+                          
+                          <h3 class="mt-50 mb-25">Informed Consent</h3>
+                          
+                          <p>The Independent Transportation Network (ITN) is a non-profit, community-based organization providing dignified, consumer-oriented transportation for seniors and people with visual impairments. </p>
+
+                          <p>As an ITNAmerica affiliate community, your ITN benefits from more than a decade of research to develop a model for economically sustainable transportation. Among the public and private organizations that have supported this research are the Federal Transit Administration, the Transportation Research Board (National Academies of Science), AARP, the Great Bay Foundation for Social Entrepreneurs, and the Atlantic Philanthropies. Thousands of private individuals and their families have participated in this research and development, without which, this service would not be possible.</p>
+
+                          <p>In the spirit of this public/private effort, to continue the development and analysis that will allow ITNAmerica to better understand the mobility needs of older Americans, their families and their communities, and to continuously improve the quality and sustainability of the service, we routinely collect data about riders and the rides we deliver. The identity of our riders is kept entirely confidential in all reports we use for these purposes.</p>
+
+                          <p>In addition to this routine data collection, ITNAmerica also conducts research. From time to time, we may ask you to participate in a research project. Your participation in the ITNAmerica research studies is voluntary and confidential. If you prefer not to participate in the research studies, your decision will not affect the quality of your service or your eligibility to use ITN for rides.</p>
+
+                          <p>Your signature indicates that you understand that routinely-collected ITNAmerica data will be used to study and improve transportation for seniors, and that you may, from time to time, be asked questions about your use of the service. We will do our best to provide rides for you and we will always strive to inform you when we cannot provide a ride. However, we are not responsible for any costs or expenses you may incur when we are unable to provide a ride for a specific time and place.</p>
+                          
+                          <div class="form-group">
+                            <input ng-model="formData.agreement.name" type="text" class="form-control" id="name" name="name" placeholder="Customer Name: * - (please print name)" required>
+                          </div>
+                          
+                          <div class="form-group">
+                            <input ng-model="formData.agreement.signature" type="text" class="form-control" id="signature" name="signature" placeholder="Signature of customer or legal representative: *" required>
+                          </div>
+                          
+                          <div class="form-group">
+                            <input ng-model="formData.agreement.date" type="text" class="form-control" id="date" name="date" ng-pattern="datePattern" placeholder="Date: * - Example: mm/dd/yyyy" required>
+                            <div ng-messages="itnForm.date.$error">
+                              <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
+                            </div>
+                          </div>
+                            
+                          <div class="form-group">
+                            <label class="checkbox-inline"><input type="checkbox" value="agree" ng-click="" required>By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
+                          </div>
+
+                          <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                          <!-- <input type="reset" class="btn btn-primary pull-right itn-green-bg" value="Reset"> -->
+                          
+                        </div><!--tab7-->
                         
-                    <!-- <button type="submit" style="background:#e05944" class="btn btn-lg btn-danger" ng-disabled="form.$invalid" ng-show="tab===7">Submit</button> -->
-                    <button type="submit" style="background:#e05944" class="btn btn-lg btn-danger" ng-disabled="form.$invalid">Submit</button>
+                    <button type="submit" style="background:#e05944" class="btn btn-lg btn-danger" ng-disabled="form.$invalid" ng-show="tab===7">Submit</button>
                 
                 </form>
             </div><!--form area-->
