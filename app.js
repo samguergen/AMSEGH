@@ -3,12 +3,14 @@ var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var app = express();
 
-var env = require('env-variables.js');
+var env = require('env-variables.js') || require(__dirname + 'env-vars.js');
 var gmail_login = env.gmail_login;
 var gmail_pass = env.gmail_pass;
 
 app.use(express.json()); //convert req to json
 app.use(express.static(__dirname + '/app'));
+
+console.log('directory is ',  __dirname );
 
 app.post('/sendmail', function(req, res){
   console.log('post req', req.body);
