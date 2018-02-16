@@ -6,3 +6,4 @@ tmp
 .DS_Store
 .ideasendgrid.env
 .env
+env-vars.js

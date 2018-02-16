@@ -3,7 +3,8 @@ var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var app = express();
 
-var env = require('env-variables.js') || require(__dirname + 'env-vars.js');
+// var env = require('env-variables.js') || require(__dirname + 'env-vars.js');
+var env = require(__dirname + '/env-vars.js');
 var gmail_login = env.gmail_login;
 var gmail_pass = env.gmail_pass;
 
