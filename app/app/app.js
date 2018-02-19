@@ -104,20 +104,6 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 })
 
 
-// myApp.run(function($rootScope, $scope) { 
-//   $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams) {
-//     $scope.formData = {};
-//     // if (fromState.name === "") { 
-//     //   // The initial transition comes from "root", which uses the empty string as a name.
-//     //   alert("initial state: " + toState.name);
-//     // }
-//   });
-// });
-
-
-
-
-
 myApp.controller('MainController', ['$scope', '$transitions','$http', function ($scope, $transitions, $http)  {
   console.log('inside main controller');
   $scope.zoomLevel = 1;
@@ -128,6 +114,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
   $scope.emailPattern = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/);
   $scope.datePattern = new RegExp(/^(\d{2})\/(\d{2})\/(\d{4})$/);
   $scope.dobPattern = new RegExp(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+  $scope.phonePattern = new RegExp(/^\d{3}[- ]?\d{3}[- ]?\d{4}$/);
   
   // $transitions.onStart({}, function($transition, $scope){
   //     console.log('changing state');
@@ -170,11 +157,15 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     
   }
   
-  $scope.submitForm = function(volunteer){
+  $scope.submitForm = function(formType){
     var emailSubject = 'New membership application received';
-    if (volunteer) {
+    if (formType === 'volunteer') {
       emailSubject = 'New volunteer application received';
-    }
+    } else if (formType === 'contact') {
+      emailSubject = $scope.formData.subject || 'Contact Form submitted';
+    } else if (formType === 'nonrider') {
+       emailSubject = $scope.formData.subject || 'Non-Rider application Form submitted';
+      }
     console.log('form you are sending is ', $scope.formData);
     $scope.loading = true;
     $http.post('/sendmail', {

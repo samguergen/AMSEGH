@@ -12,29 +12,36 @@
         <div class="col-sm-12">
             <div class="form-area" style="background: #c7dfe4;border:none">  
                 <!-- <form role="form"> -->
-                  <form action="mailto:info@itnlanier.org" method="post" enctype="text/plain">
+                  <form name="contactform" novalidate ng-submit="submitForm('contact')" role="contact form" ng-model="formData">
                 <br style="clear:both">
                             <h3 style="margin-bottom: 25px; text-align: center">Contact ITN Lanier</h3>
                     <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" ng-model="formData.name" required>
+                    <span class="error" ng-show="myForm.name.$error.required">Required!</span>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+                    <input type="text" class="form-control" id="email" name="email" ng-pattern="emailPattern" placeholder="Email" ng-model="formData.email" required>
+                    <span class="error" ng-show="myForm.email.$error.required">Required!</span>
+                    <br><span class="error" ng-show="myForm.email.$error.pattern">Please match pattern user@example.com</span>
+                    
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+                    <input type="text" class="form-control" id="mobile" name="mobile" ng-pattern="phonePattern" placeholder="Mobile Number. Example: 617-344-9876" ng-model="formData.phone" required>
+                    <span class="error" ng-show="myForm.mobile.$error.required">Required!</span>
+                    <br><span class="error" ng-show="myForm.mobile.$error.pattern">Please match pattern [+91-036-78658 || 91-036-78658]</span>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" ng-model="formData.subject" required>
+                    <span class="error" ng-show="myForm.subject.$error.required">Required!</span>
                   </div>
                   <div class="form-group">
-                  <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+                  <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7" ng-model="formData.messageBody"></textarea>
                       <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
                   </div>
                     
                 <!-- <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button> -->
-                <input type="submit" id="submit" class="btn btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%">
-                <input type="reset" class="btn btn-primary pull-right itn-green-bg" value="Reset">
+                <input type="submit" id="submit" class="btn btn-primary pull-right itn-green-bg" value="Send"  ng-disabled="contactform.$error" style="margin-left:2%">
+                <!-- <input type="reset" class="btn btn-primary pull-right itn-green-bg" value="Reset"> -->
                 
                 </form>
             </div>
