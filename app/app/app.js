@@ -129,7 +129,8 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     date: "The date should have the format: MM/DD/YYYY",
     dob: "The date of birth should have the format: MM/DD/YYYY",
     phone: "The phone number needs to have the format: 111-111-1111"
-  }
+  };
+  $scope.dataPDF = null;
   
   // $transitions.onStart({}, function($transition, $scope){
   //     console.log('changing state');
@@ -172,6 +173,43 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     
   }
   
+  $scope.generatePDF2 = function() {
+    kendo.drawing.drawDOM($("#formConfirmation"))
+      .then(function (group) {
+          // Render the result as a PDF file
+          return kendo.drawing.exportPDF(group, {
+              paperSize: "auto",
+              margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
+          });
+      })
+      .done(function (data) {
+        console.log('data is ', data);
+        $scope.dataPDF = data;
+        
+        $http.post('/sendmail', {
+          from: '"ITN Web User" <donotreply@itnamerica.com>',
+          to: 'samguergen@gmail.com',
+          subject: "New Non Rider Application",
+          text: $scope.formData,
+          pdf: $scope.dataPDF
+        }).then(res=>{
+            $scope.loading = false;
+            $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
+        });
+          // $.ajax({
+          //     type: "POST",
+          //     url: publish + "/sendmailPDF",
+          //     processData: false,  // tell jQuery not to process the data
+          //     contentType: false,  // tell jQuery not to set contentType
+          //     data: '{ "imageData" : "' + data + '" ,"id": "' + self.customerGuid() + '"}',
+          //     contentType: 'application/json; charset=utf-8',
+          //     dataType: 'json',
+          // });
+ 
+          
+      });
+  }
+  
   $scope.generatePDF = function() {
     kendo.drawing.drawDOM($("#formConfirmation")).then(function(group) {
       console.log('pdf is ', group);
@@ -191,9 +229,6 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     console.log('form you are sending is ', $scope.formData);
     $scope.loading = true;
     
-    //generating PDF
-    $scope.generatePDF();
-    
     $http.post('/sendmail', {
       from: '"ITN Web User" <donotreply@itnamerica.com>',
       to: 'samguergen@gmail.com',
@@ -203,6 +238,23 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
         $scope.loading = false;
         $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
     });
+  }
+  
+  $scope.submitForm2 = function(formType){
+    var emailSubject = 'New membership application received';
+    if (formType === 'volunteer') {
+      emailSubject = 'New volunteer application received';
+    } else if (formType === 'contact') {
+      emailSubject = $scope.formData.subject || 'Contact Form submitted';
+    } else if (formType === 'nonrider') {
+       emailSubject = $scope.formData.subject || 'Non-Rider application Form submitted';
+      }
+    console.log('form you are sending is ', $scope.formData);
+    $scope.loading = true;
+    
+    //generating PDF
+    $scope.generatePDF2();
+
   }
   
   

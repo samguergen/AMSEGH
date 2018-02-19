@@ -28,7 +28,8 @@ app.post('/sendmail', function(req, res){
         to: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line   
         text: JSON.stringify(req.body.text), // plain text body
-        bcc: 'info@itnlanier.org'
+        bcc: 'info@itnlanier.org',
+        attachments: [{path: req.body.pdf}]
         // html: '<b>Hello ITN?</b>' // html body
     };
 
@@ -38,8 +39,6 @@ app.post('/sendmail', function(req, res){
             return console.log(error);
         }
         console.log('Message sent: %s', info.messageId);
-        // Preview only available when sending through an Ethereal account
-        // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
         // transporter.close();
     });
   
