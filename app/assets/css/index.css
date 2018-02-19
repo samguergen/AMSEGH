@@ -1604,6 +1604,11 @@ form textarea.form-control {font-size:25px}
   background: #fc6d6d;
   color: white;
 }
+.error {
+  color: #e05944;
+  font-weight:bold;
+  padding: 10px;
+}
 
 /* GENERAL */
 
@@ -1619,6 +1624,11 @@ h2,h3 {line-height:1.7}
 .form-control::-moz-placeholder { color: black; font-style:italic}  /* Mozilla Firefox 19+ */
 .form-control:-ms-input-placeholder { color: black; font-style:italic}  /* Internet Explorer 10-11 */
 .form-control::-ms-input-placeholder { color: black; font-style:italic}  /* Microsoft Edge */
+
+.form-group input[type=email], .form-group input#emailConfirmation {
+  font-size: 25px;
+  height: 50px;
+}
 
 /* RESPONSIVE */
 

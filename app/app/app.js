@@ -110,11 +110,25 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
   $scope.tab = 1;
   $scope.formData = {};
   $scope.loading = false;
-  $scope.zipPattern = new RegExp(/^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] *\d[A-Z]\d)$/);
+  $scope.minlength = 2;
+  $scope.maxlength = 30;
+  // $scope.zipPattern = new RegExp(/^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] *\d[A-Z]\d)$/);
+  $scope.zipPattern = new RegExp(/^\d{5}$/);
   $scope.emailPattern = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/);
   $scope.datePattern = new RegExp(/^(\d{2})\/(\d{2})\/(\d{4})$/);
   $scope.dobPattern = new RegExp(/^(\d{2})\/(\d{2})\/(\d{4})$/);
   $scope.phonePattern = new RegExp(/^\d{3}[- ]?\d{3}[- ]?\d{4}$/);
+  $scope.errorMessages = {
+    required: "This field is required",
+    minlength: "This field needs to be at least 2 characters long",
+    maxlength: "This field needs to be at most 30 characters long",
+    phone: "Please match pattern [+91-036-78658 || 91-036-78658]",
+    zip: "The zipcode should be be 5 digits long",
+    email: "The email should have the format: test@example.com",
+    date: "The date should have the format: MM/DD/YYYY",
+    dob: "The date of birth should have the format: MM/DD/YYYY",
+    phone: "The phone number needs to have the format: 111-111-1111"
+  }
   
   // $transitions.onStart({}, function($transition, $scope){
   //     console.log('changing state');
