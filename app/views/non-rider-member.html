@@ -142,11 +142,10 @@
                       <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
                   </div>
                     
-                <!-- <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button> -->
-                <input type="submit" ng-disabled="nonriderform.$invalid" id="submit" class="btn btn-lg btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%">
-                <input type="reset" class="btn btn-lg btn-primary pull-right itn-green-bg" value="Reset">
-                
-                errors: {{ $scope.nonriderform.$error }}
+                <!-- <input type="submit" ng-disabled="nonriderform.$invalid" id="submit" class="btn btn-lg btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%"> -->
+                <input type="submit" id="submit" class="btn btn-lg btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%">
+                <input type="reset" class="btn btn-lg btn-primary pull-right itn-green-bg" ng-click="formData = {}" value="Reset">
+
                 
                 </form>
             </div>
