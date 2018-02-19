@@ -172,6 +172,13 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     
   }
   
+  $scope.generatePDF = function() {
+    kendo.drawing.drawDOM($("#formConfirmation")).then(function(group) {
+      console.log('pdf is ', group);
+      kendo.drawing.pdf.saveAs(group, "Application PDF.pdf");
+    });
+  }
+  
   $scope.submitForm = function(formType){
     var emailSubject = 'New membership application received';
     if (formType === 'volunteer') {
@@ -183,6 +190,10 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
       }
     console.log('form you are sending is ', $scope.formData);
     $scope.loading = true;
+    
+    //generating PDF
+    $scope.generatePDF();
+    
     $http.post('/sendmail', {
       from: '"ITN Web User" <donotreply@itnamerica.com>',
       to: 'samguergen@gmail.com',

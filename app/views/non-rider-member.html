@@ -12,7 +12,7 @@
         <hr align="center">
         
         <div class="col-sm-12">
-            <div class="form-area" style="background: #c7dfe4;border:none">  
+            <div class="form-area" id="formConfirmation" style="background: #c7dfe4;border:none">  
                   <form name="nonriderform" novalidate ng-submit="submitForm('nonrider')" role="non rider form" ng-model="formData">
                 <br style="clear:both">
                             <h3 style="margin-bottom: 25px; text-align: center">Membership Form (Non-Rider)</h3>
@@ -145,6 +145,7 @@
                 <!-- <input type="submit" ng-disabled="nonriderform.$invalid" id="submit" class="btn btn-lg btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%"> -->
                 <input type="submit" id="submit" class="btn btn-lg btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%">
                 <input type="reset" class="btn btn-lg btn-primary pull-right itn-green-bg" ng-click="formData = {}" value="Reset">
+                <input type="button" class="btn btn-lg btn-primary pull-right itn-green-bg" ng-click="generatePDF()" value="Generate PDF">
 
                 
                 </form>
