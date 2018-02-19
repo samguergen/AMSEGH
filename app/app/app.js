@@ -125,6 +125,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     phone: "Please match pattern [+91-036-78658 || 91-036-78658]",
     zip: "The zipcode should be be 5 digits long",
     email: "The email should have the format: test@example.com",
+    emailConfirmation: "The email confirmation field should match the email field",
     date: "The date should have the format: MM/DD/YYYY",
     dob: "The date of birth should have the format: MM/DD/YYYY",
     phone: "The phone number needs to have the format: 111-111-1111"
@@ -195,3 +196,19 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
   
   
 }]);
+
+
+myApp.directive('match', function($parse) {
+  return {
+    require: 'ngModel',
+    link: function(scope, elem, attrs, ctrl) {
+      scope.$watch(function() {        
+        return $parse(attrs.match)(scope) === ctrl.$modelValue;
+      }, function(currentValue) {
+        ctrl.$setValidity('mismatch', currentValue);
+      });
+    }
+  };
+});
+
+
