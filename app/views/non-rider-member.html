@@ -15,7 +15,7 @@
             <div class="form-area" id="formConfirmation" style="background: #c7dfe4;border:none">  
                   <form name="nonriderform" novalidate ng-submit="submitForm2('nonrider')" role="non rider form" ng-model="formData">
                 <br style="clear:both">
-                            <!-- <img src="assets/images/custom_logo.png" style="margin:auto;display:block" alt="main logo"/> -->
+                            <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
                             <h3 style="margin-bottom: 25px; text-align: center">Membership Form (Non-Rider)</h3>
                             
                   <div class="row">
@@ -154,11 +154,11 @@
                   </div>
                 </div>
 
-                  <div class="form-group" ng-class="{ 'has-error' : nonriderform.message.$invalid && !nonriderform.message.$pristine }">
+                  <!-- <div class="form-group" ng-class="{ 'has-error' : nonriderform.message.$invalid && !nonriderform.message.$pristine }">
                     <label for="message body">Message: *</label><br>
                   <textarea class="form-control" type="textarea" id="message" maxlength="140" rows="7" ng-model="formData.message" required></textarea>
                       <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
-                  </div>
+                  </div> -->
                     
                 <!-- <input type="submit" ng-disabled="nonriderform.$invalid" id="submit" class="btn btn-lg btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%"> -->
                 <input type="submit" id="submit" class="btn btn-lg btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%">
