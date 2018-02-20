@@ -360,92 +360,135 @@
 
 
                           <div id="second-emergency" class="mt-50">
+                            
                             <h2>Second Emergency Contact</h2>
-                              <div class="form-group">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name*" ng-model="formData.secondEmergencyContact.name" required>
+                            
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.secondEmName.$invalid && !itnForm.secondEmName.$pristine }">
+                              <label for="name">Name: *</label><br>
+                              <input type="text" class="form-control" id="name" name="secondEmName" ng-model="formData.secondEmergencyContact.name" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                              <span ng-if="itnForm.secondEmName.$error.required && !itnForm.secondEmName.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.secondEmName.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.secondEmName.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
+                            </div>
+                            
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.secondEmRelationship.$invalid && !itnForm.secondEmRelationship.$pristine }">
+                              <label for="relationship">Relationship: *</label><br>
+                              <input type="text" class="form-control" id="relationship" name="secondEmRelationship" placeholder="Example: Daughter" ng-model="formData.secondEmergencyContact.relationship" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                              <span ng-if="itnForm.secondEmRelationship.$error.required && !itnForm.secondEmRelationship.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.secondEmRelationship.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.secondEmRelationship.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
+                            </div>
+                            
+                            <div class="row">
+                              <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.secondEmStreet.$invalid && !itnForm.secondEmStreet.$pristine }">
+                                <label for="street">Street Address: *</label><br>
+                                <input type="text" class="form-control" id="street" name="secondEmStreet" ng-model="formData.secondEmergencyContact.street" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                                <span ng-if="itnForm.secondEmStreet.$error.required && !itnForm.secondEmStreet.$pristine" class="help-block">{{errorMessages.required}}</span>
+                                <span ng-if="itnForm.secondEmStreet.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                                <span ng-if="itnForm.secondEmStreet.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                               </div>
-                              <div class="form-group">
-                                <input type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship* - Example:Daughter" ng-model="formData.secondEmergencyContact.relationship" required>
+                              
+                              <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.secondEmCity.$invalid && !itnForm.secondEmCity.$pristine }">
+                                <label for="city">City: *</label><br>
+                                <input type="text" class="form-control" id="city" name="firtEmCity"  ng-model="formData.secondEmergencyContact.city" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                                <span ng-if="itnForm.secondEmCity.$error.required && !itnForm.secondEmCity.$pristine" class="help-block">{{errorMessages.required}}</span>
+                                <span ng-if="itnForm.secondEmCity.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                                <span ng-if="itnForm.secondEmCity.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                               </div>
-                              <div class="form-group">
-                                <input type="text" class="form-control" id="street" name="street" placeholder="Street Address*" ng-model="formData.secondEmergencyContact.street" required>
-                              </div>
-                              <div class="form-group">
-                                <input type="text" class="form-control" id="city" name="city" placeholder="City*" ng-model="formData.secondEmergencyContact.city" required>
-                              </div>
-                              <div class="form-group">
-                                <select class="form-control" id="state">
-                                  <option ng-model="formData.secondEmergencyContact.state" value="">Select a State*</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="">N/A</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="AK">Alaska</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="AL">Alabama</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="AR">Arkansas</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="AZ">Arizona</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="CA">California</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="CO">Colorado</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="CT">Connecticut</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="DC">District of Columbia</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="DE">Delaware</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="FL">Florida</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="GA">Georgia</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="HI">Hawaii</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="IA">Iowa</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="ID">Idaho</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="IL">Illinois</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="IN">Indiana</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="KS">Kansas</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="KY">Kentucky</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="LA">Louisiana</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="MA">Massachusetts</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="MD">Maryland</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="ME">Maine</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="MI">Michigan</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="MN">Minnesota</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="MO">Missouri</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="MS">Mississippi</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="MT">Montana</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="NC">North Carolina</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="ND">North Dakota</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="NE">Nebraska</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="NH">New Hampshire</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="NJ">New Jersey</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="NM">New Mexico</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="NV">Nevada</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="NY">New York</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="OH">Ohio</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="OK">Oklahoma</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="OR">Oregon</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="PA">Pennsylvania</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="PR">Puerto Rico</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="RI">Rhode Island</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="SC">South Carolina</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="SD">South Dakota</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="TN">Tennessee</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="TX">Texas</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="UT">Utah</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="VA">Virginia</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="VT">Vermont</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="WA">Washington</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="WI">Wisconsin</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="WV">West Virginia</option>
-                                  <option ng-model="formData.secondEmergencyContact.state" value="WY">Wyoming</option>
-                                </select>
-                              </div>
-                              <div class="form-group">
-                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip code*" ng-model="formData.secondEmergencyContact.zip" ng-pattern="zipPattern" required>
-                              </div>
-                              <div class="form-group">
-                                <input type="text" class="form-control" id="home-phone" name="home-phone" placeholder="Home Phone* - Example: xxx-xxx-xxxx" ng-model="formData.secondEmergencyContact.homePhone" required>
-                              </div>
-                              <div class="form-group">
-                                <input type="text" class="form-control" id="cellphone" name="cellphone" placeholder="CellPhone - Example: xxx-xxx-xxxx" ng-model="formData.secondEmergencyContact.cellPhone" required>
-                              </div>
-                              <div class="form-group">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.secondEmergencyContact.email" ng-pattern="emailPattern">
-                                <div ng-messages="itnForm.email.$error">
-                                  <div ng-message="pattern">Please enter a valid email address!</div>
-                                </div>
-                              </div>
+                            </div><!--row-->
+                            
+                            <div class="row">
+                            <div class="form-group col-sm-6">
+                              <label for="state">State: *</label><br>
+                              <select class="form-control" id="state">
+                                <option ng-model="formData.secondEmergencyContact.state" value="">Select a State*</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="">N/A</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="AK">Alaska</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="AL">Alabama</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="AR">Arkansas</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="AZ">Arizona</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="CA">California</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="CO">Colorado</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="CT">Connecticut</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="DC">District of Columbia</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="DE">Delaware</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="FL">Florida</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="GA">Georgia</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="HI">Hawaii</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="IA">Iowa</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="ID">Idaho</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="IL">Illinois</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="IN">Indiana</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="KS">Kansas</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="KY">Kentucky</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="LA">Louisiana</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="MA">Massachusetts</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="MD">Maryland</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="ME">Maine</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="MI">Michigan</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="MN">Minnesota</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="MO">Missouri</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="MS">Mississippi</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="MT">Montana</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="NC">North Carolina</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="ND">North Dakota</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="NE">Nebraska</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="NH">New Hampshire</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="NJ">New Jersey</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="NM">New Mexico</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="NV">Nevada</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="NY">New York</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="OH">Ohio</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="OK">Oklahoma</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="OR">Oregon</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="PA">Pennsylvania</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="PR">Puerto Rico</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="RI">Rhode Island</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="SC">South Carolina</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="SD">South Dakota</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="TN">Tennessee</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="TX">Texas</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="UT">Utah</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="VA">Virginia</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="VT">Vermont</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="WA">Washington</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="WI">Wisconsin</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="WV">West Virginia</option>
+                                <option ng-model="formData.secondEmergencyContact.state" value="WY">Wyoming</option>
+                              </select>
+                            </div>
+                            
+                            <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.secondEmZip.$invalid && !itnForm.secondEmZip.$pristine }">
+                              <label for="zip">Zip Code: *</label><br>
+                              <input type="text" class="form-control" id="zip" name="zip" ng-model="formData.secondEmergencyContact.zip" ng-model="formData.secondEmergencyContact.zip" ng-pattern="zipPattern" required>
+                              <span ng-if="itnForm.secondEmZip.$error.required && !itnForm.secondEmZip.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.secondEmZip.$error.pattern" class="help-block">{{errorMessages.zip}}</span>
+                            </div>
+                            </div><!--row-->
+                            
+                            <div class="row">
+                            <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.secondEmHomePhone.$invalid && !itnForm.secondEmHomePhone.$pristine }">
+                              <label for="home phone">Home Phone: *</label><br>
+                              <input type="text" class="form-control" id="home-phone" name="secondEmHomePhone" placeholder="Example: xxx-xxx-xxxx" ng-model="formData.secondEmergencyContact.homePhone" ng-pattern="phonePattern" required>
+                              <span ng-if="itnForm.secondEmHomePhone.$error.required && !itnForm.secondEmHomePhone.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.secondEmHomePhone.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
+                            </div>
+                            
+                            <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.secondEmCellphone.$invalid && !itnForm.secondEmCellphone.$pristine }">
+                              <label for="cell phone">Cell Phone: </label><br>
+                              <input type="text" class="form-control" id="cellphone" name="secondEmCellphone" placeholder="Example: xxx-xxx-xxxx" ng-model="formData.secondEmergencyContact.cellPhone" ng-pattern="phonePattern" required>
+                              <span ng-if="itnForm.secondEmCellphone.$error.required && !itnForm.secondEmCellphone.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.secondEmCellphone.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
+                            </div>
+                            </div><!--row-->
+                            
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.secondEmEmail.$invalid && !itnForm.secondEmEmail.$pristine }">
+                              <label for="email">Email: </label><br>
+                              <input type="email" class="form-control" id="email" name="secondEmEmail" placeholder="Example: test@example.com" ng-model="formData.secondEmergencyContact.email" ng-pattern="emailPattern">
+                              <span ng-if="itnForm.secondEmEmail.$error.required && !itnForm.secondEmEmail.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.secondEmEmail.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
+                            </div>
+                            
                             </div><!--second emergency contact-->
                             
                             <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
