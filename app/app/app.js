@@ -131,6 +131,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     phone: "The phone number needs to have the format: 111-111-1111"
   };
   $scope.dataPDF = null;
+  $scope.formSubject = 'New membership application received';
   
   // $transitions.onStart({}, function($transition, $scope){
   //     console.log('changing state');
@@ -189,7 +190,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
         $http.post('/sendmail', {
           from: '"ITN Web User" <donotreply@itnamerica.com>',
           to: 'samguergen@gmail.com',
-          subject: "New Non Rider Application",
+          subject: $scope.formSubject,
           text: $scope.formData,
           pdf: $scope.dataPDF
         }).then(res=>{
@@ -234,14 +235,13 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
   }
   
   $scope.submitForm2 = function(formType){
-    var emailSubject = 'New membership application received';
     if (formType === 'volunteer') {
-      emailSubject = 'New volunteer application received';
-    } else if (formType === 'contact') {
-      emailSubject = $scope.formData.subject || 'Contact Form submitted';
+      $scope.formSubject = 'New volunteer application received';
     } else if (formType === 'nonrider') {
-       emailSubject = $scope.formData.subject || 'Non-Rider application Form submitted';
-      }
+      $scope.formSubject = 'Non-Rider application Form submitted';
+    } else if (formType === 'contact') {
+      $scope.formSubject = $scope.formData.subject || 'Contact Form submitted';
+    }
     console.log('form you are sending is ', $scope.formData);
     $scope.loading = true;
     
