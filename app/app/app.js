@@ -201,39 +201,39 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
       });
   }
   
-  $scope.generatePDFs = function() {
-    console.log('inside pdfS');
-    kendo.drawing.drawDOM($("#formConfirmation"))
-      .then(function (group) {
-          // Render the result as a PDF file
-          return kendo.drawing.exportPDF(group, {
-              paperSize: "A4",
-              margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
-          });
-      })
-      .done(function (data) {
-        console.log('data is ', data);
-        $scope.dataPDF = data;
-        
-        $http.post('/sendmail', {
-          from: '"ITN Web User" <donotreply@itnamerica.com>',
-          to: 'samguergen@gmail.com',
-          subject: $scope.formSubject,
-          text: $scope.formData,
-          pdf: $scope.dataPDF
-        }).then(res=>{
-            $scope.loading = false;
-            $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
-        });
-      });
-  }
+  // $scope.generatePDFs = function() {
+  //   console.log('inside pdfS');
+  //   kendo.drawing.drawDOM($("#formConfirmation"))
+  //     .then(function (group) {
+  //         // Render the result as a PDF file
+  //         return kendo.drawing.exportPDF(group, {
+  //             paperSize: "A4",
+  //             margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
+  //         });
+  //     })
+  //     .done(function (data) {
+  //       console.log('data is ', data);
+  //       $scope.dataPDF = data;
+  // 
+  //       $http.post('/sendmail', {
+  //         from: '"ITN Web User" <donotreply@itnamerica.com>',
+  //         to: 'samguergen@gmail.com',
+  //         subject: $scope.formSubject,
+  //         text: $scope.formData,
+  //         pdf: $scope.dataPDF
+  //       }).then(res=>{
+  //           $scope.loading = false;
+  //           $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
+  //       });
+  //     });
+  // }
 
   
   $scope.generateMultiPagePDF = function() {
     console.log('inside multipage');
     kendo.drawing.drawDOM($("#formConfirmation"), {
           paperSize: "A4",
-          margin: { left: "0cm", top: "1cm", right: "0cm", bottom: "1cm" }
+          margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
       }).then(function (group) {
           // Render the result as a PDF file
           return kendo.drawing.exportPDF(group);
@@ -286,20 +286,16 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
       $scope.formSubject = 'New volunteer application received';
       $scope.generateMultiPagePDF();
     } else if (formType === 'membership') {
+      $scope.tab = 99;
       $scope.formSubject = 'New membership application received';
       $scope.generateMultiPagePDF();
-      $scope.generatePDFs();
     } else if (formType === 'nonrider') {
       $scope.formSubject = 'Non-Rider application Form submitted';
       $scope.generatePDF();
     } else if (formType === 'contact') {
       $scope.formSubject = $scope.formData.subject || 'Contact Form submitted';
     }
-
     
-    //generating PDF
-    // $scope.generatePDF();
-
   }
   
   
