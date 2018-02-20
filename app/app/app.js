@@ -173,7 +173,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     
   }
   
-  $scope.generatePDF2 = function() {
+  $scope.generatePDF = function() {
     kendo.drawing.drawDOM($("#formConfirmation"))
       .then(function (group) {
           // Render the result as a PDF file
@@ -208,13 +208,6 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
  
           
       });
-  }
-  
-  $scope.generatePDF = function() {
-    kendo.drawing.drawDOM($("#formConfirmation")).then(function(group) {
-      console.log('pdf is ', group);
-      kendo.drawing.pdf.saveAs(group, "Application PDF.pdf");
-    });
   }
   
   $scope.submitForm = function(formType){
@@ -253,7 +246,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     $scope.loading = true;
     
     //generating PDF
-    $scope.generatePDF2();
+    $scope.generatePDF();
 
   }
   

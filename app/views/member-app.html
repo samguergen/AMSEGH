@@ -11,8 +11,8 @@
           You can book your first ride by calling us on (678) 696-0360.</em></p>
         <hr align="center">
         <div class="col-sm-12">
-            <div class="form-area" style="background: #c7dfe4;border:none">  
-                  <form name="itnForm" novalidate ng-submit="submitForm()" role="membership form" ng-model="formData">
+            <div class="form-area" id="formConfirmation" style="background: #c7dfe4;border:none">  
+                  <form name="itnForm" novalidate ng-submit="submitForm2()" role="membership form" ng-model="formData">
                     <br style="clear:both">
                     <h2 class="app-title">Application for Transportation Service</h2>
                     
@@ -327,7 +327,7 @@
                             
                             <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.firstEmZip.$invalid && !itnForm.firstEmZip.$pristine }">
                               <label for="zip">Zip Code: *</label><br>
-                              <input type="text" class="form-control" id="zip" name="zip" ng-model="formData.firstEmergencyContact.zip" ng-model="formData.firstEmergencyContact.zip" ng-pattern="zipPattern" required>
+                              <input type="text" class="form-control" id="zip" name="firstEmZip" ng-model="formData.firstEmergencyContact.zip" ng-model="formData.firstEmergencyContact.zip" ng-pattern="zipPattern" required>
                               <span ng-if="itnForm.firstEmZip.$error.required && !itnForm.firstEmZip.$pristine" class="help-block">{{errorMessages.required}}</span>
                               <span ng-if="itnForm.firstEmZip.$error.pattern" class="help-block">{{errorMessages.zip}}</span>
                             </div>
@@ -390,7 +390,7 @@
                               
                               <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.secondEmCity.$invalid && !itnForm.secondEmCity.$pristine }">
                                 <label for="city">City: *</label><br>
-                                <input type="text" class="form-control" id="city" name="firtEmCity"  ng-model="formData.secondEmergencyContact.city" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                                <input type="text" class="form-control" id="city" name="secondEmCity"  ng-model="formData.secondEmergencyContact.city" ng-minlength="minlength" ng-maxlength="maxlength" required>
                                 <span ng-if="itnForm.secondEmCity.$error.required && !itnForm.secondEmCity.$pristine" class="help-block">{{errorMessages.required}}</span>
                                 <span ng-if="itnForm.secondEmCity.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
                                 <span ng-if="itnForm.secondEmCity.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
@@ -460,7 +460,7 @@
                             
                             <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.secondEmZip.$invalid && !itnForm.secondEmZip.$pristine }">
                               <label for="zip">Zip Code: *</label><br>
-                              <input type="text" class="form-control" id="zip" name="zip" ng-model="formData.secondEmergencyContact.zip" ng-model="formData.secondEmergencyContact.zip" ng-pattern="zipPattern" required>
+                              <input type="text" class="form-control" id="zip" name="secondEmZip" ng-model="formData.secondEmergencyContact.zip" ng-model="formData.secondEmergencyContact.zip" ng-pattern="zipPattern" required>
                               <span ng-if="itnForm.secondEmZip.$error.required && !itnForm.secondEmZip.$pristine" class="help-block">{{errorMessages.required}}</span>
                               <span ng-if="itnForm.secondEmZip.$error.pattern" class="help-block">{{errorMessages.zip}}</span>
                             </div>
@@ -706,7 +706,7 @@
                             <div class="form-group ta-center">
                               <label for="gender">Gender: * </label><br>
                               <label class="radio-inline"><input type="radio" value="female" ng-model="formData.customerInfo.gender">Female</label>
-                              <label class="radio-inline"><input type="radio" value="male" ng-model="formData.customerInfo.gender">Male</label>
+                              <label class="radio-inline"><input type="radio" value="male" ng-model="formData.customerInfo.gender" required>Male</label>
                             </div>
                             
                             <div class="form-group" ng-class="{ 'has-error' : itnForm.dob.$invalid && !itnForm.dob.$pristine }">
@@ -722,7 +722,7 @@
                               <label class="radio-inline"><input ng-model="formData.customerInfo.maritalStatus" type="radio" value="single">Single</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.maritalStatus" type="radio" value="partnered">Partnered</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.maritalStatus" type="radio" value="divorced">Divorced</label>
-                              <label class="radio-inline"><input ng-model="formData.customerInfo.maritalStatus" type="radio" value="widowed">Widowed</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.maritalStatus" type="radio" value="widowed" required>Widowed</label>
                             </div>
                             
                             <div class="form-group ta-center">
@@ -731,12 +731,12 @@
                               <label class="radio-inline"><input ng-model="formData.customerInfo.livingArrangement" type="radio" value="spouse">Live with Spouse</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.livingArrangement" type="radio" value="children">Live with Children</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.livingArrangement" type="radio" value="friend">Live with Friend</label>
-                              <label class="radio-inline"><input ng-model="formData.customerInfo.livingArrangement" type="radio" value="other-family">Live with Other Family</label>
+                              <label class="radio-inline"><input ng-model="formData.customerInfo.livingArrangement" type="radio" value="other-family" required>Live with Other Family</label>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="dwelling">Dwelling Arrangements: * </label><br>
-                              <label class="radio-inline"><input ng-model="formData.customerInfo.dwellingArrangement" type="radio" value="private-home">Private Home</label>
+                              <label class="radio-inline" required><input ng-model="formData.customerInfo.dwellingArrangement" type="radio" value="private-home">Private Home</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.dwellingArrangement" type="radio" value="assisted-living"> Assisted Living Facility</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.dwellingArrangement" type="radio" value="retirement-community"> Independent Living Retirement Community</label>
                               <label class="radio-inline"><input type="radio" value="other-dwelling" ng-click="otherDwelling = !otherDwelling">Other (specify)</label>
@@ -760,7 +760,7 @@
                               <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="public-transportation">Public Transportation</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="taxi">Taxi</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="private-service">Private Service</label>
-                              <label class="radio-inline"><input type="radio" value="other-transportation" ng-click="otherTransportation = !otherTransportation">Other (specify)</label>
+                              <label class="radio-inline"><input type="radio" ng-click="otherTransportation = !otherTransportation">Other (specify)</label>
                                 <input ng-model="formData.customerInfo.currentTransportationMeans.other" type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
                             </div>
                           
@@ -815,9 +815,9 @@
                           
                           <div class="form-group ta-center">
                             <label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
-                            <label class="radio-inline"><input ng-model="formData.customerInfo.memberOfProfessionalOrgOrUnion" type="radio" value="yes" ng-click="specifyUnions = !specifyUnions">Yes</label>
+                            <label class="radio-inline"><input ng-model="formData.customerInfo.memberOfProfessionalOrgOrUnion" type="radio" ng-click="specifyUnions = !specifyUnions">Yes</label>
                             <label class="radio-inline"><input type="radio" value="no">No</label>
-                              <input ng-model="formData.customerInfo.memberOfProfessionalOrgOrUnion" type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
+                              <input ng-model="formData.customerInfo.memberOfProfessionalOrgOrUnion.other" type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
                           </div>
                           
                           <div class="form-group ta-center">
@@ -1085,7 +1085,7 @@
                           
                           <div class="form-group" ng-class="{ 'has-error' : itnForm.name1.$invalid && !itnForm.name1.$pristine }">
                             <label for="name">Name: *</label>
-                            <input ng-model="formData.agreement.name" type="text" class="form-control" id="name" name="name1" placeholder="Customer please print name"  ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.agreement.name1" required>
+                            <input ng-model="formData.agreement.name" type="text" class="form-control" id="name" name="name1" placeholder="please print name"  ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.agreement.name1" required>
                             <span ng-if="itnForm.name1.$error.required && !itnForm.name1.$pristine" class="help-block">{{errorMessages.required}}</span>
                             <span ng-if="itnForm.name1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
                             <span ng-if="itnForm.name1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
@@ -1125,7 +1125,7 @@
                           
                           <div class="form-group" ng-class="{ 'has-error' : itnForm.name2.$invalid && !itnForm.name2.$pristine }">
                             <label for="name">Name: *</label>
-                            <input ng-model="formData.agreement.name" type="text" class="form-control" id="name" name="name2" placeholder="Customer please print name"  ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.agreement.name2" required>
+                            <input ng-model="formData.agreement.name2" type="text" class="form-control" id="name" name="name2" placeholder="please print name"  ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.agreement.name2" required>
                             <span ng-if="itnForm.name2.$error.required && !itnForm.name2.$pristine" class="help-block">{{errorMessages.required}}</span>
                             <span ng-if="itnForm.name2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
                             <span ng-if="itnForm.name2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
@@ -1133,7 +1133,7 @@
                           
                           <div class="form-group" ng-class="{ 'has-error' : itnForm.signature2.$invalid && !itnForm.signature2.$pristine }">
                             <label for="signature">Signature: *</label>
-                            <input ng-model="formData.agreement.signature" type="text" class="form-control" id="signature" name="signature2" placeholder="Signature of customer or legal representative: *" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.agreement.signature2" required>
+                            <input ng-model="formData.agreement.signature2" type="text" class="form-control" id="signature" name="signature2" placeholder="Signature of customer or legal representative: *" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.agreement.signature2" required>
                             <span ng-if="itnForm.signature2.$error.required && !itnForm.signature2.$pristine" class="help-block">{{errorMessages.required}}</span>
                             <span ng-if="itnForm.signature2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
                             <span ng-if="itnForm.signature2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
@@ -1141,7 +1141,7 @@
                           
                           <div class="form-group" ng-class="{ 'has-error' : itnForm.date2.$invalid && !itnForm.date2.$pristine }">
                             <label for="date">Agreement Date: *</label>
-                            <input ng-model="formData.agreement.date" type="text" class="form-control" id="date" name="date2" ng-pattern="datePattern" placeholder="Example: mm/dd/yyyy" required>
+                            <input ng-model="formData.agreement.date2" type="text" class="form-control" id="date" name="date2" ng-pattern="datePattern" placeholder="Example: mm/dd/yyyy" required>
                             <span ng-if="itnForm.date2.$error.required && !itnForm.date2.$pristine" class="help-block">{{errorMessages.required}}</span>
                             <span ng-if="itnForm.date2.$error.pattern" class="help-block">{{errorMessages.date}}</span>
                           </div>
