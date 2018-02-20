@@ -1403,7 +1403,8 @@ form textarea.form-control {font-size:25px}
 }
 
 .volunteer-app .steps, .member-app .steps {
-  margin-bottom:100px !important;
+  margin-bottom: 75px !important;
+  margin-top: 50px;
 }
     
 #footer {
@@ -1629,6 +1630,7 @@ h2,h3 {line-height:1.7}
   font-size: 25px;
   height: 50px;
 }
+
 
 /* RESPONSIVE */
 
