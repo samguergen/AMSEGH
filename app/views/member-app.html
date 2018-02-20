@@ -353,7 +353,7 @@
                               <label for="email">Email: </label><br>
                               <input type="email" class="form-control" id="email" name="firstEmEmail" placeholder="Example: test@example.com" ng-model="formData.firstEmergencyContact.email" ng-pattern="emailPattern">
                               <span ng-if="itnForm.firstEmEmail.$error.required && !itnForm.firstEmEmail.$pristine" class="help-block">{{errorMessages.required}}</span>
-                              <span ng-if="itnForm.firstEmEmail.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
+                              <span ng-if="itnForm.firstEmEmail.$error.pattern" class="help-block">{{errorMessages.email}}</span>
                             </div>
                             
                           </div><!--first emergency-->
@@ -486,7 +486,7 @@
                               <label for="email">Email: </label><br>
                               <input type="email" class="form-control" id="email" name="secondEmEmail" placeholder="Example: test@example.com" ng-model="formData.secondEmergencyContact.email" ng-pattern="emailPattern">
                               <span ng-if="itnForm.secondEmEmail.$error.required && !itnForm.secondEmEmail.$pristine" class="help-block">{{errorMessages.required}}</span>
-                              <span ng-if="itnForm.secondEmEmail.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
+                              <span ng-if="itnForm.secondEmEmail.$error.pattern" class="help-block">{{errorMessages.email}}</span>
                             </div>
                             
                             </div><!--second emergency contact-->
@@ -495,6 +495,7 @@
                             <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                             
                           </div><!--tab2-->
+
 
 
                           <div class="member-tabs" ng-if="tab === 3">
@@ -539,7 +540,7 @@
                               <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.agencyOnAging" type="checkbox" value="agency">Agency on Aging</label>
                               <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.socialWorker" type="checkbox" value="social-worker">Social Worker</label>
                               <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.internet" type="checkbox" value="Internet">Internet</label>
-                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.currentMember" type="checkbox" value="current-member">Were you referred by a current member?</label>
+                              <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.currentMember" type="checkbox" value="current-member" required>Were you referred by a current member?</label>
                             </div>
                             
                             <div class="form-group ta-center">
@@ -549,16 +550,37 @@
                             </div>
                             
                             <div ng-if="sendInfo">
-                              <div class="form-group">
-                                <input ng-model="formData.sendInfoTo.name" type="text" class="form-control" id="name" name="name" placeholder="Name: *" required>
+                              
+                              <div class="form-group" ng-class="{ 'has-error' : itnForm.name.$invalid && !itnForm.name.$pristine }">
+                                <label for="name">Name: *</label><br>
+                                <input ng-model="formData.sendInfoTo.name" type="text" class="form-control" id="name" name="name" ng-minlength="minlength" ng-maxlength="maxlength">
+                                <span ng-if="itnForm.name.$error.required && !itnForm.name.$pristine" class="help-block">{{errorMessages.required}}</span>
+                                <span ng-if="itnForm.name.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                                <span ng-if="itnForm.name.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                               </div>
-                              <div class="form-group">
-                                <input ng-model="formData.sendInfoTo.relationship" type="text" class="form-control" id="relationship" name="relationship" placeholder="Relationship: *" required>
+                              
+                              <div class="row">
+                              <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.relationship.$invalid && !itnForm.relationship.$pristine }">
+                                <label for="relationship">Relationship: *</label><br>
+                                <input ng-model="formData.sendInfoTo.relationship" type="text" class="form-control" id="relationship" name="relationship" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                                <span ng-if="itnForm.relationship.$error.required && !itnForm.relationship.$pristine" class="help-block">{{errorMessages.required}}</span>
+                                <span ng-if="itnForm.relationship.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                                <span ng-if="itnForm.relationship.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                               </div>
-                              <div class="form-group">
-                                <input ng-model="formData.sendInfoTo.street" type="text" class="form-control" id="street" name="street" placeholder="Street Address: *" required>
+                              
+                              
+                              <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.street.$invalid && !itnForm.street.$pristine }">
+                                <label for="street">Street Address: *</label><br>
+                                <input ng-model="formData.sendInfoTo.street" type="text" class="form-control" id="street" name="street" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                                <span ng-if="itnForm.street.$error.required && !itnForm.street.$pristine" class="help-block">{{errorMessages.required}}</span>
+                                <span ng-if="itnForm.street.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                                <span ng-if="itnForm.street.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                               </div>
-                              <div class="form-group">
+                              </div><!--row-->
+                              
+                              <div class="row">
+                              <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.state.$invalid && !itnForm.state.$pristine }">
+                                <label for="state">State: *</label><br>
                                 <select class="form-control" id="state">
                                   <option ng-model="formData.sendInfoTo.state" value="">Select a State*</option>
                                   <option ng-model="formData.sendInfoTo.state" value="">N/A</option>
@@ -615,19 +637,33 @@
                                   <option ng-model="formData.sendInfoTo.state" value="WV">West Virginia</option>
                                   <option ng-model="formData.sendInfoTo.state" value="WY">Wyoming</option>
                                 </select>
+                                <span ng-if="itnForm.state.$error.required && !itnForm.state.$pristine" class="help-block">{{errorMessages.required}}</span>
                               </div>
-                              <div class="form-group">
-                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code: *" ng-model="formData.sendInfoTo.zip" ng-pattern="zipPattern" required>
+                              
+                              <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.zip.$invalid && !itnForm.zip.$pristine }">
+                                <label for="zip">Zip Code: *</label><br>
+                                <input type="text" class="form-control" id="zip" name="zip" ng-model="formData.sendInfoTo.zip" ng-pattern="zipPattern" required>
+                                <span ng-if="itnForm.zip.$error.required && !itnForm.zip.$pristine" class="help-block">{{errorMessages.required}}</span>
+                                <span ng-if="itnForm.zip.$error.pattern" class="help-block">{{errorMessages.zip}}</span>
                               </div>
-                              <div class="form-group">
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone* - Example: xxx-xxx-xxxx"  ng-model="formData.sendInfoTo.phone" required>
+                              </div><!--row-->
+                              
+                              <div class="row">
+                              <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.phone.$invalid && !itnForm.phone.$pristine }">
+                                <label for="phone">Phone: *</label><br>
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Example: xxx-xxx-xxxx"  ng-model="formData.sendInfoTo.phone" ng-pattern="phonePattern" required>
+                                <span ng-if="itnForm.phone.$error.required && !itnForm.phone.$pristine" class="help-block">{{errorMessages.required}}</span>
+                                <span ng-if="itnForm.phone.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
                               </div>
-                              <div class="form-group">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="formData.sendInfoTo.email" ng-pattern="emailPattern">
-                                <div ng-messages="itnForm.email.$error">
-                                  <div ng-message="pattern">Please enter a valid email address!</div>
-                                </div>
+                              
+                              <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.email.$invalid && !itnForm.email.$pristine }">
+                                <label for="email">Email: </label><br>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Example: test@example.com" ng-model="formData.sendInfoTo.email" ng-pattern="emailPattern">
+                                <span ng-if="itnForm.email.$error.required && !itnForm.email.$pristine" class="help-block">{{errorMessages.required}}</span>
+                                <span ng-if="itnForm.email.$error.pattern" class="help-block">{{errorMessages.email}}</span>
                               </div>
+                              </div><!--row-->
+                              
                             </div><!--sendinfo-->
                             
                             <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>

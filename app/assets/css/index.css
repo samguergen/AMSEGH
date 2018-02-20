@@ -1269,6 +1269,7 @@ padding: 50px;
   font-size: 30px;
   color:black;
 }
+.member-app .btn-lg {margin-top:50px}
 form select#state {
     font-size: 25px;
     height: 50px;
