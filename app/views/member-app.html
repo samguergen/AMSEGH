@@ -12,7 +12,7 @@
         <hr align="center">
         <div class="col-sm-12">
             <div class="form-area" id="formConfirmation" style="background: #c7dfe4;border:none">  
-                  <form name="itnForm" novalidate ng-submit="submitForm2()" role="membership form" ng-model="formData">
+                  <form name="itnForm" novalidate ng-submit="submitForm2('membership')" role="membership form" ng-model="formData">
                     <br style="clear:both">
                     <h2 class="app-title">Application for Transportation Service</h2>
                     
@@ -815,8 +815,8 @@
                           
                           <div class="form-group ta-center">
                             <label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
-                            <label class="radio-inline"><input ng-model="formData.customerInfo.memberOfProfessionalOrgOrUnion" type="radio" ng-click="specifyUnions = !specifyUnions">Yes</label>
-                            <label class="radio-inline"><input type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="formData.customerInfo.memberOfProfessionalOrgOrUnion" type="radio" value="yes" ng-click="specifyUnions = true">Yes</label>
+                            <label class="radio-inline"><input type="radio" value="no" ng-click="specifyUnions = false">No</label>
                               <input ng-model="formData.customerInfo.memberOfProfessionalOrgOrUnion.other" type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
                           </div>
                           
