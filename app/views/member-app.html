@@ -200,7 +200,7 @@
 
                         <div class="member-tabs" ng-if="tab===2 || tab===99">
                           
-                        <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
+                        <!-- <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/> -->
 
                         <ol class="steps">
                         <li class="step previous complete">
@@ -500,7 +500,7 @@
 
                           <div class="member-tabs" ng-if="tab===3 || tab===99">
                             
-                            <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
+                            <!-- <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/> -->
                             
                             <ol class="steps">
                               <li class="step previous complete">
@@ -673,7 +673,7 @@
                           
                           <div class="member-tabs" ng-if="tab===4 || tab===99">
                             
-                            <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
+                            <!-- <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/> -->
                             
                             <ol class="steps">
                               <li class="step previous complete">
@@ -771,7 +771,7 @@
 
                         <div class="member-tabs" ng-if="tab===5 || tab===99">
                           
-                          <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
+                          <!-- <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/> -->
                           
                           <ol class="steps">
                             <li class="step previous complete">
@@ -852,7 +852,7 @@
 
                         <div class="member-tabs" ng-if="tab===6 || tab===99">
                           
-                          <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
+                          <!-- <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/> -->
                           
                           <ol class="steps">
                             <li class="step previous complete">
@@ -1029,8 +1029,10 @@
                             <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms.giftCertificate" type="checkbox" value="gift_certificate">Gift Certificate</label>
                           </div>
                           
-                          <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                          <!-- <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button> -->
+                          <button ng-click="tab=99" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button> 
                           <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                          
                           
                         </div><!--tab6-->
 
@@ -1039,7 +1041,7 @@
 
                         <div class="member-tabs" ng-if="tab===7 || tab===99">
                           
-                          <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
+                          <!-- <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/> -->
                           
                           <ol class="steps">
                             <li class="step previous complete">
@@ -1152,7 +1154,8 @@
 
                           <button type="submit" style="background:#e05944" class="btn btn-lg btn-danger" ng-disabled="form.$invalid">Submit</button>
                           
-                          <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                          <!-- <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>   -->
+                          <button ng-click="tab=6" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           <input type="reset" class="btn btn-primary pull-right itn-green-bg" value="Reset" ng-click="formData = {}">
                           
                         </div><!--tab7-->

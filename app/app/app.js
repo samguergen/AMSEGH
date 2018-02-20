@@ -287,6 +287,9 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
       $scope.generateMultiPagePDF();
     } else if (formType === 'membership') {
       $scope.tab = 99;
+      $(document).ready(function(){
+        $('.steps').css('display', 'none')
+      })
       $scope.formSubject = 'New membership application received';
       $scope.generateMultiPagePDF();
     } else if (formType === 'nonrider') {
