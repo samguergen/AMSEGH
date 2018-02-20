@@ -709,12 +709,11 @@
                               <label class="radio-inline"><input type="radio" value="male" ng-model="formData.customerInfo.gender">Male</label>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.dob.$invalid && !itnForm.dob.$pristine }">
                               <label for="dob">Date of Birth: * - </label><br>
                               <input type="text" class="form-control" id="dob" name="dob" placeholder="Example: mm/dd/yyyy" ng-model="formData.customerInfo.dateOfBirth" ng-pattern="dobPattern" required>
-                              <div ng-messages="itnForm.dob.$error">
-                                <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
-                              </div>
+                              <span ng-if="itnForm.dob.$error.required && !itnForm.dob.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.dob.$error.pattern" class="help-block">{{errorMessages.dob}}</span>
                             </div>
                             
                             <div class="form-group ta-center">
@@ -1083,16 +1082,28 @@
                               <li>Your contacts may receive a limited number of mailings (via regular mail or e-mail) for the ITN affiliate’s fundraising events/campaigns, as well as up to four quarterly ITN Newsletters. Their names will not be shared with any other party or organization.</li>
                             </ol>
                           </div>
+                          
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.name1.$invalid && !itnForm.name1.$pristine }">
+                            <label for="name">Name: *</label>
+                            <input ng-model="formData.agreement.name" type="text" class="form-control" id="name" name="name1" placeholder="Customer please print name"  ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.agreement.name1" required>
+                            <span ng-if="itnForm.name1.$error.required && !itnForm.name1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.name1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.name1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
+                          </div>
                             
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="signature" name="signature" placeholder="Agreement Signature: * - (please print name)" required>
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.signature1.$invalid && !itnForm.signature1.$pristine }">
+                            <label for="signature">Agreement Signature: *</label>
+                            <input type="text" class="form-control" id="signature" name="signature1" placeholder="please print name" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.agreement.signature1" required>
+                            <span ng-if="itnForm.signature1.$error.required && !itnForm.signature1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.signature1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.signature1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                           </div>
                           
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="date" name="date" placeholder="Agreement Date: * - Example: mm/dd/yyyy" ng-pattern="datePattern" required>
-                            <div ng-messages="itnForm.date.$error">
-                              <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
-                            </div>
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.date1.$invalid && !itnForm.date1.$pristine }">
+                            <label for="date">Agreement Date: *</label>
+                            <input type="text" class="form-control" id="date" name="date1" placeholder="Example: mm/dd/yyyy" ng-pattern="datePattern" ng-model="formData.agreement.date1" required>
+                            <span ng-if="itnForm.date1.$error.required && !itnForm.date1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.date1.$error.pattern" class="help-block">{{errorMessages.date}}</span>
                           </div>
                             
                           <div class="form-group">  
@@ -1112,31 +1123,41 @@
 
                           <p>Your signature indicates that you understand that routinely-collected ITNAmerica data will be used to study and improve transportation for seniors, and that you may, from time to time, be asked questions about your use of the service. We will do our best to provide rides for you and we will always strive to inform you when we cannot provide a ride. However, we are not responsible for any costs or expenses you may incur when we are unable to provide a ride for a specific time and place.</p>
                           
-                          <div class="form-group">
-                            <input ng-model="formData.agreement.name" type="text" class="form-control" id="name" name="name" placeholder="Customer Name: * - (please print name)" required>
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.name2.$invalid && !itnForm.name2.$pristine }">
+                            <label for="name">Name: *</label>
+                            <input ng-model="formData.agreement.name" type="text" class="form-control" id="name" name="name2" placeholder="Customer please print name"  ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.agreement.name2" required>
+                            <span ng-if="itnForm.name2.$error.required && !itnForm.name2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.name2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.name2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                           </div>
                           
-                          <div class="form-group">
-                            <input ng-model="formData.agreement.signature" type="text" class="form-control" id="signature" name="signature" placeholder="Signature of customer or legal representative: *" required>
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.signature2.$invalid && !itnForm.signature2.$pristine }">
+                            <label for="signature">Signature: *</label>
+                            <input ng-model="formData.agreement.signature" type="text" class="form-control" id="signature" name="signature2" placeholder="Signature of customer or legal representative: *" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.agreement.signature2" required>
+                            <span ng-if="itnForm.signature2.$error.required && !itnForm.signature2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.signature2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.signature2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                           </div>
                           
-                          <div class="form-group">
-                            <input ng-model="formData.agreement.date" type="text" class="form-control" id="date" name="date" ng-pattern="datePattern" placeholder="Date: * - Example: mm/dd/yyyy" required>
-                            <div ng-messages="itnForm.date.$error">
-                              <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
-                            </div>
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.date2.$invalid && !itnForm.date2.$pristine }">
+                            <label for="date">Agreement Date: *</label>
+                            <input ng-model="formData.agreement.date" type="text" class="form-control" id="date" name="date2" ng-pattern="datePattern" placeholder="Example: mm/dd/yyyy" required>
+                            <span ng-if="itnForm.date2.$error.required && !itnForm.date2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.date2.$error.pattern" class="help-block">{{errorMessages.date}}</span>
                           </div>
                             
                           <div class="form-group">
                             <label class="checkbox-inline"><input type="checkbox" value="agree" ng-click="" required>By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
                           </div>
 
+                          <button type="submit" style="background:#e05944" class="btn btn-lg btn-danger" ng-disabled="form.$invalid">Submit</button>
+                          
                           <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
-                          <!-- <input type="reset" class="btn btn-primary pull-right itn-green-bg" value="Reset"> -->
+                          <input type="reset" class="btn btn-primary pull-right itn-green-bg" value="Reset" ng-click="formData = {}">
                           
                         </div><!--tab7-->
                         
-                    <button type="submit" style="background:#e05944" class="btn btn-lg btn-danger" ng-disabled="form.$invalid" ng-show="tab===7">Submit</button>
+                    <!-- <button type="submit" style="background:#e05944" class="btn btn-lg btn-danger" ng-disabled="form.$invalid" ng-show="tab===7">Submit</button> -->
 
                 
                 </form>
