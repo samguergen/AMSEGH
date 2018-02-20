@@ -739,7 +739,7 @@
                               <label class="radio-inline"><input ng-model="formData.customerInfo.dwellingArrangement" type="radio" value="private-home">Private Home</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.dwellingArrangement" type="radio" value="assisted-living"> Assisted Living Facility</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.dwellingArrangement" type="radio" value="retirement-community"> Independent Living Retirement Community</label>
-                              <label class="radio-inline"><input type="radio" value="other-dwelling" ng-click="otherDwelling = !otherDwelling">Other</label>
+                              <label class="radio-inline"><input type="radio" value="other-dwelling" ng-click="otherDwelling = !otherDwelling">Other (specify)</label>
                                 <input type="text" ng-model="formData.customerInfo.dwellingArrangement.other" class="form-control" id="other-dwelling" name="other-dwelling" placeholder="other (specify)" ng-if="otherDwelling">
                             </div>
                             
@@ -760,7 +760,7 @@
                               <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="public-transportation">Public Transportation</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="taxi">Taxi</label>
                               <label class="radio-inline"><input ng-model="formData.customerInfo.currentTransportationMeans" type="radio" value="private-service">Private Service</label>
-                              <label class="radio-inline"><input type="radio" value="other-transportation" ng-click="otherTransportation = !otherDwelling">Other</label>
+                              <label class="radio-inline"><input type="radio" value="other-transportation" ng-click="otherTransportation = !otherTransportation">Other (specify)</label>
                                 <input ng-model="formData.customerInfo.currentTransportationMeans.other" type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
                             </div>
                           
