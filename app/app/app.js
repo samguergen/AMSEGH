@@ -259,8 +259,8 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
       $scope.formSubject = 'New volunteer application received';
       $scope.generateMultiPagePDF();
     } else if (formType === 'membership') {
-      // $(document).ready(function(){
-        // $('#pdfVersion').css('display', 'block');
+      $(document).ready(function(){
+        $('#pdfVersion').css('display', 'block');
         // $('.steps').css('display', 'none');
         // $('form input[type=text], form input#email').css({'font-size':'14px !important', 'height': '30px !important'});
         // $('form select').css({'font-size':'14px !important', 'height': '30px !important'});
@@ -269,7 +269,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
         // $('form .form-group').css('margin-top', '0 !important');
         // $('.jumbotron p').css('font-size', '14px');
         // $('.form-group ol li').css('font-size', '14px');
-      // })
+      })
       $scope.showPdf = true;
       $scope.formSubject = 'New membership application received';
       $scope.generateMultiPagePDF();

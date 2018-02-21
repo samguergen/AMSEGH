@@ -1301,7 +1301,8 @@ form input[type=text], form input#email {
 }
 form textarea.form-control {font-size:25px}
 .member-app .checkbox-inline, .volunteer-app .checkbox-inline {line-height: 1}
-/*#pdfVersion {display:none};*/
+#pdfVersion label {margin-right: 15px;}
+#pdfVersion {display:none};
 .volunteer-drive {
   font-size:25px;
 }
