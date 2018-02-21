@@ -273,7 +273,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
       $scope.showPdf = true;
       $scope.formSubject = 'New membership application received';
       $scope.generateMultiPagePDF();
-      $scope.generatePDFMembership();
+      // $scope.generatePDFMembership();
     } else if (formType === 'nonrider') {
       $scope.formSubject = 'Non-Rider application Form submitted';
       $scope.generatePDF();

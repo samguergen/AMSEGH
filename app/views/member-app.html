@@ -12,7 +12,7 @@
         <hr align="center">
         <div class="col-sm-12">
             <div class="form-area" id="formConfirmation" style="background: #c7dfe4;border:none">  
-                  <form name="itnForm" novalidate ng-submit="showPdf = true; submitForm2('membership')" role="membership form" ng-model="formData">
+                  <form name="itnForm" novalidate ng-submit="submitForm2('membership')" role="membership form" ng-model="formData">
                     <br style="clear:both">
                     <h2 class="app-title">Application for Transportation Service</h2>
                     
@@ -1177,7 +1177,7 @@
   </div><!--member-app-->
   
   
-  <div id="pdfVersion" ng-show="showPdf">
+  <div id="pdfVersion" style="background:green">
     
     <h2 class="app-title">Application for Transportation Service</h2>
     
@@ -1347,10 +1347,8 @@
         XX
     </div>
     
-    <h3>Rideshare</h3>
       <br><label for="reduce ITN cost with rideshare">Would you like to reduce the cost of ITN trips by sharing rides with others when it's convenient?: *</label>
       {{formData.drivingInfo.reduceCostWithRideshare}}
-    <h3>Programs</h3>
       <br><label for="info on programs">Would you like information on any of these ITN programs?:</label>
       XX
       
