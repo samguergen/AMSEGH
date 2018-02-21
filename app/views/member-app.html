@@ -44,10 +44,11 @@
                         </li>
                       </ol>
                       
-                        <div class="form-group ta-center">
+                        <div class="form-group ta-center" ng-class="{ 'has-error' : itnForm.membership.$invalid && !itnForm.membership.$pristine }">
                           <label for="Membership Type">Membership Type: *</label><br>
-                          <label class="radio-inline"><input type="radio" value="individual" ng-model="formData.membership">Individual</label>
-                          <label class="radio-inline"><input type="radio" value="family" ng-model="formData.membership" required>Family</label>
+                          <label class="radio-inline"><input type="radio" value="individual" name="membership" ng-model="formData.membership">Individual</label>
+                          <label class="radio-inline"><input type="radio" name="membership" value="family" ng-model="formData.membership" required>Family</label>
+                          <span ng-if="itnForm.membership.$error.required && !itnForm.membership.$pristine" class="help-block">{{errorMessages.required}}</span>
                         </div>
                         
                         <div class="form-group" ng-class="{ 'has-error' : itnForm.riderName.$invalid && !itnForm.riderName.$pristine }">
@@ -1196,7 +1197,7 @@
   <script type="x/kendo-template" id="page-template">
     <div class="page-template">
       <div class="header">
-        <div style="float: right">Page #: pageNum # of #: totalPages #</div>
+        // <div style="float: right">Page #: pageNum # of #: totalPages #</div>
         // <div style="float: right"><img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/></div>
       </div>
       <div class="watermark"><img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/></div>
