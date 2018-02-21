@@ -205,7 +205,8 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     console.log('inside multipage');
     kendo.drawing.drawDOM($("#pdfVersion"), {
           paperSize: "A4",
-          margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
+          margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" },
+          template: "A test"
       }).then(function (group) {
         console.log('exporting pdf');
           // Render the result as a PDF file
@@ -261,19 +262,10 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     } else if (formType === 'membership') {
       $(document).ready(function(){
         $('#pdfVersion').css('display', 'block');
-        // $('.steps').css('display', 'none');
-        // $('form input[type=text], form input#email').css({'font-size':'14px !important', 'height': '30px !important'});
-        // $('form select').css({'font-size':'14px !important', 'height': '30px !important'});
-        // $('form label').css('font-size', '14px !important');
-        // $('form .btn-leg').css('display', 'none');
-        // $('form .form-group').css('margin-top', '0 !important');
-        // $('.jumbotron p').css('font-size', '14px');
-        // $('.form-group ol li').css('font-size', '14px');
       })
       $scope.showPdf = true;
       $scope.formSubject = 'New membership application received';
       $scope.generateMultiPagePDF();
-      // $scope.generatePDFMembership();
     } else if (formType === 'nonrider') {
       $scope.formSubject = 'Non-Rider application Form submitted';
       $scope.generatePDF();
