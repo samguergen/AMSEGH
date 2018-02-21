@@ -77,64 +77,12 @@
                           
                           <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.state.$invalid && !itnForm.state.$pristine }">
                             <label for="state">State: *</label><br>
-                            <select class="form-control" id="state">
-                              <option ng-model="formData.state" value="">Select a State*</option>
-                              <option ng-model="formData.state" value="N/A">N/A</option>
-                              <option ng-model="formData.state" value="AK">Alaska</option>
-                              <option ng-model="formData.state" value="AL">Alabama</option>
-                              <option ng-model="formData.state" value="AR">Arkansas</option>
-                              <option ng-model="formData.state" value="AZ">Arizona</option>
-                              <option ng-model="formData.state" value="CA">California</option>
-                              <option ng-model="formData.state" value="CO">Colorado</option>
-                              <option ng-model="formData.state" value="CT">Connecticut</option>
-                              <option ng-model="formData.state" value="DC">District of Columbia</option>
-                              <option ng-model="formData.state" value="DE">Delaware</option>
-                              <option ng-model="formData.state" value="FL">Florida</option>
-                              <option ng-model="formData.state" value="GA">Georgia</option>
-                              <option ng-model="formData.state" value="HI">Hawaii</option>
-                              <option ng-model="formData.state" value="IA">Iowa</option>
-                              <option ng-model="formData.state" value="ID">Idaho</option>
-                              <option ng-model="formData.state" value="IL">Illinois</option>
-                              <option ng-model="formData.state" value="IN">Indiana</option>
-                              <option ng-model="formData.state" value="KS">Kansas</option>
-                              <option ng-model="formData.state" value="KY">Kentucky</option>
-                              <option ng-model="formData.state" value="LA">Louisiana</option>
-                              <option ng-model="formData.state" value="MA">Massachusetts</option>
-                              <option ng-model="formData.state" value="MD">Maryland</option>
-                              <option ng-model="formData.state" value="ME">Maine</option>
-                              <option ng-model="formData.state" value="MI">Michigan</option>
-                              <option ng-model="formData.state" value="MN">Minnesota</option>
-                              <option ng-model="formData.state" value="MO">Missouri</option>
-                              <option ng-model="formData.state" value="MS">Mississippi</option>
-                              <option ng-model="formData.state" value="MT">Montana</option>
-                              <option ng-model="formData.state" value="NC">North Carolina</option>
-                              <option ng-model="formData.state" value="ND">North Dakota</option>
-                              <option ng-model="formData.state" value="NE">Nebraska</option>
-                              <option ng-model="formData.state" value="NH">New Hampshire</option>
-                              <option ng-model="formData.state" value="NJ">New Jersey</option>
-                              <option ng-model="formData.state" value="NM">New Mexico</option>
-                              <option ng-model="formData.state" value="NV">Nevada</option>
-                              <option ng-model="formData.state" value="NY">New York</option>
-                              <option ng-model="formData.state" value="OH">Ohio</option>
-                              <option ng-model="formData.state" value="OK">Oklahoma</option>
-                              <option ng-model="formData.state" value="OR">Oregon</option>
-                              <option ng-model="formData.state" value="PA">Pennsylvania</option>
-                              <option ng-model="formData.state" value="PR">Puerto Rico</option>
-                              <option ng-model="formData.state" value="RI">Rhode Island</option>
-                              <option ng-model="formData.state" value="SC">South Carolina</option>
-                              <option ng-model="formData.state" value="SD">South Dakota</option>
-                              <option ng-model="formData.state" value="TN">Tennessee</option>
-                              <option ng-model="formData.state" value="TX">Texas</option>
-                              <option ng-model="formData.state" value="UT">Utah</option>
-                              <option ng-model="formData.state" value="VA">Virginia</option>
-                              <option ng-model="formData.state" value="VT">Vermont</option>
-                              <option ng-model="formData.state" value="WA">Washington</option>
-                              <option ng-model="formData.state" value="WI">Wisconsin</option>
-                              <option ng-model="formData.state" value="WV">West Virginia</option>
-                              <option ng-model="formData.state" value="WY" required>Wyoming</option>
+                            <select ng-model="formData.state" class="form-control" name="state" id="state">
+                               <option ng-repeat="state in states" value="{{state}}">{{state}}</option>
                             </select>
                             <span ng-if="itnForm.state.$error.required && !itnForm.state.$pristine" class="help-block">{{errorMessages.required}}</span>
                           </div>
+                    
                       </div><!--row-->
                         
                         <div class="row">
@@ -265,65 +213,13 @@
                             </div><!--row-->
                             
                             <div class="row">
-                            <div class="form-group col-sm-6">
-                              <label for="state">State: *</label><br>
-                              <select class="form-control" id="state">
-                                <option ng-model="formData.firstEmergencyContact.state" value="">Select a State*</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="">N/A</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="AK">Alaska</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="AL">Alabama</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="AR">Arkansas</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="AZ">Arizona</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="CA">California</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="CO">Colorado</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="CT">Connecticut</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="DC">District of Columbia</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="DE">Delaware</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="FL">Florida</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="GA">Georgia</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="HI">Hawaii</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="IA">Iowa</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="ID">Idaho</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="IL">Illinois</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="IN">Indiana</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="KS">Kansas</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="KY">Kentucky</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="LA">Louisiana</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="MA">Massachusetts</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="MD">Maryland</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="ME">Maine</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="MI">Michigan</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="MN">Minnesota</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="MO">Missouri</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="MS">Mississippi</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="MT">Montana</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="NC">North Carolina</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="ND">North Dakota</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="NE">Nebraska</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="NH">New Hampshire</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="NJ">New Jersey</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="NM">New Mexico</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="NV">Nevada</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="NY">New York</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="OH">Ohio</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="OK">Oklahoma</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="OR">Oregon</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="PA">Pennsylvania</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="PR">Puerto Rico</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="RI">Rhode Island</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="SC">South Carolina</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="SD">South Dakota</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="TN">Tennessee</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="TX">Texas</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="UT">Utah</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="VA">Virginia</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="VT">Vermont</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="WA">Washington</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="WI">Wisconsin</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="WV">West Virginia</option>
-                                <option ng-model="formData.firstEmergencyContact.state" value="WY">Wyoming</option>
-                              </select>
-                            </div>
+                              <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.firstEmState.$invalid && !itnForm.firstEmState.$pristine }">
+                                <label for="state">State: *</label><br>
+                                <select ng-model="formData.firstEmergencyContact.state" class="form-control" name="firstEmState" id="state">
+                                   <option ng-repeat="state in states" value="{{state}}">{{state}}</option>
+                                </select>
+                                <span ng-if="itnForm.firstEmState.$error.required && !itnForm.firstEmState.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              </div>
                             
                             <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.firstEmZip.$invalid && !itnForm.firstEmZip.$pristine }">
                               <label for="zip">Zip Code: *</label><br>
@@ -398,65 +294,13 @@
                             </div><!--row-->
                             
                             <div class="row">
-                            <div class="form-group col-sm-6">
-                              <label for="state">State: *</label><br>
-                              <select class="form-control" id="state">
-                                <option ng-model="formData.secondEmergencyContact.state" value="">Select a State*</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="">N/A</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="AK">Alaska</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="AL">Alabama</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="AR">Arkansas</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="AZ">Arizona</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="CA">California</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="CO">Colorado</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="CT">Connecticut</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="DC">District of Columbia</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="DE">Delaware</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="FL">Florida</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="GA">Georgia</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="HI">Hawaii</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="IA">Iowa</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="ID">Idaho</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="IL">Illinois</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="IN">Indiana</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="KS">Kansas</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="KY">Kentucky</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="LA">Louisiana</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="MA">Massachusetts</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="MD">Maryland</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="ME">Maine</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="MI">Michigan</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="MN">Minnesota</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="MO">Missouri</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="MS">Mississippi</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="MT">Montana</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="NC">North Carolina</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="ND">North Dakota</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="NE">Nebraska</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="NH">New Hampshire</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="NJ">New Jersey</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="NM">New Mexico</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="NV">Nevada</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="NY">New York</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="OH">Ohio</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="OK">Oklahoma</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="OR">Oregon</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="PA">Pennsylvania</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="PR">Puerto Rico</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="RI">Rhode Island</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="SC">South Carolina</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="SD">South Dakota</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="TN">Tennessee</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="TX">Texas</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="UT">Utah</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="VA">Virginia</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="VT">Vermont</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="WA">Washington</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="WI">Wisconsin</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="WV">West Virginia</option>
-                                <option ng-model="formData.secondEmergencyContact.state" value="WY">Wyoming</option>
-                              </select>
-                            </div>
+                              <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.secondEmState.$invalid && !itnForm.secondEmState.$pristine }">
+                                <label for="state">State: *</label><br>
+                                <select ng-model="formData.secondEmergencyContact.state" class="form-control" name="secondEmState" id="state">
+                                   <option ng-repeat="state in states" value="{{state}}">{{state}}</option>
+                                </select>
+                                <span ng-if="itnForm.secondEmState.$error.required && !itnForm.secondEmState.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              </div>
                             
                             <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.secondEmZip.$invalid && !itnForm.secondEmZip.$pristine }">
                               <label for="zip">Zip Code: *</label><br>
@@ -579,66 +423,13 @@
                               </div><!--row-->
                               
                               <div class="row">
-                              <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.state.$invalid && !itnForm.state.$pristine }">
-                                <label for="state">State: *</label><br>
-                                <select class="form-control" id="state">
-                                  <option ng-model="formData.sendInfoTo.state" value="">Select a State*</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="">N/A</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="AK">Alaska</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="AL">Alabama</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="AR">Arkansas</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="AZ">Arizona</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="CA">California</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="CO">Colorado</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="CT">Connecticut</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="DC">District of Columbia</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="DE">Delaware</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="FL">Florida</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="GA">Georgia</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="HI">Hawaii</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="IA">Iowa</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="ID">Idaho</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="IL">Illinois</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="IN">Indiana</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="KS">Kansas</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="KY">Kentucky</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="LA">Louisiana</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="MA">Massachusetts</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="MD">Maryland</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="ME">Maine</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="MI">Michigan</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="MN">Minnesota</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="MO">Missouri</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="MS">Mississippi</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="MT">Montana</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="NC">North Carolina</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="ND">North Dakota</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="NE">Nebraska</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="NH">New Hampshire</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="NJ">New Jersey</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="NM">New Mexico</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="NV">Nevada</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="NY">New York</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="OH">Ohio</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="OK">Oklahoma</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="OR">Oregon</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="PA">Pennsylvania</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="PR">Puerto Rico</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="RI">Rhode Island</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="SC">South Carolina</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="SD">South Dakota</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="TN">Tennessee</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="TX">Texas</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="UT">Utah</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="VA">Virginia</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="VT">Vermont</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="WA">Washington</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="WI">Wisconsin</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="WV">West Virginia</option>
-                                  <option ng-model="formData.sendInfoTo.state" value="WY">Wyoming</option>
-                                </select>
-                                <span ng-if="itnForm.state.$error.required && !itnForm.state.$pristine" class="help-block">{{errorMessages.required}}</span>
-                              </div>
+                                <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.state.$invalid && !itnForm.state.$pristine }">
+                                  <label for="state">State: *</label><br>
+                                  <select ng-model="formData.sendInfoTo.state" class="form-control" name="state" id="state">
+                                     <option ng-repeat="state in states" value="{{state}}">{{state}}</option>
+                                  </select>
+                                  <span ng-if="itnForm.state.$error.required && !itnForm.state.$pristine" class="help-block">{{errorMessages.required}}</span>
+                                </div>
                               
                               <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.zip.$invalid && !itnForm.zip.$pristine }">
                                 <label for="zip">Zip Code: *</label><br>
@@ -1179,8 +970,6 @@
   
   <div id="pdfVersion">
     
-    <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
-    
     <h3 class="app-title">Application for Transportation Service</h3>
     
     <br><label for="Membership Type">Membership Type: *</label><br>
@@ -1408,7 +1197,7 @@
     <div class="page-template">
       <div class="header">
         <div style="float: right">Page #: pageNum # of #: totalPages #</div>
-        <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
+        <div style="float: right"><img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/></div>
       </div>
       <div class="footer">
         Page #: pageNum # of #: totalPages #
