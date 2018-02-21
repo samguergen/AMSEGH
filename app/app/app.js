@@ -206,7 +206,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     kendo.drawing.drawDOM($("#pdfVersion"), {
           paperSize: "A4",
           margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" },
-          template: "A test"
+          template: $("#page-template").html()
       }).then(function (group) {
         console.log('exporting pdf');
           // Render the result as a PDF file
