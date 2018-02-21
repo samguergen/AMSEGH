@@ -209,7 +209,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     console.log('inside multipage');
     kendo.drawing.drawDOM($("#pdfVersion"), {
           paperSize: "A4",
-          margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" },
+          margin: { left: "3cm", top: "1cm", right: "1cm", bottom: "1cm" },
           template: $("#page-template").html()
       }).then(function (group) {
         console.log('exporting pdf');

@@ -1637,14 +1637,15 @@ h2,h3 {line-height:1.7}
 }
 
 .page-template {
-  /*position: absolute;*/
+  font-family: "DejaVu Sans", "Arial", sans-serif;
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
 }
 .page-template .header {
-  /*position: absolute;*/
+  position: absolute;
   top: 30px;
   left: 30px;
   right: 30px;
@@ -1652,13 +1653,22 @@ h2,h3 {line-height:1.7}
   color: #888;
 }
 .page-template .footer {
-  /*position: absolute;*/
+  position: absolute;
   bottom: 30px;
   left: 30px;
   right: 30px;
   border-top: 1px solid #888;
   text-align: center;
   color: #888;
+}
+.page-template .watermark {
+  font-weight: bold;
+  font-size: 400%;
+  text-align: center;
+  margin-top: 30%;
+  color: #aaaaaa;
+  opacity: 0.1;
+  /*transform: rotate(-35deg) scale(1.7, 1.5);*/
 }
 
 
