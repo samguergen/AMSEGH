@@ -327,7 +327,7 @@
                             
                             <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.firstEmZip.$invalid && !itnForm.firstEmZip.$pristine }">
                               <label for="zip">Zip Code: *</label><br>
-                              <input type="text" class="form-control" id="zip" name="firstEmZip" ng-model="formData.firstEmergencyContact.zip" ng-model="formData.firstEmergencyContact.zip" ng-pattern="zipPattern" required>
+                              <input type="text" class="form-control" id="zip" name="firstEmZip" ng-model="formData.firstEmergencyContact.zip"  ng-pattern="zipPattern" required>
                               <span ng-if="itnForm.firstEmZip.$error.required && !itnForm.firstEmZip.$pristine" class="help-block">{{errorMessages.required}}</span>
                               <span ng-if="itnForm.firstEmZip.$error.pattern" class="help-block">{{errorMessages.zip}}</span>
                             </div>
@@ -1030,7 +1030,7 @@
                           </div>
                           
                           <!-- <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button> -->
-                          <button ng-click="tab=99" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button> 
+                          <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button> 
                           <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           
                           
@@ -1154,8 +1154,7 @@
 
                           <button type="submit" style="background:#e05944" class="btn btn-lg btn-danger" ng-disabled="form.$invalid">Submit</button>
                           
-                          <!-- <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>   -->
-                          <button ng-click="tab=6" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                          <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           <input type="reset" class="btn btn-primary pull-right itn-green-bg" value="Reset" ng-click="formData = {}">
                           
                         </div><!--tab7-->
@@ -1178,97 +1177,99 @@
   </div><!--member-app-->
   
   
-  <div id="pdfVersion">
+  <div id="pdfVersion" ng-if="showPdf">
     
-    <label for="Membership Type">Membership Type: *</label><br>
+    <h2 class="app-title">Application for Transportation Service</h2>
+    
+    <br><label for="Membership Type">Membership Type: *</label>
     {{formData.membership}}
-    <label for="rider name">Rider's Name: *</label><br>
+    <br><label for="rider name">Rider's Name: *</label>
     {{formData.riderName}}
-    <label for="street">Street Address: *</label><br>
+    <br><label for="street">Street Address: *</label>
     {{formData.streetAddress}}
-    <label for="street">City: *</label><br>
+    <br><label for="street">City: *</label>
     {{formData.city}}
-    <label for="state">State: *</label><br>
+    <br><label for="state">State: *</label>
     {{formData.state}}
-    <label for="zip">Zip Code: *</label><br>
+    <br><label for="zip">Zip Code: *</label>
     {{formData.zip}}
-    <label for="years at address">Years at Address: *</label><br>
+    <br><label for="years at address">Years at Address: *</label>
     {{formData.yearsAtAddress}}
-    <label for="Mailing Adress Yes or No">Is this your Mailing Address?*:  </label><br>
+    <br><label for="Mailing Adress Yes or No">Is this your Mailing Address?*:  </label>
     {{formData.isMailingAddress}}
-    <label for="Billing Adress Yes or No">Is this your Billing Address?*:  </label><br>
+    <br><label for="Billing Adress Yes or No">Is this your Billing Address?*:  </label>
     {{formData.isBillingAddress}}
-    <label for="Year-round Residence Yes or No">Is this your Year-round Residence?*:  </label><br>
+    <br><label for="Year-round Residence Yes or No">Is this your Year-round Residence?*:  </label>
     {{formData.isYearRoundResidence}}
-    <label for="primary phone">Primary Phone: *</label><br>
+    <br><label for="primary phone">Primary Phone: *</label>
     {{formData.primaryPhone}}
-    <label for="secondary phone">Secondary Phone: </label><br>
+    <br><label for="secondary phone">Secondary Phone: </label>
     {{formData.secondaryPhone}}
-    <label for="email">Email: </label><br>
+    <br><label for="email">Email: </label>
     {{formData.email}}
     
     <h2>First Emergency Contact</h2>
     
-    <label for="name">Name: *</label><br>
+    <br><label for="name">Name: *</label>
     {{formData.firstEmergencyContact.name}}
-    <label for="relationship">Relationship: *</label><br>
+    <br><label for="relationship">Relationship: *</label>
     {{formData.firstEmergencyContact.relationship}}
-    <label for="street">Street Address: *</label><br>
+    <br><label for="street">Street Address: *</label>
     {{formData.firstEmergencyContact.street}}
-    <label for="city">City: *</label><br>
+    <br><label for="city">City: *</label>
     {{formData.firstEmergencyContact.city}}
-    <label for="state">State: *</label><br>
+    <br><label for="state">State: *</label>
     {{formData.firstEmergencyContact.state}}
-    <label for="zip">Zip Code: *</label><br>
+    <br><label for="zip">Zip Code: *</label>
     {{formData.firstEmergencyContact.zip}}
-    <label for="home phone">Home Phone: *</label><br>
+    <br><label for="home phone">Home Phone: *</label>
     {{formData.firstEmergencyContact.homePhone}}
-    <label for="cell phone">Cell Phone: </label><br>
+    <br><label for="cell phone">Cell Phone: </label>
     {{formData.firstEmergencyContact.cellPhone}}
-    <label for="email">Email: </label><br>
+    <br><label for="email">Email: </label>
     {{formData.firstEmergencyContact.email}}
     
     <h2>Second Emergency Contact</h2>
     
-    <label for="name">Name: *</label><br>
+    <br><label for="name">Name: *</label>
     {{formData.secondEmergencyContact.name}}
-    <label for="relationship">Relationship: *</label><br>
+    <br><label for="relationship">Relationship: *</label>
     {{formData.secondEmergencyContact.relationship}}
-    <label for="street">Street Address: *</label><br>
+    <br><label for="street">Street Address: *</label>
     {{formData.secondEmergencyContact.street}}
-    <label for="city">City: *</label><br>
+    <br><label for="city">City: *</label>
     {{formData.secondEmergencyContact.city}}
-    <label for="state">State: *</label><br>
+    <br><label for="state">State: *</label>
     {{formData.secondEmergencyContact.state}}
-    <label for="zip">Zip Code: *</label><br>
+    <br><label for="zip">Zip Code: *</label>
     {{formData.secondEmergencyContact.zip}}
-    <label for="home phone">Home Phone: *</label><br>
+    <br><label for="home phone">Home Phone: *</label>
     {{formData.secondEmergencyContact.homePhone}}
-    <label for="cell phone">Cell Phone: </label><br>
+    <br><label for="cell phone">Cell Phone: </label>
     {{formData.secondEmergencyContact.cellPhone}}
-    <label for="email">Email: </label><br>
+    <br><label for="email">Email: </label>
     {{formData.secondEmergencyContact.email}}
     
     
-    <label for="Heard about ITN">How did you hear about ITN?: *</label><br>
+    <br><label for="Heard about ITN">How did you hear about ITN?: *</label>
     XX
     
-    <label for="send info">Would you like us to send information about ITN to a relative, friend, or business? * </label><br>
+    <br><label for="send info">Would you like us to send information about ITN to a relative, friend, or business? * </label>
     {{formData.sendInfoToRelativeFriendBiz}}
     <div ng-if="sendInfo">
-      <label for="name">Name: *</label><br>
+      <br><label for="name">Name: *</label>
       {{formData.sendInfoTo.name}}
-      <label for="relationship">Relationship: *</label><br>
+      <br><label for="relationship">Relationship: *</label>
       {{formData.sendInfoTo.relationship}}
-      <label for="street">Street Address: *</label><br>
+      <br><label for="street">Street Address: *</label>
       {{formData.sendInfoTo.street}}
-      <label for="state">State: *</label><br>
+      <br><label for="state">State: *</label>
       {{formData.sendInfoTo.state}}
-      <label for="zip">Zip Code: *</label><br>
+      <br><label for="zip">Zip Code: *</label>
       {{formData.sendInfoTo.zip}}
-      <label for="phone">Phone: *</label><br>
+      <br><label for="phone">Phone: *</label>
       {{formData.sendInfoTo.phone}}
-      <label for="email">Email: </label><br>
+      <br><label for="email">Email: </label>
       {{formData.sendInfoTo.email}}
     </div>
     
@@ -1276,81 +1277,81 @@
     
     <h2>Customer Information</h2>
     
-    <label for="gender">Gender: * </label><br>
+    <br><label for="gender">Gender: * </label>
     {{formData.customerInfo.gender}}
-    <label for="dob">Date of Birth: * - </label><br>
+    <br><label for="dob">Date of Birth: * - </label>
     {{formData.customerInfo.dateOfBirth}}
-    <label for="marital status">Marital Status: * </label><br>
+    <br><label for="marital status">Marital Status: * </label>
     {{formData.customerInfo.maritalStatus}}
-    <label for="living">Living Arrangements: * </label><br>
+    <br><label for="living">Living Arrangements: * </label>
     {{formData.customerInfo.livingArrangement}}
-    <label for="dwelling">Dwelling Arrangements: * </label><br>
+    <br><label for="dwelling">Dwelling Arrangements: * </label>
     {{formData.customerInfo.dwellingArrangement}}
-    <label for="languages">Languages Spoken: *</label><br>
+    <br><label for="languages">Languages Spoken: *</label>
     XX
-    <label for="transportation means">Current primary means of getting around: * </label><br>
+    <br><label for="transportation means">Current primary means of getting around: * </label>
     {{formData.customerInfo.currentTransportationMeans}}
     
     <h2>Civic Engagement</h2>
     
-    <label for="member of any organization">Are you a member of any of the following organizations?:</label><br>
+    <br><label for="member of any organization">Are you a member of any of the following organizations?:</label>
     XX
-    <label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
+    <br><label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label>
     {{formData.customerInfo.memberOfProfessionalOrgOrUnion}} - {{formData.customerInfo.memberOfProfessionalOrgOrUnion.other}}
-    <label for="served in armed forces">Have you ever served on active duty in the U.S. Armed Forces, Military Reserves, or National Guard: *</label><br>
+    <br><label for="served in armed forces">Have you ever served on active duty in the U.S. Armed Forces, Military Reserves, or National Guard: *</label>
     {{formData.customerInfo.servedInMilitary}}
-    <label for="special needs">Special Needs and Mobility Assistance: *</label><br>
+    <br><label for="special needs">Special Needs and Mobility Assistance: *</label>
     XX
   
     <h2>Driving Information</h2>
     
-    <label for="license">Do you have a current driver's license?: *</label><br>
+    <br><label for="license">Do you have a current driver's license?: *</label>
     {{formData.drivingInfo.hasLicense}}
-    <label for="own vehicle">Do you own a vehicle?: *</label><br>
+    <br><label for="own vehicle">Do you own a vehicle?: *</label>
     {{formData.drivingInfo.ownVehicle}}
-    <label for="driver improvement">Have you tried any driver improvement activities or classes to help you keep driving safely longer?: *</label><br>
+    <br><label for="driver improvement">Have you tried any driver improvement activities or classes to help you keep driving safely longer?: *</label>
     {{formData.drivingInfo.driverImprovementClasses}}
-    <label for="driven in last 10 years">Have you driven in the last ten years?: *</label><br>
+    <br><label for="driven in last 10 years">Have you driven in the last ten years?: *</label>
     {{formData.drivingInfo.drivenLast10Years}}
-    <label for="currently driving">Do you currently drive?: *</label><br>
+    <br><label for="currently driving">Do you currently drive?: *</label>
     {{formData.drivingInfo.currentlyDrive}}
     
     <div ng-if="currentDriver">
       <h3>If you drive...</h3>
-      <label for="how often do you drive">How often do you drive?:</label><br>
+      <br><label for="how often do you drive">How often do you drive?:</label>
       {{formData.drivingInfo.howOftenYouDrive}}
-      <label for="restricted your driving">Have you restricted your own driving?:</label><br>
+      <br><label for="restricted your driving">Have you restricted your own driving?:</label>
       {{formData.drivingInfo.restrictedOwnDriving}}
       <h3>How often do you do the following:</h3>
-        <label for="avoid driving at night">Avoid driving at night?:</label><br>
+        <br><label for="avoid driving at night">Avoid driving at night?:</label>
         {{formData.drivingInfo.avoidDrivingAtNight}}
-        <label for="avoid highway driving">Avoid highway driving?:</label><br>
+        <br><label for="avoid highway driving">Avoid highway driving?:</label>
         {{formData.drivingInfo.avoidHighwayDriving}}
-        <label for="avoid left turns on incoming traffic">Avoid making left turns across incoming traffic?:</label><br>
+        <br><label for="avoid left turns on incoming traffic">Avoid making left turns across incoming traffic?:</label>
         {{formData.drivingInfo.avoidLeftTurnsIncomingTraffic}}
-        <label for="avoid driving bad weather">Avoid driving in bad weather?:</label><br>
+        <br><label for="avoid driving bad weather">Avoid driving in bad weather?:</label>
         {{formData.drivingInfo.avoidDrivingBadWeather}}
-        <label for="avoid driving alone">Avoid driving alone?:</label><br>
+        <br><label for="avoid driving alone">Avoid driving alone?:</label>
         {{formData.drivingInfo.avoidDrivingAlone}}
-        <label for="avoid driving high traffic">Avoid driving on high traffic roads?:</label><br>
+        <br><label for="avoid driving high traffic">Avoid driving on high traffic roads?:</label>
         {{formData.drivingInfo.avoidDrivingHighTrafficRoads}}
-        <label for="avoid driving unfamiliar areas">Avoid driving in unfamiliar areas?:</label><br>
+        <br><label for="avoid driving unfamiliar areas">Avoid driving in unfamiliar areas?:</label>
         {{formData.drivingInfo.avoidDrivingUnfamiliarAreas}}
-        <label for="pass up fun because of driving concerns">Pass up opportunities to go shopping, visit friends, etc., because of concerns about driving?:</label><br>
+        <br><label for="pass up fun because of driving concerns">Pass up opportunities to go shopping, visit friends, etc., because of concerns about driving?:</label>
         {{formData.drivingInfo.passOpportunitiesBecauseDriveConcerns}}
     </div>
     
     <div ng-if="!currentDriver">  
       <h3>If you do not drive...</h3>
-        <label for="avoid driving alone">Please check a reason:</label><br>
+        <br><label for="avoid driving alone">Please check a reason:</label>
         XX
     </div>
     
     <h3>Rideshare</h3>
-      <label for="reduce ITN cost with rideshare">Would you like to reduce the cost of ITN trips by sharing rides with others when it's convenient?: *</label><br>
+      <br><label for="reduce ITN cost with rideshare">Would you like to reduce the cost of ITN trips by sharing rides with others when it's convenient?: *</label>
       {{formData.drivingInfo.reduceCostWithRideshare}}
     <h3>Programs</h3>
-      <label for="info on programs">Would you like information on any of these ITN programs?:</label><br>
+      <br><label for="info on programs">Would you like information on any of these ITN programs?:</label>
       XX
       
       <h3 class="mt-50 mb-25">Personal Transportation Account Agreement</h3>
@@ -1372,11 +1373,11 @@
       </div>
       
       <label>By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
-      <label for="name">Name: *</label>
+      <br><label for="name">Name: *</label>
       {{formData.agreement.name1}}
-      <label for="signature">Agreement Signature: *</label>
+      <br><label for="signature">Agreement Signature: *</label>
       {{formData.agreement.signature1}}
-      <label for="date">Agreement Date: *</label>
+      <br><label for="date">Agreement Date: *</label>
       {{formData.agreement.date1}}
       
       
@@ -1393,11 +1394,11 @@
       <p>Your signature indicates that you understand that routinely-collected ITNAmerica data will be used to study and improve transportation for seniors, and that you may, from time to time, be asked questions about your use of the service. We will do our best to provide rides for you and we will always strive to inform you when we cannot provide a ride. However, we are not responsible for any costs or expenses you may incur when we are unable to provide a ride for a specific time and place.</p>
       
       <label>By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
-      <label for="name">Name: *</label>
+      <br><label for="name">Name: *</label>
       {{formData.agreement.name2}}
-      <label for="signature">Agreement Signature: *</label>
+      <br><label for="signature">Agreement Signature: *</label>
       {{formData.agreement.signature2}}
-      <label for="date">Agreement Date: *</label>
+      <br><label for="date">Agreement Date: *</label>
       {{formData.agreement.date2}}
       
     

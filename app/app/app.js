@@ -200,41 +200,14 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
         });
       });
   }
-  
-  // $scope.generatePDFs = function() {
-  //   console.log('inside pdfS');
-  //   kendo.drawing.drawDOM($("#formConfirmation"))
-  //     .then(function (group) {
-  //         // Render the result as a PDF file
-  //         return kendo.drawing.exportPDF(group, {
-  //             paperSize: "A4",
-  //             margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
-  //         });
-  //     })
-  //     .done(function (data) {
-  //       console.log('data is ', data);
-  //       $scope.dataPDF = data;
-  // 
-  //       $http.post('/sendmail', {
-  //         from: '"ITN Web User" <donotreply@itnamerica.com>',
-  //         to: 'samguergen@gmail.com',
-  //         subject: $scope.formSubject,
-  //         text: $scope.formData,
-  //         pdf: $scope.dataPDF
-  //       }).then(res=>{
-  //           $scope.loading = false;
-  //           $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
-  //       });
-  //     });
-  // }
 
-  
   $scope.generateMultiPagePDF = function() {
     console.log('inside multipage');
-    kendo.drawing.drawDOM($("#formConfirmation"), {
+    kendo.drawing.drawDOM($("#pdfVersion"), {
           paperSize: "A4",
           margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
       }).then(function (group) {
+        console.log('exporting pdf');
           // Render the result as a PDF file
           return kendo.drawing.exportPDF(group);
       })
@@ -286,19 +259,21 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
       $scope.formSubject = 'New volunteer application received';
       $scope.generateMultiPagePDF();
     } else if (formType === 'membership') {
-      $scope.tab = 99;
-      $(document).ready(function(){
-        $('.steps').css('display', 'none');
-        $('form input[type=text], form input#email').css({'font-size':'14px !important', 'height': '30px !important'});
-        $('form select').css({'font-size':'14px !important', 'height': '30px !important'});
-        $('form label').css('font-size', '14px !important');
-        $('form .btn-leg').css('display', 'none');
-        $('form .form-group').css('margin-top', '0 !important');
-        $('.jumbotron p').css('font-size', '14px');
-        $('.form-group ol li').css('font-size', '14px');
-      })
+      // $(document).ready(function(){
+        // $('#pdfVersion').css('display', 'block');
+        // $('.steps').css('display', 'none');
+        // $('form input[type=text], form input#email').css({'font-size':'14px !important', 'height': '30px !important'});
+        // $('form select').css({'font-size':'14px !important', 'height': '30px !important'});
+        // $('form label').css('font-size', '14px !important');
+        // $('form .btn-leg').css('display', 'none');
+        // $('form .form-group').css('margin-top', '0 !important');
+        // $('.jumbotron p').css('font-size', '14px');
+        // $('.form-group ol li').css('font-size', '14px');
+      // })
+      $scope.showPdf = true;
       $scope.formSubject = 'New membership application received';
       $scope.generateMultiPagePDF();
+      $scope.generatePDFMembership();
     } else if (formType === 'nonrider') {
       $scope.formSubject = 'Non-Rider application Form submitted';
       $scope.generatePDF();
@@ -307,6 +282,36 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     }
     
   }
+  
+  
+  $scope.generatePDFMembership = function() {
+    console.log('inside pdf');
+    kendo.drawing.drawDOM($("#pdfVersion"))
+      .then(function (group) {
+        console.log('exportin');
+          // Render the result as a PDF file
+          return kendo.drawing.exportPDF(group, {
+              paperSize: "auto",
+              margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
+          });
+      })
+      .done(function (data) {
+        console.log('data is ', data);
+        $scope.dataPDF = data;
+        
+        $http.post('/sendmail', {
+          from: '"ITN Web User" <donotreply@itnamerica.com>',
+          to: 'samguergen@gmail.com',
+          subject: $scope.formSubject,
+          text: $scope.formData,
+          pdf: $scope.dataPDF
+        }).then(res=>{
+            $scope.loading = false;
+            $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
+        });
+      });
+  }
+  
   
   
 }]);
