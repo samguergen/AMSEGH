@@ -1637,14 +1637,14 @@ h2,h3 {line-height:1.7}
 }
 
 .page-template {
-  position: absolute;
+  /*position: absolute;*/
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
 }
 .page-template .header {
-  position: absolute;
+  /*position: absolute;*/
   top: 30px;
   left: 30px;
   right: 30px;
@@ -1652,7 +1652,7 @@ h2,h3 {line-height:1.7}
   color: #888;
 }
 .page-template .footer {
-  position: absolute;
+  /*position: absolute;*/
   bottom: 30px;
   left: 30px;
   right: 30px;
