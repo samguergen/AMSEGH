@@ -144,6 +144,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
   }
 
   $scope.nextTabMemberApp = function(prev){
+    $(window).scrollTop(50);
     if (prev) {
       $scope.tab -= 1;
     } else {
