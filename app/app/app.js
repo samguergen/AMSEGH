@@ -288,7 +288,14 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     } else if (formType === 'membership') {
       $scope.tab = 99;
       $(document).ready(function(){
-        $('.steps').css('display', 'none')
+        $('.steps').css('display', 'none');
+        $('form input[type=text], form input#email').css({'font-size':'14px !important', 'height': '30px !important'});
+        $('form select').css({'font-size':'14px !important', 'height': '30px !important'});
+        $('form label').css('font-size', '14px !important');
+        $('form .btn-leg').css('display', 'none');
+        $('form .form-group').css('margin-top', '0 !important');
+        $('.jumbotron p').css('font-size', '14px');
+        $('.form-group ol li').css('font-size', '14px');
       })
       $scope.formSubject = 'New membership application received';
       $scope.generateMultiPagePDF();

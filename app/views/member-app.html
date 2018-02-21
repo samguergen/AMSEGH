@@ -906,8 +906,8 @@
                           
                           <div class="form-group ta-center">
                             <label for="currently driving">Do you currently drive?: *</label><br>
-                            <label class="radio-inline"><input type="radio" value="yes" ng-click="currentDriver = true">Yes</label>
-                            <label class="radio-inline"><input type="radio" value="no" ng-click="currentDriver = false">No</label>
+                            <label class="radio-inline"><input ng-model="formData.drivingInfo.currentlyDrive" type="radio" value="yes" ng-click="currentDriver = true">Yes</label>
+                            <label class="radio-inline"><input ng-model="formData.drivingInfo.currentlyDrive" type="radio" value="no" ng-click="currentDriver = false">No</label>
                           </div>
                           
                           <div ng-if="currentDriver">
@@ -1176,6 +1176,233 @@
   
     
   </div><!--member-app-->
+  
+  
+  <div id="pdfVersion">
+    
+    <label for="Membership Type">Membership Type: *</label><br>
+    {{formData.membership}}
+    <label for="rider name">Rider's Name: *</label><br>
+    {{formData.riderName}}
+    <label for="street">Street Address: *</label><br>
+    {{formData.streetAddress}}
+    <label for="street">City: *</label><br>
+    {{formData.city}}
+    <label for="state">State: *</label><br>
+    {{formData.state}}
+    <label for="zip">Zip Code: *</label><br>
+    {{formData.zip}}
+    <label for="years at address">Years at Address: *</label><br>
+    {{formData.yearsAtAddress}}
+    <label for="Mailing Adress Yes or No">Is this your Mailing Address?*:  </label><br>
+    {{formData.isMailingAddress}}
+    <label for="Billing Adress Yes or No">Is this your Billing Address?*:  </label><br>
+    {{formData.isBillingAddress}}
+    <label for="Year-round Residence Yes or No">Is this your Year-round Residence?*:  </label><br>
+    {{formData.isYearRoundResidence}}
+    <label for="primary phone">Primary Phone: *</label><br>
+    {{formData.primaryPhone}}
+    <label for="secondary phone">Secondary Phone: </label><br>
+    {{formData.secondaryPhone}}
+    <label for="email">Email: </label><br>
+    {{formData.email}}
+    
+    <h2>First Emergency Contact</h2>
+    
+    <label for="name">Name: *</label><br>
+    {{formData.firstEmergencyContact.name}}
+    <label for="relationship">Relationship: *</label><br>
+    {{formData.firstEmergencyContact.relationship}}
+    <label for="street">Street Address: *</label><br>
+    {{formData.firstEmergencyContact.street}}
+    <label for="city">City: *</label><br>
+    {{formData.firstEmergencyContact.city}}
+    <label for="state">State: *</label><br>
+    {{formData.firstEmergencyContact.state}}
+    <label for="zip">Zip Code: *</label><br>
+    {{formData.firstEmergencyContact.zip}}
+    <label for="home phone">Home Phone: *</label><br>
+    {{formData.firstEmergencyContact.homePhone}}
+    <label for="cell phone">Cell Phone: </label><br>
+    {{formData.firstEmergencyContact.cellPhone}}
+    <label for="email">Email: </label><br>
+    {{formData.firstEmergencyContact.email}}
+    
+    <h2>Second Emergency Contact</h2>
+    
+    <label for="name">Name: *</label><br>
+    {{formData.secondEmergencyContact.name}}
+    <label for="relationship">Relationship: *</label><br>
+    {{formData.secondEmergencyContact.relationship}}
+    <label for="street">Street Address: *</label><br>
+    {{formData.secondEmergencyContact.street}}
+    <label for="city">City: *</label><br>
+    {{formData.secondEmergencyContact.city}}
+    <label for="state">State: *</label><br>
+    {{formData.secondEmergencyContact.state}}
+    <label for="zip">Zip Code: *</label><br>
+    {{formData.secondEmergencyContact.zip}}
+    <label for="home phone">Home Phone: *</label><br>
+    {{formData.secondEmergencyContact.homePhone}}
+    <label for="cell phone">Cell Phone: </label><br>
+    {{formData.secondEmergencyContact.cellPhone}}
+    <label for="email">Email: </label><br>
+    {{formData.secondEmergencyContact.email}}
+    
+    
+    <label for="Heard about ITN">How did you hear about ITN?: *</label><br>
+    XX
+    
+    <label for="send info">Would you like us to send information about ITN to a relative, friend, or business? * </label><br>
+    {{formData.sendInfoToRelativeFriendBiz}}
+    <div ng-if="sendInfo">
+      <label for="name">Name: *</label><br>
+      {{formData.sendInfoTo.name}}
+      <label for="relationship">Relationship: *</label><br>
+      {{formData.sendInfoTo.relationship}}
+      <label for="street">Street Address: *</label><br>
+      {{formData.sendInfoTo.street}}
+      <label for="state">State: *</label><br>
+      {{formData.sendInfoTo.state}}
+      <label for="zip">Zip Code: *</label><br>
+      {{formData.sendInfoTo.zip}}
+      <label for="phone">Phone: *</label><br>
+      {{formData.sendInfoTo.phone}}
+      <label for="email">Email: </label><br>
+      {{formData.sendInfoTo.email}}
+    </div>
+    
+    <p><em>ITNAmerica respects your privacy and will keep all customer information confidential. The following information allows us to provide better service to our customers, and helps us better understand the circumstances that customers face when they apply to use the ITN for rides.</em></p>
+    
+    <h2>Customer Information</h2>
+    
+    <label for="gender">Gender: * </label><br>
+    {{formData.customerInfo.gender}}
+    <label for="dob">Date of Birth: * - </label><br>
+    {{formData.customerInfo.dateOfBirth}}
+    <label for="marital status">Marital Status: * </label><br>
+    {{formData.customerInfo.maritalStatus}}
+    <label for="living">Living Arrangements: * </label><br>
+    {{formData.customerInfo.livingArrangement}}
+    <label for="dwelling">Dwelling Arrangements: * </label><br>
+    {{formData.customerInfo.dwellingArrangement}}
+    <label for="languages">Languages Spoken: *</label><br>
+    XX
+    <label for="transportation means">Current primary means of getting around: * </label><br>
+    {{formData.customerInfo.currentTransportationMeans}}
+    
+    <h2>Civic Engagement</h2>
+    
+    <label for="member of any organization">Are you a member of any of the following organizations?:</label><br>
+    XX
+    <label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
+    {{formData.customerInfo.memberOfProfessionalOrgOrUnion}} - {{formData.customerInfo.memberOfProfessionalOrgOrUnion.other}}
+    <label for="served in armed forces">Have you ever served on active duty in the U.S. Armed Forces, Military Reserves, or National Guard: *</label><br>
+    {{formData.customerInfo.servedInMilitary}}
+    <label for="special needs">Special Needs and Mobility Assistance: *</label><br>
+    XX
+  
+    <h2>Driving Information</h2>
+    
+    <label for="license">Do you have a current driver's license?: *</label><br>
+    {{formData.drivingInfo.hasLicense}}
+    <label for="own vehicle">Do you own a vehicle?: *</label><br>
+    {{formData.drivingInfo.ownVehicle}}
+    <label for="driver improvement">Have you tried any driver improvement activities or classes to help you keep driving safely longer?: *</label><br>
+    {{formData.drivingInfo.driverImprovementClasses}}
+    <label for="driven in last 10 years">Have you driven in the last ten years?: *</label><br>
+    {{formData.drivingInfo.drivenLast10Years}}
+    <label for="currently driving">Do you currently drive?: *</label><br>
+    {{formData.drivingInfo.currentlyDrive}}
+    
+    <div ng-if="currentDriver">
+      <h3>If you drive...</h3>
+      <label for="how often do you drive">How often do you drive?:</label><br>
+      {{formData.drivingInfo.howOftenYouDrive}}
+      <label for="restricted your driving">Have you restricted your own driving?:</label><br>
+      {{formData.drivingInfo.restrictedOwnDriving}}
+      <h3>How often do you do the following:</h3>
+        <label for="avoid driving at night">Avoid driving at night?:</label><br>
+        {{formData.drivingInfo.avoidDrivingAtNight}}
+        <label for="avoid highway driving">Avoid highway driving?:</label><br>
+        {{formData.drivingInfo.avoidHighwayDriving}}
+        <label for="avoid left turns on incoming traffic">Avoid making left turns across incoming traffic?:</label><br>
+        {{formData.drivingInfo.avoidLeftTurnsIncomingTraffic}}
+        <label for="avoid driving bad weather">Avoid driving in bad weather?:</label><br>
+        {{formData.drivingInfo.avoidDrivingBadWeather}}
+        <label for="avoid driving alone">Avoid driving alone?:</label><br>
+        {{formData.drivingInfo.avoidDrivingAlone}}
+        <label for="avoid driving high traffic">Avoid driving on high traffic roads?:</label><br>
+        {{formData.drivingInfo.avoidDrivingHighTrafficRoads}}
+        <label for="avoid driving unfamiliar areas">Avoid driving in unfamiliar areas?:</label><br>
+        {{formData.drivingInfo.avoidDrivingUnfamiliarAreas}}
+        <label for="pass up fun because of driving concerns">Pass up opportunities to go shopping, visit friends, etc., because of concerns about driving?:</label><br>
+        {{formData.drivingInfo.passOpportunitiesBecauseDriveConcerns}}
+    </div>
+    
+    <div ng-if="!currentDriver">  
+      <h3>If you do not drive...</h3>
+        <label for="avoid driving alone">Please check a reason:</label><br>
+        XX
+    </div>
+    
+    <h3>Rideshare</h3>
+      <label for="reduce ITN cost with rideshare">Would you like to reduce the cost of ITN trips by sharing rides with others when it's convenient?: *</label><br>
+      {{formData.drivingInfo.reduceCostWithRideshare}}
+    <h3>Programs</h3>
+      <label for="info on programs">Would you like information on any of these ITN programs?:</label><br>
+      XX
+      
+      <h3 class="mt-50 mb-25">Personal Transportation Account Agreement</h3>
+      
+      <p>A personal ITN transportation account is like a personal bank account. It is debited whenever you take an ITN ride, and when you make a payment to ITN, it is like making a deposit into your account.  At the end of each month, you receive a statement that details your rides and any other account activity, such as payments, gift certificates, Ride & Shop™ or Healthy Miles™, volunteer credits, CarTrade™ credits, or payment of membership dues.</p>
+
+      <p>ITN is a charitable nonprofit service supported by your fares and voluntary local community support. Because fares cover only half the true cost of rides, the ITN affiliate may include family members and any others you have listed as contacts in its fundraising campaigns, including the Family Membership Campaign, Walk for Rides and Annual Appeal. Participation in these campaigns is voluntary. A contact’s decision not to participate will not affect the quality of your service or your eligibility to use ITN for rides.</p>
+      
+      <p><strong>Your signature below indicates that you agree to the following policies:</strong></p>
+      
+      <div class="form-group">
+        <ol>
+          <li>You will maintain a balance in your account sufficient to cover your monthly rides;</li>
+          <li>Your membership dues will be automatically debited on the anniversary of your membership;</li>
+          <li>If you have an unpaid balance greater than $200 for longer than 60 days, your account will be paused until you have deposited sufficient funds to again achieve a positive balance;</li>
+          <li>If there is no activity in your account for one year and we have made three documented unsuccessful attempts to reach you, you agree that the balance in our account will become a charitable gift to ITN;</li>
+          <li>Your contacts may receive a limited number of mailings (via regular mail or e-mail) for the ITN affiliate’s fundraising events/campaigns, as well as up to four quarterly ITN Newsletters. Their names will not be shared with any other party or organization.</li>
+        </ol>
+      </div>
+      
+      <label>By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
+      <label for="name">Name: *</label>
+      {{formData.agreement.name1}}
+      <label for="signature">Agreement Signature: *</label>
+      {{formData.agreement.signature1}}
+      <label for="date">Agreement Date: *</label>
+      {{formData.agreement.date1}}
+      
+      
+      <h3 class="mt-50 mb-25">Informed Consent</h3>
+      
+      <p>The Independent Transportation Network (ITN) is a non-profit, community-based organization providing dignified, consumer-oriented transportation for seniors and people with visual impairments. </p>
+
+      <p>As an ITNAmerica affiliate community, your ITN benefits from more than a decade of research to develop a model for economically sustainable transportation. Among the public and private organizations that have supported this research are the Federal Transit Administration, the Transportation Research Board (National Academies of Science), AARP, the Great Bay Foundation for Social Entrepreneurs, and the Atlantic Philanthropies. Thousands of private individuals and their families have participated in this research and development, without which, this service would not be possible.</p>
+
+      <p>In the spirit of this public/private effort, to continue the development and analysis that will allow ITNAmerica to better understand the mobility needs of older Americans, their families and their communities, and to continuously improve the quality and sustainability of the service, we routinely collect data about riders and the rides we deliver. The identity of our riders is kept entirely confidential in all reports we use for these purposes.</p>
+
+      <p>In addition to this routine data collection, ITNAmerica also conducts research. From time to time, we may ask you to participate in a research project. Your participation in the ITNAmerica research studies is voluntary and confidential. If you prefer not to participate in the research studies, your decision will not affect the quality of your service or your eligibility to use ITN for rides.</p>
+
+      <p>Your signature indicates that you understand that routinely-collected ITNAmerica data will be used to study and improve transportation for seniors, and that you may, from time to time, be asked questions about your use of the service. We will do our best to provide rides for you and we will always strive to inform you when we cannot provide a ride. However, we are not responsible for any costs or expenses you may incur when we are unable to provide a ride for a specific time and place.</p>
+      
+      <label>By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
+      <label for="name">Name: *</label>
+      {{formData.agreement.name2}}
+      <label for="signature">Agreement Signature: *</label>
+      {{formData.agreement.signature2}}
+      <label for="date">Agreement Date: *</label>
+      {{formData.agreement.date2}}
+      
+    
+  </div>
+  
 
 
   
