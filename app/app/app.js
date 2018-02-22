@@ -239,7 +239,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     $http.post('/sendmail', {
       from: '"ITN Web User" <donotreply@itnamerica.com>',
       to: 'samguergen@gmail.com',
-      subject: $scope.formSubject,
+      subject: "Contact Form Submitted: " + $scope.formSubject,
       text: $scope.formData,
       html: `<p><strong>Name:</strong>: ${$scope.formData.name}</p>
       <p><strong>Email:</strong>: ${$scope.formData.email}</p>

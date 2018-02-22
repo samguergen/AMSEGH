@@ -10,31 +10,43 @@
         <h3>Want to learn more about ITN<em>Lanier</em>? Have questions or comments? Use the form below, or call us at (678) 696-0360. Or visit us at 999 Chestnut St. SE, Gainesville, GA 30501.</h3>
         <hr align="center">
         <div class="col-sm-12">
-            <div class="form-area" style="background: #c7dfe4;border:none">  
-                  <form name="contactform" novalidate ng-submit="submitForm('contact')" role="contact form" ng-model="formData">
+            <div class="form-area" style="background: #c7dfe4;border:none"> 
+               
+                  <form name="itnForm" novalidate ng-submit="submitForm('contact')" role="contact form" ng-model="formData">
                 <br style="clear:both">
                             <h3 style="margin-bottom: 25px; text-align: center">Contact ITN Lanier</h3>
-                    <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" ng-model="formData.name" required>
-                    <span class="error" ng-show="myForm.name.$error.required">Required!</span>
-                  </div>
-                  <div class="form-group">
+                            
+                    <div class="form-group" ng-class="{ 'has-error' : itnForm.name.$invalid && !itnForm.name.$pristine }">
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Name" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.name" required>
+                      <span ng-if="itnForm.name.$error.required && !itnForm.name.$pristine" class="help-block">{{errorMessages.required}}</span>
+                      <span ng-if="itnForm.name.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                      <span ng-if="itnForm.name.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
+                    </div>
+                  
+                  <div class="form-group" ng-class="{ 'has-error' : itnForm.email.$invalid && !itnForm.email.$pristine }">
                     <input type="text" class="form-control" id="email" name="email" ng-pattern="emailPattern" placeholder="Email" ng-model="formData.email" required>
-                    <span class="error" ng-show="myForm.email.$error.required">Required!</span>
-                    <br><span class="error" ng-show="myForm.email.$error.pattern">Please match pattern user@example.com</span>
-                    
+                    <span ng-if="itnForm.email.$error.required && !itnForm.email.$pristine" class="help-block">{{errorMessages.required}}</span>
+                    <span ng-if="itnForm.email.$error.pattern" class="help-block">{{errorMessages.email}}</span>
                   </div>
-                  <div class="form-group">
+                  
+                  <div class="form-group" ng-class="{ 'has-error' : itnForm.mobile.$invalid && !itnForm.mobile.$pristine }">
                     <input type="text" class="form-control" id="mobile" name="mobile" ng-pattern="phonePattern" placeholder="Mobile Number. Example: 617-344-9876" ng-model="formData.phone" required>
-                    <span class="error" ng-show="myForm.mobile.$error.required">Required!</span>
-                    <br><span class="error" ng-show="myForm.mobile.$error.pattern">Please match pattern [+91-036-78658 || 91-036-78658]</span>
+                    <span ng-if="itnForm.mobile.$error.required && !itnForm.mobile.$pristine" class="help-block">{{errorMessages.required}}</span>
+                    <span ng-if="itnForm.mobile.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
                   </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" ng-model="formData.subject" required>
-                    <span class="error" ng-show="myForm.subject.$error.required">Required!</span>
+                  
+                  <div class="form-group" ng-class="{ 'has-error' : itnForm.subject.$invalid && !itnForm.subject.$pristine }">
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" ng-model="formData.subject" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                    <span ng-if="itnForm.subject.$error.required && !itnForm.subject.$pristine" class="help-block">{{errorMessages.required}}</span>
+                    <span ng-if="itnForm.subject.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                    <span ng-if="itnForm.subject.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                   </div>
-                  <div class="form-group">
-                  <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7" ng-model="formData.messageBody"></textarea>
+                  
+                  <div class="form-group" ng-class="{ 'has-error' : itnForm.message.$invalid && !itnForm.message.$pristine }">
+                    <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Message" maxlength="140" rows="7" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.messageBody" required></textarea>
+                    <span ng-if="itnForm.message.$error.required && !itnForm.message.$pristine" class="help-block">{{errorMessages.required}}</span>
+                    <span ng-if="itnForm.message.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                    <span ng-if="itnForm.message.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                       <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
                   </div>
                     
