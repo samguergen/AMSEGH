@@ -103,7 +103,7 @@
                         
                         <div class="form-group ta-center" ng-class="{ 'has-error' : itnForm.gender.$invalid && !itnForm.gender.$pristine }">
                           <label for="gender">Gender: * </label><br>
-                          <label class="radio-inline"><input type="radio" name="gender"  value="female" ng-model="formData.customerInfo.gender" required>Female</label>
+                          <label class="radio-inline"><input type="radio" name="gender"  value="female" ng-model="formData.gender" required>Female</label>
                           <label class="radio-inline"><input type="radio" name="gender" value="male" ng-model="formData.customerInfo.gender">Male</label>
                           <span ng-if="itnForm.gender.$error.required && !itnForm.gender.$pristine" class="help-block">{{errorMessages.required}}</span>
                         </div>
@@ -276,10 +276,8 @@
                               ng-show="limitations">
                           </div>
                           
-                          
-                        
                           <div class="form-group ta-center">
-                            <label for="send info">Current Employment Status: *</label><br>
+                            <label for="current employment">Current Employment Status: *</label><br>
                             <label class="radio-inline"><input ng-model="formData.currentEmployment" type="radio" value="none" ng-click="occupation = false" required>None</label>
                             <label class="radio-inline"><input ng-model="formData.currentEmployment" type="radio" value="fulltime" ng-click="occupation = true">Full-time</label>
                             <label class="radio-inline"><input ng-model="formData.currentEmployment" type="radio" value="parttime" ng-click="occupation = true">Part-time</label>
@@ -434,7 +432,7 @@
                       
                       <div class="form-group" ng-class="{ 'has-error' : itnForm.date1.$invalid && !itnForm.date1.$pristine }">
                         <label for="date">Agreement Date: *</label>
-                        <input type="text" class="form-control" id="date" name="date1" placeholder="Example: mm/dd/yyyy" ng-pattern="datePattern" ng-model="formData.agreement.date" required>
+                        <input type="text" class="form-control" id="date" name="date1" placeholder="Example: mm/dd/yyyy" ng-pattern="datePattern" ng-model="formData.references.date" required>
                         <span ng-if="itnForm.date1.$error.required && !itnForm.date1.$pristine" class="help-block">{{errorMessages.required}}</span>
                         <span ng-if="itnForm.date1.$error.pattern" class="help-block">{{errorMessages.date}}</span>
                       </div>
@@ -550,6 +548,7 @@
                 <h2>Ethnic Background</h2>
                 
                 <div class="form-group ta-center">
+                  <label for="ethnicity">What is your ethnic background?:</label><br>
                   <label class="checkbox-inline"><input ng-model="formData.ethnicBackground.aaa" type="checkbox" value="aaa">African American</label>
                   <label class="checkbox-inline"><input ng-model="formData.ethnicBackground.asian" type="checkbox" value="elks">Asian</label>
                   <label class="checkbox-inline"><input ng-model="formData.ethnicBackground.caucasian" type="checkbox" value="rotary">Caucasian</label>
@@ -580,7 +579,7 @@
                 
                 <div class="form-group ta-center">
                   <label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
-                  <label class="radio-inline"><input ng-model="formData.customerInfo.memberOfProfessionalOrgOrUnion" type="radio" value="yes" ng-click="specifyUnions = !specifyUnions">Yes</label>
+                  <label class="radio-inline"><input ng-model="formData.memberOfProfessionalOrgOrUnion" type="radio" value="yes" ng-click="specifyUnions = !specifyUnions">Yes</label>
                   <label class="radio-inline"><input type="radio" value="no">No</label>
                     <input ng-model="formData.memberOfProfessionalOrgOrUnions" type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
                 </div>
@@ -692,7 +691,7 @@
                             <p><strong>I certify that I have not been convicted or forfeited bond or collateral because of a moving violation during the last three years.</strong></p>
                             
                             <div class="form-group" ng-class="{ 'has-error' : itnForm.signature2.$invalid && !itnForm.signature2.$pristine }">
-                              <label for="signature">Signature: *</label>
+                              <label for="signature"> Agreement Signature: *</label>
                               <input type="text" class="form-control" id="signature" name="signature2" placeholder="type your full name" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.requestDriverRecord.signature" required>
                               <span ng-if="itnForm.signature2.$error.required && !itnForm.signature2.$pristine" class="help-block">{{errorMessages.required}}</span>
                               <span ng-if="itnForm.signature2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
@@ -1423,12 +1422,164 @@
   
   
   <h2>Authorization to Request Driver Record</h2>
+  <label for="name">Name *:</label><br>
+  {{formData.requestDriverRecord.name}}
+  <label for="maiden name">Previous/Maiden name (if applicable) * :</label><br>
+  {{formData.requestDriverRecord.maidenName}}
+  <label for="date of birth">Date of Birth *:</label><br>
+  {{formData.requestDriverRecord.dob}}
+  <label for="license number">Driver's License Number *:</label><br>
+  {{formData.requestDriverRecord.licenseNumber}}
+  <label for="license number">I authorize ITNLanier to request and receive my Driving Record from *:</label>
+  {{formData.requestDriverRecord.authorize}}
+  
+  <p><strong>I certify that I have not been convicted or forfeited bond or collateral because of a moving violation during the last three years.</strong></p>
+  
+  <label for="signature"> Agreement Signature: *</label>
+  {{formData.requestDriverRecord.signature}}
+  <label for="date">Agreement Date: *</label>
+  {{formData.requestDriverRecord.date}}
   
   
+  <h2>Authorization to Request Criminal Record History</h2>
+  <label for="criminal record state">This authorization is required to check your Criminal History Record from: *</label>
+  {{formData.requestCriminalRecord.authorize}}
+  
+  <p><strong>Please fill in your complete name (please include any previous names used) and include date of birthand social security number, then sign below. The purpose of this background check will be for volunteer purposes.<strong></p>
+  
+  <label for="name">Name *:</label><br>
+  {{formData.requestCriminalRecord.name}}
+  <label for="maiden name">Previous/maiden name (if applicable) * :</label><br>
+  {{formData.requestCriminalRecord.maidenName}}
+  <label for="date of birth">Date of Birth *:</label><br>
+  {{formData.requestCriminalRecord.dob]}}
+  <label for="social security number">Social Security Number *:</label><br>
+  {{formData.requestCriminalRecord.socialSecurity}}
+  
+  <p><strong>I authorize Independent Transportation Network® to request and receive any and all criminal history information about me held by the State Bureau of Identification. The purpose of this background check will be for volunteer purposes.</strong></p>
+  
+  <label for="signature">Signature *:</label><br>
+  {{formData.requestCriminalRecord.signature}}
+  <label for="date">Date *:</label><br>
+  {{formData.requestCriminalRecord.date}}
   
   
+  <h2>Vehicle Description Information</h2>
+  <label for="own vehicle">Do you own the vehicle?: *</label><br>
+  {{formData.vehicleDescription.vehicleOWner}}
+  
+  <h3>Vehicle Description</h3>
+  <label for="make">Make *:</label><br>
+  {{formData.vehicleDescription.make}}
+  <label for="model">Model *:</label><br>
+  {{formData.vehicleDescription.model}}
+  <label for="type">Type:</label><br>
+  {{formData.vehicleDescription.type}}
+  <label for="year">Year *:</label><br>
+  {{formData.vehicleDescription.year}}
+  <label for="registration Plate">Registration plate *:</label><br>
+  {{formData.vehicleDescription.registrationPlate}}
+  <label for="color">Color :</label><br>
+  {{formData.vehicleDescription.color}}
+  <label for="number Of Doors">Number of doors *:</label><br>
+  {{formData.vehicleDescription.numberOfDoors}}
+  <label for="registration Expiration">Registration expiration date: *</label><br>
+  {{formData.vehicleDescription.registrationExpiration}}
+  <label for="insurance Company">Insurance company: *</label><br>
+  {{formData.vehicleDescription.insuranceCompany}}
+  <label for="agent">Agent: *</label><br>
+  {{formData.vehicleDescription.agent}}
+  <label for="agent address">Agent Address: *</label><br>
+  {{formData.vehicleDescription.agentAddress}}
+  <label for="agent Phone">Agent Phone</label><br>
+  {{formData.vehicleDescription.agentPhone}}
+  <label for="can transport walker or wheelchair">Are you able to transport a folding walker or wheel chair: *</label><br>
+  {{formData.vehicleDescription.canTransportWalkerWheelChair}}
+  
+  <label for="general condition">Please describe the general condition of the vehicle(s) and any known defects: *</label><br>
+  {{formData.vehicleDescription.generalCondition}}
+  <label for="passenger capacity">Passenger capacity: *</label><br>
+  {{formData.vehicleDescription.passengerCapacity}}
+  <label for="can Transport Pets">Are you willing to transport properly restrained pets: *</label><br>
+  {{formData.vehicleDescription.canTransportPets}}
+  <label for="has large trunk">Do you have a large trunk: *</label><br>
+  {{formData.vehicleDescription.hasLargeTrunk}}
+  <label for="has covered truck bed">Covered truck bed: *</label><br>
+  {{formData.vehicleDescription.hasCoveredTruckBed}}
+  <label for="only vehicle">Is this the only vehicle you will be using: *</label><br>
+  {{formData.vehicleDescription.onlyVehicle}}
+  
+  <div ng-show="secondVehicle">
+    <label for="make">Make *:</label><br>
+    {{formData.secondVehicleDescription.make}}
+    <label for="model">Model *:</label><br>
+    {{formData.secondVehicleDescription.model}}
+    <label for="type">Type:</label><br>
+    {{formData.secondVehicleDescription.type}}
+    <label for="year">Year *:</label><br>
+    {{formData.secondVehicleDescription.year}}
+    <label for="registration Plate">Registration plate *:</label><br>
+    {{formData.secondVehicleDescription.registrationPlate}}
+    <label for="color">Color :</label><br>
+    {{formData.secondVehicleDescription.color}}
+    <label for="number Of Doors">Number of doors *:</label><br>
+    {{formData.secondVehicleDescription.numberOfDoors}}
+    <label for="registration Expiration">Registration expiration date: *</label><br>
+    {{formData.secondVehicleDescription.registrationExpiration}}
+    <label for="insurance Company">Insurance company: *</label><br>
+    {{formData.secondVehicleDescription.insuranceCompany}}
+    <label for="agent">Agent: *</label><br>
+    {{formData.secondVehicleDescription.agent}}
+    <label for="agent address">Agent Address: *</label><br>
+    {{formData.secondVehicleDescription.agentAddress}}
+    <label for="agent Phone">Agent Phone</label><br>
+    {{formData.secondVehicleDescription.agentPhone}}
+    <label for="can transport walker or wheelchair">Are you able to transport a folding walker or wheel chair: *</label><br>
+    {{formData.secondVehicleDescription.canTransportWalkerWheelChair}}
+    
+    <label for="general condition">Please describe the general condition of the vehicle(s) and any known defects: *</label><br>
+    {{formData.secondVehicleDescription.generalCondition}}
+    <label for="passenger capacity">Passenger capacity: *</label><br>
+    {{formData.secondVehicleDescription.passengerCapacity}}
+    <label for="can Transport Pets">Are you willing to transport properly restrained pets: *</label><br>
+    {{formData.secondVehicleDescription.canTransportPets}}
+    <label for="has large trunk">Do you have a large trunk: *</label><br>
+    {{formData.secondVehicleDescription.hasLargeTrunk}}
+    <label for="has covered truck bed">Covered truck bed: *</label><br>
+    {{formData.secondVehicleDescription.hasCoveredTruckBed}}
+    <label for="only vehicle">Is this the only vehicle you will be using: *</label><br>
+    {{formData.secondVehicleDescription.onlyVehicle}}
+  </div>
+  
+  <label for="signature">Signature *:</label><br>
+  {{formData.vehicleDescription.signature}}
+  <label for="date">Date *:</label><br>
+  {{formData.vehicleDescription.date}}
   
   
+  <h2>Volunteer Driver Change of Status</h2>
+
+  <p>It is the responsibility of the Volunteer Driver to notify the Independent Transportation Network® of any changes in relevant driver information.
+  Please notify your ITN Representative of any incidents or changes related to the list below, and submit copies of new documents before their expiration dates.</p>
+
+  <ul>
+    <li>Change of insurance policy, agent, or carrier</li>
+    <li>Accidents</li>
+    <li>Moving Violations</li>
+    <li>New/different vehicles</li>
+    <li>Criminal convictions</li>
+    <li>Significant medical issues that affect driving</li>
+    <li>Change in license status</li>
+  </ul>
+
+  <p>I understand that I need to report any changes in the above to ITN, and agree to do so in a timely manner.</p>
+  
+  <label for="signature">Volunteer Driver Signature *:</label><br>
+  {{formData.changeOfStatus.signature}}
+  <label for="date">Date: *</label><br>  
+  {{formData.changeOfStatus.date}}
+  <label for="itn Signature">ITN<em>America</em> Signature:</label><br>
+  <label for="itn date">Date:</label><br>
   
   
   
