@@ -1,4 +1,4 @@
-    <div class="donate">
+    <div class="donate" ng-init="resetFormData()">
       
       <div class="jumbotron section first-hero" style="height:400px">
         <h1>Donate</h1>
@@ -81,28 +81,48 @@
           <div class="row"></div>
             
             <div class="form-area" style="margin:auto;margin-top:50px">  
-                  <form action="mailto:info@itnlanier.org" method="post" enctype="text/plain">
+              <form name="itnForm" novalidate ng-submit="submitForm('contact')" role="contact form" ng-model="formData">
                 <br style="clear:both">
-                  <h3 style="margin-bottom: 25px; text-align: center; color:#fc6d6d">Contact us</h3>
-                    <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
-                  </div>
-                  <div class="form-group">
-                  <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
-                  </div>
-                <input type="submit" id="submit" class="btn btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%">
-                <input type="reset" class="btn btn-primary pull-right itn-green-bg" value="Reset">
+                <h3 style="margin-bottom: 25px; text-align: center">Contact ITN Lanier</h3>
+                        
+                <div class="form-group" ng-class="{ 'has-error' : itnForm.name.$invalid && !itnForm.name.$pristine }">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Name" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.name" required>
+                  <span ng-if="itnForm.name.$error.required && !itnForm.name.$pristine" class="help-block">{{errorMessages.required}}</span>
+                  <span ng-if="itnForm.name.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                  <span ng-if="itnForm.name.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
+                </div>
+              
+                <div class="form-group" ng-class="{ 'has-error' : itnForm.email.$invalid && !itnForm.email.$pristine }">
+                  <input type="text" class="form-control" id="email" name="email" ng-pattern="emailPattern" placeholder="Email" ng-model="formData.email" required>
+                  <span ng-if="itnForm.email.$error.required && !itnForm.email.$pristine" class="help-block">{{errorMessages.required}}</span>
+                  <span ng-if="itnForm.email.$error.pattern" class="help-block">{{errorMessages.email}}</span>
+                </div>
+              
+                <div class="form-group" ng-class="{ 'has-error' : itnForm.mobile.$invalid && !itnForm.mobile.$pristine }">
+                  <input type="text" class="form-control" id="mobile" name="mobile" ng-pattern="phonePattern" placeholder="Mobile Number. Example: 617-344-9876" ng-model="formData.phone" required>
+                  <span ng-if="itnForm.mobile.$error.required && !itnForm.mobile.$pristine" class="help-block">{{errorMessages.required}}</span>
+                  <span ng-if="itnForm.mobile.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
+                </div>
                 
-                </form>
+                <div class="form-group" ng-class="{ 'has-error' : itnForm.subject.$invalid && !itnForm.subject.$pristine }">
+                  <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" ng-model="formData.subject" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                  <span ng-if="itnForm.subject.$error.required && !itnForm.subject.$pristine" class="help-block">{{errorMessages.required}}</span>
+                  <span ng-if="itnForm.subject.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                  <span ng-if="itnForm.subject.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
+                </div>
+                
+                <div class="form-group" ng-class="{ 'has-error' : itnForm.message.$invalid && !itnForm.message.$pristine }">
+                  <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Message" maxlength="140" rows="7" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.messageBody" required></textarea>
+                  <span ng-if="itnForm.message.$error.required && !itnForm.message.$pristine" class="help-block">{{errorMessages.required}}</span>
+                  <span ng-if="itnForm.message.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                  <span ng-if="itnForm.message.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
+                    <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
+                </div>
+                  
+                <input type="submit" id="submit" class="btn btn-lg btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%">
+                <input type="button" ng-click="formData = {}" value="Reset Form" class="btn btn-lg pull-right itn-green-bg"  style="margin-left:2%">
+              
+              </form>
             </div><!--form-area-->
                   
           </div><!--donate-type-->
