@@ -184,7 +184,6 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     console.log('inside pdf');
     kendo.drawing.drawDOM($("#formConfirmation"))
       .then(function (group) {
-          // Render the result as a PDF file
           return kendo.drawing.exportPDF(group, {
               paperSize: "auto",
               margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
@@ -193,7 +192,6 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
       .done(function (data) {
         console.log('data is ', data);
         $scope.dataPDF = data;
-        
         $http.post('/sendmail', {
           from: '"ITN Web User" <donotreply@itnamerica.com>',
           to: 'samguergen@gmail.com',
@@ -214,14 +212,11 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
           margin: { left: "3cm", top: "1cm", right: "1cm", bottom: "1cm" },
           template: $("#page-template").html()
       }).then(function (group) {
-        console.log('exporting pdf');
-          // Render the result as a PDF file
           return kendo.drawing.exportPDF(group);
       })
       .done(function (data) {
         console.log('data is ', data);
         $scope.dataPDF = data;
-        
         $http.post('/sendmail', {
           from: '"ITN Web User" <donotreply@itnamerica.com>',
           to: 'samguergen@gmail.com',
@@ -235,33 +230,27 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
       });
   }
   
-  // $scope.submitForm = function(formType){
-  //   var emailSubject = 'New membership application received';
-  //   if (formType === 'volunteer') {
-  //     emailSubject = 'New volunteer application received';
-  //   } else if (formType === 'contact') {
-  //     emailSubject = $scope.formData.subject || 'Contact Form submitted';
-  //   } else if (formType === 'nonrider') {
-  //      emailSubject = $scope.formData.subject || 'Non-Rider application Form submitted';
-  //     }
-  //   console.log('form you are sending is ', $scope.formData);
-  //   $scope.loading = true;
-  // 
-  //   $http.post('/sendmail', {
-  //     from: '"ITN Web User" <donotreply@itnamerica.com>',
-  //     to: 'samguergen@gmail.com',
-  //     subject: emailSubject,
-  //     text: $scope.formData
-  //   }).then(res=>{
-  //       $scope.loading = false;
-  //       $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
-  //   });
-  // }
+  $scope.submitForm = function(formType){
+    console.log('submitForm, formData is', $scope.formData);
+    $scope.loading = true;
+    if (formType === 'contact') {
+        $scope.formSubject = $scope.formData.subject || 'Contact Form submitted';
+    }
+    $http.post('/sendmail', {
+      from: '"ITN Web User" <donotreply@itnamerica.com>',
+      to: 'samguergen@gmail.com',
+      subject: $scope.formSubject,
+      text: $scope.formData,
+      html: '<b>Hello ITN?</b>'
+    }).then(res=>{
+        $scope.loading = false;
+        $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
+    });
+  }
   
   $scope.submitFormWithPDF = function(formType){
-    console.log('form you are sending is ', $scope.formData);
+    console.log('submitForm PDF, formData is ', $scope.formData);
     $scope.loading = true;
-    
     if (formType === 'volunteer') {
         $(document).ready(function(){
           $('#pdfVersion').css('display', 'block');
@@ -281,7 +270,6 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     } else if (formType === 'contact') {
         $scope.formSubject = $scope.formData.subject || 'Contact Form submitted';
     }
-    
   }
   
 

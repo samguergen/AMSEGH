@@ -21,17 +21,37 @@ app.post('/sendmail', function(req, res){
        }
     })
   )
-  
-    // setup email data with unicode symbols
-    let mailOptions = {
+  let mailOptions = {};
+  if (req.body && req.body.attachments){
+    mailOptions = {
         from: req.body.from, // sender address
         to: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line   
         text: JSON.stringify(req.body.text), // plain text body
         // bcc: 'info@itnlanier.org',
         attachments: [{path: req.body.pdf}]
-        // html: '<b>Hello ITN?</b>' // html body
     };
+  }
+  else if (req.body && req.body.html){
+    mailOptions = {
+        from: req.body.from, // sender address
+        to: req.body.to, // list of receivers
+        subject: req.body.subject, // Subject line   
+        text: JSON.stringify(req.body.text), // plain text body
+        // bcc: 'info@itnlanier.org',
+        html: req.body.html // html body
+    };
+  } else {
+    mailOptions = {
+        from: req.body.from, // sender address
+        to: req.body.to, // list of receivers
+        subject: req.body.subject, // Subject line   
+        text: JSON.stringify(req.body.text), // plain text body
+        // bcc: 'info@itnlanier.org',
+    };
+  }
+  
+
 
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
