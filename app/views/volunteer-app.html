@@ -322,8 +322,8 @@
                         <label for="criminal conviction">Have you had any past criminal convictions, or do you have any charges pending against you in a court of law?*</label><br>
                         <label class="radio-inline"><input type="radio" value="female" ng-model="formData.criminalConviction" ng-click="crimConvic = true" required>Female</label>
                         <label class="radio-inline"><input type="radio" value="male" ng-model="formData.criminalConviction" ng-click="crimConvic = true">Male</label>
-                        <textarea class="form-control" rows="5" id="limitations" name="limitations" placeholder="List convictions: *" ng-model="formData.criminalConvictionDetail"
-                        ng-show="crimConvic"></textarea>
+                        <input type="text" class="form-control"   id="limitations" name="limitations" placeholder="List convictions: *" ng-model="formData.criminalConvictionDetail"
+                        ng-show="crimConvic">
                       </div>
                       
                       <div class="form-group ta-center">
@@ -344,13 +344,13 @@
                       
                       <div class="form-group" ng-class="{ 'has-error' : itnForm.firstRefPhoneOrMailing.$invalid && !itnForm.firstRefPhoneOrMailing.$pristine }">
                         <label for="phone">Phone (or Mailing Address): *</label><br>
-                        <input type="text" class="form-control" rows="5" id="firstRefPhoneOrMailing" name="firstRefPhoneOrMailing" ng-model="formData.firstReference.phoneOrMailing" required>
+                        <input type="text" class="form-control"   id="firstRefPhoneOrMailing" name="firstRefPhoneOrMailing" ng-model="formData.firstReference.phoneOrMailing" required>
                         <span ng-if="itnForm.firstRefPhoneOrMailing.$error.required && !itnForm.firstRefPhoneOrMailing.$pristine" class="help-block">{{errorMessages.required}}</span>
                       </div>
                       
                       <div class="form-group" ng-class="{ 'has-error' : itnForm.firstRefAcquainted.$invalid && !itnForm.firstRefAcquainted.$pristine }">
                         <label for="acquainted">How are you acquainted: *</label><br>
-                        <input type="text" class="form-control" rows="5" id="acquainted" name="firstRefAcquainted" ng-model="formData.firstReference.acquainted" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                        <input type="text" class="form-control"   id="acquainted" name="firstRefAcquainted" ng-model="formData.firstReference.acquainted" ng-minlength="minlength" ng-maxlength="maxlength" required>
                         <span ng-if="itnForm.firstRefAcquainted.$error.required && !itnForm.firstRefAcquainted.$pristine" class="help-block">{{errorMessages.required}}</span>
                         <span ng-if="itnForm.firstRefAcquainted.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
                         <span ng-if="itnForm.firstRefAcquainted.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
@@ -374,14 +374,14 @@
                       
                       <div class="form-group" ng-class="{ 'has-error' : itnForm.secondRefPhoneOrMailing.$invalid && !itnForm.secondRefPhoneOrMailing.$pristine }">
                         <label for="phone">Phone (or Mailing Address): *</label><br>
-                        <input type="text" class="form-control" rows="5" id="secondRefPhoneOrMailing" name="secondRefPhoneOrMailing" ng-model="formData.secondReference.phoneOrMailing" required>
+                        <input type="text" class="form-control"   id="secondRefPhoneOrMailing" name="secondRefPhoneOrMailing" ng-model="formData.secondReference.phoneOrMailing" required>
                         <span ng-if="itnForm.secondRefPhoneOrMailing.$error.required && !itnForm.secondRefPhoneOrMailing.$pristine" class="help-block">{{errorMessages.required}}</span>
                         <span ng-if="itnForm.secondRefPhoneOrMailing.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
                       </div>
                       
                       <div class="form-group" ng-class="{ 'has-error' : itnForm.secondRefAcquainted.$invalid && !itnForm.secondRefAcquainted.$pristine }">
                         <label for="acquainted">How are you acquainted: *</label><br>
-                        <input type="text" class="form-control" rows="5" id="acquainted" name="secondRefAcquainted" ng-model="formData.secondReference.acquainted" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                        <input type="text" class="form-control"   id="acquainted" name="secondRefAcquainted" ng-model="formData.secondReference.acquainted" ng-minlength="minlength" ng-maxlength="maxlength" required>
                         <span ng-if="itnForm.secondRefAcquainted.$error.required && !itnForm.secondRefAcquainted.$pristine" class="help-block">{{errorMessages.required}}</span>
                         <span ng-if="itnForm.secondRefAcquainted.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
                         <span ng-if="itnForm.secondRefAcquainted.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
@@ -405,13 +405,13 @@
                       
                       <div class="form-group" ng-class="{ 'has-error' : itnForm.thirdRefPhoneOrMailing.$invalid && !itnForm.thirdRefPhoneOrMailing.$pristine }">
                         <label for="phone">Phone (or Mailing Address): *</label><br>
-                        <input type="text" class="form-control" rows="5" id="thirdRefPhoneOrMailing" name="thirdRefPhoneOrMailing" ng-model="formData.thirdReference.phoneOrMailing" required>
+                        <input type="text" class="form-control"   id="thirdRefPhoneOrMailing" name="thirdRefPhoneOrMailing" ng-model="formData.thirdReference.phoneOrMailing" required>
                         <span ng-if="itnForm.thirdRefPhoneOrMailing.$error.required && !itnForm.thirdRefPhoneOrMailing.$pristine" class="help-block">{{errorMessages.required}}</span>
                       </div>
                       
                       <div class="form-group" ng-class="{ 'has-error' : itnForm.thirdRefAcquainted.$invalid && !itnForm.thirdRefAcquainted.$pristine }">
                         <label for="acquainted">How are you acquainted: *</label><br>
-                        <input type="text" class="form-control" rows="5" id="acquainted" name="thirdRefAcquainted" ng-model="formData.thirdReference.acquainted" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                        <input type="text" class="form-control"   id="acquainted" name="thirdRefAcquainted" ng-model="formData.thirdReference.acquainted" ng-minlength="minlength" ng-maxlength="maxlength" required>
                         <span ng-if="itnForm.thirdRefAcquainted.$error.required && !itnForm.thirdRefAcquainted.$pristine" class="help-block">{{errorMessages.required}}</span>
                         <span ng-if="itnForm.thirdRefAcquainted.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
                         <span ng-if="itnForm.thirdRefAcquainted.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
@@ -824,67 +824,94 @@
                           
                           <h3>Vehicle Description</h3>
                           
-                          <div class="form-group">
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.make1.$invalid && !itnForm.make1.$pristine }">
                             <label for="make">Make *:</label><br>
-                            <input type="text" class="form-control" id="make" name="make" ng-model="formData.vehicleDescription.make" required>
+                            <input type="text" class="form-control" id="make" name="make1" ng-model="formData.vehicleDescription.make" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                            <span ng-if="itnForm.make1.$error.required && !itnForm.make1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.make1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.make1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                           </div>
                           
-                          <div class="form-group">
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.model1.$invalid && !itnForm.model1.$pristine }">
                             <label for="model">Model *:</label><br>
-                            <input type="text" class="form-control" id="model" name="model" ng-model="formData.vehicleDescription.model" required>
+                            <input type="text" class="form-control" id="model" name="model1" ng-model="formData.vehicleDescription.model" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                            <span ng-if="itnForm.model1.$error.required && !itnForm.model1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.model1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.model1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                           </div>
                           
-                          <div class="form-group">
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.type1.$invalid && !itnForm.type1.$pristine }">
                             <label for="type">Type:</label><br>
-                            <input type="text" class="form-control" id="type" name="type" ng-model="formData.vehicleDescription.type" placeholder="Example: Sedan">
+                            <input type="text" class="form-control" id="type" name="type1" ng-model="formData.vehicleDescription.type" ng-minlength="minlength" ng-maxlength="maxlength" placeholder="Example: Sedan">
+                            <span ng-if="itnForm.type1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.type1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                           </div>
                           
-                          <div class="form-group">
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.year1.$invalid && !itnForm.year1.$pristine }">
                             <label for="year">Year *:</label><br>
-                            <input type="text" class="form-control" id="year" name="year" ng-model="formData.vehicleDescription.year" required>
+                            <input type="text" class="form-control" id="year" name="year1" ng-model="formData.vehicleDescription.year" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                            <span ng-if="itnForm.year1.$error.required && !itnForm.year1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.year1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.year1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                           </div>
                           
-                          <div class="form-group">
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.registrationPlate1.$invalid && !itnForm.registrationPlate1.$pristine }">
                             <label for="registration Plate">Registration plate *:</label><br>
-                            <input type="text" class="form-control" id="registrationPlate" name="registrationPlate" ng-model="formData.vehicleDescription.registrationPlate" required>
+                            <input type="text" class="form-control" id="registrationPlate" name="registrationPlate1" ng-model="formData.vehicleDescription.registrationPlate" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                            <span ng-if="itnForm.registrationPlate1.$error.required && !itnForm.registrationPlate1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.registrationPlate1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.registrationPlate1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                           </div>
                           
-                          <div class="form-group">
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.color1.$invalid && !itnForm.color1.$pristine }">
                             <label for="color">Color :</label><br>
-                            <input type="text" class="form-control" id="color" name="color" ng-model="formData.vehicleDescription.color">
+                            <input type="text" class="form-control" id="color" name="color1" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.vehicleDescription.color">
+                            <span ng-if="itnForm.color1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.color1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                           </div>
                           
-                          <div class="form-group">
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.numberOfDoors1.$invalid && !itnForm.numberOfDoors1.$pristine }">
                             <label for="number Of Doors">Number of doors *:</label><br>
-                            <input type="text" class="form-control" id="numberOfDoors" name="numberOfDoors" ng-model="formData.vehicleDescription.numberOfDoors" required>
+                            <input type="text" class="form-control" id="numberOfDoors" name="numberOfDoors1" ng-model="formData.vehicleDescription.numberOfDoors" required>
+                            <span ng-if="itnForm.numberOfDoors1.$error.required && !itnForm.numberOfDoors1.$pristine" class="help-block">{{errorMessages.required}}</span>
                           </div>
                           
-                          <div class="form-group">
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.registrationExpiration1.$invalid && !itnForm.registrationExpiration1.$pristine }">
                             <label for="registration Expiration">Registration expiration date: *</label><br>
-                            <input type="text" class="form-control" id="registrationExpiration" name="registrationExpiration" ng-model="formData.vehicleDescription.registrationExpiration" ng-pattern="datePattern" placeholder="mm/dd/yyyy" required>
-                            <div ng-messages="itnForm.registrationExpiration.$error">
-                              <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
-                            </div>
+                            <input type="text" class="form-control" id="registrationExpiration" name="registrationExpiration1" ng-model="formData.vehicleDescription.registrationExpiration" ng-pattern="datePattern" placeholder="mm/dd/yyyy" required>
+                            <span ng-if="itnForm.registrationExpiration1.$error.required && !itnForm.registrationExpiration1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.registrationExpiration1.$error.pattern" class="help-block">{{errorMessages.date}}</span>
                           </div>
                           
-                          <div class="form-group">
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.insuranceCompany1.$invalid && !itnForm.insuranceCompany1.$pristine }">
                             <label for="insurance Company">Insurance company: *</label><br>
-                            <input type="text" class="form-control" id="insuranceCompany" name="insuranceCompany" ng-model="formData.vehicleDescription.insuranceCompany" required>
+                            <input type="text" class="form-control" id="insuranceCompany" name="insuranceCompany1" ng-model="formData.vehicleDescription.insuranceCompany" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                            <span ng-if="itnForm.insuranceCompany1.$error.required && !itnForm.insuranceCompany1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.insuranceCompany1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.insuranceCompany1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                           </div>
                           
-                          <div class="form-group">
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.agent1.$invalid && !itnForm.agent1.$pristine }">
                             <label for="agent">Agent: *</label><br>
-                            <input type="text" class="form-control" id="agent" name="agent" ng-model="formData.vehicleDescription.agent" required>
+                            <input type="text" class="form-control" id="agent" name="agent1" ng-model="formData.vehicleDescription.agent" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                            <span ng-if="itnForm.agent1.$error.required && !itnForm.agent1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.agent1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.agent1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                           </div>
                           
-                          <div class="form-group">
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.agentAddress1.$invalid && !itnForm.agentAddress1.$pristine }">
                             <label for="agent address">Agent Address: *</label><br>
-                            <textarea class="form-control" rows="5" id="agentAddress" name="agentAddress" ng-model="formData.vehicleDescription.agentAddress" required></textarea>
+                            <input type="text" class="form-control" id="agentAddress" name="agentAddress1" ng-model="formData.vehicleDescription.agentAddress" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                            <span ng-if="itnForm.agentAddress1.$error.required && !itnForm.agentAddress1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.agentAddress1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.agentAddress1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                           </div>
                           
-                          <div class="form-group">
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.agentPhone1.$invalid && !itnForm.agentPhone1.$pristine }">
                             <label for="agent Phone">Agent Phone</label><br>
-                            <input type="text" class="form-control" id="agentPhone" name="agentPhone" ng-model="formData.vehicleDescription.agentPhone" placeholder="Example: xxx-xxx-xxxx">
+                            <input type="text" class="form-control" id="agentPhone" name="agentPhone1" ng-pattern="phonePattern" ng-model="formData.vehicleDescription.agentPhone" placeholder="Example: xxx-xxx-xxxx">
+                            <span ng-if="itnForm.agentPhone1.$error.required && !itnForm.agentPhone1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.agentPhone1.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
                           </div>
                           
                           <div class="form-group ta-center">
@@ -894,9 +921,9 @@
                           </div>
                           
                           <div class="form-group">
-                            <label for="agent address">Please describe the general condition of the vehicle(s) and any known defects: *</label><br>
-                            <textarea class="form-control" rows="5" id="generalCondition" name="generalCondition" ng-model="formData.vehicleDescription.generalCondition"
-                            required></textarea>
+                            <label for="general condition">Please describe the general condition of the vehicle(s) and any known defects: *</label><br>
+                            <input type="text" class="form-control"   id="generalCondition" name="generalCondition" ng-model="formData.vehicleDescription.generalCondition"
+                             ng-minlength="minlength" ng-maxlength="maxlength" required>
                           </div>
                           
                           <div class="form-group">
@@ -931,95 +958,153 @@
                           
                           <div ng-show="secondVehicle">
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.make2.$invalid && !itnForm.make2.$pristine }">
                               <label for="make">Make *:</label><br>
-                              <input type="text" class="form-control" id="make" name="make" ng-model="formData.vehicleDescription.secondVehicle.make" required>
+                              <input type="text" class="form-control" id="make" name="make2" ng-model="formData.secondVehicleDescription.make" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                              <span ng-if="itnForm.make2.$error.required && !itnForm.make2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.make2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.make2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.model2.$invalid && !itnForm.model2.$pristine }">
                               <label for="model">Model *:</label><br>
-                              <input type="text" class="form-control" id="model" name="model" ng-model="formData.vehicleDescription.secondVehicle.model" required>
+                              <input type="text" class="form-control" id="model" name="model2" ng-model="formData.secondVehicleDescription.model" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                              <span ng-if="itnForm.model2.$error.required && !itnForm.model2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.model2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.model2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.type2.$invalid && !itnForm.type2.$pristine }">
                               <label for="type">Type:</label><br>
-                              <input type="text" class="form-control" id="type" name="type" ng-model="formData.vehicleDescription.secondVehicle.type" placeholder="Example: Sedan">
+                              <input type="text" class="form-control" id="type" name="type2" ng-model="formData.secondVehicleDescription.type" ng-minlength="minlength" ng-maxlength="maxlength" placeholder="Example: Sedan">
+                              <span ng-if="itnForm.type2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.type2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.year2.$invalid && !itnForm.year2.$pristine }">
                               <label for="year">Year *:</label><br>
-                              <input type="text" class="form-control" id="year" name="year" ng-model="formData.vehicleDescription.secondVehicle.year" required>
+                              <input type="text" class="form-control" id="year" name="year2" ng-model="formData.secondVehicleDescription.year" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                              <span ng-if="itnForm.year2.$error.required && !itnForm.year2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.year2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.year2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.registrationPlate2.$invalid && !itnForm.registrationPlate2.$pristine }">
                               <label for="registration Plate">Registration plate *:</label><br>
-                              <input type="text" class="form-control" id="registrationPlate" name="registrationPlate" ng-model="formData.vehicleDescription.secondVehicle.registrationPlate" required>
+                              <input type="text" class="form-control" id="registrationPlate" name="registrationPlate2" ng-model="formData.secondVehicleDescription.registrationPlate" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                              <span ng-if="itnForm.registrationPlate2.$error.required && !itnForm.registrationPlate2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.registrationPlate2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.registrationPlate2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.color2.$invalid && !itnForm.color2.$pristine }">
                               <label for="color">Color :</label><br>
-                              <input type="text" class="form-control" id="color" name="color" ng-model="formData.vehicleDescription.secondVehicle.color">
+                              <input type="text" class="form-control" id="color" name="color2" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.secondVehicleDescription.color">
+                              <span ng-if="itnForm.color2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.color2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.numberOfDoors2.$invalid && !itnForm.numberOfDoors2.$pristine }">
                               <label for="number Of Doors">Number of doors *:</label><br>
-                              <input type="text" class="form-control" id="numberOfDoors" name="numberOfDoors" ng-model="formData.vehicleDescription.secondVehicle.numberOfDoors" required>
+                              <input type="text" class="form-control" id="numberOfDoors" name="numberOfDoors2" ng-model="formData.secondVehicleDescription.numberOfDoors" required>
+                              <span ng-if="itnForm.numberOfDoors2.$error.required && !itnForm.numberOfDoors2.$pristine" class="help-block">{{errorMessages.required}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.registrationExpiration2.$invalid && !itnForm.registrationExpiration2.$pristine }">
                               <label for="registration Expiration">Registration expiration date: *</label><br>
-                              <input type="text" class="form-control" id="registrationExpiration" name="registrationExpiration" ng-model="formData.vehicleDescription.secondVehicle.registrationExpiration" ng-pattern="datePattern" placeholder="mm/dd/yyyy" required>
-                              <div ng-messages="itnForm.registrationExpiration.$error">
-                                <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
-                              </div>
+                              <input type="text" class="form-control" id="registrationExpiration" name="registrationExpiration2" ng-model="formData.secondVehicleDescription.registrationExpiration" ng-pattern="datePattern" placeholder="mm/dd/yyyy" required>
+                              <span ng-if="itnForm.registrationExpiration2.$error.required && !itnForm.registrationExpiration2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.registrationExpiration2.$error.pattern" class="help-block">{{errorMessages.date}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.insuranceCompany2.$invalid && !itnForm.insuranceCompany2.$pristine }">
                               <label for="insurance Company">Insurance company: *</label><br>
-                              <input type="text" class="form-control" id="insuranceCompany" name="insuranceCompany" ng-model="formData.vehicleDescription.secondVehicle.insuranceCompany" required>
+                              <input type="text" class="form-control" id="insuranceCompany" name="insuranceCompany2" ng-model="formData.secondVehicleDescription.insuranceCompany" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                              <span ng-if="itnForm.insuranceCompany2.$error.required && !itnForm.insuranceCompany2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.insuranceCompany2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.insuranceCompany2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.agent2.$invalid && !itnForm.agent2.$pristine }">
                               <label for="agent">Agent: *</label><br>
-                              <input type="text" class="form-control" id="agent" name="agent" ng-model="formData.vehicleDescription.secondVehicle.agent" required>
+                              <input type="text" class="form-control" id="agent" name="agent2" ng-model="formData.secondVehicleDescription.agent" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                              <span ng-if="itnForm.agent2.$error.required && !itnForm.agent2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.agent2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.agent2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.agentAddress2.$invalid && !itnForm.agentAddress2.$pristine }">
                               <label for="agent address">Agent Address: *</label><br>
-                              <textarea class="form-control" rows="5" id="agentAddress" name="agentAddress" ng-model="formData.vehicleDescription.secondVehicle.agentAddress" required></textarea>
+                              <input type="text" class="form-control" id="agentAddress" name="agentAddress2" ng-model="formData.secondVehicleDescription.agentAddress" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                              <span ng-if="itnForm.agentAddress2.$error.required && !itnForm.agentAddress2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.agentAddress2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.agentAddress2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.agentPhone2.$invalid && !itnForm.agentPhone2.$pristine }">
                               <label for="agent Phone">Agent Phone</label><br>
-                              <input type="text" class="form-control" id="agentPhone" name="agentPhone" ng-model="formData.vehicleDescription.secondVehicle.agentPhone" placeholder="Example: xxx-xxx-xxxx">
+                              <input type="text" class="form-control" id="agentPhone" name="agentPhone2" ng-pattern="phonePattern" ng-model="formData.secondVehicleDescription.agentPhone" placeholder="Example: xxx-xxx-xxxx">
+                              <span ng-if="itnForm.agentPhone2.$error.required && !itnForm.agentPhone2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.agentPhone2.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
                             </div>
                             
                             <div class="form-group ta-center">
                               <label for="can transport walker or wheelchair">Are you able to transport a folding walker or wheel chair: *</label><br>
-                              <label class="radio-inline"><input ng-model="formData.vehicleDescription.secondVehicle.canTransportWalkerWheelChair" type="radio" value="yes" required>Yes</label>
-                              <label class="radio-inline"><input ng-model="formData.vehicleDescription.secondVehicle.canTransportWalkerWheelChairownVehicle" type="radio" value="no">No</label>
+                              <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.canTransportWalkerWheelChair" type="radio" value="yes" required>Yes</label>
+                              <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.canTransportWalkerWheelChairownVehicle" type="radio" value="no">No</label>
                             </div>
                             
                             <div class="form-group">
-                              <label for="agent address">Please describe the general condition of the vehicle(s) and any known defects: *</label><br>
-                              <textarea class="form-control" rows="5" id="generalCondition" name="generalCondition" ng-model="formData.vehicleDescription.secondVehicle.generalCondition"
-                              required></textarea>
+                              <label for="general condition">Please describe the general condition of the vehicle(s) and any known defects: *</label><br>
+                              <input type="text" class="form-control"   id="generalCondition" name="generalCondition" ng-model="formData.secondVehicleDescription.generalCondition"
+                               ng-minlength="minlength" ng-maxlength="maxlength" required>
                             </div>
                             
-                          </div>
-                          
-                          
-                          <div class="form-group">
-                            <label for="signature">Signature *:</label><br>
-                            <input type="text" class="form-control" id="signature" name="signature" placeholder="Type your full name" ng-model="formData.vehicleDescription.signature" required>
-                          </div>
-                          
-                          <div class="form-group">
-                            <label for="date">Date *:</label><br>
-                            <input type="text" class="form-control" id="date" name="date" ng-model="formData.vehicleDescription.date" ng-pattern="datePattern" placeholder="mm/dd/yyyy" required>
-                            <div ng-messages="itnForm.date.$error">
-                              <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
+                            <div class="form-group">
+                              <label for="passenger capacity">Passenger capacity: *</label><br>
+                              <input type="text" class="form-control" id="passengerCapacity" name="passengerCapacity" ng-model="formData.secondVehicleDescription.passengerCapacity" placeholder="number of people" required>people
                             </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="can Transport Pets">Are you willing to transport properly restrained pets: *</label><br>
+                              <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.canTransportPets" type="radio" value="yes" required>Yes</label>
+                              <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.canTransportPets" type="radio" value="no">No</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="has large trunk">Do you have a large trunk: *</label><br>
+                              <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.hasLargeTrunk" type="radio" value="yes" required>Yes</label>
+                              <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.hasLargeTrunk" type="radio" value="no">No</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="has covered truck bed">Covered truck bed: *</label><br>
+                              <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.hasCoveredTruckBed" type="radio" value="yes" required>Yes</label>
+                              <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.hasCoveredTruckBed" type="radio" value="no">No</label>
+                            </div>
+                            
+                            <div class="form-group ta-center">
+                              <label for="only vehicle">Is this the only vehicle you will be using: *</label><br>
+                              <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.onlyVehicle" ng-click="secondVehicle = true" type="radio" value="yes" required>Yes</label>
+                              <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.onlyVehicle" ng-click="secondVehicle = false" type="radio" value="no">No</label>
+                            </div>
+                            
+                          </div><!--second vehicle-->
+                          
+                          
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.signature4.$invalid && !itnForm.signature4.$pristine }">
+                            <label for="signature">Signature *:</label><br>
+                            <input type="text" class="form-control" id="signature" name="signature4" placeholder="Type your full name" ng-model="formData.vehicleDescription.signature" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                            <span ng-if="itnForm.signature4.$error.required && !itnForm.signature4.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.signature4.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.signature4.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
+                          </div>
+                          
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.date4.$invalid && !itnForm.date4.$pristine }">
+                            <label for="date">Date *:</label><br>
+                            <input type="text" class="form-control" id="date" name="date4" ng-model="formData.vehicleDescription.date" ng-pattern="datePattern" placeholder="mm/dd/yyyy" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                            <span ng-if="itnForm.date4.$error.required && !itnForm.date4.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.date4.$error.pattern" class="help-block">{{errorMessages.date}}</span>
                           </div>
                           
                           
@@ -1079,31 +1164,30 @@
 
                           <p>I understand that I need to report any changes in the above to ITN, and agree to do so in a timely manner.</p>
                           
-                          <div class="form-group">
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.signature5.$invalid && !itnForm.signature5.$pristine }">
                             <label for="signature">Volunteer Driver Signature *:</label><br>
-                            <input type="text" class="form-control" id="signature" name="signature" placeholder="Type your full name" ng-model="formData.changeOfStatus.signature" required>
+                            <input type="text" class="form-control" id="signature" name="signature5" placeholder="Type your full name" ng-model="formData.changeOfStatus.signature" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                            <span ng-if="itnForm.signature5.$error.required && !itnForm.signature5.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.signature5.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                            <span ng-if="itnForm.signature5.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                           </div>
                           
-                          <div class="form-group">
-                            <label for="date">Date *:</label><br>
-                            <input type="text" class="form-control" id="date" name="date" ng-model="formData.changeOfStatus.date" placeholder="mm/dd/yyyy" ng-pattern="datePattern" required>
-                            <div ng-messages="itnForm.date.$error">
-                              <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
-                            </div>
+                          <div class="form-group" ng-class="{ 'has-error' : itnForm.date5.$invalid && !itnForm.date5.$pristine }">
+                            <label for="date">Date: *</label><br>
+                            <input type="text" class="form-control" id="date" name="date5" ng-model="formData.changeOfStatus.date" ng-pattern="datePattern" placeholder="mm/dd/yyyy" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                            <span ng-if="itnForm.date5.$error.required && !itnForm.date5.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.date5.$error.pattern" class="help-block">{{errorMessages.date}}</span>
                           </div>
                           
                           
                           <div class="form-group">
                             <label for="itn Signature">ITN<em>America</em> Signature *:</label><br>
-                            <input type="text" class="form-control" id="itnSignature" name="itnSignature" ng-model="formData.changeOfStatus.itnSignature">
+                            <input type="text" class="form-control" id="itnSignature" name="itnSignature" ng-model="formData.changeOfStatus.itnSignature" ng-disabled="true">
                           </div>
                           
                           <div class="form-group">
                             <label for="itn date">Date *:</label><br>
-                            <input type="text" class="form-control" id="itnDate" name="itnDate" ng-pattern="datePattern" ng-model="formData.changeOfStatus.itnDate">
-                            <div ng-messages="itnForm.date.$error">
-                              <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
-                            </div>
+                            <input type="text" class="form-control" id="itnDate" name="itnDate" ng-pattern="datePattern" ng-model="formData.changeOfStatus.itnDate" ng-disabled="true">
                           </div>
                           
                         <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
