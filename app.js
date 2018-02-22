@@ -50,8 +50,6 @@ app.post('/sendmail', function(req, res){
         // bcc: 'info@itnlanier.org',
     };
   }
-  
-
 
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {

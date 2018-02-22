@@ -241,7 +241,12 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
       to: 'samguergen@gmail.com',
       subject: $scope.formSubject,
       text: $scope.formData,
-      html: '<b>Hello ITN?</b>'
+      html: `<p><strong>Name:</strong>: ${$scope.formData.name}</p>
+      <p><strong>Email:</strong>: ${$scope.formData.email}</p>
+      <p><strong>Mobile:</strong>: ${$scope.formData.phone}</p>
+      <p><strong>Subject:</strong>: ${$scope.formData.subject}</p>
+      <p><strong>Message Body:</strong>: ${$scope.formData.messageBody}</p>
+      `
     }).then(res=>{
         $scope.loading = false;
         $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
