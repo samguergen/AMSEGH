@@ -112,7 +112,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
   $scope.loading = false;
   $scope.minlength = 2;
   $scope.maxlength = 30;
-  // $scope.zipPattern = new RegExp(/^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] *\d[A-Z]\d)$/);
+  $scope.ssnPattern = new RegExp(/^[0-7][0-9]{2}[\W\s-][0-9]{2}[\W\s-][0-9]{4}|[\s\W][0-7][0-9]{8}[\s\W]$/);
   $scope.zipPattern = new RegExp(/^\d{5}$/);
   $scope.emailPattern = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/);
   $scope.datePattern = new RegExp(/^(\d{2})\/(\d{2})\/(\d{4})$/);
@@ -128,12 +128,14 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     emailConfirmation: "The email confirmation field should match the email field",
     date: "The date should have the format: MM/DD/YYYY",
     dob: "The date of birth should have the format: MM/DD/YYYY",
-    phone: "The phone number needs to have the format: 111-111-1111"
+    phone: "The phone number should have the format: 111-111-1111",
+    ssn: "The driver license number should have the format: 123-45-6789"
   };
   $scope.dataPDF = null;
   $scope.formSubject = 'New application received';
   $scope.states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
-  $scope.itnSources = ['Family','Friend','Speaker','Doctor','Radio','Television','Flier','Book','Phone','Agency on Aging', 'Social Worker','Internet','Referred by Current Member']
+  $scope.itnSources = ['Family','Friend','Speaker','Doctor','Radio','Television','Flier','Book','Phone','Agency on Aging', 'Social Worker','Internet','Referred by Current Member'];
+  $scope.ratings = ['None',1,2,3,4,5,6];
 
   
   // $transitions.onStart({}, function($transition, $scope){
@@ -279,35 +281,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     
   }
   
-  
-  $scope.generatePDFMembership = function() {
-    console.log('inside pdf');
-    kendo.drawing.drawDOM($("#pdfVersion"))
-      .then(function (group) {
-        console.log('exportin');
-          // Render the result as a PDF file
-          return kendo.drawing.exportPDF(group, {
-              paperSize: "auto",
-              margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
-          });
-      })
-      .done(function (data) {
-        console.log('data is ', data);
-        $scope.dataPDF = data;
-        
-        $http.post('/sendmail', {
-          from: '"ITN Web User" <donotreply@itnamerica.com>',
-          to: 'samguergen@gmail.com',
-          subject: $scope.formSubject,
-          text: $scope.formData,
-          pdf: $scope.dataPDF
-        }).then(res=>{
-            $scope.loading = false;
-            $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
-        });
-      });
-  }
-  
+
   
   
 }]);

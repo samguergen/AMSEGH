@@ -346,7 +346,6 @@
                         <label for="phone">Phone (or Mailing Address): *</label><br>
                         <input type="text" class="form-control" rows="5" id="firstRefPhoneOrMailing" name="firstRefPhoneOrMailing" ng-model="formData.firstReference.phoneOrMailing" required>
                         <span ng-if="itnForm.firstRefPhoneOrMailing.$error.required && !itnForm.firstRefPhoneOrMailing.$pristine" class="help-block">{{errorMessages.required}}</span>
-                        <span ng-if="itnForm.firstRefPhoneOrMailing.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
                       </div>
                       
                       <div class="form-group" ng-class="{ 'has-error' : itnForm.firstRefAcquainted.$invalid && !itnForm.firstRefAcquainted.$pristine }">
@@ -408,7 +407,6 @@
                         <label for="phone">Phone (or Mailing Address): *</label><br>
                         <input type="text" class="form-control" rows="5" id="thirdRefPhoneOrMailing" name="thirdRefPhoneOrMailing" ng-model="formData.thirdReference.phoneOrMailing" required>
                         <span ng-if="itnForm.thirdRefPhoneOrMailing.$error.required && !itnForm.thirdRefPhoneOrMailing.$pristine" class="help-block">{{errorMessages.required}}</span>
-                        <span ng-if="itnForm.thirdRefPhoneOrMailing.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
                       </div>
                       
                       <div class="form-group" ng-class="{ 'has-error' : itnForm.thirdRefAcquainted.$invalid && !itnForm.thirdRefAcquainted.$pristine }">
@@ -425,22 +423,24 @@
                       </div>
                       
                       <p>This information is correct to the best of my knowledge. I give the Independent Transportation Network permission to check on this information, and to contact references.</p>
-
-                      <div class="form-group">
+                      
+                      <div class="form-group" ng-class="{ 'has-error' : itnForm.signature1.$invalid && !itnForm.signature1.$pristine }">
                         <label for="signature">Signature (type your full name): *</label><br>
-                        <input type="text" class="form-control" id="signature" name="signature" placeholder="type your full name" ng-model="formData.references.signature" required>
+                        <input type="text" class="form-control" id="signature" name="signature1" placeholder="type your full name" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.references.signature" required>
+                        <span ng-if="itnForm.signature1.$error.required && !itnForm.signature1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                        <span ng-if="itnForm.signature1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                        <span ng-if="itnForm.signature1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                       </div>
                       
-                      <div class="form-group">
-                        <label for="date">Date: *</label><br>
-                        <input type="text" class="form-control" id="date" name="date" placeholder="mm/dd/yyyy" ng-model="formData.references.date" ng-pattern="datePattern" required>
-                        <div ng-messages="itnForm.date.$error">
-                          <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
-                        </div>
+                      <div class="form-group" ng-class="{ 'has-error' : itnForm.date1.$invalid && !itnForm.date1.$pristine }">
+                        <label for="date">Agreement Date: *</label>
+                        <input type="text" class="form-control" id="date" name="date1" placeholder="Example: mm/dd/yyyy" ng-pattern="datePattern" ng-model="formData.agreement.date" required>
+                        <span ng-if="itnForm.date1.$error.required && !itnForm.date1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                        <span ng-if="itnForm.date1.$error.pattern" class="help-block">{{errorMessages.date}}</span>
                       </div>
 
-                      <div class="form-group">
-                        <label class="checkbox-inline"><input ng-model="formData.references.agree" type="checkbox" value="family" required>By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
+                      <div class="form-group">  
+                        <label class="checkbox-inline"><input type="checkbox" value="agree" ng-model="formData.agree" ng-click="" required>By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
                       </div>
 
 
@@ -493,82 +493,46 @@
                             <h3>Please rank your reasons for wanting to drive for the ITN, with " 1 " the most important reason, and " 6 " being the least:</h3>
                             
                             <div class="form-group">
-                            <label for="serve community">Serve the community:</label>
-                            <select class="form-control" id="reasons">
-                              <option ng-model="formData.reasons.serveCommunity">None</option>
-                              <option ng-model="formData.reasons.serveCommunity">1</option>
-                              <option ng-model="formData.reasons.serveCommunity">2</option>
-                              <option ng-model="formData.reasons.serveCommunity">3</option>
-                              <option ng-model="formData.reasons.serveCommunity">4</option>
-                              <option ng-model="formData.reasons.serveCommunity">5</option>
-                              <option ng-model="formData.reasons.serveCommunity">6</option>
-                            </select>
-                          </div>
+                              <label for="serve community">Serve the community:</label>
+                              <select ng-model="formData.reasons.serveCommunity" class="form-control" id="serve">
+                                <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
+                              </select>
+                            </div>
                           
-                          <div class="form-group">
-                          <label for="serve community">Enjoy driving:</label>
-                          <select class="form-control" id="reasons">
-                            <option ng-model="formData.reasons.serveCommunity">None</option>
-                            <option ng-model="formData.reasons.enjoyDriving">1</option>
-                            <option ng-model="formData.reasons.enjoyDriving">2</option>
-                            <option ng-model="formData.reasons.enjoyDriving">3</option>
-                            <option ng-model="formData.reasons.enjoyDriving">4</option>
-                            <option ng-model="formData.reasons.enjoyDriving">5</option>
-                            <option ng-model="formData.reasons.enjoyDriving">6</option>
-                          </select>
-                        </div>
+                            <div class="form-group">
+                              <label for="serve community">Enjoy driving:</label>
+                              <select ng-model="formData.reasons.enjoyDriving" class="form-control" id="enjoy">
+                                <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
+                              </select>
+                            </div>
                         
-                        <div class="form-group">
-                        <label for="serve community">Help elderly people:</label>
-                        <select class="form-control" id="reasons">
-                          <option ng-model="formData.reasons.serveCommunity">None</option>
-                          <option ng-model="formData.reasons.helpEldery">1</option>
-                          <option ng-model="formData.reasons.helpEldery">2</option>
-                          <option ng-model="formData.reasons.helpEldery">3</option>
-                          <option ng-model="formData.reasons.helpEldery">4</option>
-                          <option ng-model="formData.reasons.helpEldery">5</option>
-                          <option ng-model="formData.reasons.helpEldery">6</option>
-                        </select>
-                      </div>
+                            <div class="form-group">
+                              <label for="serve community">Help eldery people:</label>
+                              <select ng-model="formData.reasons.helpEldery" class="form-control" id="help">
+                                <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
+                              </select>
+                            </div>
                       
-                      <div class="form-group">
-                      <label for="serve community">Additional income:</label>
-                      <select class="form-control" id="reasons">
-                        <option ng-model="formData.reasons.serveCommunity">None</option>
-                        <option ng-model="formData.reasons.additionalIncome">1</option>
-                        <option ng-model="formData.reasons.additionalIncome">2</option>
-                        <option ng-model="formData.reasons.additionalIncome">3</option>
-                        <option ng-model="formData.reasons.additionalIncome">4</option>
-                        <option ng-model="formData.reasons.additionalIncome">5</option>
-                        <option ng-model="formData.reasons.additionalIncome">6</option>
-                      </select>
-                    </div>
+                            <div class="form-group">
+                              <label for="serve community">Additional Income:</label>
+                              <select ng-model="formData.reasons.additionalIncome" class="form-control" id="additional">
+                                <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
+                              </select>
+                            </div>
                     
-                    <div class="form-group">
-                    <label for="serve community">Occupy your time:</label>
-                    <select class="form-control" id="reasons">
-                      <option ng-model="formData.reasons.serveCommunity">None</option>
-                      <option ng-model="formData.reasons.occupyYourTime">1</option>
-                      <option ng-model="formData.reasons.occupyYourTime">2</option>
-                      <option ng-model="formData.reasons.occupyYourTime">3</option>
-                      <option ng-model="formData.reasons.occupyYourTime">4</option>
-                      <option ng-model="formData.reasons.occupyYourTime">5</option>
-                      <option ng-model="formData.reasons.occupyYourTime">6</option>
-                    </select>
-                  </div>
-                  
-                  <div class="form-group">
-                  <label for="serve community">Enjoy elderly people:</label>
-                  <select class="form-control" id="reasons">
-                    <option ng-model="formData.reasons.serveCommunity">None</option>
-                    <option ng-model="formData.reasons.enjoyEldery">1</option>
-                    <option ng-model="formData.reasons.enjoyEldery">2</option>
-                    <option ng-model="formData.reasons.enjoyEldery">3</option>
-                    <option ng-model="formData.reasons.enjoyEldery">4</option>
-                    <option ng-model="formData.reasons.enjoyEldery">5</option>
-                    <option ng-model="formData.reasons.enjoyEldery">6</option>
-                  </select>
-                </div>
+                            <div class="form-group">
+                              <label for="serve community">Occupy your time:</label>
+                              <select ng-model="formData.reasons.occupyTime" class="form-control" id="occupy">
+                                <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
+                              </select>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="serve community">Enjoy eldery people:</label>
+                              <select ng-model="formData.reasons.enjoyEldery" class="form-control" id="enjoy">
+                                <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
+                              </select>
+                            </div>
                             
                 
                 <h2>Education</h2>
@@ -618,13 +582,13 @@
                   <label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
                   <label class="radio-inline"><input ng-model="formData.customerInfo.memberOfProfessionalOrgOrUnion" type="radio" value="yes" ng-click="specifyUnions = !specifyUnions">Yes</label>
                   <label class="radio-inline"><input type="radio" value="no">No</label>
-                    <input ng-model="formData.memberOfProfessionalOrgOrUnion" type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
+                    <input ng-model="formData.memberOfProfessionalOrgOrUnions" type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
                 </div>
                 
                 <div class="form-group ta-center">
                   <label for="served in armed forces">Have you ever served on active duty in the U.S. Armed Forces, Military Reserves, or National Guard: *</label><br>
                   <label class="radio-inline"><input ng-model="formData.servedInMilitary" type="radio" value="yes">Yes</label>
-                  <label class="radio-inline"><input ng-model="formData.customerInfo.servedInMilitary" type="radio" value="no">No</label>
+                  <label class="radio-inline"><input ng-model="formData.servedInMilitary" type="radio" value="no">No</label>
                 </div>
                 
                 
@@ -688,214 +652,124 @@
                             <h2>Authorization to Request Driver Record</h2>
                           
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.name2.$invalid && !itnForm.name2.$pristine }">
                               <label for="name">Name *:</label><br>
-                              <input type="text" class="form-control" id="name" name="name" placeholder="Please print full name"   ng-model="formData.requestDriverRecord.name" required>
+                              <input type="text" class="form-control" id="name" name="name2" placeholder="Please print full name"   ng-model="formData.requestDriverRecord.name" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                              <span ng-if="itnForm.name2.$error.required && !itnForm.name2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.name2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.name2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.maidenName.$invalid && !itnForm.maidenName.$pristine }">
                               <label for="maiden name">Previous/Maiden name (if applicable) * :</label><br>
-                              <input type="text" class="form-control" id="maidenName" name="maidenName"   ng-model="formData.requestDriverRecord.maidenName">
+                              <input type="text" class="form-control" id="maidenName" name="maidenName" ng-minlength="minlength" ng-maxlength="maxlength"  ng-model="formData.requestDriverRecord.maidenName">
+                              <span ng-if="itnForm.maidenName.$error.required && !itnForm.maidenName.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.maidenName.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.maidenName.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.dob1.$invalid && !itnForm.dob1.$pristine }">
                               <label for="date of birth">Date of Birth *:</label><br>
-                              <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY"   ng-model="formData.requestDriverRecord.dob" ng-pattern="dobPattern" required>
-                              <div ng-messages="itnForm.dob.$error">
-                                <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
-                              </div>
+                              <input type="text" class="form-control" id="dob" name="dob1" placeholder="MM/DD/YYYY"   ng-model="formData.requestDriverRecord.dob" ng-pattern="dobPattern" required>
+                              <span ng-if="itnForm.dob1.$error.required && !itnForm.maidenName.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.dob1.$error.pattern" class="help-block">{{errorMessages.dob}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.licenseNumber.$invalid && !itnForm.licenseNumber.$pristine }">
                               <label for="license number">Driver's License Number *:</label><br>
-                              <input type="text" class="form-control" id="licenseNumber" name="licenseNumber" ng-model="formData.requestDriverRecord.licenseNumber" required>
+                              <input type="text" class="form-control" id="licenseNumber" name="licenseNumber" ng-model="formData.requestDriverRecord.licenseNumber"  required>
+                              <span ng-if="itnForm.licenseNumber.$error.required && !itnForm.licenseNumber.$pristine" class="help-block">{{errorMessages.required}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.drivingRecordState.$invalid && !itnForm.drivingRecordState.$pristine }">
                               <label for="license number">I authorize ITNLanier to request and receive my Driving Record from *:</label>
-                              <select class="form-control" id="authorize">
-                                <option ng-model="formData.requestDriverRecord.authorize" value="">Select a State*</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="">N/A</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="AK">Alaska</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="AL">Alabama</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="AR">Arkansas</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="AZ">Arizona</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="CA">California</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="CO">Colorado</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="CT">Connecticut</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="DC">District of Columbia</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="DE">Delaware</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="FL">Florida</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="GA">Georgia</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="HI">Hawaii</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="IA">Iowa</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="ID">Idaho</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="IL">Illinois</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="IN">Indiana</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="KS">Kansas</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="KY">Kentucky</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="LA">Louisiana</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="MA">Massachusetts</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="MD">Maryland</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="ME">Maine</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="MI">Michigan</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="MN">Minnesota</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="MO">Missouri</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="MS">Mississippi</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="MT">Montana</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="NC">North Carolina</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="ND">North Dakota</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="NE">Nebraska</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="NH">New Hampshire</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="NJ">New Jersey</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="NM">New Mexico</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="NV">Nevada</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="NY">New York</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="OH">Ohio</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="OK">Oklahoma</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="OR">Oregon</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="PA">Pennsylvania</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="PR">Puerto Rico</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="RI">Rhode Island</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="SC">South Carolina</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="SD">South Dakota</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="TN">Tennessee</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="TX">Texas</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="UT">Utah</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="VA">Virginia</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="VT">Vermont</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="WA">Washington</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="WI">Wisconsin</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="WV">West Virginia</option>
-                                <option ng-model="formData.requestDriverRecord.authorize" value="WY" required>Wyoming</option>
+                              <select ng-model="formData.requestDriverRecord.authorize" class="form-control" name="drivingRecordState" id="state">
+                                 <option ng-repeat="state in states" value="{{state}}">{{state}}</option>
                               </select>
+                              <span ng-if="itnForm.drivingRecordState.$error.required && !itnForm.drivingRecordState.$pristine" class="help-block">{{errorMessages.required}}</span>
                             </div>
                             
                             <p><strong>I certify that I have not been convicted or forfeited bond or collateral because of a moving violation during the last three years.</strong></p>
                             
-                            <div class="form-group">
-                              <label for="signature">Signature *:</label><br>
-                              <input type="text" class="form-control" id="signature" name="signature" ng-model="formData.requestDriverRecord.signature" placeholder="Type your full name" required>
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.signature2.$invalid && !itnForm.signature2.$pristine }">
+                              <label for="signature">Signature: *</label>
+                              <input type="text" class="form-control" id="signature" name="signature2" placeholder="type your full name" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.requestDriverRecord.signature" required>
+                              <span ng-if="itnForm.signature2.$error.required && !itnForm.signature2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.signature2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.signature2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
-                              <label for="date">Date *:</label><br>
-                              <input type="text" class="form-control" id="date" name="date" ng-model="formData.requestDriverRecord.date" ng-pattern="datePattern" placeholder="mm/dd/yyyy" required>
-                              <div ng-messages="itnForm.date.$error">
-                                <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
-                              </div>
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.date2.$invalid && !itnForm.date2.$pristine }">
+                              <label for="date">Agreement Date: *</label>
+                              <input ng-model="formData.requestDriverRecord.date2" type="text" class="form-control" id="date" name="date2" ng-pattern="datePattern" placeholder="Example: mm/dd/yyyy" required>
+                              <span ng-if="itnForm.date2.$error.required && !itnForm.date2.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.date2.$error.pattern" class="help-block">{{errorMessages.date}}</span>
                             </div>
-                            
-                            <div class="form-group ta-center">
-                              <label class="checkbox-inline"><input ng-model="formData.requestDriverRecord.authorize" type="checkbox" value="authorize" required>
-                                *
-                                  By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.
-                              </label>
+
+                            <div class="form-group">
+                              <label class="checkbox-inline"><input type="checkbox" value="authorize" ng-model="formData.requestDriverRecord.authorize" required>By checking this box and submitting this form, you agree that your digital signature will be considered your legal signature and represents your agreement to the terms and policies outlined above.</label>
                             </div>
                             
                             
                             
                             <h2 class="mt-50">Authorization to Request Criminal Record History</h2>
-                          
                             
-                            <div class="form-group">
-                              <label for="license number">This authorization is required to check your Criminal History Record from</label>
-                              <select class="form-control" id="authorize">
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="">Select a State*</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="">N/A</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="AK">Alaska</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="AL">Alabama</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="AR">Arkansas</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="AZ">Arizona</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="CA">California</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="CO">Colorado</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="CT">Connecticut</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="DC">District of Columbia</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="DE">Delaware</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="FL">Florida</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="GA">Georgia</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="HI">Hawaii</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="IA">Iowa</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="ID">Idaho</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="IL">Illinois</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="IN">Indiana</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="KS">Kansas</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="KY">Kentucky</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="LA">Louisiana</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="MA">Massachusetts</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="MD">Maryland</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="ME">Maine</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="MI">Michigan</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="MN">Minnesota</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="MO">Missouri</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="MS">Mississippi</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="MT">Montana</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="NC">North Carolina</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="ND">North Dakota</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="NE">Nebraska</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="NH">New Hampshire</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="NJ">New Jersey</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="NM">New Mexico</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="NV">Nevada</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="NY">New York</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="OH">Ohio</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="OK">Oklahoma</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="OR">Oregon</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="PA">Pennsylvania</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="PR">Puerto Rico</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="RI">Rhode Island</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="SC">South Carolina</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="SD">South Dakota</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="TN">Tennessee</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="TX">Texas</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="UT">Utah</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="VA">Virginia</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="VT">Vermont</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="WA">Washington</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="WI">Wisconsin</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="WV">West Virginia</option>
-                                <option ng-model="formData.requestCriminalRecord.authorize" value="WY" required>Wyoming</option>
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.criminalRecordState.$invalid && !itnForm.criminalRecordState.$pristine }">
+                              <label for="criminal record state">This authorization is required to check your Criminal History Record from: *</label>
+                              <select ng-model="formData.requestCriminalRecord.authorize" class="form-control" name="criminalRecordState" id="state">
+                                 <option ng-repeat="state in states" value="{{state}}">{{state}}</option>
                               </select>
+                              <span ng-if="itnForm.criminalRecordState.$error.required && !itnForm.criminalRecordState.$pristine" class="help-block">{{errorMessages.required}}</span>
                             </div>
+                          
                             
                             <p><strong>Please fill in your complete name (please include any previous names used) and include date of birthand social security number, then sign below. The purpose of this background check will be for volunteer purposes.<strong></p>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.name3.$invalid && !itnForm.name3.$pristine }">
                               <label for="name">Name *:</label><br>
-                              <input type="text" class="form-control" id="name" name="name" placeholder="Please type full name"   ng-model="formData.requestCriminalRecord.name" required>
+                              <input type="text" class="form-control" id="name" name="name3" placeholder="Please type full name"   ng-model="formData.requestCriminalRecord.name" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                              <span ng-if="itnForm.name3.$error.required && !itnForm.name3.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.name3.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.name3.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.maidenName3.$invalid && !itnForm.maidenName3.$pristine }">
                               <label for="maiden name">Previous/maiden name (if applicable) * :</label><br>
-                              <input type="text" class="form-control" id="maidenName" name="maidenName"   ng-model="formData.requestCriminalRecord.maidenName">
+                              <input type="text" class="form-control" id="maidenName" name="maidenName3"   ng-model="formData.requestCriminalRecord.maidenName" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                              <span ng-if="itnForm.maidenName3.$error.required && !itnForm.maidenName3.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.maidenName3.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.maidenName3.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.dob3.$invalid && !itnForm.dob3.$pristine }">
                               <label for="date of birth">Date of Birth *:</label><br>
-                              <input type="text" class="form-control" id="dob" name="dob" placeholder="MM/DD/YYYY"   ng-model="formData.requestCriminalRecord.dob" ng-pattern="dobPattern" required>
-                              <div ng-messages="itnForm.dob.$error">
-                                <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
-                              </div>
+                              <input type="text" class="form-control" id="dob" name="dob3" placeholder="MM/DD/YYYY"   ng-model="formData.requestCriminalRecord.dob" ng-pattern="dobPattern" ng-pattern="datePattern" required>
+                              <span ng-if="itnForm.dob3.$error.required && !itnForm.dob3.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.dob3.$error.pattern" class="help-block">{{errorMessages.date}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.ssn.$invalid && !itnForm.ssn.$pristine }">
                               <label for="social security number">Social Security Number *:</label><br>
-                              <input type="text" class="form-control" id="socialSecurity" name="socialSecurity" placeholder="xxx-xx-xxxx" ng-model="formData.requestCriminalRecord.socialSecurity" required>
+                              <input type="text" class="form-control" id="socialSecurity" name="socialSecurity" placeholder="xxx-xx-xxxx" ng-model="formData.requestCriminalRecord.socialSecurity" ng-pattern="ssnPattern" required>
+                              <span ng-if="itnForm.ssn.$error.required && !itnForm.ssn.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.ssn.$error.pattern" class="help-block">{{errorMessages.ssn}}</span>
                             </div>
                             
                             <p class="mt-50"><strong>I authorize Independent Transportation Network® to request and receive any and all criminal history information about me held by the State Bureau of Identification. The purpose of this background check will be for volunteer purposes.</strong></p>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.signature3.$invalid && !itnForm.signature3.$pristine }">
                               <label for="signature">Signature *:</label><br>
-                              <input type="text" class="form-control" id="signature" name="signature" placeholder="Type your full name" ng-model="formData.requestCriminalRecord.signature" required>
+                              <input type="text" class="form-control" id="signature" name="signature3" placeholder="Type your full name" ng-model="formData.requestCriminalRecord.signature" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                              <span ng-if="itnForm.signature3.$error.required && !itnForm.signature3.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.signature3.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                              <span ng-if="itnForm.signature3.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : itnForm.date3.$invalid && !itnForm.date3.$pristine }">
                               <label for="date">Date *:</label><br>
-                              <input type="text" class="form-control" id="date" name="date" ng-model="formData.requestCriminalRecord.date" ng-pattern="datePattern" required>
-                              <div ng-messages="itnForm.date.$error">
-                                <div ng-message="pattern">Please enter a valid date format: mm/dd/yyyy!</div>
-                              </div>
+                              <input type="text" class="form-control" id="date" name="date3" ng-model="formData.requestCriminalRecord.date" ng-pattern="datePattern" required>
+                              <span ng-if="itnForm.date3.$error.required && !itnForm.date3.$pristine" class="help-block">{{errorMessages.required}}</span>
+                              <span ng-if="itnForm.date3.$error.pattern" class="help-block">{{errorMessages.date}}</span>
                             </div>
                             
                             
