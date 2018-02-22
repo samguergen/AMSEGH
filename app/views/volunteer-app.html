@@ -65,7 +65,7 @@
                   
                 
               
-                  <form novalidate name="itnForm" ng-submit="submitForm('volunteer')" role="volunteer form" ng-model="formData" ng-show="showForm">
+                  <form novalidate name="itnForm" ng-submit="submitFormWithPDF('volunteer')" role="volunteer form" ng-model="formData" ng-show="showForm">
                     <br style="clear:both">
                     
                     <div class="member-tabs" ng-if="tab===1">
@@ -93,9 +93,9 @@
                         </li>
                       </ol>
                       
-                        <div class="form-group" ng-class="{ 'has-error' : itnForm.riderName.$invalid && !itnForm.riderName.$pristine }">>
+                        <div class="form-group" ng-class="{ 'has-error' : itnForm.riderName.$invalid && !itnForm.riderName.$pristine }">
                           <label for="rider name">Name: *</label><br>
-                          <input type="text" class="form-control" id="riderName" name="name" ng-model="formData.riderName" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                          <input type="text" class="form-control" id="riderName" name="riderName" ng-model="formData.riderName" ng-minlength="minlength" ng-maxlength="maxlength" required>
                           <span ng-if="itnForm.riderName.$error.required && !itnForm.riderName.$pristine" class="help-block">{{errorMessages.required}}</span>
                           <span ng-if="itnForm.riderName.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
                           <span ng-if="itnForm.riderName.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
@@ -103,7 +103,7 @@
                         
                         <div class="form-group ta-center" ng-class="{ 'has-error' : itnForm.gender.$invalid && !itnForm.gender.$pristine }">
                           <label for="gender">Gender: * </label><br>
-                          <label class="radio-inline"><input type="radio" name="gender"  value="female" ng-model="formData.gender" required>Female</label>
+                          <label class="radio-inline"><input type="radio" name="gender"  value="female" ng-model="formData.riderGender" required>Female</label>
                           <label class="radio-inline"><input type="radio" name="gender" value="male" ng-model="formData.customerInfo.gender">Male</label>
                           <span ng-if="itnForm.gender.$error.required && !itnForm.gender.$pristine" class="help-block">{{errorMessages.required}}</span>
                         </div>
@@ -116,7 +116,8 @@
                           <span ng-if="itnForm.street.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                         </div>
                         
-                        <div class="form-group" ng-class="{ 'has-error' : itnForm.city.$invalid && !itnForm.city.$pristine }">
+                        <div class="row">
+                        <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.city.$invalid && !itnForm.city.$pristine }">
                           <label for="gender">City: * </label><br>
                           <input type="text" class="form-control" id="city" name="city" ng-model="formData.city" ng-minlength="minlength" ng-maxlength="maxlength" required>
                           <span ng-if="itnForm.city.$error.required && !itnForm.city.$pristine" class="help-block">{{errorMessages.required}}</span>
@@ -124,53 +125,52 @@
                           <span ng-if="itnForm.city.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                         </div>
                         
-                        <div class="form-group" ng-class="{ 'has-error' : itnForm.state.$invalid && !itnForm.state.$pristine }">
+                        <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.state.$invalid && !itnForm.state.$pristine }">
                           <label for="state">State: *</label><br>
                           <select ng-model="formData.state" class="form-control" name="state" id="state">
                              <option ng-repeat="state in states" value="{{state}}">{{state}}</option>
                           </select>
                           <span ng-if="itnForm.state.$error.required && !itnForm.state.$pristine" class="help-block">{{errorMessages.required}}</span>
                         </div>
-                        
-                        <div class="form-group" ng-class="{ 'has-error' : itnForm.zip.$invalid && !itnForm.zip.$pristine }">
-                          <label for="zip">Zip Code: *</label><br>
-                          <input type="text" class="form-control" id="zip" name="zip" ng-model="formData.zip" ng-pattern="zipPattern" required>
-                          <span ng-if="itnForm.zip.$error.required && !itnForm.zip.$pristine" class="help-block">{{errorMessages.required}}</span>
-                          <span ng-if="itnForm.zip.$error.pattern" class="help-block">{{errorMessages.zip}}</span>
-                        </div>
-                    
+                        </div><!--row-->
                         
                         <div class="row">
+                          <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.zip.$invalid && !itnForm.zip.$pristine }">
+                            <label for="zip">Zip Code: *</label><br>
+                            <input type="text" class="form-control" id="zip" name="zip" ng-model="formData.zip" ng-pattern="zipPattern" required>
+                            <span ng-if="itnForm.zip.$error.required && !itnForm.zip.$pristine" class="help-block">{{errorMessages.required}}</span>
+                            <span ng-if="itnForm.zip.$error.pattern" class="help-block">{{errorMessages.zip}}</span>
+                          </div>
+                    
                           <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.homePhone.$invalid && !itnForm.homePhone.$pristine }">
                             <label for="home phone">Home Phone: *</label><br>
                             <input type="text" class="form-control" id="primary-phone" name="homePhone" placeholder="Example: xxx-xxx-xxxx"  ng-model="formData.homePhone" ng-pattern="phonePattern" required>
                             <span ng-if="itnForm.homePhone.$error.required && !itnForm.homePhone.$pristine" class="help-block">{{errorMessages.required}}</span>
                             <span ng-if="itnForm.homePhone.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
                           </div>
+                        </div><!--row-->
                           
+                          <div class="row">
                           <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.workPhone.$invalid && !itnForm.workPhone.$pristine }">
                             <label for="work phone">Work Phone: </label><br>
                             <input type="text" class="form-control" id="secondary-phone" name="workPhone" placeholder="Example: xxx-xxx-xxxx" ng-model="formData.workPhone" ng-pattern="phonePattern">
                             <span ng-if="itnForm.workPhone.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
                           </div>
-                        </div><!--row-->
                         
-                        <div class="row">
                           <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.cellPhone.$invalid && !itnForm.cellPhone.$pristine }">
                             <label for="cell phone">Cell Phone: *</label><br>
                             <input type="text" class="form-control" id="primary-phone" name="cellPhone" placeholder="Example: xxx-xxx-xxxx"  ng-model="formData.cellPhone" ng-pattern="phonePattern" required>
                             <span ng-if="itnForm.cellPhone.$error.required && !itnForm.cellPhone.$pristine" class="help-block">{{errorMessages.required}}</span>
                             <span ng-if="itnForm.cellPhone.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
                           </div>
+                          </div><!--row-->
                           
                           <div class="form-group" ng-class="{ 'has-error' : itnForm.email.$invalid && !itnForm.email.$pristine }">
                             <label for="email">Email: </label><br>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Example: test@example.com" ng-model="formData.email" ng-pattern="emailPattern">
                             <span ng-if="itnForm.email.$error.pattern" class="help-block">{{errorMessages.email}}</span>
                           </div> 
-                        </div><!--row-->
 
-                      
                       
                           <h2>First Emergency Contact</h2>
                           
@@ -252,15 +252,17 @@
                       
                         <h2>Driving Experience</h2>
                         
-                          <div class="form-group">
+                          <div class="row">
+                          <div class="form-group col-sm-6">
                             <label for="years of driving experience">Years of Driving experience:</label><br>
                             <input type="text" class="form-control" id="years" name="years" ng-model="formData.drivingExperience.years">
                           </div>
                           
-                          <div class="form-group">
+                          <div class="form-group col-sm-6">
                             <label for="Estimated miles driven last year">Estimated miles driven last year:</label><br>
                             <input type="text" class="form-control" id="milesDrivenLastYr" name="milesDrivenLastYr" ng-model="formData.drivingExperience.milesDrivenLastYr">
                           </div>
+                          </div><!--row-->
                           
                           <div class="form-group" ng-class="{ 'has-error' : itnForm.visionLastExamined.$invalid && !itnForm.visionLastExamined.$pristine }">
                             <label for="vision last examined">When was your vision last examined: *</label><br>
@@ -318,16 +320,16 @@
                       
                       <div class="form-group ta-center">
                         <label for="criminal conviction">Have you had any past criminal convictions, or do you have any charges pending against you in a court of law?*</label><br>
-                        <label class="radio-inline"><input type="radio" value="female" ng-model="formData.criminalConviction" ng-click="crimConvic = true" required>Female</label>
-                        <label class="radio-inline"><input type="radio" value="male" ng-model="formData.criminalConviction" ng-click="crimConvic = true">Male</label>
+                        <label class="radio-inline"><input type="radio" value="yes" ng-model="formData.criminalConviction" ng-click="crimConvic = true" required>Yes</label>
+                        <label class="radio-inline"><input type="radio" value="no" ng-model="formData.criminalConviction" ng-click="crimConvic = true">No</label>
                         <input type="text" class="form-control"   id="limitations" name="limitations" placeholder="List convictions: *" ng-model="formData.criminalConvictionDetail"
                         ng-show="crimConvic">
                       </div>
                       
                       <div class="form-group ta-center">
                         <label for="moving violation">Have you been convicted of any moving violations in the past three years? * </label><br>
-                        <label class="radio-inline"><input type="radio" value="female" ng-model="formData.movingViolation" required>Female</label>
-                        <label class="radio-inline"><input type="radio" value="male" ng-model="formData.movingViolation">Male</label>
+                        <label class="radio-inline"><input type="radio" value="yes" ng-model="formData.movingViolation" required>Yes</label>
+                        <label class="radio-inline"><input type="radio" value="no" ng-model="formData.movingViolation">No</label>
                       </div>
 
                       <h3>First Reference</h3>
@@ -360,7 +362,7 @@
                       </div>
                       
                       
-                      <h3>Second Reference</h3>
+                      <h3 class="mt-25">Second Reference</h3>
                       
                       <div class="form-group" ng-class="{ 'has-error' : itnForm.secondRefName.$invalid && !itnForm.secondRefName.$pristine }">
                         <label for="name">Name: *</label><br>
@@ -391,7 +393,7 @@
                       </div>
                       
                       
-                      <h3>Third Reference</h3>
+                      <h3 class="mt-25">Third Reference</h3>
                       
                       <div class="form-group" ng-class="{ 'has-error' : itnForm.thirdRefName.$invalid && !itnForm.thirdRefName.$pristine }">
                         <label for="name">Name: *</label><br>
@@ -490,50 +492,56 @@
                             
                             <h3>Please rank your reasons for wanting to drive for the ITN, with " 1 " the most important reason, and " 6 " being the least:</h3>
                             
-                            <div class="form-group">
-                              <label for="serve community">Serve the community:</label>
-                              <select ng-model="formData.reasons.serveCommunity" class="form-control" id="serve">
-                                <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
-                              </select>
-                            </div>
-                          
-                            <div class="form-group">
-                              <label for="serve community">Enjoy driving:</label>
-                              <select ng-model="formData.reasons.enjoyDriving" class="form-control" id="enjoy">
-                                <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
-                              </select>
-                            </div>
-                        
-                            <div class="form-group">
-                              <label for="serve community">Help eldery people:</label>
-                              <select ng-model="formData.reasons.helpEldery" class="form-control" id="help">
-                                <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
-                              </select>
-                            </div>
-                      
-                            <div class="form-group">
-                              <label for="serve community">Additional Income:</label>
-                              <select ng-model="formData.reasons.additionalIncome" class="form-control" id="additional">
-                                <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
-                              </select>
-                            </div>
-                    
-                            <div class="form-group">
-                              <label for="serve community">Occupy your time:</label>
-                              <select ng-model="formData.reasons.occupyTime" class="form-control" id="occupy">
-                                <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
-                              </select>
-                            </div>
+                            <div class="row">
+                              <div class="form-group col-sm-6">
+                                <label for="serve community">Serve the community:</label>
+                                <select ng-model="formData.reasons.serveCommunity" class="form-control" id="serve">
+                                  <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
+                                </select>
+                              </div>
                             
-                            <div class="form-group">
-                              <label for="serve community">Enjoy eldery people:</label>
-                              <select ng-model="formData.reasons.enjoyEldery" class="form-control" id="enjoy">
-                                <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
-                              </select>
-                            </div>
+                              <div class="form-group col-sm-6">
+                                <label for="serve community">Enjoy driving:</label>
+                                <select ng-model="formData.reasons.enjoyDriving" class="form-control" id="enjoy">
+                                  <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
+                                </select>
+                              </div>
+                            </div><!--row-->
+                        
+                            <div class="row">
+                              <div class="form-group col-sm-6">
+                                <label for="serve community">Help eldery people:</label>
+                                <select ng-model="formData.reasons.helpEldery" class="form-control" id="help">
+                                  <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
+                                </select>
+                              </div>
+                        
+                              <div class="form-group col-sm-6">
+                                <label for="serve community">Additional Income:</label>
+                                <select ng-model="formData.reasons.additionalIncome" class="form-control" id="additional">
+                                  <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
+                                </select>
+                              </div>
+                            </div><!--row-->
+                    
+                            <div class="row">
+                              <div class="form-group col-sm-6">
+                                <label for="serve community">Occupy your time:</label>
+                                <select ng-model="formData.reasons.occupyTime" class="form-control" id="occupy">
+                                  <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
+                                </select>
+                              </div>
+                              
+                              <div class="form-group col-sm-6">
+                                <label for="serve community">Enjoy eldery people:</label>
+                                <select ng-model="formData.reasons.enjoyEldery" class="form-control" id="enjoy">
+                                  <option ng-repeat="rating in ratings"  value="{{rating}}">{{rating}}</option>
+                                </select>
+                              </div>
+                            </div><!--row-->
                             
                 
-                <h2>Education</h2>
+                <h2 class="mt-25">Education</h2>
                 
                 <div class="form-group">
                   <label for="learn about ITN">Highest grade/degree completed:</label><br>
@@ -545,7 +553,7 @@
                   <input type="text" class="form-control" id="firstAidTraining" name="firstAidTraining"  ng-model="formData.education.firstAidTraining">
                 </div>
                 
-                <h2>Ethnic Background</h2>
+                <h2 class="mt-25">Ethnic Background</h2>
                 
                 <div class="form-group ta-center">
                   <label for="ethnicity">What is your ethnic background?:</label><br>
@@ -561,7 +569,7 @@
 
 
 
-                <h2>Civic Engagement</h2>
+                <h2 class="mt-25">Civic Engagement</h2>
                 
                 <div class="form-group ta-center">
                   <label for="member of any organization">Are you a member of any of the following organizations?:</label><br>
@@ -722,7 +730,7 @@
                             </div>
                           
                             
-                            <p><strong>Please fill in your complete name (please include any previous names used) and include date of birthand social security number, then sign below. The purpose of this background check will be for volunteer purposes.<strong></p>
+                            <p><strong>Please fill in your complete name (please include any previous names used) and include date of birthand social security number, then sign below. The purpose of this background check will be for volunteer purposes.</strong>strong></p>
                             
                             <div class="form-group" ng-class="{ 'has-error' : itnForm.name3.$invalid && !itnForm.name3.$pristine }">
                               <label for="name">Name *:</label><br>
@@ -950,8 +958,8 @@
                           
                           <div class="form-group ta-center">
                             <label for="only vehicle">Is this the only vehicle you will be using: *</label><br>
-                            <label class="radio-inline"><input ng-model="formData.vehicleDescription.onlyVehicle" ng-click="secondVehicle = true" type="radio" value="yes" required>Yes</label>
-                            <label class="radio-inline"><input ng-model="formData.vehicleDescription.onlyVehicle" ng-click="secondVehicle = false" type="radio" value="no">No</label>
+                            <label class="radio-inline"><input ng-model="formData.vehicleDescription.onlyVehicle" ng-click="secondVehicle = false" type="radio" value="yes" required>Yes</label>
+                            <label class="radio-inline"><input ng-model="formData.vehicleDescription.onlyVehicle" ng-click="secondVehicle = true" type="radio" value="no">No</label>
                           </div>
                           
                           
@@ -1081,12 +1089,7 @@
                               <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.hasCoveredTruckBed" type="radio" value="yes" required>Yes</label>
                               <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.hasCoveredTruckBed" type="radio" value="no">No</label>
                             </div>
-                            
-                            <div class="form-group ta-center">
-                              <label for="only vehicle">Is this the only vehicle you will be using: *</label><br>
-                              <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.onlyVehicle" ng-click="secondVehicle = true" type="radio" value="yes" required>Yes</label>
-                              <label class="radio-inline"><input ng-model="formData.secondVehicleDescription.onlyVehicle" ng-click="secondVehicle = false" type="radio" value="no">No</label>
-                            </div>
+
                             
                           </div><!--second vehicle-->
                           
@@ -1189,19 +1192,21 @@
                             <input type="text" class="form-control" id="itnDate" name="itnDate" ng-pattern="datePattern" ng-model="formData.changeOfStatus.itnDate" ng-disabled="true">
                           </div>
                           
+                        <button type="submit" class="btn btn-lg btn-danger" ng-disabled="form.$invalid">Submit</button>
                         <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                        
+                        <p style="color:red; margin-top:50px"><strong>{{serverMessage}}</strong></p>
                         
                         </div><!--tab6-->
                         
                         
-                    <button type="submit" class="btn btn-danger" ng-disabled="form.$invalid" ng-show="tab===6">Submit</button>
+                    
                 
                 </form>
               </div><!--instructions-->
             </div><!--form area-->
           </div><!--col sm 12-->
           
-          <p style="color:red; margin-top:50px"><strong>{{serverMessage}}</strong></p>
           
         </div><!--container-->
       
@@ -1213,6 +1218,8 @@
 
 
 <div id="pdfVersion">
+  <h3 class="app-title">Volunteer Driver Application</h3>
+  
   <h3>Main Duty</h3>
   <p>Drive ITN customers (seniors and people with visual impairments) wherever they want to go within the service area. Medical appointments, shopping, and to visit friends are frequent destinations.</p>
 
@@ -1259,9 +1266,9 @@
   <p>ITN<em>America</em> respects your privacy and will keep all volunteer information confidential. Personal information is used for aggregate reporting purposes only, to enable group distribution comparisons across affiliates and between the ITN<em>America</em> volunteer population and the US older population in general.</p>
   
   <br><label for="rider name">Name: *</label><br>
-  {{formData.name}}
+  {{formData.riderNname}}
   <br><label for="gender">Gender: * </label><br>
-  {{formData.gender}}
+  {{formData.riderGender}}
   <br><label for="gender">Street Address: * </label><br>
   {{formData.streetAddress}}
   <br><label for="gender">City: * </label><br>
@@ -1452,7 +1459,7 @@
   <br><label for="maiden name">Previous/maiden name (if applicable) * :</label><br>
   {{formData.requestCriminalRecord.maidenName}}
   <br><label for="date of birth">Date of Birth *:</label><br>
-  {{formData.requestCriminalRecord.dob]}}
+  {{formData.requestCriminalRecord.dob}}
   <br><label for="social security number">Social Security Number *:</label><br>
   {{formData.requestCriminalRecord.socialSecurity}}
   
@@ -1547,8 +1554,6 @@
     {{formData.secondVehicleDescription.hasLargeTrunk}}
     <br><label for="has covered truck bed">Covered truck bed: *</label><br>
     {{formData.secondVehicleDescription.hasCoveredTruckBed}}
-    <br><label for="only vehicle">Is this the only vehicle you will be using: *</label><br>
-    {{formData.secondVehicleDescription.onlyVehicle}}
   </div>
   
   <br><label for="signature">Signature *:</label><br>
@@ -1590,6 +1595,7 @@
     <div class="page-template">
       <div class="header">
       </div>
+      <div class="watermark"><img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/></div>
       <div class="watermark"><img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/></div>
       <div class="footer">
         Page #: pageNum # of #: totalPages #

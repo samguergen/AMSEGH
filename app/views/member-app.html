@@ -12,7 +12,7 @@
         <hr align="center">
         <div class="col-sm-12">
             <div class="form-area" id="formConfirmation" style="background: #c7dfe4;border:none">  
-                  <form name="itnForm" novalidate ng-submit="submitForm2('membership')" role="membership form" ng-model="formData">
+                  <form name="itnForm" novalidate ng-submit="submitFormWithPDF('membership')" role="membership form" ng-model="formData">
                     <br style="clear:both">
                     <h2 class="app-title">Application for Transportation Service</h2>
                     
@@ -1197,9 +1197,8 @@
   <script type="x/kendo-template" id="page-template">
     <div class="page-template">
       <div class="header">
-        // <div style="float: right">Page #: pageNum # of #: totalPages #</div>
-        // <div style="float: right"><img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/></div>
       </div>
+      <div class="watermark"><img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/></div>
       <div class="watermark"><img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/></div>
       <div class="footer">
         Page #: pageNum # of #: totalPages #

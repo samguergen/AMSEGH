@@ -1311,7 +1311,7 @@ form textarea.form-control {font-size:25px}
 }
 .volunteer-drive #first-hero-volunteer-drive {
   background-image: url('../images/dark/aa-3.jpg') !important;
-  background-position: center center !important;
+  background-position: center top !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   height: 400px !important;
@@ -1397,7 +1397,6 @@ form textarea.form-control {font-size:25px}
 }
 .volunteer-app .app-title {
   margin-top:25px;
-  margin-bottom:50px;
   padding-top:50px;
 }
 .volunteer-app .form-area {

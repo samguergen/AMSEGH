@@ -112,7 +112,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
   $scope.loading = false;
   $scope.minlength = 2;
   $scope.maxlength = 30;
-  $scope.ssnPattern = new RegExp(/^[0-7][0-9]{2}[\W\s-][0-9]{2}[\W\s-][0-9]{4}|[\s\W][0-7][0-9]{8}[\s\W]$/);
+  $scope.ssnPattern = new RegExp(/^\d{3}-?\d{2}-?\d{4}$/);
   $scope.zipPattern = new RegExp(/^\d{5}$/);
   $scope.emailPattern = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/);
   $scope.datePattern = new RegExp(/^(\d{2})\/(\d{2})\/(\d{4})$/);
@@ -258,25 +258,28 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
   //   });
   // }
   
-  $scope.submitForm2 = function(formType){
+  $scope.submitFormWithPDF = function(formType){
     console.log('form you are sending is ', $scope.formData);
     $scope.loading = true;
     
     if (formType === 'volunteer') {
-      $scope.formSubject = 'New volunteer application received';
-      $scope.generateMultiPagePDF();
+        $(document).ready(function(){
+          $('#pdfVersion').css('display', 'block');
+        })
+        $scope.formSubject = 'New volunteer application received';
+        $scope.generateMultiPagePDF();
     } else if (formType === 'membership') {
-      $(document).ready(function(){
-        $('#pdfVersion').css('display', 'block');
-      })
-      $scope.showPdf = true;
-      $scope.formSubject = 'New membership application received';
-      $scope.generateMultiPagePDF();
+        $(document).ready(function(){
+          $('#pdfVersion').css('display', 'block');
+        })
+        $scope.showPdf = true;
+        $scope.formSubject = 'New membership application received';
+        $scope.generateMultiPagePDF();
     } else if (formType === 'nonrider') {
-      $scope.formSubject = 'Non-Rider application Form submitted';
-      $scope.generatePDF();
+        $scope.formSubject = 'Non-Rider application Form submitted';
+        $scope.generatePDF();
     } else if (formType === 'contact') {
-      $scope.formSubject = $scope.formData.subject || 'Contact Form submitted';
+        $scope.formSubject = $scope.formData.subject || 'Contact Form submitted';
     }
     
   }
