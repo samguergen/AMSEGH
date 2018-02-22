@@ -1195,17 +1195,17 @@
                         <button type="submit" class="btn btn-lg btn-danger" ng-disabled="form.$invalid">Submit</button>
                         <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                         
-                        <p style="color:red; margin-top:50px"><strong>{{serverMessage}}</strong></p>
                         
                         </div><!--tab6-->
                         
+                        <input type="button" ng-click="formData = {}" value="Reset Form" class="btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">
                         
-                    
-                
                 </form>
               </div><!--instructions-->
             </div><!--form area-->
           </div><!--col sm 12-->
+          
+          <p style="color:red; margin-top:50px"><strong>{{serverMessage}}</strong></p>
           
           
         </div><!--container-->
