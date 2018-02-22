@@ -464,7 +464,6 @@ nav .dropdown-menu li.divider{
     border: 2px solid #8f8fb66b;
     border-radius: 5px;
 }
-.donate .form-area {width:70%}
 .donate .section {
   background:white;
 }
@@ -517,7 +516,7 @@ nav .dropdown-menu li.divider{
 }
 .donate .form-area {
     background-color: #FAFAFA;
-  	padding: 10px 40px 60px;
+  	padding: 10px 40px 80px;
   	margin: 10px 0px 60px;
   	border: 1px solid GREY;
     border: 2px solid #fc6d6d;
