@@ -22,7 +22,7 @@ app.post('/sendmail', function(req, res){
     })
   )
   let mailOptions = {};
-  if (req.body && req.body.attachments){
+  if (req.body && req.body.pdf){
     console.log('sending email with pdf');
     mailOptions = {
         from: req.body.from, // sender address
