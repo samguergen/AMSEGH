@@ -194,7 +194,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
         $scope.dataPDF = data;
         $http.post('/sendmail', {
           from: '"ITN Web User" <donotreply@itnamerica.com>',
-          to: 'samguergen@gmail.com',
+          to: 'itnamerica2018@gmail.com',
           subject: $scope.formSubject,
           text: $scope.formData,
           pdf: $scope.dataPDF
@@ -219,7 +219,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
         $scope.dataPDF = data;
         $http.post('/sendmail', {
           from: '"ITN Web User" <donotreply@itnamerica.com>',
-          to: 'samguergen@gmail.com',
+          to: 'itnamerica2018@gmail.com',
           subject: $scope.formSubject,
           text: $scope.formData,
           pdf: $scope.dataPDF
@@ -238,7 +238,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     }
     $http.post('/sendmail', {
       from: '"ITN Web User" <donotreply@itnamerica.com>',
-      to: 'samguergen@gmail.com',
+      to: 'itnamerica2018@gmail.com',
       subject: "Contact Form Submitted: " + $scope.formSubject,
       text: $scope.formData,
       html: `<p><strong>Name:</strong>: ${$scope.formData.name}</p>
