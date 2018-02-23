@@ -13,56 +13,56 @@
         
         <div class="col-sm-12">
             <div class="form-area" id="formConfirmation" style="background: #c7dfe4;border:none">  
-                  <form name="nonriderform" novalidate ng-submit="submitForm2('nonrider')" role="non rider form" ng-model="formData">
+                  <form name="itnForm" novalidate ng-submit="submitFormWithPDF('nonrider')" role="non rider form" ng-model="formData">
                 <br style="clear:both">
                             <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
                             <h3 style="margin-bottom: 25px; text-align: center">Membership Form (Non-Rider)</h3>
                             
                   <div class="row">
-              			<div class="form-group col-sm-6" ng-class="{ 'has-error' : nonriderform.firstName.$invalid && !nonriderform.firstName.$pristine }">
+              			<div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.firstName.$invalid && !itnForm.firstName.$pristine }">
                       <label for="First name">First Name: *</label><br>
           						<input type="text" class="form-control" id="firstName" name="firstName" ng-model="formData.firstName" ng-minlength="minlength" ng-maxlength="maxlength" required>
-                      <span ng-if="nonriderform.firstName.$error.required && !nonriderform.firstName.$pristine" class="help-block">{{errorMessages.required}}</span>
-                      <span ng-if="nonriderform.firstName.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
-                      <span ng-if="nonriderform.firstName.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
+                      <span ng-if="itnForm.firstName.$error.required && !itnForm.firstName.$pristine" class="help-block">{{errorMessages.required}}</span>
+                      <span ng-if="itnForm.firstName.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                      <span ng-if="itnForm.firstName.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
           					</div>
                     
-                    <div class="form-group col-sm-6" ng-class="{ 'has-error' : nonriderform.lastName.$invalid && !nonriderform.lastName.$pristine }">
+                    <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.lastName.$invalid && !itnForm.lastName.$pristine }">
                       <label for="last name">Last Name: *</label><br>
                       <input type="text" class="form-control" id="lastName" name="lastName" ng-model="formData.lastName" ng-minlength="minlength" ng-maxlength="maxlength" required>
-                      <span ng-if="nonriderform.lastName.$error.required && !nonriderform.lastName.$pristine" class="help-block">{{errorMessages.required}}</span>
-                      <span ng-if="nonriderform.lastName.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
-                      <span ng-if="nonriderform.lastName.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
+                      <span ng-if="itnForm.lastName.$error.required && !itnForm.lastName.$pristine" class="help-block">{{errorMessages.required}}</span>
+                      <span ng-if="itnForm.lastName.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                      <span ng-if="itnForm.lastName.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                     </div>
                   </div>
                   
                   <div class="row">
-              			<div class="form-group col-sm-6" ng-class="{ 'has-error' : nonriderform.address1.$invalid && !nonriderform.address1.$pristine }">
+              			<div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.address1.$invalid && !itnForm.address1.$pristine }">
                       <label for="address 1">Address 1: *</label><br>
                       <input type="text" class="form-control" id="address1" name="address1" ng-model="formData.address1" ng-minlength="minlength" ng-maxlength="maxlength" required>
-                      <span ng-if="nonriderform.address1.$error.required && !nonriderform.address1.$pristine" class="help-block">{{errorMessages.required}}</span>
-                      <span ng-if="nonriderform.address1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
-                      <span ng-if="nonriderform.address1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
+                      <span ng-if="itnForm.address1.$error.required && !itnForm.address1.$pristine" class="help-block">{{errorMessages.required}}</span>
+                      <span ng-if="itnForm.address1.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                      <span ng-if="itnForm.address1.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                     </div>
                   
-                    <div class="form-group col-sm-6" ng-class="{ 'has-error' : nonriderform.address2.$invalid && !nonriderform.address2.$pristine }">
+                    <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.address2.$invalid && !itnForm.address2.$pristine }">
                       <label for="address 2">Address 2: </label><br>
                       <input type="text" class="form-control" id="address2" name="address2" ng-model="formData.address2" ng-minlength="minlength" ng-maxlength="maxlength">
-                      <span ng-if="nonriderform.address2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
-                      <span ng-if="nonriderform.address2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
+                      <span ng-if="itnForm.address2.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                      <span ng-if="itnForm.address2.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                   </div>
                 </div>
                 
                   <div class="row">
-              			<div class="form-group col-sm-6" ng-class="{ 'has-error' : nonriderform.city.$invalid && !nonriderform.city.$pristine }">
+              			<div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.city.$invalid && !itnForm.city.$pristine }">
                     <label for="city">City: *</label><br>
                     <input type="text" class="form-control" id="city" name="city" ng-model="formData.city" ng-minlength="minlength" ng-maxlength="maxlength" required>
-                    <span ng-if="nonriderform.city.$error.required && !nonriderform.city.$pristine" class="help-block">{{errorMessages.required}}</span>
-                    <span ng-if="nonriderform.city.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
-                    <span ng-if="nonriderform.city.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
+                    <span ng-if="itnForm.city.$error.required && !itnForm.city.$pristine" class="help-block">{{errorMessages.required}}</span>
+                    <span ng-if="itnForm.city.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
+                    <span ng-if="itnForm.city.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                   </div>
                   
-                  <div class="form-group col-sm-6" ng-class="{ 'has-error' : nonriderform.state.$invalid && !nonriderform.state.$pristine }">
+                  <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.state.$invalid && !itnForm.state.$pristine }">
                     <label for="state">State: *</label><br>
                     <select class="form-control" id="state">
                       <option ng-model="formData.state" value="">Select a State*</option>
@@ -120,47 +120,47 @@
                       <option ng-model="formData.state" value="WV">West Virginia</option>
                       <option ng-model="formData.state" value="WY" required>Wyoming</option>
                     </select>
-                    <span ng-if="nonriderform.state.$error.required && !nonriderform.state.$pristine" class="help-block">{{errorMessages.required}}</span>
+                    <span ng-if="itnForm.state.$error.required && !itnForm.state.$pristine" class="help-block">{{errorMessages.required}}</span>
                   </div>
                 </div>
                   <div class="row">
-              			<div class="form-group col-sm-6" ng-class="{ 'has-error' : nonriderform.zip.$invalid && !nonriderform.zip.$pristine }">
+              			<div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.zip.$invalid && !itnForm.zip.$pristine }">
                       <label for="zip">Zip code: *</label><br>
                     <input type="text" class="form-control" id="zip" name="zip" ng-model="formData.zip" ng-pattern="zipPattern" required>
-                    <span ng-if="nonriderform.zip.$error.required && !nonriderform.zip.$pristine" class="help-block">{{errorMessages.required}}</span>
-                    <span ng-if="nonriderform.zip.$error.pattern" class="help-block">{{errorMessages.zip}}</span>
+                    <span ng-if="itnForm.zip.$error.required && !itnForm.zip.$pristine" class="help-block">{{errorMessages.required}}</span>
+                    <span ng-if="itnForm.zip.$error.pattern" class="help-block">{{errorMessages.zip}}</span>
                   </div>
-                  <div class="form-group col-sm-6" ng-class="{ 'has-error' : nonriderform.phone.$invalid && !nonriderform.phone.$pristine }">
+                  <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.phone.$invalid && !itnForm.phone.$pristine }">
                     <label for="phone">Phone Number: *</label><br>
                     <input type="text" class="form-control" id="phone" name="phone" ng-model="formData.phone" ng-pattern="phonePattern" required>
-                    <span ng-if="nonriderform.phone.$error.required && !nonriderform.phone.$pristine" class="help-block">{{errorMessages.required}}</span>
-                    <span ng-if="nonriderform.phone.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
+                    <span ng-if="itnForm.phone.$error.required && !itnForm.phone.$pristine" class="help-block">{{errorMessages.required}}</span>
+                    <span ng-if="itnForm.phone.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
                   </div>
                 </div>
                 
                 <div class="row">
-                  <div class="form-group col-sm-6" ng-class="{ 'has-error' : nonriderform.email.$invalid && !nonriderform.email.$pristine }">
+                  <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.email.$invalid && !itnForm.email.$pristine }">
                     <label for="email">Email: *</label><br>
         						<input type="email" class="form-control" id="email" name="email" ng-model="formData.email" ng-pattern="emailPattern" required>
-                    <span ng-if="nonriderform.email.$error.required && !nonriderform.email.$pristine" class="help-block">{{errorMessages.required}}</span>
-                    <span ng-if="nonriderform.email.$error.pattern" class="help-block">{{errorMessages.email}}</span>
+                    <span ng-if="itnForm.email.$error.required && !itnForm.email.$pristine" class="help-block">{{errorMessages.required}}</span>
+                    <span ng-if="itnForm.email.$error.pattern" class="help-block">{{errorMessages.email}}</span>
         					</div>
                   
-                  <div class="form-group col-sm-6" ng-class="{ 'has-error' : nonriderform.emailConfirmation.$invalid && !nonriderform.emailConfirmation.$pristine }">
+                  <div class="form-group col-sm-6" ng-class="{ 'has-error' : itnForm.emailConfirmation.$invalid && !itnForm.emailConfirmation.$pristine }">
                     <label for="email confirmation">Email Confirmation: *</label><br>
                     <input type="email" class="form-control" id="emailConfirmation" name="emailConfirmation" ng-model="formData.emailConfirmation" match="formData.email" required>
-                    <span ng-if="nonriderform.emailConfirmation.$error.required && !nonriderform.emailConfirmation.$pristine" class="help-block">{{errorMessages.required}}</span>
-                    <span ng-if="nonriderform.emailConfirmation.$error.mismatch" class="help-block">{{errorMessages.emailConfirmation}}</span>
+                    <span ng-if="itnForm.emailConfirmation.$error.required && !itnForm.emailConfirmation.$pristine" class="help-block">{{errorMessages.required}}</span>
+                    <span ng-if="itnForm.emailConfirmation.$error.mismatch" class="help-block">{{errorMessages.emailConfirmation}}</span>
                   </div>
                 </div>
 
-                  <!-- <div class="form-group" ng-class="{ 'has-error' : nonriderform.message.$invalid && !nonriderform.message.$pristine }">
+                  <!-- <div class="form-group" ng-class="{ 'has-error' : itnForm.message.$invalid && !itnForm.message.$pristine }">
                     <label for="message body">Message: *</label><br>
                   <textarea class="form-control" type="textarea" id="message" maxlength="140" rows="7" ng-model="formData.message" required></textarea>
                       <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
                   </div> -->
                     
-                <!-- <input type="submit" ng-disabled="nonriderform.$invalid" id="submit" class="btn btn-lg btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%"> -->
+                <!-- <input type="submit" ng-disabled="itnForm.$invalid" id="submit" class="btn btn-lg btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%"> -->
                 <input type="submit" id="submit" class="btn btn-lg btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%">
                 <input type="reset" class="btn btn-lg btn-primary pull-right itn-green-bg" ng-click="formData = {}" value="Reset">
 
