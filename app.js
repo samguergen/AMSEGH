@@ -23,31 +23,37 @@ app.post('/sendmail', function(req, res){
   )
   let mailOptions = {};
   if (req.body && req.body.attachments){
+    console.log('sending email with pdf');
     mailOptions = {
         from: req.body.from, // sender address
         to: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line   
         text: JSON.stringify(req.body.text), // plain text body
-        bcc: 'info@itnlanier.org',
+        bcc: 'samguergen@gmail.com',
+        // bcc: 'info@itnlanier.org',
         attachments: [{path: req.body.pdf}]
     };
   }
   else if (req.body && req.body.html){
+    console.log('sending email without pdf');
     mailOptions = {
         from: req.body.from, // sender address
         to: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line   
         text: JSON.stringify(req.body.text), // plain text body
-        bcc: 'info@itnlanier.org',
+        // bcc: 'info@itnlanier.org',
+        bcc: 'samguergen@gmail.com',
         html: req.body.html // html body
     };
   } else {
+    console.log('sending email with neither');
     mailOptions = {
         from: req.body.from, // sender address
         to: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line   
         text: JSON.stringify(req.body.text), // plain text body
-        bcc: 'info@itnlanier.org',
+        bcc: 'samguergen@gmail.com',
+        // bcc: 'info@itnlanier.org',
     };
   }
 
