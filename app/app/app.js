@@ -111,7 +111,8 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
   $scope.formData = {};
   $scope.loading = false;
   $scope.minlength = 2;
-  $scope.maxlength = 30;
+  $scope.maxlength = 50;
+  $scope.maxMsgLength = 2000;
   $scope.ssnPattern = new RegExp(/^\d{3}-?\d{2}-?\d{4}$/);
   $scope.zipPattern = new RegExp(/^\d{5}$/);
   $scope.emailPattern = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/);
@@ -233,13 +234,10 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
   $scope.submitForm = function(formType){
     console.log('submitForm, formData is', $scope.formData);
     $scope.loading = true;
-    if (formType === 'contact') {
-        $scope.formSubject = $scope.formData.subject || 'Contact Form submitted';
-    }
     $http.post('/sendmail', {
       from: '"ITN Web User" <donotreply@itnamerica.com>',
       to: 'itnamerica2018@gmail.com',
-      subject: "Contact Form Submitted: " + $scope.formSubject,
+      subject: "Contact Form Submitted",
       text: $scope.formData,
       html: `<p><strong>Name:</strong>: ${$scope.formData.name}</p>
       <p><strong>Email:</strong>: ${$scope.formData.email}</p>
@@ -272,9 +270,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     } else if (formType === 'nonrider') {
         $scope.formSubject = 'Non-Rider application Form submitted';
         $scope.generatePDF();
-    } else if (formType === 'contact') {
-        $scope.formSubject = $scope.formData.subject || 'Contact Form submitted';
-    }
+    } 
   }
   
 

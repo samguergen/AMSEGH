@@ -42,7 +42,7 @@
                 </div>
                 
                 <div class="form-group" ng-class="{ 'has-error' : itnForm.message.$invalid && !itnForm.message.$pristine }">
-                  <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Message" maxlength="140" rows="7" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.messageBody" required></textarea>
+                  <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Message" maxlength="2000" rows="7" ng-minlength="minlength" ng-maxlength="maxMsgLength" ng-model="formData.messageBody" required></textarea>
                   <span ng-if="itnForm.message.$error.required && !itnForm.message.$pristine" class="help-block">{{errorMessages.required}}</span>
                   <span ng-if="itnForm.message.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
                   <span ng-if="itnForm.message.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
@@ -67,7 +67,7 @@
   $(document).ready(function(){ 
     $('#characterLeft').text('140 characters left');
     $('#message').keydown(function () {
-        var max = 140;
+        var max = 2000;
         var len = $(this).val().length;
         if (len >= max) {
             $('#characterLeft').text('You have reached the limit');
