@@ -94,6 +94,10 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         url: '/add-pta-credit',
         templateUrl: 'views/add-pta-credit.html'
       })
+      .state('draft', {
+        url: '/draft',
+        templateUrl: 'views/draft.html'
+      })
 
   // default fall back route
   $urlRouterProvider.otherwise('/');
