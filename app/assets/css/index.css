@@ -1731,6 +1731,9 @@ h2,h3 {line-height:1.7}
   .homepage .item #volunteer-help {
     object-position: 19% 50%;
   }
+  .homepage .carousel-inner .item .carousel-statement {
+    font-size: 25px;
+  }
   .homepage .progress {height: 700px;}
   .homepage .progress .progress-steps .col-sm-4 {
     border: 3px dashed;
@@ -1744,6 +1747,10 @@ h2,h3 {line-height:1.7}
   .regeneron .container .reg-img{
     margin-top:50px;
     margin-bottom:50px;
+  }
+  .regeneron .reg-text {
+    text-align:left;
+    font-weight:bold;
   }
   .main {padding-bottom:700px;}
   #footer {height:700px;}
