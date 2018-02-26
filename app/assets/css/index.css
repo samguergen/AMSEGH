@@ -443,12 +443,11 @@ nav .dropdown-menu li.divider{
 
 
 .contact .first-hero {
-  background-image: url('../images/dark/aa-6.jpg');
+  background-image: url('../images/dark/spanish-woman.png');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 400px;
-  /*opacity: 0.5;*/
 }
 .contact #first-hero-contact h1 {
   color:White;
@@ -905,7 +904,7 @@ nav .dropdown-menu li.divider{
 }
 
 .faces #first-hero-faces {
-  background-image: url('../images/dark/aa-2.jpg');
+  background-image: url('../images/dark/aa-couple3.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1015,7 +1014,7 @@ nav .dropdown-menu li.divider{
 }
 
 .family #first-hero-family {
-  background-image: url('../images/dark/old-young.jpg');
+  background-image: url('../images/dark/indian-young-old.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1248,8 +1247,8 @@ padding: 50px;
 }
 
 .member-app #first-hero-online-app {
-  background-image: url('../images/dark/man-fruits.jpeg');
-  background-position: center top;
+  background-image: url('../images/dark/aa-couple.jpg');
+  background-position: right top;
   background-size: cover;
   background-repeat: no-repeat;
   height: 400px;
@@ -1309,8 +1308,8 @@ form textarea.form-control {font-size:25px}
   font-size:25px;
 }
 .volunteer-drive #first-hero-volunteer-drive {
-  background-image: url('../images/dark/aa-3.jpg') !important;
-  background-position: center top !important;
+  background-image: url('../images/dark/asian-couple.jpg') !important;
+  background-position: center center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   height: 400px !important;
@@ -1382,7 +1381,7 @@ form textarea.form-control {font-size:25px}
     margin-top: 20px;
 }
 .volunteer-app #first-hero-volunteer-app {
-  background-image: url('../images/dark/asian.jpg') !important;
+  background-image: url('../images/dark/oldage-wisdom.jpg') !important;
   background-position: center center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
