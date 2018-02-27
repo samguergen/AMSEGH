@@ -1870,6 +1870,25 @@ h2,h3 {line-height:1.7}
   }
   .family .carousel-inner .item, .family .text-carousel {height:auto}
   .family .carousel-inner .item .carousel-content {width:200px}
+  
+  .family .text-carousel p {
+    width:100%;
+  }
+  .family .text-carousel2 { 
+    margin-top:10px;
+  }
+  .carousel-wrap {
+    height: 800px !important;
+    width:83% !important;
+  }
+  .carousel-wrap1, .carousel-wrap2 {
+    background-image:none;
+  }
+  .carousel-wrap2 {
+    height: 1000px !important;
+  }
+  
+  
   #footer .search {display:none}
   
 }
