@@ -150,7 +150,7 @@ nav .dropdown-menu li.divider{
     background-size: cover;
 }
 
-.carousel-inner .item img {
+.carousel-inner .item img, .carousel-inner .item iframe {
   object-fit: cover;
   width: 100%;
   height: 500px;
@@ -1199,12 +1199,17 @@ nav .dropdown-menu li.divider{
 .become-member .intro h3, .become-member .intro h4 {
   line-height:1.7;
 }
-.become-member .intro .badge {
+.become-member .intro .prospective h3 {
+  display:inline-block;
+  margin: 2%;
+  font-weight:bold;
+}
+/*.become-member .intro .badge {
   padding: 10px 15px;
   font-size: 22px;
   margin: 15px 1%;
   background: #fc6d6d;
-}
+}*/
 .become-member .ride-friend {
   background-image: url('../images/itn-people-images/men-car.jpg');
   background-position: center top;

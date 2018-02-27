@@ -108,7 +108,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 })
 
 
-myApp.controller('MainController', ['$scope', '$transitions','$http', function ($scope, $transitions, $http)  {
+myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', function ($scope, $transitions, $http, $anchorScroll)  {
   console.log('inside main controller');
   $scope.zoomLevel = 1;
   $scope.tab = 1;
@@ -149,6 +149,11 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
   //     $scope.tab = 1;
   // });
   
+  $scope.scrollTo = function(id) {
+      $location.hash(id);
+      $anchorScroll();
+   }
+  
   $scope.resetFormData = function(){
     $scope.formData = {}
   }
@@ -184,8 +189,8 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
     }
     
   }
-  
-  
+
+
   $scope.submitForm = function(formType){
     console.log('submitForm, formData is', $scope.formData);
     $scope.loading = true;
