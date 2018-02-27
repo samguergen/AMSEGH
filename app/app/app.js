@@ -279,6 +279,40 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', function (
       });
   }
 
+  $scope.toggleSlide = function(direction) {
+      // var elements = document.getElementsByClassName("hideable");
+      var elements = $(".hideable");
+      console.log("elements are", elements);
+      var visibleID = getVisible(elements);
+      console.log('visible id is ', visibleID);
+      elements[visibleID].style.display = "none"; // hide the currently visible LI
+      if(direction === 'prev') {
+          var makeVisible = prev(visibleID, elements.length); // get the previous slide
+      } else if (direction === 'next') {
+          var makeVisible = next(visibleID, elements.length); // get the next slide
+      }
+      elements[makeVisible].style.display = "block"; // show the previous or next slide
+  }
+  function getVisible(elements) {
+    console.log('inside getvisible, elements are', elements);
+      var visibleID = -1;
+      for(var i = 0; i < elements.length; i++) {
+        console.log('foreach');
+          if(elements[i].style.display == "block") {
+            console.log('its a block');
+              visibleID = i;
+          }
+      }
+      return visibleID;
+  }
+  function prev(num, arrayLength) {
+      if(num == 0) return arrayLength-1;
+      else return num-1;
+  }
+  function next(num, arrayLength) {
+      if(num == arrayLength-1) return 0;
+      else return num+1;
+  }
   
   
 }]);

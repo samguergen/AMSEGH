@@ -1667,6 +1667,10 @@ h2,h3 {line-height:1.7}
   opacity: 0.1;
   /*transform: rotate(-35deg) scale(1.7, 1.5);*/
 }
+.hideable {
+    display: none;
+}
+
 
 
 /* RESPONSIVE */
