@@ -111,4 +111,31 @@
         $("#textCarousel1").slick();
         $("#textCarousel2").slick();
       });
+      
+      
+      function checkWidth(init)
+      {
+          /*If browser resized, check width again */
+          if ($(window).width() < 514) {
+            console.log('resizing');
+            $('.family').removeClass('text-carousel');
+              $('.family').removeClass('carousel-wrap');
+          }
+          else {
+              if (!init) {
+                  // $('html').removeClass('mobile');
+              }
+          }
+      }
+
+      $(document).ready(function() {
+          checkWidth(true);
+
+          $(window).resize(function() {
+              checkWidth(false);
+          });
+      });
+
+
+
     </script>
