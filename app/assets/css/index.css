@@ -1667,10 +1667,19 @@ h2,h3 {line-height:1.7}
   opacity: 0.1;
   /*transform: rotate(-35deg) scale(1.7, 1.5);*/
 }
-.hideable {
-    display: none;
+div.background-slideshow li {
+   display: none;
+   z-index: 1;
+   width: 100%;
+   vertical-align: middle;  
 }
-
+div.background-slideshow li.current {
+    display: inline;  
+    z-index: 2;
+}
+div.background-slideshow li.previous {
+    z-index: 1;
+}
 
 
 /* RESPONSIVE */
