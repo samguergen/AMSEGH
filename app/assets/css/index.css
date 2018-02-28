@@ -1883,6 +1883,9 @@ h2,h3 {line-height:1.7}
   .family .text-carousel2 { 
     margin-top:10px;
   }
+  .family .carousel .col-xs-offset-3 {
+    margin-left:2% !important;
+  }
   .carousel-wrap {
     height: 800px !important;
     width:83% !important;
