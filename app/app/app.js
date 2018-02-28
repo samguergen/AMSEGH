@@ -108,7 +108,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 })
 
 
-myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', function ($scope, $transitions, $http, $anchorScroll)  {
+myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', function ($scope, $transitions, $http, $anchorScroll, $location)  {
   console.log('inside main controller');
   $scope.zoomLevel = 1;
   $scope.tab = 1;
@@ -150,9 +150,12 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   // });
   
   $scope.scrollTo = function(id) {
-      $location.hash(id);
-      $anchorScroll();
-   }
+    var old = $location.hash();
+    $location.hash(id);
+    $anchorScroll();
+    //reset to old to keep any additional routing logic from kicking in
+    $location.hash(old);
+};
   
   $scope.resetFormData = function(){
     $scope.formData = {}
