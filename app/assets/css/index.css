@@ -1619,6 +1619,7 @@ form textarea.form-control {font-size:25px}
 
 /* GENERAL */
 
+a {cursor: pointer}
 h2,h3 {line-height:1.7}
 .jumbotron ul {
   font-size: 25px;
