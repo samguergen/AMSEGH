@@ -287,41 +287,24 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
       });
   }
 
-  $scope.toggleSlide = function(direction) {
-      // var elements = document.getElementsByClassName("hideable");
-      var elements = $(".hideable");
-      console.log("elements are", elements);
-      var visibleID = getVisible(elements);
-      console.log('visible id is ', visibleID);
-      elements[visibleID].style.display = "none"; // hide the currently visible LI
-      if(direction === 'prev') {
-          var makeVisible = prev(visibleID, elements.length); // get the previous slide
-      } else if (direction === 'next') {
-          var makeVisible = next(visibleID, elements.length); // get the next slide
-      }
-      elements[makeVisible].style.display = "block"; // show the previous or next slide
-  }
-  function getVisible(elements) {
-    console.log('inside getvisible, elements are', elements);
-      var visibleID = -1;
-      for(var i = 0; i < elements.length; i++) {
-        console.log('foreach');
-          if(elements[i].style.display == "block") {
-            console.log('its a block');
-              visibleID = i;
-          }
-      }
-      return visibleID;
-  }
-  function prev(num, arrayLength) {
-      if(num == 0) return arrayLength-1;
-      else return num-1;
-  }
-  function next(num, arrayLength) {
-      if(num == arrayLength-1) return 0;
-      else return num+1;
-  }
   
+  //dropdown hover on Desktop only
+  $(document).ready(function() { 
+  var navbarToggle = '.navbar-toggle'; // name of navbar toggle, BS3 = '.navbar-toggle', BS4 = '.navbar-toggler'  
+  $('.dropdown, .dropup').each(function() {
+    var dropdown = $(this),
+      dropdownToggle = $('[data-toggle="dropdown"]', dropdown),
+      dropdownHoverAll = dropdownToggle.data('dropdown-hover-all') || false;
+    
+    // Mouseover
+    dropdown.hover(function(){
+      var notMobileMenu = $(navbarToggle).length > 0 && $(navbarToggle).css('display') === 'none';
+      if ((dropdownHoverAll == true || (dropdownHoverAll == false && notMobileMenu))) { 
+        dropdownToggle.trigger('click');
+      }
+    })
+  });
+});
   
 }]);
 
