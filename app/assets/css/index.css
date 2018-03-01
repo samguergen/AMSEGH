@@ -1755,6 +1755,15 @@ h2,h3 {line-height:1.7}
   }
 }
 
+
+@media (min-width: 991px) and (max-width: 1200px) {
+  .services .operate ul {
+    margin-left:20%;
+    margin-top:0;
+  }
+}
+
+
 /* MOBILE */
 
 @media (max-width: 450px) {
