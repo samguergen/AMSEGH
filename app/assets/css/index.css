@@ -321,10 +321,8 @@ nav .dropdown-menu li.divider{
 .services .operate {
   background: white;
   color: #9b557e;
-  font-weight: bold;
 }
 .services .operate h2 {
-  color: #9b557e;
   font-weight: bold;
   margin-top:75px;
   margin-bottom:75px;
@@ -337,10 +335,15 @@ nav .dropdown-menu li.divider{
   display: block;
 }
 .services .operate h3 {
-  color: #9b557e;
   font-weight: bold;
   text-align: center;
   margin-top: 4%;
+}
+.services .operate ul {
+  margin-top:20%;
+  list-style-type:none;
+  font-size:20px;
+  font-weight:bold;
 }
 .services .jumbo-title {
   background-color: #399eaa;
