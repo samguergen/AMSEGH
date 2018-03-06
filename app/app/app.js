@@ -88,7 +88,10 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
       })
       .state('newsletters', {
         url: '/newsletters',
-        templateUrl: 'views/newsletters.html'
+        templateUrl: 'views/newsletters.html',
+        params: {
+          anchor: null
+        }
       })
       .state('add-pta-credit', {
         url: '/add-pta-credit',
@@ -112,7 +115,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 })
 
 
-myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', function ($scope, $transitions, $http, $anchorScroll, $location)  {
+myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams)  {
   console.log('inside main controller');
   $scope.zoomLevel = 1;
   $scope.tab = 1;
@@ -159,7 +162,12 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     $anchorScroll();
     //reset to old to keep any additional routing logic from kicking in
     $location.hash(old);
-};
+  };
+  
+  $scope.catchAnchor = function(){
+    console.log('stateparam is ', $stateParams, $stateParams.anchor);
+    $scope.scrollTo($stateParams.anchor);
+  }
   
   $scope.resetFormData = function(){
     $scope.formData = {}
