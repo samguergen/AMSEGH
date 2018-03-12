@@ -182,6 +182,10 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     }
   }
   
+  $scope.scrollToTop = function(){
+    $(window).scrollTop(50);
+  }
+  
   $scope.readMore = function(divId) {
     var content = document.getElementById(divId);
     if (content.style.display === "none") {
