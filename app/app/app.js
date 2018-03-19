@@ -239,12 +239,11 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
       to: 'itnamerica2018@gmail.com',
       subject: "ITNLanier Contact Form Submitted",
       text: $scope.formData,
-      html: `<p><strong>Name:</strong>: ${$scope.formData.name}</p>
-      <p><strong>Email:</strong>: ${$scope.formData.email}</p>
-      <p><strong>Mobile:</strong>: ${$scope.formData.phone}</p>
-      <p><strong>Subject:</strong>: ${$scope.formData.subject}</p>
-      <p><strong>Message Body:</strong>: ${$scope.formData.messageBody}</p>
-      `
+      html: "<p><strong>Name:</strong>: " + $scope.formData.name + "</p>\n" +
+      "<p><strong>Email:</strong>: " + $scope.formData.email + "</p>\n " +
+      "<p><strong>Mobile:</strong>: " + $scope.formData.phone + "</p>\n " +
+      "<p><strong>Subject:</strong>: " + $scope.formData.subject + "</p>\n " +
+      "<p><strong>Message Body:</strong>: " + $scope.formData.messageBody + "</p>\n "
     }).then(function(res){
         $scope.loading = false;
         $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
