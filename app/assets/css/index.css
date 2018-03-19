@@ -1163,8 +1163,8 @@ nav .dropdown-menu li.divider{
 .non-rider #first-hero-rider {
   background-image: url('../images/dark/young-dude3.jpg');
   background-attachment: fixed;
-  background-position: center center;
-  /*background-position: center;*/
+  /*background-position: center center;*/
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 400px;
@@ -1200,7 +1200,8 @@ nav .dropdown-menu li.divider{
 .become-member #first-hero-become {
   background-image: url('../images/dark/old-aa-woman-reverse.jpg');
   background-attachment: fixed;
-  background-position: center center;
+  /*background-position: center center;*/
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 400px;
