@@ -229,6 +229,13 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     }
     
   }
+  
+  $scope.searchKeyword = function(keyword){
+    console.log("inside searchKeyword");
+    var myHilitor = new Hilitor("wrapper-content");
+    console.log('my hilitor is ', myHilitor);
+    myHilitor.apply(keyword);
+  }
 
 
   $scope.submitForm = function(formType){

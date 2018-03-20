@@ -46,8 +46,8 @@
   			
 </head>
 
-<body>
-  <div class="wrapper">
+<body ng-controller="MainController">
+  <div class="wrapper" id="wrapper-content">
   
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -151,9 +151,9 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-  <div class="main" ng-controller="MainController">
+  <div class="main" id="main-content">
     
-    <div ui-view></div>
+    <div id="main-content-inner" ui-view></div>
     
     
       <!-- <div ng-view></div> -->
@@ -209,12 +209,22 @@
                 <input type="text" class="form-control" placeholder="Search">
               </div>
               <div class="col-sm-2">
-                <button type="submit" class="btn btn-default btn-search">
+                <button type="button" ng-click="searchKeyword()" class="btn btn-default btn-search">
                   <i class="fa fa-search"></i>
                 </button>
               </div>
             </span>
           </form>
+          
+          
+          <search
+     class="size-medium"
+     param="searchText"
+     placeholder="Search"
+     search="search($param)"
+ ></search>
+ <a ng-click="clear()">Clear</a>
+          
         </div>
         
       <!-- </div> -->
@@ -231,11 +241,9 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
   <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-  <!--
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="../node_modules/@uirouter/core/_bundles/ui-router-core.js"></script> 
-  <script src="../node_modules/@uirouter/angularjs/release/ui-router-angularjs.js"></script>
-  <script src="../node_modules/angular-animate/angular-animate.min.js"></script> -->
+  <script src="bower_components/hilitor/hilitor.js"></script>
+  <script src="bower_components/angular-search/dist/search.js"></script>
+
   
   <!--PROD-->
   <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
