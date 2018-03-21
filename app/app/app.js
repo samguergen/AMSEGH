@@ -132,7 +132,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 
 
-myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams)  {
+myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout)  {
   console.log('inside main controller');
   $scope.zoomLevel = 1;
   $scope.tab = 1;
@@ -236,6 +236,32 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     var myHilitor = new Hilitor("wrapper-content");
     myHilitor.apply($scope.keyword);
     console.log('my hilitor', myHilitor);
+  }
+  
+  $scope.animateValue = function(id, start, end, duration)  {
+    var range = end - start;
+    var current = start;
+    var increment = end > start? 1 : -1;
+    var stepTime = Math.abs(Math.floor(duration / range));
+    var obj = document.getElementById(id);
+    var timer = setInterval(function() {
+        current += increment;
+        obj.innerHTML = current;
+        if (current == end) {
+            clearInterval(timer);
+        }
+    // }, stepTime);
+  }, 0.01);
+  }
+  
+  $scope.onDivScrolled = function(id, start, end, duration){
+    console.log('inside on div scrolled');
+    $(document).scroll(function() {
+      // $timeout(function(){
+        console.log('inside timeout, values are ', id, start, end, duration);
+          $scope.animateValue(id, start, end, duration);
+      // },10)
+    });
   }
 
 

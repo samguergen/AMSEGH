@@ -69,7 +69,7 @@
 
       </div>
     </div>
-    <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+    <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
       <a ui-sref="volunteer-to-drive">
         <div class="feature-icon" style="background: #e05944">
           <i class="fa fa-heart"></i>
@@ -81,7 +81,7 @@
         Become an ITN driver
       </div>
     </div>
-    <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+    <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
       <a ui-sref="pay-online">
         <div class="feature-icon" style="background: #529ba8">
           <i class="fa fa-usd"></i>
@@ -110,16 +110,16 @@
   </div>
 </div><!--MISSION-->
 
-<div class="jumbotron section progress container">
+<div class="jumbotron section progress container" id="progress" ng-mouseover="onDivScrolled('rides-given', 0, 2902, 500)">
   <div class="container">
     <h1>Our Progress</h1>
     <div class="row progress-steps">
       <div class="col-sm-6">
-        <div class="numbers">2,902</div>
+        <div class="numbers" id="rides-given">2,902</div>
         Rides given
       </div>
       <div class="col-sm-6">
-        <div class="numbers">58,424</div>
+        <div class="numbers" id="miles-driven">58,424</div>
         Miles driven
       </div>
       <!-- <div class="col-sm-4">
