@@ -42,7 +42,8 @@
     "jquery": "^3.3.1",
     "nodemailer": "^4.0.1",
     "nodemailer-sendgrid-transport": "^0.2.0",
-    "nodemailer-smtp-transport": "^2.7.4"
+    "nodemailer-smtp-transport": "^2.7.4",
+    "wowjs": "^1.1.3"
   },
   "engines": {
     "node": "6.10.0",

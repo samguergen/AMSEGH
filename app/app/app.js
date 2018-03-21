@@ -235,6 +235,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     console.log("inside searchKeyword");
     var myHilitor = new Hilitor("wrapper-content");
     myHilitor.apply($scope.keyword);
+    console.log('my hilitor', myHilitor);
   }
 
 
