@@ -134,6 +134,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout)  {
   console.log('inside main controller');
+  var firstTime = true;
   $scope.zoomLevel = 1;
   $scope.tab = 1;
   $scope.formData = {};
@@ -241,27 +242,31 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   $scope.animateValue = function(id, start, end, duration)  {
     var range = end - start;
     var current = start;
-    var increment = end > start? 1 : -1;
+    var increment = end > start? 50 : -50;
     var stepTime = Math.abs(Math.floor(duration / range));
     var obj = document.getElementById(id);
     var timer = setInterval(function() {
         current += increment;
         obj.innerHTML = current;
-        if (current == end) {
+        if (current >= end) {
             clearInterval(timer);
+            obj.innerHTML = end;
         }
-    // }, stepTime);
-  }, 0.01);
+    }, stepTime);
   }
   
-  $scope.onDivScrolled = function(id, start, end, duration){
-    console.log('inside on div scrolled');
-    $(document).scroll(function() {
-      // $timeout(function(){
-        console.log('inside timeout, values are ', id, start, end, duration);
-          $scope.animateValue(id, start, end, duration);
-      // },10)
-    });
+  $scope.onDivScrolled = function(id, start, end, duration, id2, start2, end2, duration2, id3, start3, end3, duration3){
+    if (firstTime){
+      $(document).scroll(function() {
+            $scope.animateValue(id, start, end, duration);
+            $scope.animateValue(id2, start2, end2, duration2);
+            if (id3, start3, end3, duration3){
+              $scope.animateValue(id3, start3, end3, duration3)
+            }
+            firstTime = false;
+      });
+      firstTime = false;
+    }
   }
 
 
