@@ -131,7 +131,7 @@
           
         <div class="jumbotron section national">
             <div class="row">
-              <div class="col-sm-9" style="background: rgba(255,255,255,0.6);">
+              <div class="col-sm-9 wow rollIn" data-wow-duration="2s" style="background: rgba(255,255,255,0.6);">
                 <!-- <h2>The Power of a National Network</h2> -->
                   <p>ITN<em>Lanier</em> is part of the ITN<em>America</em> family, which unites organizations across the country working to support the transportation needs of older people. The ITN<em>America</em> model offers a platform for dignified, sustainable mobility using technological solutions and innovative programming. We welcome your interest, and hope you will consider the benefits of having an ITN affiliate in your area.
                   To learn more, <a ui-sref="contact">contact us </a></p>
@@ -161,18 +161,7 @@
       </div><!--lightgreen div-->
     </div><!--organization-->
 
-  <!-- <script>
-      function readMore(divId) {
-        var content = document.getElementById(divId);
-        console.log(content);
-        // var buttonText = content.nextElementSibling.nextElementSibling.nextElementSibling.innerText;
-        if (content.style.display === "none") {
-            content.style.display = "block";
-            // content.nextElementSibling.nextElementSibling.nextElementSibling.innerText = "READ LESS";
-        } else {
-            content.style.display = "none";
-            // content.nextElementSibling.nextElementSibling.nextElementSibling.innerText = "READ MORE";
-        }
-    }
-  </script> -->
+    <script>
+    new WOW().init();
+    </script>
 
