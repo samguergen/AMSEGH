@@ -689,33 +689,32 @@ nav .dropdown-menu li.divider{
   margin: 25px auto 25px auto;
 }
 
-#board h1, .org-section h1 {
+#board h1, .org-section h1, #staff h1 {
   text-align:center;
   padding: 20px;
   color:#399eaa;
 }
-#board .row {
+#board .row, #staff .row {
   text-align: center;
   margin-top: 100px;
 }
-#board .row img {
-  /*transform: scale(1.5);*/
+#board .row img, #staff .row img {
   height:300px;
 }
-#board .row h2{
+#board .row h2, #staff .row h2{
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
   font-size:26px;
   /*margin-top: 70px;*/
 }
-#board .row .title {
+#board .row .title, #staff .row .title {
   font-weight: bold;
   font-style: italic;
   line-height:2;
   font-size: 23px;
 }
-#board .row button {
+#board .row button, #staff .row button {
   color: #ef4034 !important;
   border-radius: 0;
   border: 2px solid #ef4034;
@@ -723,10 +722,10 @@ nav .dropdown-menu li.divider{
   margin: 15px;
   padding: 1em 2em;
 }
-#board .btn-lg {
+#board .btn-lg, #staff .btn-lg {
   background:white;
 }
-#board .row .showBoardBio{
+#board .row .showBoardBio, #staff .row .showBoardBio{
   /*display:none;*/
   -webkit-transition:all linear 0.5s;
   transition:all linear 0.5s;
@@ -735,7 +734,7 @@ nav .dropdown-menu li.divider{
   padding: 5px;
   margin-top: 20px;
 }
-#board .row .showBoardBio.ng-hide{
+#board .row .showBoardBio.ng-hide, #staff .row .showBoardBio.ng-hide{
   opacity:0;
 }
 .org-section {
