@@ -134,7 +134,8 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout)  {
   console.log('inside main controller');
-  var firstTime = true;
+  
+  $scope.affiliate = "Lanier";
   $scope.zoomLevel = 1;
   $scope.tab = 1;
   $scope.formData = {};
@@ -253,20 +254,6 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
             obj.innerHTML = end;
         }
     }, stepTime);
-  }
-  
-  $scope.onDivScrolled = function(id, start, end, duration, id2, start2, end2, duration2, id3, start3, end3, duration3){
-    if (firstTime){
-      $(document).scroll(function() {
-            $scope.animateValue(id, start, end, duration);
-            $scope.animateValue(id2, start2, end2, duration2);
-            if (id3, start3, end3, duration3){
-              $scope.animateValue(id3, start3, end3, duration3)
-            }
-            firstTime = false;
-      });
-      firstTime = false;
-    }
   }
 
 

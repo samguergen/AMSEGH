@@ -7,13 +7,13 @@
     <div class="jumbotron section" style="background: #c7dfe4">
       
       <div class="container">
-        <h3>Want to learn more about ITN<em>Lanier</em>? Have questions or comments? Use the form below, or call us at (678) 696-0360. Or visit us at 999 Chestnut St. SE, Gainesville, GA 30501.</h3>
+        <h3>Want to learn more about ITN<em>{{affiliate}}</em>? Have questions or comments? Use the form below, or call us at (678) 696-0360. Or visit us at 999 Chestnut St. SE, Gainesville, GA 30501.</h3>
         <hr align="center">
         <div class="col-sm-12">
             <div class="form-area" style="background: #c7dfe4;border:none"> 
               <form name="itnForm" novalidate ng-submit="submitForm('contact')" role="contact form" ng-model="formData">
                 <br style="clear:both">
-                <h3 style="margin-bottom: 25px; text-align: center">Contact ITN<em>Lanier</em></h3>
+                <h3 style="margin-bottom: 25px; text-align: center">Contact ITN<em>{{affiliate}}</em></h3>
                         
                 <div class="form-group" ng-class="{ 'has-error' : itnForm.name.$invalid && !itnForm.name.$pristine }">
                   <input type="text" class="form-control" id="name" name="name" placeholder="Name" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.name" required>
