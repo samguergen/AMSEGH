@@ -140,7 +140,7 @@
                           <span ng-if="itnForm.email.$error.pattern" class="help-block">{{errorMessages.email}}</span>
                         </div> 
 
-                        <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                        <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
 
                         </div><!--tab 1-->
 
@@ -336,8 +336,8 @@
                             
                             </div><!--second emergency contact-->
                             
-                            <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
-                            <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                            <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                            <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                             
                           </div><!--tab2-->
 
@@ -458,8 +458,8 @@
                               
                             </div><!--sendinfo-->
                             
-                            <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
-                            <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                            <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                            <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                             
                           </div><!--tab3-->
                           
@@ -556,8 +556,8 @@
                                 <input ng-model="formData.customerInfo.currentTransportationMeans.other" type="text" class="form-control" id="other-transportation" name="other-transportation" placeholder="other (specify)" ng-if="otherTransportation">
                             </div>
                           
-                            <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
-                            <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                            <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                            <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
 
                         </div><!--tab4-->
 
@@ -636,8 +636,8 @@
                             <label class="checkbox-inline"><input ng-model="formData.customerInfo.specialNeeds.none" type="checkbox" value="none">None of the above</label>
                           </div>
                           
-                          <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
-                          <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                          <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                          <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           
                         </div><!--tab5-->
 
@@ -821,9 +821,9 @@
                             <label class="checkbox-inline"><input ng-model="formData.drivingInfo.wantInfoOnPrograms.giftCertificate" type="checkbox" value="gift_certificate">Gift Certificate</label>
                           </div>
                           
-                          <!-- <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button> -->
-                          <button ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button> 
-                          <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                          <!-- <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button> -->
+                          <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button> 
+                          <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           
                           
                         </div><!--tab6-->
@@ -907,7 +907,7 @@
                           
                           <h3 class="mt-50 mb-25">Informed Consent</h3>
                           
-                          <p>The Independent Transportation Network (ITN) is a non-profit, community-based organization providing dignified, consumer-oriented transportation for seniors and people with visual impairments. </p>
+                          <p>The Independent Transportation Network (ITN) is a nonprofit, community-based organization providing dignified, consumer-oriented transportation for seniors and people with visual impairments. </p>
 
                           <p>As an ITNAmerica affiliate community, your ITN benefits from more than a decade of research to develop a model for economically sustainable transportation. Among the public and private organizations that have supported this research are the Federal Transit Administration, the Transportation Research Board (National Academies of Science), AARP, the Great Bay Foundation for Social Entrepreneurs, and the Atlantic Philanthropies. Thousands of private individuals and their families have participated in this research and development, without which, this service would not be possible.</p>
 
@@ -948,7 +948,7 @@
                           </div>
 
                           <button type="submit" class="btn btn-lg pull-right btn-danger" style="background:#e05944; margin-left:2%" ng-disabled="form.$invalid">Submit</button>
-                          <button ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
+                          <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           
                         </div><!--tab7-->
                         
@@ -1175,7 +1175,7 @@
       
       <h3 class="mt-50 mb-25">Informed Consent</h3>
       
-      <p>The Independent Transportation Network (ITN) is a non-profit, community-based organization providing dignified, consumer-oriented transportation for seniors and people with visual impairments. </p>
+      <p>The Independent Transportation Network (ITN) is a nonprofit, community-based organization providing dignified, consumer-oriented transportation for seniors and people with visual impairments. </p>
 
       <p>As an ITNAmerica affiliate community, your ITN benefits from more than a decade of research to develop a model for economically sustainable transportation. Among the public and private organizations that have supported this research are the Federal Transit Administration, the Transportation Research Board (National Academies of Science), AARP, the Great Bay Foundation for Social Entrepreneurs, and the Atlantic Philanthropies. Thousands of private individuals and their families have participated in this research and development, without which, this service would not be possible.</p>
 
