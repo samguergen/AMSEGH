@@ -1192,7 +1192,7 @@
                             <input type="text" class="form-control" id="itnDate" name="itnDate" ng-pattern="datePattern" ng-model="formData.changeOfStatus.itnDate" ng-disabled="true">
                           </div>
                           
-                        <button type="submit" class="btn btn-lg pull-right btn-danger" style="background:#e05944; margin-left:2%" ng-disabled="form.$invalid">Submit</button>
+                        <button type="submit" ng-hide="loading" class="btn btn-lg pull-right btn-danger" style="background:#e05944; margin-left:2%" ng-disabled="form.$invalid">Submit</button>
                         <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                         
                         
