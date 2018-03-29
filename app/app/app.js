@@ -378,15 +378,26 @@ myApp.directive('match', function($parse) {
 
 myApp.filter('inputSelected', function(){
   return function(formData){
-    
     var keyArr = [];
+    var word = [];
     Object.keys(formData).forEach(function(key){
-      if (formData[key]){
-        var keyCap = key.charAt(0).toUpperCase() + key.slice(1);
-      	keyArr.push(keyCap)
+    if (formData[key]){
+    	var keyCap = key.charAt(0).toUpperCase() + key.slice(1);
+      for (var char = 0; char<keyCap.length; char++ ) {
+      	if (keyCap[char] == keyCap[char].toUpperCase()){
+          var spacedLetter = ' '+ keyCap[char];
+          word.push(spacedLetter);
+        }
+        else {
+          word.push(keyCap[char]);
+        }
       }
+    }
+    keyArr.push(word.join(''))
+    word = [];
     })
-    return keyArr;
+    //console.log("keyarr abs end is ", keyArr.slice(1));
+    return keyArr.slice(1);
   }
 })
 
