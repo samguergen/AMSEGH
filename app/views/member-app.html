@@ -43,25 +43,7 @@
                           <a href="#tab7" tabindex="-1">Step 7</a>
                         </li>
                       </ol>
-                      
-                      <div class="form-group ta-center">
-                        <label for="Heard about ITN">How did you hear about ITN?: *</label><br>
-                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.family" type="checkbox" value="family">Family</label>
-                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.friend" type="checkbox" value="friend">Friend</label>
-                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.speaker" type="checkbox" value="speaker">Speaker</label>
-                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.doctor" type="checkbox" value="doctor">Doctor</label>
-                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.radio" type="checkbox" value="radio">Radio</label>
-                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.tv" type="checkbox" value="television">Television</label><br>
-                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.flier" type="checkbox" value="flier">Flier</label>
-                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.phone" type="checkbox" value="phone">Phone</label>
-                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.book" type="checkbox" value="book">Book</label>
-                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.agencyOnAging" type="checkbox" value="agency">Agency on Aging</label>
-                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.socialWorker" type="checkbox" value="social-worker">Social Worker</label>
-                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.internet" type="checkbox" value="Internet">Internet</label>
-                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.currentMember" type="checkbox" value="current-member" required>Were you referred by a current member?</label>
-                      </div>
-                      
-                      {{ formData.heardAboutItn | inputSelected }}
+                  
                       
                         <div class="form-group ta-center" ng-class="{ 'has-error' : itnForm.membership.$invalid }">
                           <label for="Membership Type">Membership Type: *</label><br>
