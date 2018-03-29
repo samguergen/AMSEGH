@@ -378,11 +378,13 @@ myApp.directive('match', function($parse) {
 
 myApp.filter('inputSelected', function(){
   return function(formData){
+    var keyArr = [];
     Object.keys(formData).forEach(function(key){
       if (formData[key]){
-      	return key;
+      	keyArr.push(key)
       }
     })
+    return keyArr;
   }
 })
 
