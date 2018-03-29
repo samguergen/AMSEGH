@@ -44,6 +44,25 @@
                         </li>
                       </ol>
                       
+                      <div class="form-group ta-center">
+                        <label for="Heard about ITN">How did you hear about ITN?: *</label><br>
+                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.family" type="checkbox" value="family">Family</label>
+                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.friend" type="checkbox" value="friend">Friend</label>
+                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.speaker" type="checkbox" value="speaker">Speaker</label>
+                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.doctor" type="checkbox" value="doctor">Doctor</label>
+                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.radio" type="checkbox" value="radio">Radio</label>
+                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.tv" type="checkbox" value="television">Television</label><br>
+                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.flier" type="checkbox" value="flier">Flier</label>
+                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.phone" type="checkbox" value="phone">Phone</label>
+                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.book" type="checkbox" value="book">Book</label>
+                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.agencyOnAging" type="checkbox" value="agency">Agency on Aging</label>
+                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.socialWorker" type="checkbox" value="social-worker">Social Worker</label>
+                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.internet" type="checkbox" value="Internet">Internet</label>
+                        <label class="checkbox-inline"><input ng-model="formData.heardAboutItn.currentMember" type="checkbox" value="current-member" required>Were you referred by a current member?</label>
+                      </div>
+                      
+                      {{ formData.heardAboutItn | inputSelected }}
+                      
                         <div class="form-group ta-center" ng-class="{ 'has-error' : itnForm.membership.$invalid }">
                           <label for="Membership Type">Membership Type: *</label><br>
                           <label class="radio-inline"><input type="radio" value="individual" name="membership" ng-model="formData.membership">Individual</label>
@@ -345,7 +364,7 @@
 
                           <div class="member-tabs" ng-if="tab===3 || tab===99" id="tab3">
                             
-                            <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
+                            <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block;text-align:center" alt="main logo"/>
                             
                             <ol class="steps">
                               <li class="step previous complete">
@@ -465,7 +484,7 @@
                           
                           <div class="member-tabs" ng-if="tab===4 || tab===99" id="tab4">
                             
-                            <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
+                            <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block;text-align:center" alt="main logo"/>
                             
                             <ol class="steps">
                               <li class="step previous complete">
@@ -536,7 +555,7 @@
                             </div>
                             
                             <div class="form-group ta-center">
-                              <label for="languages">Languages Spoken: *</label><br>
+                              <label for="languages">Languages : *</label><br>
                               <label class="checkbox-inline"><input ng-model="formData.customerInfo.languages.english" type="checkbox" value="english">English</label>
                               <label class="checkbox-inline"><input ng-model="formData.customerInfo.languages.french" type="checkbox" value="french">French</label>
                               <label class="checkbox-inline"><input ng-model="formData.customerInfo.languages.spanish" type="checkbox" value="spanish">Spanish</label>
@@ -563,7 +582,7 @@
 
                         <div class="member-tabs" ng-if="tab===5 || tab===99" id="tab5">
                           
-                          <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
+                          <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block;text-align:center" alt="main logo"/>
                           
                           <ol class="steps">
                             <li class="step previous complete">
@@ -607,9 +626,9 @@
                           
                           <div class="form-group ta-center">
                             <label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
-                            <label class="radio-inline"><input ng-model="formData.customerInfo.memberOfProfessionalOrgOrUnion" type="radio" value="yes" ng-click="specifyUnions = true">Yes</label>
+                            <label class="radio-inline"><input ng-model="formData.memberOfProfessionalOrgOrUnion" type="radio" value="yes" ng-click="specifyUnions = true">Yes</label>
                             <label class="radio-inline"><input type="radio" value="no" ng-click="specifyUnions = false">No</label>
-                              <input ng-model="formData.customerInfo.memberOfProfessionalOrgOrUnions" type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
+                              <input ng-model="formData.memberOfProfessionalOrgOrUnions" type="text" class="form-control" id="unions" name="unions" placeholder="Please list:" ng-if="specifyUnions">
                           </div>
                           
                           <div class="form-group ta-center">
@@ -644,7 +663,7 @@
 
                         <div class="member-tabs" ng-if="tab===6 || tab===99" id="tab6">
                           
-                          <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
+                          <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block;text-align:center" alt="main logo"/>
                           
                           <ol class="steps">
                             <li class="step previous complete">
@@ -833,7 +852,7 @@
 
                         <div class="member-tabs" ng-if="tab===7 || tab===99" id="tab7">
                           
-                          <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block" alt="main logo"/>
+                          <img src="assets/images/icons/itnlanier_white_bg.png" style="margin:auto;display:block;text-align:center" alt="main logo"/>
                           
                           <ol class="steps">
                             <li class="step previous complete">
@@ -1050,7 +1069,8 @@
     
     <br><label for="send info">Would you like us to send information about ITN to a relative, friend, or business? * </label><br>
     {{formData.sendInfoToRelativeFriendBiz}}
-    <div ng-if="sendInfo">
+    
+    <br><div ng-if="sendInfo">
       <br><label for="name">Name: *</label><br>
       {{formData.sendInfoTo.name}}
       <br><label for="relationship">Relationship: *</label><br>
@@ -1082,20 +1102,20 @@
     <br><label for="dwelling">Dwelling Arrangements: * </label><br>
     {{formData.customerInfo.dwellingArrangement}}
     <br><label for="languages">Languages Spoken: *</label><br>
-    {{formData.customerInfo.languages}}
+    {{formData.customerInfo.languages | inputSelected}}
     <br><label for="transportation means">Current primary means of getting around: * </label><br>
     {{formData.customerInfo.currentTransportationMeans}}
     
     <h3>Civic Engagement</h3>
     
     <br><label for="member of any organization">Are you a member of any of the following organizations?:</label><br>
-    {{formData.customerInfo.memberOfOrganization}}
+    {{formData.customerInfo.memberOfOrganization | inputSelected}}
     <br><label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
-    {{formData.customerInfo.memberOfProfessionalOrgOrUnion}} - {{formData.customerInfo.memberOfProfessionalOrgOrUnions}} 
+    {{formData.memberOfProfessionalOrgOrUnion}} - {{formData.memberOfProfessionalOrgOrUnions}} 
     <br><label for="served in armed forces">Have you ever served on active duty in the U.S. Armed Forces, Military Reserves, or National Guard: *</label><br>
     {{formData.customerInfo.servedInMilitary}}
     <br><label for="special needs">Special Needs and Mobility Assistance: *</label><br>
-    {{formData.customerInfo.specialNeeds}}
+    {{formData.customerInfo.specialNeeds | inputSelected }}
   
     <h3>Driving Information</h3>
     
@@ -1144,7 +1164,7 @@
       <br><label for="reduce ITN cost with rideshare">Would you like to reduce the cost of ITN trips by sharing rides with others when it's convenient?: *</label><br>
       {{formData.drivingInfo.reduceCostWithRideshare}}
       <br><label for="info on programs">Would you like information on any of these ITN programs?:</label><br>
-      {{formData.wantInfoOnPrograms}}
+      {{formData.wantInfoOnPrograms | inputSelected}}
       
       <h3 class="mt-50 mb-25">Personal Transportation Account Agreement</h3>
       
@@ -1213,7 +1233,7 @@
   $(document).ready(function(){ 
     $('#characterLeft').text('2000 characters left');
     $('#message').keydown(function () {
-        var max = 140;
+        var max = 2000;
         var len = $(this).val().length;
         if (len >= max) {
             $('#characterLeft').text('You have reached the limit');

@@ -570,7 +570,7 @@
 
 
                 <h2 class="mt-25">Civic Engagement</h2>
-                
+          www      
                 <div class="form-group ta-center">
                   <label for="member of any organization">Are you a member of any of the following organizations?:</label><br>
                   <label class="checkbox-inline"><input ng-model="formData.memberOfOrganization.aaa" type="checkbox" value="aaa">AAA</label>
@@ -1354,7 +1354,7 @@
   
   <h3>Civic Engagement</h3>
   <br><label for="member of any organization">Are you a member of any of the following organizations?:</label><br>
-  {{formData.memberOfOrganization}}
+  {{formData.memberOfOrganization | inputSelected}}
   <br><label for="professional organization or labor union">Are you part of any professional organizations or labor unions?: * </label><br>
   {{formData.memberOfProfessionalOrgOrUnion}} - {{formData.memberOfProfessionalOrgOrUnions}}
   <br><label for="served in armed forces">Have you ever served on active duty in the U.S. Armed Forces, Military Reserves, or National Guard: *</label><br>
@@ -1563,7 +1563,7 @@
   $(document).ready(function(){ 
     $('#characterLeft').text('2000 characters left');
     $('#message').keydown(function () {
-        var max = 140;
+        var max = 2000;
         var len = $(this).val().length;
         if (len >= max) {
             $('#characterLeft').text('You have reached the limit');

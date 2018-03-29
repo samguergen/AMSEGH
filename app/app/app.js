@@ -396,8 +396,7 @@ myApp.filter('inputSelected', function(){
     keyArr.push(word.join(''))
     word = [];
     })
-    //console.log("keyarr abs end is ", keyArr.slice(1));
-    return keyArr.slice(1);
+    return keyArr.toString();
   }
 })
 
