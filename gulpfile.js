@@ -1,11 +1,11 @@
-var gulp = require('gulp');
-var useref = require('gulp-useref');
-var uglify = require('gulp-uglify');
-var gulpIf = require('gulp-if');
-
-gulp.task('hello', function() {
-  console.log('Hello Sam');
-});
+// var gulp = require('gulp');
+// var useref = require('gulp-useref');
+// var uglify = require('gulp-uglify');
+// var gulpIf = require('gulp-if');
+// 
+// gulp.task('hello', function() {
+//   console.log('Hello Sam');
+// });
 
 // gulp.task('useref', function(){
 //   return gulp.src('app/*.html')
