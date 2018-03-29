@@ -378,10 +378,12 @@ myApp.directive('match', function($parse) {
 
 myApp.filter('inputSelected', function(){
   return function(formData){
+    
     var keyArr = [];
     Object.keys(formData).forEach(function(key){
       if (formData[key]){
-      	keyArr.push(key)
+        var keyCap = key.charAt(0).toUpperCase() + key.slice(1);
+      	keyArr.push(keyCap)
       }
     })
     return keyArr;
