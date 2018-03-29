@@ -1445,6 +1445,10 @@ form textarea.form-control {font-size:25px}
   margin-bottom: 75px !important;
   margin-top: 50px;
 }
+
+.member-app #pdfVersion, .volunteer-app #pdfVersion {
+  font-size: 12px !important;
+} 
     
 #footer {
     width:100%;
