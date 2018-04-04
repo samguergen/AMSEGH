@@ -171,6 +171,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   $scope.itnSources = ['Family','Friend','Speaker','Doctor','Radio','Television','Flier','Book','Phone','Agency on Aging', 'Social Worker','Internet','Referred by Current Member'];
   $scope.ratings = ['None',1,2,3,4,5,6];
   $scope.keyword = '';
+  $scope.keywordInApp = '';
 
   
   // $transitions.onStart({}, function($transition, $scope){
@@ -240,6 +241,21 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     var myHilitor = new Hilitor("wrapper-content");
     myHilitor.apply($scope.keyword);
     console.log('my hilitor', myHilitor);
+  }
+  
+  $scope.searchKeywordInApp = function(){
+    console.log('inside searchkeywordinapp');
+    $http.get('../app/views/what-we-do.html')
+    .then(function(data){
+      // console.log('data is ', data, data.data);
+      var words = findWord($scope.keywordInApp, data.data);
+      console.log('words are ', words);
+    })
+
+  }
+  
+  function findWord(word, str) {
+    return str.split(' ').some(function(w){return w === word})
   }
   
   $scope.animateValue = function(id, start, end, duration)  {
