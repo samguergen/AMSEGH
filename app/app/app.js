@@ -120,8 +120,8 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 
 
-  myApp.run(['$rootScope', '$location', '$window',
-    function($rootScope, $location, $window) {
+  myApp.run(['$rootScope', '$location', '$window', '$state',
+    function($rootScope, $location, $window, $state) {      
       $rootScope.$on('$routeChangeSuccess',
         function(event) {
           if (!$window.ga) {
@@ -136,9 +136,9 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 
 
-myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', '$state', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout, $state)  {
+myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', '$state', '$rootScope', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout, $state, $rootScope)  {
   console.log('inside main controller');
-  
+
   $scope.affiliate = "Lanier";
   $scope.zoomLevel = 1;
   $scope.tab = 1;
@@ -197,12 +197,13 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   ];
   $scope.urlsWithKeyword = [];
 
-  
-  // $transitions.onStart({}, function($transition, $scope){
-  //     console.log('changing state');
-  //     $scope.formData = {};
-  //     $scope.tab = 1;
-  // });
+  $transitions.onStart({}, function($transition, $scope){
+      console.log('changing state');
+      // $scope.resetFormData();
+      if ($scope.keyword.length > 0){
+        $scope.searchKeyword();
+      }
+  });
   
   $scope.scrollTo = function(id) {
     var old = $location.hash();
