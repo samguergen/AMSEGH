@@ -198,11 +198,9 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   $scope.urlsWithKeyword = [];
 
   $transitions.onStart({}, function(){
-      console.log('changing state');
       $scope.resetFormData();
       if ($scope.keyword.length > 0){
         angular.element(document).ready(function () {
-          console.log('keyword to highlight is ', $scope.keyword);
           $scope.searchKeyword();
         });
       }
