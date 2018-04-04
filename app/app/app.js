@@ -268,22 +268,36 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   }
   
   $scope.searchKeywordInApp = function(){
-    var x; var y;
+    var x;
     console.log('inside searchkeywordinapp');
     for (x=0; x < $scope.listOfUrls.length; x++){
       console.log('first, x is ',x );
-      $http.get($scope.listOfUrls[x].url)
-      .then(function(data){
-        console.log('second, x is ',x , $scope.listOfUrls[x]);
-        var matchWord = findWord($scope.keyword, data.data);
-        if (matchWord){
-          console.log('third, x is ', x, 'pushing that element ', $scope.listOfUrls[x]);
-          $scope.urlsWithKeyword.push($scope.listOfUrls[x])
-        }
-      })
+      apiCall(x)
+
+      // $http.get($scope.listOfUrls[x].url)
+      // .then(function(data){
+      //   console.log('second, x is ',x , $scope.listOfUrls[x]);
+      //   var matchWord = findWord($scope.keyword, data.data);
+      //   if (matchWord){
+      //     console.log('third, x is ', x, 'pushing that element ', $scope.listOfUrls[x]);
+      //     $scope.urlsWithKeyword.push($scope.listOfUrls[x])
+      //   }
+      // })
     }
 
     $state.go('keyword-pages');
+  }
+  
+  var apiCall = function(x){
+    $http.get($scope.listOfUrls[x].url)
+    .then(function(data){
+      console.log('second, x is ',x , $scope.listOfUrls[x]);
+      var matchWord = findWord($scope.keyword, data.data);
+      if (matchWord){
+        console.log('third, x is ', x, 'pushing that element ', $scope.listOfUrls[x]);
+        $scope.urlsWithKeyword.push($scope.listOfUrls[x])
+      }
+    })
   }
   
   function findWord(keyword, str) {
