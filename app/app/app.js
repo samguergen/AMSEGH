@@ -261,7 +261,6 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   }
   
   $scope.searchKeyword = function(){
-    console.log("inside searchKeyword");
     var myHilitor = new Hilitor("wrapper-content");
     myHilitor.apply($scope.keyword);
     console.log('my hilitor', myHilitor);
@@ -269,51 +268,30 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   
   $scope.searchKeywordInApp = function(){
     var x;
-    console.log('inside searchkeywordinapp');
     for (x=0; x < $scope.listOfUrls.length; x++){
-      console.log('first, x is ',x );
-      apiCall(x)
-
-      // $http.get($scope.listOfUrls[x].url)
-      // .then(function(data){
-      //   console.log('second, x is ',x , $scope.listOfUrls[x]);
-      //   var matchWord = findWord($scope.keyword, data.data);
-      //   if (matchWord){
-      //     console.log('third, x is ', x, 'pushing that element ', $scope.listOfUrls[x]);
-      //     $scope.urlsWithKeyword.push($scope.listOfUrls[x])
-      //   }
-      // })
+      apiCallToUrls(x)
     }
-
     $state.go('keyword-pages');
   }
   
-  var apiCall = function(x){
+  function apiCallToUrls(x){
     $http.get($scope.listOfUrls[x].url)
     .then(function(data){
-      console.log('second, x is ',x , $scope.listOfUrls[x]);
       var matchWord = findWord($scope.keyword, data.data);
       if (matchWord){
-        console.log('third, x is ', x, 'pushing that element ', $scope.listOfUrls[x]);
         $scope.urlsWithKeyword.push($scope.listOfUrls[x])
       }
     })
   }
   
   function findWord(keyword, str) {
-    // var matchWords = [];
     var text = str.split(' ');
-    console.log('keyword is ', keyword, 'text is ', text);
     for (var word=0; word < text.length; word++){
       if (text[word].toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ){
-        console.log('a match! ', text[word], keyword);
-        console.log('return keyword ', keyword);
         return keyword
       }
     }
     return false;
-    // return matchWords;
-    // return str.split(' ').some(function(w){return w === word})
   }
   
   $scope.animateValue = function(id, start, end, duration)  {
