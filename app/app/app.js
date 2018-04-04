@@ -176,6 +176,25 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   $scope.ratings = ['None',1,2,3,4,5,6];
   $scope.keyword = '';
   $scope.keywordPages = '';
+  $scope.listOfUrls = [
+    {name: 'Home', state: 'home', url: '../app/views/home.html'},
+    {name: 'What We Do', state: 'what-we-do', url: '../app/views/what-we-do.html'},
+    {name: 'Our Organization', state: 'organization', url: '../app/views/organization.html'},
+    {name: 'Faces of our Members', state: 'faces', url: '../app/views/faq.html'},
+    {name: 'FAQ', state: 'faq', url: '../app/views/what-we-do.html'},
+    {name: 'News', state: 'news', url: '../app/views/news.html'},
+    {name: 'Contact Us', state: 'contact', url: '../app/views/contact.html'},
+    {name: 'Become a Member', state: 'become-member', url: '../app/views/become-member.html'},
+    {name: 'Online Membership Application', state: 'member-app', url: '../app/views/member-app.html'},
+    {name: 'Volunteer To Drive', state: 'volunteer-to-drive', url: '../app/views/volunteer-to-drive.html'},
+    {name: 'Online Volunteer Application', state: 'volunteer-app', url: '../app/views/volunteer-app.html'},
+    {name: 'Family Involvement', state: 'family', url: '../app/views/family.html'},
+    {name: 'Member Programs', state: 'member-programs', url: '../app/views/member-programs.html'},
+    {name: 'Pay Online', state: 'pay-online', url: '../app/views/pay-online.html'},
+    {name: 'Donate', state: 'donate', url: '../app/views/donate.html'},
+    {name: 'Corporate Partnership', state: 'corporate', url: '../app/views/corporate.html'},
+    {name: 'Newsletter', state: 'newsletter', url: '../app/views/newsletter.html'}
+  ];
   $scope.urlsWithKeyword = [];
 
   
@@ -250,14 +269,17 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   
   $scope.searchKeywordInApp = function(){
     console.log('inside searchkeywordinapp');
-    $http.get('../app/views/what-we-do.html')
-    .then(function(data){
-      console.log('data is ', data, data.data);
-      var matchWord = findWord($scope.keyword, data.data);
-      if (matchWord){
-        $scope.urlsWithKeyword.push('../app/views/what-we-do.html')
-      }
-    })
+    for (var x=0; x < $scope.listOfUrls.length; x++){
+      $http.get($scope.listOfUrls[x].url)
+      .then(function(data){
+        console.log('data is ', data, data.data);
+        var matchWord = findWord($scope.keyword, data.data);
+        if (matchWord){
+          $scope.urlsWithKeyword.push($scope.listOfUrls[x])
+        }
+      })
+    }
+
     $state.go('keyword-pages');
   }
   
