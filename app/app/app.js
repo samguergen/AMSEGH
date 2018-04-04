@@ -247,15 +247,22 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     console.log('inside searchkeywordinapp');
     $http.get('../app/views/what-we-do.html')
     .then(function(data){
-      // console.log('data is ', data, data.data);
-      var words = findWord($scope.keywordInApp, data.data);
-      console.log('words are ', words);
+      console.log('data is ', data, data.data);
+      var words = findWord($scope.keyword, data.data);
+      // console.log('words are ', words);
     })
 
   }
   
-  function findWord(word, str) {
-    return str.split(' ').some(function(w){return w === word})
+  function findWord(keyword, str) {
+    var text = str.split(' ');
+    console.log('keyword is ', keyword, 'text is ', text);
+    for (var word=0; word < text.length; word++){
+      if (text[word].toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ){
+        console.log('a match! ', text[word], keyword);
+      }
+    }
+    // return str.split(' ').some(function(w){return w === word})
   }
   
   $scope.animateValue = function(id, start, end, duration)  {
