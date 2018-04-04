@@ -101,6 +101,10 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         url: '/services-map',
         templateUrl: 'views/services-map.html'
       })
+      .state('keyword-pages', {
+        url: '/keyword-pages',
+        templateUrl: 'views/keyword-pages.html'
+      })
       .state('draft', {
         url: '/draft',
         templateUrl: 'views/draft.html'
@@ -132,7 +136,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 
 
-myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout)  {
+myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', '$state', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout, $state)  {
   console.log('inside main controller');
   
   $scope.affiliate = "Lanier";
@@ -171,7 +175,8 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   $scope.itnSources = ['Family','Friend','Speaker','Doctor','Radio','Television','Flier','Book','Phone','Agency on Aging', 'Social Worker','Internet','Referred by Current Member'];
   $scope.ratings = ['None',1,2,3,4,5,6];
   $scope.keyword = '';
-  $scope.keywordInApp = '';
+  $scope.keywordPages = '';
+  $scope.urlsWithKeyword = [];
 
   
   // $transitions.onStart({}, function($transition, $scope){
@@ -248,20 +253,27 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     $http.get('../app/views/what-we-do.html')
     .then(function(data){
       console.log('data is ', data, data.data);
-      var words = findWord($scope.keyword, data.data);
-      // console.log('words are ', words);
+      var matchWord = findWord($scope.keyword, data.data);
+      if (matchWord){
+        $scope.urlsWithKeyword.push('../app/views/what-we-do.html')
+      }
     })
-
+    $state.go('keyword-pages');
   }
   
   function findWord(keyword, str) {
+    // var matchWords = [];
     var text = str.split(' ');
     console.log('keyword is ', keyword, 'text is ', text);
     for (var word=0; word < text.length; word++){
       if (text[word].toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ){
         console.log('a match! ', text[word], keyword);
+        // matchWords.push(keywords);
+        return keyword
       }
     }
+    return false;
+    // return matchWords;
     // return str.split(' ').some(function(w){return w === word})
   }
   
