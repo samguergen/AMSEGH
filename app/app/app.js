@@ -268,13 +268,16 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   }
   
   $scope.searchKeywordInApp = function(){
+    var x; var y;
     console.log('inside searchkeywordinapp');
-    for (var x=0; x < $scope.listOfUrls.length; x++){
+    for (x=0; x < $scope.listOfUrls.length; x++){
+      console.log('first, x is ',x );
       $http.get($scope.listOfUrls[x].url)
       .then(function(data){
-        console.log('data is ', data, data.data);
+        console.log('second, x is ',x , $scope.listOfUrls[x]);
         var matchWord = findWord($scope.keyword, data.data);
         if (matchWord){
+          console.log('third, x is ', x, 'pushing that element ', $scope.listOfUrls[x]);
           $scope.urlsWithKeyword.push($scope.listOfUrls[x])
         }
       })
@@ -290,7 +293,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     for (var word=0; word < text.length; word++){
       if (text[word].toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ){
         console.log('a match! ', text[word], keyword);
-        // matchWords.push(keywords);
+        console.log('return keyword ', keyword);
         return keyword
       }
     }
