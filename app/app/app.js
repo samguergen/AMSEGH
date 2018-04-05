@@ -208,7 +208,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
           } else {
             return 'views/newsletter.html'
           } 
-        }
+        },
         params: {
           anchor: null
         }
