@@ -7,79 +7,79 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
     
       .state('home', {
         url: '/',
-        templateUrl: 'app/views/home.html'
+        templateUrl: 'views/home.html'
       })
       .state('become-member', {
         url: '/become-member',
-        templateUrl: 'app/views/become-member.html'
+        templateUrl: 'views/become-member.html'
       })
       .state('community', {
         url: '/community',
-        templateUrl: 'app/views/community.html'
+        templateUrl: 'views/community.html'
       })
       .state('contact', {
         url: '/contact',
-        templateUrl: 'app/views/contact.html'
+        templateUrl: 'views/contact.html'
       })
       .state('donate', {
         url: '/donate',
-        templateUrl: 'app/views/donate.html'
+        templateUrl: 'views/donate.html'
       })
       .state('faces', {
         url: '/faces-of-our-members',
-        templateUrl: 'app/views/faces.html'
+        templateUrl: 'views/faces.html'
       })
       .state('family', {
         url: '/family-involvement',
-        templateUrl: 'app/views/family.html'
+        templateUrl: 'views/family.html'
       })
       .state('faq', {
         url: '/faq',
-        templateUrl: 'app/views/faq.html'
+        templateUrl: 'views/faq.html'
       })
       .state('member-app', {
         url: '/member-application',
-        templateUrl: 'app/views/member-app.html'
+        templateUrl: 'views/member-app.html'
       })
       .state('member-programs', {
         url: '/member-programs',
-        templateUrl: 'app/views/member-programs.html'
+        templateUrl: 'views/member-programs.html'
       })
       .state('news', {
         url: '/news',
-        templateUrl: 'app/views/news.html'
+        templateUrl: 'views/news.html'
       })
       .state('non-rider-member', {
         url: '/non-rider-member',
-        templateUrl: 'app/views/non-rider-member.html'
+        templateUrl: 'views/non-rider-member.html'
       })
       .state('organization', {
         url: '/organization',
-        templateUrl: 'app/views/organization.html'
+        templateUrl: 'views/organization.html'
       })
       .state('pay-online', {
         url: '/pay-online',
-        templateUrl: 'app/views/pay-online.html'
+        templateUrl: 'views/pay-online.html'
       })
       .state('rider-stories', {
         url: '/rider-stories',
-        templateUrl: 'app/views/rider-stories.html'
+        templateUrl: 'views/rider-stories.html'
       })
       .state('what-we-do', {
         url: '/what-we-do',
-        templateUrl: 'app/views/what-we-do.html'
+        templateUrl: 'views/what-we-do.html'
       })
       .state('corporate', {
         url: '/corporate',
-        templateUrl: 'app/views/corporate.html'
+        templateUrl: 'views/corporate.html'
       })
       .state('volunteer-to-drive', {
         url: '/volunteer-to-drive',
-        templateUrl: 'app/views/volunteer-to-drive.html'
+        templateUrl: 'views/volunteer-to-drive.html'
       })
       .state('volunteer-app', {
         url: '/volunteer-app',
-        templateUrl: 'app/views/volunteer-app.html'
+        templateUrl: 'views/volunteer-app.html'
             // resolve: {
             //     formData: function ($scope) {
             //         $scope.formData = {};
@@ -88,26 +88,26 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
       })
       .state('newsletters', {
         url: '/newsletters',
-        templateUrl: 'app/views/newsletters.html',
+        templateUrl: 'views/newsletters.html',
         params: {
           anchor: null
         }
       })
       .state('add-pta-credit', {
         url: '/add-pta-credit',
-        templateUrl: 'app/views/add-pta-credit.html'
+        templateUrl: 'views/add-pta-credit.html'
       })
       .state('services-map', {
         url: '/services-map',
-        templateUrl: 'app/views/services-map.html'
+        templateUrl: 'views/services-map.html'
       })
       .state('keyword-pages', {
         url: '/keyword-pages',
-        templateUrl: 'app/views/keyword-pages.html'
+        templateUrl: 'views/keyword-pages.html'
       })
       .state('draft', {
         url: '/draft',
-        templateUrl: 'app/views/draft.html'
+        templateUrl: 'views/draft.html'
       })
 
   // default fall back route
