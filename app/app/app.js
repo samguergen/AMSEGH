@@ -7,79 +7,193 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
     
       .state('home', {
         url: '/',
-        templateUrl: 'views/home.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/home.html'
+          } else {
+            return 'views/home.html'
+          } 
+        }
       })
       .state('become-member', {
         url: '/become-member',
-        templateUrl: 'views/become-member.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/become-member.html'
+          } else {
+            return 'views/become-member.html'
+          } 
+        }
       })
       .state('community', {
         url: '/community',
-        templateUrl: 'views/community.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/community.html'
+          } else {
+            return 'views/community.html'
+          } 
+        }
       })
       .state('contact', {
         url: '/contact',
-        templateUrl: 'views/contact.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/contact.html'
+          } else {
+            return 'views/contact.html'
+          } 
+        }
       })
       .state('donate', {
         url: '/donate',
-        templateUrl: 'views/donate.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/donate.html'
+          } else {
+            return 'views/donate.html'
+          } 
+        }
       })
       .state('faces', {
         url: '/faces-of-our-members',
-        templateUrl: 'views/faces.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/faces.html'
+          } else {
+            return 'views/faces.html'
+          } 
+        }
       })
       .state('family', {
         url: '/family-involvement',
-        templateUrl: 'views/family.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/family.html'
+          } else {
+            return 'views/family.html'
+          } 
+        }
       })
       .state('faq', {
         url: '/faq',
-        templateUrl: 'views/faq.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/faq.html'
+          } else {
+            return 'views/faq.html'
+          } 
+        }
       })
       .state('member-app', {
         url: '/member-application',
-        templateUrl: 'views/member-app.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/member-app.html'
+          } else {
+            return 'views/member-app.html'
+          } 
+        }
       })
       .state('member-programs', {
         url: '/member-programs',
-        templateUrl: 'views/member-programs.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/member-programs.html'
+          } else {
+            return 'views/member-programs.html'
+          } 
+        }
       })
       .state('news', {
         url: '/news',
-        templateUrl: 'views/news.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/news.html'
+          } else {
+            return 'views/news.html'
+          } 
+        }
       })
       .state('non-rider-member', {
         url: '/non-rider-member',
-        templateUrl: 'views/non-rider-member.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/non-rider-member.html'
+          } else {
+            return 'views/non-rider-member.html'
+          } 
+        }
       })
       .state('organization', {
         url: '/organization',
-        templateUrl: 'views/organization.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/organization.html'
+          } else {
+            return 'views/organization.html'
+          } 
+        }
       })
       .state('pay-online', {
         url: '/pay-online',
-        templateUrl: 'views/pay-online.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/pay-online.html'
+          } else {
+            return 'views/pay-online.html'
+          } 
+        }
       })
       .state('rider-stories', {
         url: '/rider-stories',
-        templateUrl: 'views/rider-stories.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/rider-stories.html'
+          } else {
+            return 'views/rider-stories.html'
+          } 
+        }
       })
       .state('what-we-do', {
         url: '/what-we-do',
-        templateUrl: 'views/what-we-do.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/what-we-do.html'
+          } else {
+            return 'views/what-we-do.html'
+          } 
+        }
       })
       .state('corporate', {
         url: '/corporate',
-        templateUrl: 'views/corporate.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/corporate.html'
+          } else {
+            return 'views/corporate.html'
+          } 
+        }
       })
       .state('volunteer-to-drive', {
         url: '/volunteer-to-drive',
-        templateUrl: 'views/volunteer-to-drive.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/volunteer-to-drive.html'
+          } else {
+            return 'views/volunteer-to-drive.html'
+          } 
+        }
       })
       .state('volunteer-app', {
         url: '/volunteer-app',
-        templateUrl: 'views/volunteer-app.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/volunteer-app.html'
+          } else {
+            return 'views/volunteer-app.html'
+          } 
+        }
             // resolve: {
             //     formData: function ($scope) {
             //         $scope.formData = {};
@@ -88,26 +202,56 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
       })
       .state('newsletters', {
         url: '/newsletters',
-        templateUrl: 'views/newsletters.html',
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/newsletter.html'
+          } else {
+            return 'views/newsletter.html'
+          } 
+        }
         params: {
           anchor: null
         }
       })
       .state('add-pta-credit', {
         url: '/add-pta-credit',
-        templateUrl: 'views/add-pta-credit.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/add-pta-credit.html'
+          } else {
+            return 'views/add-pta-credit.html'
+          } 
+        }
       })
       .state('services-map', {
         url: '/services-map',
-        templateUrl: 'views/services-map.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/services-map.html'
+          } else {
+            return 'views/services-map.html'
+          } 
+        }
       })
       .state('keyword-pages', {
         url: '/keyword-pages',
-        templateUrl: 'views/keyword-pages.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/keyword-pages.html'
+          } else {
+            return 'views/keyword-pages.html'
+          } 
+        }
       })
       .state('draft', {
         url: '/draft',
-        templateUrl: 'views/draft.html'
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/draft.html'
+          } else {
+            return 'views/draft.html'
+          } 
+        }
       })
 
   // default fall back route
@@ -139,13 +283,15 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', '$state', '$rootScope', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout, $state, $rootScope)  {
   console.log('inside main controller');
-  
+
+  $scope.assetsPath = "assets";
   if (location.hostname === "localhost"){
     console.log("It's a local server!");
     $scope.listOfUrls = $scope.listOfUrlsProd;
+    $scope.assetsPath = "app/assets";
   }
     
-
+  
   $scope.affiliate = "Lanier";
   $scope.zoomLevel = 1;
   $scope.tab = 1;
