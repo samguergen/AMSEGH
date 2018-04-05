@@ -7,79 +7,79 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
     
       .state('home', {
         url: '/',
-        templateUrl: 'views/home.html'
+        templateUrl: 'app/views/home.html'
       })
       .state('become-member', {
         url: '/become-member',
-        templateUrl: 'views/become-member.html'
+        templateUrl: 'app/views/become-member.html'
       })
       .state('community', {
         url: '/community',
-        templateUrl: 'views/community.html'
+        templateUrl: 'app/views/community.html'
       })
       .state('contact', {
         url: '/contact',
-        templateUrl: 'views/contact.html'
+        templateUrl: 'app/views/contact.html'
       })
       .state('donate', {
         url: '/donate',
-        templateUrl: 'views/donate.html'
+        templateUrl: 'app/views/donate.html'
       })
       .state('faces', {
         url: '/faces-of-our-members',
-        templateUrl: 'views/faces.html'
+        templateUrl: 'app/views/faces.html'
       })
       .state('family', {
         url: '/family-involvement',
-        templateUrl: 'views/family.html'
+        templateUrl: 'app/views/family.html'
       })
       .state('faq', {
         url: '/faq',
-        templateUrl: 'views/faq.html'
+        templateUrl: 'app/views/faq.html'
       })
       .state('member-app', {
         url: '/member-application',
-        templateUrl: 'views/member-app.html'
+        templateUrl: 'app/views/member-app.html'
       })
       .state('member-programs', {
         url: '/member-programs',
-        templateUrl: 'views/member-programs.html'
+        templateUrl: 'app/views/member-programs.html'
       })
       .state('news', {
         url: '/news',
-        templateUrl: 'views/news.html'
+        templateUrl: 'app/views/news.html'
       })
       .state('non-rider-member', {
         url: '/non-rider-member',
-        templateUrl: 'views/non-rider-member.html'
+        templateUrl: 'app/views/non-rider-member.html'
       })
       .state('organization', {
         url: '/organization',
-        templateUrl: 'views/organization.html'
+        templateUrl: 'app/views/organization.html'
       })
       .state('pay-online', {
         url: '/pay-online',
-        templateUrl: 'views/pay-online.html'
+        templateUrl: 'app/views/pay-online.html'
       })
       .state('rider-stories', {
         url: '/rider-stories',
-        templateUrl: 'views/rider-stories.html'
+        templateUrl: 'app/views/rider-stories.html'
       })
       .state('what-we-do', {
         url: '/what-we-do',
-        templateUrl: 'views/what-we-do.html'
+        templateUrl: 'app/views/what-we-do.html'
       })
       .state('corporate', {
         url: '/corporate',
-        templateUrl: 'views/corporate.html'
+        templateUrl: 'app/views/corporate.html'
       })
       .state('volunteer-to-drive', {
         url: '/volunteer-to-drive',
-        templateUrl: 'views/volunteer-to-drive.html'
+        templateUrl: 'app/views/volunteer-to-drive.html'
       })
       .state('volunteer-app', {
         url: '/volunteer-app',
-        templateUrl: 'views/volunteer-app.html'
+        templateUrl: 'app/views/volunteer-app.html'
             // resolve: {
             //     formData: function ($scope) {
             //         $scope.formData = {};
@@ -88,30 +88,31 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
       })
       .state('newsletters', {
         url: '/newsletters',
-        templateUrl: 'views/newsletters.html',
+        templateUrl: 'app/views/newsletters.html',
         params: {
           anchor: null
         }
       })
       .state('add-pta-credit', {
         url: '/add-pta-credit',
-        templateUrl: 'views/add-pta-credit.html'
+        templateUrl: 'app/views/add-pta-credit.html'
       })
       .state('services-map', {
         url: '/services-map',
-        templateUrl: 'views/services-map.html'
+        templateUrl: 'app/views/services-map.html'
       })
       .state('keyword-pages', {
         url: '/keyword-pages',
-        templateUrl: 'views/keyword-pages.html'
+        templateUrl: 'app/views/keyword-pages.html'
       })
       .state('draft', {
         url: '/draft',
-        templateUrl: 'views/draft.html'
+        templateUrl: 'app/views/draft.html'
       })
 
   // default fall back route
   $urlRouterProvider.otherwise('/');
+  $locationProvider.html5Mode(true).hashPrefix('');
 
   // enable HTML5 Mode for SEO
   // $locationProvider.html5Mode(true);
@@ -138,6 +139,12 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', '$state', '$rootScope', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout, $state, $rootScope)  {
   console.log('inside main controller');
+  
+  if (location.hostname === "localhost"){
+    console.log("It's a local server!");
+    $scope.listOfUrls = $scope.listOfUrlsProd;
+  }
+    
 
   $scope.affiliate = "Lanier";
   $scope.zoomLevel = 1;
@@ -195,13 +202,35 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     {name: 'Corporate Partnership', state: 'corporate', url: '../app/views/corporate.html'},
     {name: 'Newsletter', state: 'newsletter', url: '../app/views/newsletter.html'}
   ];
+  $scope.listOfUrlsProd = [
+    {name: 'Home', state: 'home', url: 'views/home.html'},
+    {name: 'What We Do', state: 'what-we-do', url: 'views/what-we-do.html'},
+    {name: 'Our Organization', state: 'organization', url: 'views/organization.html'},
+    {name: 'Faces of our Members', state: 'faces', url: 'views/faq.html'},
+    {name: 'FAQ', state: 'faq', url: 'views/what-we-do.html'},
+    {name: 'News', state: 'news', url: 'views/news.html'},
+    {name: 'Contact Us', state: 'contact', url: 'views/contact.html'},
+    {name: 'Become a Member', state: 'become-member', url: 'views/become-member.html'},
+    {name: 'Online Membership Application', state: 'member-app', url: 'views/member-app.html'},
+    {name: 'Volunteer To Drive', state: 'volunteer-to-drive', url: 'views/volunteer-to-drive.html'},
+    {name: 'Online Volunteer Application', state: 'volunteer-app', url: 'views/volunteer-app.html'},
+    {name: 'Family Involvement', state: 'family', url: 'views/family.html'},
+    {name: 'Member Programs', state: 'member-programs', url: 'views/member-programs.html'},
+    {name: 'Pay Online', state: 'pay-online', url: 'views/pay-online.html'},
+    {name: 'Donate', state: 'donate', url: 'views/donate.html'},
+    {name: 'Corporate Partnership', state: 'corporate', url: 'views/corporate.html'},
+    {name: 'Newsletter', state: 'newsletter', url: 'views/newsletter.html'}
+  ];
   $scope.urlsWithKeyword = [];
 
-  $transitions.onStart({}, function(){
+  $transitions.onStart({}, function(transition){
       $scope.resetFormData();
-      if ($scope.keyword.length > 0){
+      if (transition.from().name === 'keyword-pages'){
         angular.element(document).ready(function () {
           $scope.searchKeyword();
+          highlight($scope.keyword);
+          $scope.urlsWithKeyword = [];
+          // $scope.keyword = '';
         });
       }
   });
@@ -262,8 +291,18 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     
   }
   
+  function highlight(text) {
+    var inputText = document.getElementById("main-content");
+    var innerHTML = inputText.innerHTML;
+    var index = innerHTML.indexOf(text);
+    if (index >= 0) { 
+     innerHTML = innerHTML.substring(0,index) + "<span class='highlighted'>" + innerHTML.substring(index,index+text.length) + "</span>" + innerHTML.substring(index + text.length);
+     inputText.innerHTML = innerHTML;
+    }
+  }
+  
   $scope.searchKeyword = function(){
-    var myHilitor = new Hilitor("wrapper-content");
+    var myHilitor = new Hilitor("main-content");
     myHilitor.apply($scope.keyword);
     console.log('my hilitor', myHilitor);
   }
@@ -434,23 +473,25 @@ myApp.filter('inputSelected', function(){
   return function(formData){
     var keyArr = [];
     var word = [];
-    Object.keys(formData).forEach(function(key){
-    if (formData[key]){
-    	var keyCap = key.charAt(0).toUpperCase() + key.slice(1);
-      for (var char = 0; char<keyCap.length; char++ ) {
-      	if (keyCap[char] == keyCap[char].toUpperCase()){
-          var spacedLetter = ' '+ keyCap[char];
-          word.push(spacedLetter);
-        }
-        else {
-          word.push(keyCap[char]);
+    if (formData){
+      Object.keys(formData).forEach(function(key){
+      if (formData[key]){
+      	var keyCap = key.charAt(0).toUpperCase() + key.slice(1);
+        for (var char = 0; char<keyCap.length; char++ ) {
+        	if (keyCap[char] == keyCap[char].toUpperCase()){
+            var spacedLetter = ' '+ keyCap[char];
+            word.push(spacedLetter);
+          }
+          else {
+            word.push(keyCap[char]);
+          }
         }
       }
+      keyArr.push(word.join(''))
+      word = [];
+      })
+      return keyArr.toString();
     }
-    keyArr.push(word.join(''))
-    word = [];
-    })
-    return keyArr.toString();
   }
 })
 

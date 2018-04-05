@@ -1658,6 +1658,9 @@ form textarea.form-control {font-size:25px}
   font-weight:bold;
   padding: 10px;
 }
+.highlighted {
+  background: yellow;
+}
 
 /* GENERAL */
 
