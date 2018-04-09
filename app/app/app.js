@@ -285,12 +285,13 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   console.log('inside main controller');
 
   $scope.assetsPath = "assets";
+  $scope.viewsPath = "../views"
+  
   if (location.hostname === "localhost"){
-    console.log("It's a local server!");
-    $scope.listOfUrls = $scope.listOfUrlsProd;
+    console.log("localhost server, staging env");
     $scope.assetsPath = "app/assets";
-  }
-    
+    $scope.viewsPath = "../app/views";
+  };
   
   $scope.affiliate = "Lanier";
   $scope.zoomLevel = 1;
@@ -329,6 +330,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   $scope.ratings = ['None',1,2,3,4,5,6];
   $scope.keyword = '';
   $scope.keywordPages = '';
+  $scope.urlsWithKeyword = [];
   $scope.listOfUrls = [
     {name: 'Home', state: 'home', url: '../app/views/home.html'},
     {name: 'What We Do', state: 'what-we-do', url: '../app/views/what-we-do.html'},
@@ -348,33 +350,13 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     {name: 'Corporate Partnership', state: 'corporate', url: '../app/views/corporate.html'},
     {name: 'Newsletter', state: 'newsletter', url: '../app/views/newsletter.html'}
   ];
-  $scope.listOfUrlsProd = [
-    {name: 'Home', state: 'home', url: 'views/home.html'},
-    {name: 'What We Do', state: 'what-we-do', url: 'views/what-we-do.html'},
-    {name: 'Our Organization', state: 'organization', url: 'views/organization.html'},
-    {name: 'Faces of our Members', state: 'faces', url: 'views/faq.html'},
-    {name: 'FAQ', state: 'faq', url: 'views/what-we-do.html'},
-    {name: 'News', state: 'news', url: 'views/news.html'},
-    {name: 'Contact Us', state: 'contact', url: 'views/contact.html'},
-    {name: 'Become a Member', state: 'become-member', url: 'views/become-member.html'},
-    {name: 'Online Membership Application', state: 'member-app', url: 'views/member-app.html'},
-    {name: 'Volunteer To Drive', state: 'volunteer-to-drive', url: 'views/volunteer-to-drive.html'},
-    {name: 'Online Volunteer Application', state: 'volunteer-app', url: 'views/volunteer-app.html'},
-    {name: 'Family Involvement', state: 'family', url: 'views/family.html'},
-    {name: 'Member Programs', state: 'member-programs', url: 'views/member-programs.html'},
-    {name: 'Pay Online', state: 'pay-online', url: 'views/pay-online.html'},
-    {name: 'Donate', state: 'donate', url: 'views/donate.html'},
-    {name: 'Corporate Partnership', state: 'corporate', url: 'views/corporate.html'},
-    {name: 'Newsletter', state: 'newsletter', url: 'views/newsletter.html'}
-  ];
-  $scope.urlsWithKeyword = [];
+  
 
-  $transitions.onStart({}, function(transition){
+  $transitions.onSuccess({}, function(transition){
       $scope.resetFormData();
       if (transition.from().name === 'keyword-pages'){
         angular.element(document).ready(function () {
           $scope.searchKeyword();
-          highlight($scope.keyword);
           $scope.urlsWithKeyword = [];
           // $scope.keyword = '';
         });
@@ -437,15 +419,15 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     
   }
   
-  function highlight(text) {
-    var inputText = document.getElementById("main-content");
-    var innerHTML = inputText.innerHTML;
-    var index = innerHTML.indexOf(text);
-    if (index >= 0) { 
-     innerHTML = innerHTML.substring(0,index) + "<span class='highlighted'>" + innerHTML.substring(index,index+text.length) + "</span>" + innerHTML.substring(index + text.length);
-     inputText.innerHTML = innerHTML;
-    }
-  }
+  // function highlight(text) {
+  //   var inputText = document.getElementById("main-content");
+  //   var innerHTML = inputText.innerHTML;
+  //   var index = innerHTML.indexOf(text);
+  //   if (index >= 0) { 
+  //    innerHTML = innerHTML.substring(0,index) + "<span class='highlighted'>" + innerHTML.substring(index,index+text.length) + "</span>" + innerHTML.substring(index + text.length);
+  //    inputText.innerHTML = innerHTML;
+  //   }
+  // }
   
   $scope.searchKeyword = function(){
     var myHilitor = new Hilitor("main-content");
