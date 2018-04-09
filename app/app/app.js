@@ -347,8 +347,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     {name: 'Member Programs', state: 'member-programs', url: $scope.viewsPath + '/member-programs.html'},
     {name: 'Pay Online', state: 'pay-online', url: $scope.viewsPath + '/pay-online.html'},
     {name: 'Donate', state: 'donate', url: $scope.viewsPath + '/donate.html'},
-    {name: 'Corporate Partnership', state: 'corporate', url: $scope.viewsPath + '/corporate.html'},
-    {name: 'Newsletter', state: 'newsletter', url: $scope.viewsPath + '/newsletter.html'}
+    {name: 'Corporate Partnership', state: 'corporate', url: $scope.viewsPath + '/corporate.html'}
   ];
   
 
@@ -356,10 +355,10 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
       $scope.resetFormData();
       if (transition.from().name === 'keyword-pages'){
         angular.element(document).ready(function () {
-          console.log('urls to other states are ', $scope.listOfUrls);
           $scope.searchKeyword();
+          $scope.scrollToTop();
           $scope.urlsWithKeyword = [];
-          // $scope.keyword = '';
+          $scope.keyword = '';
         });
       }
   });
@@ -416,24 +415,12 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     }
     else if (direction == 'less') {
       $scope.zoomLevel -= 1;
-    }
-    
+    }    
   }
-  
-  // function highlight(text) {
-  //   var inputText = document.getElementById("main-content");
-  //   var innerHTML = inputText.innerHTML;
-  //   var index = innerHTML.indexOf(text);
-  //   if (index >= 0) { 
-  //    innerHTML = innerHTML.substring(0,index) + "<span class='highlighted'>" + innerHTML.substring(index,index+text.length) + "</span>" + innerHTML.substring(index + text.length);
-  //    inputText.innerHTML = innerHTML;
-  //   }
-  // }
-  
+
   $scope.searchKeyword = function(){
     var myHilitor = new Hilitor("main-content");
     myHilitor.apply($scope.keyword);
-    console.log('my hilitor', myHilitor);
   }
   
   $scope.searchKeywordInApp = function(){
