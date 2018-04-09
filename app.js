@@ -21,11 +21,6 @@ app.use(express.static(__dirname + '/app'));
 // for all public requests try to use /app folder
 // app.use("/", express.static(__dirname + "/app"));
 
-// app.get('/what-we-do', function(req, res){
-//   res.sendFile(__dirname + '/app/what-we-do.html');
-// }
-
-
 
 
 
@@ -82,14 +77,11 @@ app.post('/sendmail', function(req, res){
         // transporter.close();
     });
     
-    app.all('/*', (req, res) => res.sendFile( path.resolve('app/index.html') ))
-    
-    
-    // app.all('/*', function(req, res, next) {
-    //     res.sendFile('index.html', { root: __dirname });
-    //     res.sendFile(__dirname + '/app/contact.html');
-    // });
-
+    app.get('/*', function(req, res) { 
+      console.log('redirecting index');
+      // res.sendFile(__dirname + '/index.html')
+      res.sendFile(__dirname + '/app/contact.html')
+    });
 
   
   res.end();
