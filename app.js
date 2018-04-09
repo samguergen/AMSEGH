@@ -84,11 +84,11 @@ app.post('/sendmail', function(req, res){
     
     
     
-    app.get("/what-we-do", function (request, response) {
-      console.log('Unknown API called, request is ', request, 'response is ', response);
-      // response.redirect('/#' + request.url);
-      response.redirect('/#/what-we-do');
+    app.all('/*', function(req, res, next) {
+        // Just send the index.html for other files to support HTML5Mode
+        res.sendFile('index.html', { root: __dirname });
     });
+
 
   
   res.end();
