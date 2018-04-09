@@ -332,23 +332,23 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   $scope.keywordPages = '';
   $scope.urlsWithKeyword = [];
   $scope.listOfUrls = [
-    {name: 'Home', state: 'home', url: '../app/views/home.html'},
-    {name: 'What We Do', state: 'what-we-do', url: '../app/views/what-we-do.html'},
-    {name: 'Our Organization', state: 'organization', url: '../app/views/organization.html'},
-    {name: 'Faces of our Members', state: 'faces', url: '../app/views/faq.html'},
-    {name: 'FAQ', state: 'faq', url: '../app/views/what-we-do.html'},
-    {name: 'News', state: 'news', url: '../app/views/news.html'},
-    {name: 'Contact Us', state: 'contact', url: '../app/views/contact.html'},
-    {name: 'Become a Member', state: 'become-member', url: '../app/views/become-member.html'},
-    {name: 'Online Membership Application', state: 'member-app', url: '../app/views/member-app.html'},
-    {name: 'Volunteer To Drive', state: 'volunteer-to-drive', url: '../app/views/volunteer-to-drive.html'},
-    {name: 'Online Volunteer Application', state: 'volunteer-app', url: '../app/views/volunteer-app.html'},
-    {name: 'Family Involvement', state: 'family', url: '../app/views/family.html'},
-    {name: 'Member Programs', state: 'member-programs', url: '../app/views/member-programs.html'},
-    {name: 'Pay Online', state: 'pay-online', url: '../app/views/pay-online.html'},
-    {name: 'Donate', state: 'donate', url: '../app/views/donate.html'},
-    {name: 'Corporate Partnership', state: 'corporate', url: '../app/views/corporate.html'},
-    {name: 'Newsletter', state: 'newsletter', url: '../app/views/newsletter.html'}
+    {name: 'Home', state: 'home', url: $scope.viewsPath + '/home.html'},
+    {name: 'What We Do', state: 'what-we-do', url: $scope.viewsPath + '/what-we-do.html'},
+    {name: 'Our Organization', state: 'organization', url: $scope.viewsPath + '/organization.html'},
+    {name: 'Faces of our Members', state: 'faces', url: $scope.viewsPath + '/faq.html'},
+    {name: 'FAQ', state: 'faq', url: $scope.viewsPath + '/what-we-do.html'},
+    {name: 'News', state: 'news', url: $scope.viewsPath + '/news.html'},
+    {name: 'Contact Us', state: 'contact', url: $scope.viewsPath + '/contact.html'},
+    {name: 'Become a Member', state: 'become-member', url: $scope.viewsPath + '/become-member.html'},
+    {name: 'Online Membership Application', state: 'member-app', url: $scope.viewsPath + '/member-app.html'},
+    {name: 'Volunteer To Drive', state: 'volunteer-to-drive', url: $scope.viewsPath + '/volunteer-to-drive.html'},
+    {name: 'Online Volunteer Application', state: 'volunteer-app', url: $scope.viewsPath + '/volunteer-app.html'},
+    {name: 'Family Involvement', state: 'family', url: $scope.viewsPath + '/family.html'},
+    {name: 'Member Programs', state: 'member-programs', url: $scope.viewsPath + '/member-programs.html'},
+    {name: 'Pay Online', state: 'pay-online', url: $scope.viewsPath + '/pay-online.html'},
+    {name: 'Donate', state: 'donate', url: $scope.viewsPath + '/donate.html'},
+    {name: 'Corporate Partnership', state: 'corporate', url: $scope.viewsPath + '/corporate.html'},
+    {name: 'Newsletter', state: 'newsletter', url: $scope.viewsPath + '/newsletter.html'}
   ];
   
 
@@ -356,6 +356,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
       $scope.resetFormData();
       if (transition.from().name === 'keyword-pages'){
         angular.element(document).ready(function () {
+          console.log('urls to other states are ', $scope.listOfUrls);
           $scope.searchKeyword();
           $scope.urlsWithKeyword = [];
           // $scope.keyword = '';
