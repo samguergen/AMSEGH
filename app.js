@@ -10,12 +10,20 @@ app.use(express.json()); //convert req to json
 app.use(express.static(__dirname + '/app'));
 
 
-app.use("/app*", function(req, res, next){
-    res.sendFile(__dirname + '/app/main.html');
+app.use("/banana", function(req, res, next){
+    res.sendFile(__dirname + '/app/contact.html');
+});
+
+app.use("/apple", function(req, res, next){
+    express.static(__dirname + '/app/corporate.html')
 });
 
 // for all public requests try to use /app folder
-app.use("/", express.static(__dirname + "/app"));
+// app.use("/", express.static(__dirname + "/app"));
+
+app.get('/what-we-do', function(req, res){
+  res.sendFile(__dirname + '/app/what-we-do.html');
+}
 
 
 
