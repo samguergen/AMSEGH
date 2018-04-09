@@ -28,6 +28,7 @@ app.use(express.static(__dirname + '/app'));
 
 
 
+
 app.post('/sendmail', function(req, res){
   console.log('post req', req.body);
 
@@ -80,6 +81,14 @@ app.post('/sendmail', function(req, res){
         console.log('Message sent: %s', info.messageId);
         // transporter.close();
     });
+    
+    
+    
+    app.get("/*", function (request, response) {
+      console.log('Unknown API called, request is ', request, 'response is ', response);
+      response.redirect('/#' + request.url);
+    });
+
   
   res.end();
 });
