@@ -10,6 +10,16 @@ app.use(express.json()); //convert req to json
 app.use(express.static(__dirname + '/app'));
 
 
+app.use("/app*", function(req, res, next){
+    res.sendFile(__dirname + '/app/main.html');
+});
+
+// for all public requests try to use /app folder
+app.use("/", express.static(__dirname + "/app"));
+
+
+
+
 app.post('/sendmail', function(req, res){
   console.log('post req', req.body);
 
