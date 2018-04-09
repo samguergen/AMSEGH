@@ -265,8 +265,8 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 
 
-  myApp.run(['$rootScope', '$location', '$window', '$state',
-    function($rootScope, $location, $window, $state) {      
+  myApp.run(['$rootScope', '$location', '$window', '$state', '$stateParams', 
+    function($rootScope, $location, $window, $state, $stateParams) {      
       $rootScope.$on('$routeChangeSuccess',
         function(event) {
           if (!$window.ga) {
@@ -278,8 +278,6 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         });
     }
   ]);
-
-
 
 myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', '$state', '$rootScope', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout, $state, $rootScope)  {
   console.log('inside main controller');
