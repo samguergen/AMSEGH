@@ -358,7 +358,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
           $scope.searchKeyword();
           $scope.scrollToTop();
           $scope.urlsWithKeyword = [];
-          $scope.keyword = '';
+          // $scope.keyword = '';
         });
       }
   });
