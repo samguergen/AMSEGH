@@ -84,9 +84,10 @@ app.post('/sendmail', function(req, res){
     
     
     
-    app.get("/*", function (request, response) {
+    app.get("/what-we-do", function (request, response) {
       console.log('Unknown API called, request is ', request, 'response is ', response);
-      response.redirect('/#' + request.url);
+      // response.redirect('/#' + request.url);
+      response.redirect('/#/what-we-do');
     });
 
   
