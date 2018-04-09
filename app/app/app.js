@@ -2,9 +2,9 @@ var myApp = angular.module('myApp', ['ui.router', 'ngAnimate']);
 
 myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
   console.log('inside of config block');
-  var viewsPath = "views";
+  var viewsPath = "views/";
   if (location.hostname === "localhost"){
-    viewsPath = "app/views";
+    viewsPath = "app/views/";
   };
 
   $stateProvider
