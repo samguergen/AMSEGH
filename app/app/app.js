@@ -253,6 +253,16 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
           } 
         }
       })
+      .state('wildcard', {
+        url: '/*',
+        templateUrl: function(){
+          if (location.hostname === "localhost"){
+            return 'app/views/home.html'
+          } else {
+            return 'views/home.html'
+          } 
+        }
+      })
 
   // default fall back route
   $urlRouterProvider.otherwise('/');
@@ -283,7 +293,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   console.log('inside main controller');
 
   $scope.assetsPath = "assets";
-  $scope.viewsPath = "../views"
+  $scope.viewsPath = "../views";
   
   if (location.hostname === "localhost"){
     console.log("localhost server, staging env");
