@@ -21,6 +21,10 @@ app.use(express.static(__dirname + '/app'));
 // for all public requests try to use /app folder
 // app.use("/", express.static(__dirname + "/app"));
 
+app.use(function (req, res) {
+    res.sendfile(__dirname + '/app/index.html');
+});
+
 
 
 
