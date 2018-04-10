@@ -92,7 +92,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
       })
       .state('newsletters', {
         url: '/newsletters',
-        templateUrl: viewsPath + 'newsletter.html',
+        templateUrl: viewsPath + 'newsletters.html',
         params: {
           anchor: null
         }
