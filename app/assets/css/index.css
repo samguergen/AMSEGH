@@ -1808,6 +1808,11 @@ h2,h3 {line-height:1.7}
   }
 }
 
+/*if links added to statement*/
+/*@media (max-width: 820px) {
+  .carousel-inner .item .carousel-statement {font-size:30px;}
+}*/
+
 
 /* MOBILE */
 
