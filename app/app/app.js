@@ -143,7 +143,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
     }
   ]);
 
-myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', '$state', '$rootScope', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout, $state, $rootScope)  {
+myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', '$state', '$rootScope', '$window', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout, $state, $rootScope, $window)  {
   console.log('inside main controller');
 
   $scope.assetsPath = "assets";
@@ -224,6 +224,11 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
         });
       }
   });
+  
+  //use this function instead of ng-href as ng-href is not compatible with html5mode
+  $scope.redirectToURL = function(url){
+    $window.location.href = url;    
+  }
   
   $scope.scrollTo = function(id) {
     var old = $location.hash();
