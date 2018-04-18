@@ -982,6 +982,12 @@ nav .dropdown-menu li.divider{
   font-style: italic;
 }
 
+
+.member-programs, .member-programs p, .community, .community p {
+  line-height:1.7;
+  font-size:20px;
+}
+
 .member-programs #first-hero-member {
   background-image: url('../images/dark/group.png');
   background-attachment: fixed;

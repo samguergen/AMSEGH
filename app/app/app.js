@@ -223,6 +223,10 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
           // $scope.keyword = '';
         });
       }
+      if ( (transition.to().name === 'member-app' || transition.to().name === 'volunteer-app') || 
+      (transition.from().name === 'what-we-do' && transition.to().name === 'member-programs') ){
+        $scope.scrollToTop();
+      }
   });
   
   //use this function instead of ng-href as ng-href is not compatible with html5mode
