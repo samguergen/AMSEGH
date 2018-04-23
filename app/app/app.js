@@ -223,8 +223,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
           // $scope.keyword = '';
         });
       }
-      if ( (transition.to().name === 'member-app' || transition.to().name === 'volunteer-app') || 
-      (transition.from().name === 'what-we-do' && transition.to().name === 'member-programs') ){
+      if (!$stateParams.anchor) {
         $scope.scrollToTop();
       }
   });
