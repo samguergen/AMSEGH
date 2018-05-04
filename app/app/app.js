@@ -3,7 +3,7 @@ var myApp = angular.module('myApp', ['ui.router', 'ngAnimate']);
 myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
   console.log('inside of config block');
   var viewsPath = "views/";
-  if (location.hostname === "localhost"){
+  if (location.host === "localhost:8080"){
     viewsPath = "app/views/";
   };
 
@@ -42,7 +42,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         templateUrl: viewsPath + 'faq.html'
       })
       .state('member-app', {
-        url: '/member-application',
+        url: '/member-app',
         templateUrl: viewsPath + 'member-app.html'
       })
       .state('member-programs', {
@@ -84,11 +84,6 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
       .state('volunteer-app', {
         url: '/volunteer-app',
         templateUrl: viewsPath + 'volunteer-app.html'
-            // resolve: {
-            //     formData: function ($scope) {
-            //         $scope.formData = {};
-            //     },
-            //   }
       })
       .state('newsletters', {
         url: '/newsletters',
@@ -121,10 +116,6 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
   // default fall back route
   $urlRouterProvider.otherwise('/');
   $locationProvider.html5Mode(true).hashPrefix('');
-
-  // enable HTML5 Mode for SEO
-  // $locationProvider.html5Mode(true);
-  // $locationProvider.html5mode({ enabled: true, requireBase: false });
 })
 
 
@@ -149,7 +140,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   $scope.assetsPath = "assets";
   $scope.viewsPath = "../views";
   
-  if (location.hostname === "localhost"){
+  if (location.host === "localhost:8080"){
     console.log("localhost server, staging env");
     $scope.assetsPath = "app/assets";
     $scope.viewsPath = "../app/views";
