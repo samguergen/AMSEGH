@@ -221,7 +221,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
   
   //use this function instead of ng-href as ng-href is not compatible with html5mode
   $scope.redirectToURL = function(url){
-    $window.location.href = url;    
+    $window.open(url, '_blank');    
   }
   
   $scope.scrollTo = function(id) {
@@ -343,10 +343,10 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
       "<p><strong>Subject:</strong>: " + $scope.formData.subject + "</p>\n " +
       "<p><strong>Message Body:</strong>: " + $scope.formData.messageBody + "</p>\n "
     }).then(function(res){
-        $scope.loading = false;
+        // $scope.loading = false;
         $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
     }).catch(function(err){
-        $scope.loading = false;
+        // $scope.loading = false;
         $scope.serverMessage = 'There was an error submitting your form. Please contact us by phone instead.';
     });
   }
@@ -393,10 +393,10 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
           text: $scope.formData,
           pdf: $scope.dataPDF
         }).then(function(res){
-            $scope.loading = false;
+            // $scope.loading = false;
             $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
         }).catch(function(err){
-          $scope.loading = false;
+          // $scope.loading = false;
           $scope.serverMessage = 'There was an error submitting your form. Please contact us, or consider submitting your form by paper instead.';
         });
       });
@@ -421,10 +421,10 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
           text: $scope.formData,
           pdf: $scope.dataPDF
         }).then(function(res){
-            $scope.loading = false;
+            // $scope.loading = false;
             $scope.serverMessage = 'Your form was submitted successfully. You should hear back from us soon.';
         }).catch(function(err){
-          $scope.loading = false;
+          // $scope.loading = false;
           $scope.serverMessage = 'There was an error submitting your form. Please contact us, or consider submitting your form by paper instead.';
         });
       });
