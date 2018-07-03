@@ -24,7 +24,7 @@ var allPages = ['/home','/what-we-do','/organization','/faces-of-our-members','/
 
 MongoClient.connect('mongodb://itnadmin:itnUser0136!@ds153700.mlab.com:53700/itnlanier', function(err, client) {
   if (err) { 
-    console.log('db not connecting, but inside mongo block', err);
+    console.log('db not connecting, but inside mongo block - 1', err);
   };
   db = client.db('itnlanier');
   
@@ -149,7 +149,7 @@ app.post('/sendmail', function(req, res){
     
     MongoClient.connect('mongodb://itnadmin:itnUser0136!@ds153700.mlab.com:53700/itnlanier', function(err, client) {
       if (err) { 
-        console.log('db not connecting, but inside mongo block', err);
+        console.log('db not connecting, but inside mongo block - 2', err);
       };
       db = client.db('itnlanier');
 
