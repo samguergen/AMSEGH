@@ -816,6 +816,23 @@ $scope.checkRequiredFields = function(formType){
           $scope.serverMessage = 'There was an error submitting your form. Please contact us, or consider submitting your form by paper instead.';
         });
       });
+  };
+  
+  $scope.regenerateMultiPagePDF = function(formObj, formType) {
+    console.log('inside renegerate pdf');
+    $scope.formData = formObj;
+    $scope.formType = formType;
+    kendo.drawing.drawDOM($("#backup-pdf"), {
+          paperSize: "A4",
+          margin: { left: "3cm", top: "1cm", right: "1cm", bottom: "1cm" },
+          template: $("#page-template").html()
+      }).then(function (group) {
+          return kendo.drawing.exportPDF(group);
+      })
+      .done(function (data) {
+        console.log('data is ', data);
+        $scope.dataPDF = data;
+      });
   }
   
 }]);
