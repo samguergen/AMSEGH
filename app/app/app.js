@@ -120,6 +120,10 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
           formType: null
         }
       })
+      .state('backup-pdf', {
+        url: '/backup-pdf',
+        templateUrl: viewsPath + 'backup-pdf.html'
+      })
       .state('wildcard', {
         url: '/*',
         templateUrl: viewsPath + 'home.html'
@@ -151,7 +155,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
     }
   ]);
 
-myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', '$state', '$rootScope', '$window', 'FormService', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout, $state, $rootScope, $window, FormService)  {
+myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorScroll', '$location', '$stateParams', '$timeout', '$state', '$rootScope', '$window', 'FormService', '$sce', function ($scope, $transitions, $http, $anchorScroll, $location, $stateParams, $timeout, $state, $rootScope, $window, FormService, $sce)  {
   console.log('inside main controller');
 
   $scope.assetsPath = "assets";
@@ -680,6 +684,20 @@ $scope.checkRequiredFields = function(formType){
   $scope.validateContactInputs = function(){
     return ($scope.formData.name && $scope.formData.email && $scope.formData.phone && $scope.formData.subject && $scope.formData.messageBody ) ? true : false;
   };
+  
+  $scope.removeIfEmpty = function(formField){
+  console.log('form field is ', formField, 'type is ', typeof(formField), 'length is ', formField.length)
+  if ((formField.constructor === Object) && (Object.keys(formField).length < 1)){
+    console.log('false1');
+    return false;
+  } else if ((formField.constructor === String) && (formField.length < 1)){
+    console.log('false2');
+    return false;
+  } else {
+    console.log('true');
+    return true;
+  }
+};
 
   //for contact and newsletter forms
   $scope.submitForm = function(formType){
@@ -898,6 +916,14 @@ myApp.filter('filterLongObj', function($filter){
       return formObj;
     }
   }
+});
+
+myApp.filter('newlines', function ($sce) {
+    return function(formObj) {
+      if (formObj){
+        return $sce.trustAsHtml(formObj.replace(/,/g,'<br>'));
+      }
+    }
 });
 
 
