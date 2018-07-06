@@ -256,20 +256,21 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
 
   
 
-  $transitions.onSuccess({}, function(transition){
-      $scope.resetFormData();
+    $transitions.onSuccess({}, function(transition){
+      if (transition.from().name !== 'dashboard'){
+        $scope.resetFormData();
+      }
       if (transition.from().name === 'keyword-pages'){
         angular.element(document).ready(function () {
           $scope.searchKeyword();
           $scope.scrollToTop();
           $scope.urlsWithKeyword = [];
-          // $scope.keyword = '';
         });
       }
       if (!$stateParams.anchor) {
         $scope.scrollToTop();
       }
-  });
+    });
   
   //use this function instead of ng-href as ng-href is not compatible with html5mode
   $scope.redirectToURL = function(url){
@@ -822,18 +823,27 @@ $scope.checkRequiredFields = function(formType){
     console.log('inside renegerate pdf');
     $scope.formData = formObj;
     $scope.formType = formType;
-    kendo.drawing.drawDOM($("#backup-pdf"), {
-          paperSize: "A4",
-          margin: { left: "3cm", top: "1cm", right: "1cm", bottom: "1cm" },
-          template: $("#page-template").html()
-      }).then(function (group) {
-          return kendo.drawing.exportPDF(group);
+    console.log("formdata is ", $scope.formData);
+    $state.go('backup-pdf')
+      .then(function(){
+        console.log('begin kendo drawing');
+        kendo.drawing.drawDOM($("#backupPdf"), {
+              paperSize: "A4",
+              margin: { left: "3cm", top: "1cm", right: "1cm", bottom: "1cm" },
+              template: $("#page-template").html()
+          }).then(function (group) {
+            console.log('kendo complete, exporting pdf ', group);
+              return kendo.drawing.exportPDF(group);
+          }).catch(function(err){
+            console.log('could not generate kendo, error is ', err);
+          })
+          .done(function (data) {
+            console.log('data is ', data);
+            // $scope.dataPDF = data;
+            $scope.base64ToPDF($scope.formType, $scope.formData);
+          });
       })
-      .done(function (data) {
-        console.log('data is ', data);
-        $scope.dataPDF = data;
-      });
-  }
+}
   
 }]);
 
