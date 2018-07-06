@@ -246,6 +246,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
       vehicleDescription: {},
       changeOfStatus: {},
       drivingExperience: {},
+      references: {},
       firstReference: {},
       secondReference: {},
       thirdReference: {},
@@ -260,21 +261,21 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
 
   
 
-    $transitions.onSuccess({}, function(transition){
-      if (transition.from().name !== 'dashboard'){
-        $scope.resetFormData();
-      }
-      if (transition.from().name === 'keyword-pages'){
-        angular.element(document).ready(function () {
-          $scope.searchKeyword();
-          $scope.scrollToTop();
-          $scope.urlsWithKeyword = [];
-        });
-      }
-      if (!$stateParams.anchor) {
+  $transitions.onSuccess({}, function(transition){
+    if (transition.from().name !== 'dashboard'){
+      $scope.resetFormData();
+    }
+    if (transition.from().name === 'keyword-pages'){
+      angular.element(document).ready(function () {
+        $scope.searchKeyword();
         $scope.scrollToTop();
-      }
-    });
+        $scope.urlsWithKeyword = [];
+      });
+    }
+    if (!$stateParams.anchor) {
+      $scope.scrollToTop();
+    }
+  });
   
   //use this function instead of ng-href as ng-href is not compatible with html5mode
   $scope.redirectToURL = function(url){
@@ -446,6 +447,7 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
       $scope.pdfUrl = URL.createObjectURL(currentBlob);
       // $("#output").append($("<a/>").attr({href: $scope.pdfUrl}).append("Download"));
       // $scope.redirectToURL($scope.pdfUrl);
+      console.log('redirecting to pdf', formType, formObj);
       window.location.href = $scope.pdfUrl;
     }
     else {
@@ -489,7 +491,21 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     console.log('formobj is ', $scope.formObj);
   };
   
+  $scope.askBeforeDelete = function(formType, formObj){
+    $scope.formData = formObj;
+    $scope.formType = formType;
+    $(document).ready(function(){
+      $('#deleteAppModal').modal('show');
+    })
+  }
+  
   $scope.deleteForm = function(formType, formObj){
+    console.log('inside deleteform, form type', formType, 'form obj', formObj);
+    if (formType === 'memberapp' || formType === 'volunteerapp'){
+      $(document).ready(function(){
+        $('#deleteAppModal').modal('hide');
+      })
+    }
     FormService.deleteForm(formType, formObj).then(function(data){
       console.log('record successfully deleted ', data);
       $scope.getApps();
@@ -685,19 +701,20 @@ $scope.checkRequiredFields = function(formType){
     return ($scope.formData.name && $scope.formData.email && $scope.formData.phone && $scope.formData.subject && $scope.formData.messageBody ) ? true : false;
   };
   
+  
   $scope.removeIfEmpty = function(formField){
-  console.log('form field is ', formField, 'type is ', typeof(formField), 'length is ', formField.length)
-  if ((formField.constructor === Object) && (Object.keys(formField).length < 1)){
-    console.log('false1');
-    return false;
-  } else if ((formField.constructor === String) && (formField.length < 1)){
-    console.log('false2');
-    return false;
-  } else {
-    console.log('true');
-    return true;
-  }
-};
+    console.log('form field is ', formField, 'type is ', typeof(formField), 'length is ', formField.length)
+    if ((formField.constructor === Object) && (Object.keys(formField).length < 1)){
+      console.log('false1');
+      return false;
+    } else if ((formField.constructor === String) && (formField.length < 1)){
+      console.log('false2');
+      return false;
+    } else {
+      console.log('true');
+      return true;
+    }
+  };
 
   //for contact and newsletter forms
   $scope.submitForm = function(formType){
@@ -925,7 +942,6 @@ myApp.filter('newlines', function ($sce) {
       }
     }
 });
-
 
 myApp.filter('timestamp', function(){
   return function(formObj){
