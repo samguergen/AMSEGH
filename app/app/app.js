@@ -878,7 +878,14 @@ $scope.checkRequiredFields = function(formType){
             $scope.base64ToPDF($scope.formType, $scope.formData);
           });
       })
-}
+};
+  
+  $scope.showFormStage = function(stageNum) {
+      console.log('inside form stage, stagenum is ', stageNum, 'type is ', typeof(stageNum));
+      if (stageNum) {
+        $scope.tab = stageNum
+      }
+  };
   
 }]);
 
