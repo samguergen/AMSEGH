@@ -880,10 +880,10 @@ $scope.checkRequiredFields = function(formType){
       })
 };
   
-  $scope.showFormStage = function(stageNum) {
-      console.log('inside form stage, stagenum is ', stageNum, 'type is ', typeof(stageNum));
-      if (stageNum) {
-        $scope.tab = stageNum
+  $scope.showFormPage = function(pageNum) {
+      console.log('inside form page, pagenum is ', pageNum);
+      if (pageNum) {
+        $scope.tab = pageNum
       }
   };
   
