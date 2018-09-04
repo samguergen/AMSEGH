@@ -679,7 +679,7 @@ $scope.checkRequiredFields = function(formType){
       'Page7: Agreement signature': $scope.formData.agreement.signature1, 
       'Page7: Agreement date': $scope.formData.agreement.date1, 
       'Page7: Informed consent signature': $scope.formData.agree1, 
-      'Page7: Informed consent date': $scope.formData.agreement.signature2,
+      'Page7: Informed consent date': $scope.formData.agreement.signature2
     }
   } else {
     return true;
