@@ -1122,8 +1122,9 @@
     <br><label for="email">Email: </label><br>
     {{formData.email}}
     
-    <div ng-if="familyMembership">
+    <!-- <div ng-if="familyMembership"> -->
       <h3>Second Rider Information</h3>
+      <h5><em>Fields should be filled if applicant selected family membership</em></h5>
       
       <br><label for="second rider name">Second Rider's Name: <span style="color:red">*</span></label><br>
       {{formData.secondRiderName}}
@@ -1131,8 +1132,7 @@
       {{formData.secondRiderDob}}
       <br><label for="second rider special needs">Second Rider's Special Needs and Mobility Assistance: <span style="color:red">*</span></label><br>
       {{formData.secondRiderSpecialNeeds | inputSelected}}
-      
-    </div>
+    <!-- </div> -->
     
     <h3>First Emergency Contact</h3>
     
