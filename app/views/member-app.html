@@ -52,7 +52,8 @@
                         </div>
                       </div>
                       
-                      <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Next</button>
+
+                        <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.membership.$invalid || itnForm.riderName.$invalid || itnForm.street.$invalid || itnForm.city.$invalid || itnForm.state.$invalid || itnForm.zip.$invalid || itnForm.years.$invalid || itnForm.isMailingAddress.$invalid || itnForm.isBillingAddress.$invalid || itnForm.isYearRoundResidence.$invalid ||itnForm.primaryPhone.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Next</button>
                       
 
                         <div class="form-group ta-center" ng-class="{ 'has-error' : itnForm.membership.$invalid }">
@@ -195,7 +196,7 @@
                           
                         </div>
 
-                        <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                        <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.membership.$invalid || itnForm.riderName.$invalid || itnForm.street.$invalid || itnForm.city.$invalid || itnForm.state.$invalid || itnForm.zip.$invalid || itnForm.years.$invalid || itnForm.isMailingAddress.$invalid || itnForm.isBillingAddress.$invalid || itnForm.isYearRoundResidence.$invalid ||itnForm.primaryPhone.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
 
                         </div><!--tab 1-->
 
@@ -237,7 +238,7 @@
                           </div>
                         </div>
                         
-                        <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Next</button>
+                       <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.firstEmName.$invalid || itnForm.firstEmRelationship.$invalid || itnForm.firstEmStreet.$invalid || itnForm.firstEmCity.$invalid || itnForm.firstEmState.$invalid || itnForm.firstEmZip.$invalid || itnForm.firstEmHomePhone.$invalid || itnForm.secondEmName.$invalid || itnForm.secondEmRelationship.$invalid || itnForm.secondEmStreet.$invalid || itnForm.secondEmCity.$invalid || itnForm.secondEmState.$invalid || itnForm.secondEmZip.$invalid || itnForm.secondEmHomePhone.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Next</button>
                         <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Previous</button>  
 
 
@@ -402,7 +403,7 @@
                             
                             </div><!--second emergency contact-->
                             
-                            <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                             <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.firstEmName.$invalid || itnForm.firstEmRelationship.$invalid || itnForm.firstEmStreet.$invalid || itnForm.firstEmCity.$invalid || itnForm.firstEmState.$invalid || itnForm.firstEmZip.$invalid || itnForm.firstEmHomePhone.$invalid || itnForm.secondEmName.$invalid || itnForm.secondEmRelationship.$invalid || itnForm.secondEmStreet.$invalid || itnForm.secondEmCity.$invalid || itnForm.secondEmState.$invalid || itnForm.secondEmZip.$invalid || itnForm.secondEmHomePhone.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                             <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                             
                           </div><!--tab2-->
@@ -444,7 +445,7 @@
                               </div>
                             </div>
                             
-                            <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Next</button>
+                            <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.heardAboutItn.$invalid || itnForm.sendInfoToRelativeFriendBiz.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Next</button>
                             <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Previous</button>  
                             
                             <div class="form-group ta-center"  ng-class="{ 'has-error' : itnForm.heardAboutItn.$invalid && !itnForm.heardAboutItn.$pristine }">
@@ -536,7 +537,7 @@
                               
                             </div><!--sendinfo-->
                             
-                            <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                            <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.heardAboutItn.$invalid || itnForm.sendInfoToRelativeFriendBiz.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                             <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                             
                           </div><!--tab3-->
@@ -576,7 +577,7 @@
                               </div>
                             </div>
                             
-                            <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Next</button>
+                            <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.customerInfoGender.$invalid || itnForm.dob.$invalid || itnForm.maritalStatus.$invalid || itnForm.livingArrangement.$inval || itnForm.dwellingArrangement.$invalid || itnForm.languages.$inval || itnForm.currentTransportationMeans.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Next</button>
                             <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Previous</button>  
                             
                             <p><em>ITNAmerica respects your privacy and will keep all customer information confidential. The following information allows us to provide better service to our customers, and helps us better understand the circumstances that customers face when they apply to use the ITN for rides.</em></p>
@@ -650,7 +651,7 @@
                                 <span ng-if="itnForm.currentTransportationMeans.$error.required && !itnForm.currentTransportationMeans.$pristine" class="help-block">{{errorMessages.required}}</span>
                             </div>
                           
-                            <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                            <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.customerInfoGender.$invalid || itnForm.dob.$invalid || itnForm.maritalStatus.$invalid || itnForm.livingArrangement.$inval || itnForm.dwellingArrangement.$invalid || itnForm.languages.$inval || itnForm.currentTransportationMeans.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                             <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
 
                         </div><!--tab4-->
@@ -690,7 +691,7 @@
                             </div>
                           </div>
                           
-                          <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Next</button>
+                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.memberOfProfessionalOrgOrUnion.$invalid || itnForm.servedInMilitary.$invalid || itnForm.specialNeeds.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin:-50px">Next</button>
                           <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Previous</button>  
                           
                           <h2>Civic Engagement</h2>
@@ -743,7 +744,7 @@
                             <span ng-if="itnForm.specialNeeds.$error.required && !itnForm.specialNeeds.$pristine" class="help-block">{{errorMessages.required}}</span>
                           </div>
                           
-                          <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.memberOfProfessionalOrgOrUnion.$invalid || itnForm.servedInMilitary.$invalid || itnForm.specialNeeds.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                           <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           
                         </div><!--tab5-->
@@ -784,7 +785,7 @@
                             </div>
                           </div>
                           
-                          <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Next</button>
+                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.hasLicense.$invalid || itnForm.ownVehicle.$invalid || itnForm.driverImprovementClasses.$invalid || itnForm.drivenLast10Years.$invalid || itnForm.currentlyDrive.$invalid || itnForm.reduceCostWithRideshare.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin:-50px">Next</button>
                           <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Previous</button>  
                           
                           <h2>Driving Information</h2>
@@ -944,7 +945,7 @@
                             <label class="checkbox-inline"><input ng-model="formData.wantInfoOnPrograms.giftCertificate" type="checkbox" value="gift_certificate">Gift Certificate</label>
                           </div>
                           
-                          <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button> 
+                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.hasLicense.$invalid || itnForm.ownVehicle.$invalid || itnForm.driverImprovementClasses.$invalid || itnForm.drivenLast10Years.$invalid || itnForm.currentlyDrive.$invalid || itnForm.reduceCostWithRideshare.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                           <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           
                           
@@ -1067,7 +1068,7 @@
                             <span ng-if="itnForm.agree2.$error.required && !itnForm.agree2.$pristine" class="help-block">{{errorMessages.required}}</span>
                           </div>
 
-                          <button type="submit" ng-disabled="itnForm.$invalid || loading" class="btn btn-lg pull-right btn-danger" style="background:#e05944; margin-left:2%">Submit</button>
+                          <button type="submit" ng-disabled="itnForm.signature1.$invalid || itnForm.date1.$invalid || itnForm.agree1.$invalid || itnForm.signature2.$invalid || itnForm.date2.$invalid || itnForm.agree2.$invalid ||loading" class="btn btn-lg pull-right btn-danger" style="background:#e05944; margin-left:2%">Submit</button>
                           <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           
                         </div><!--tab7-->
