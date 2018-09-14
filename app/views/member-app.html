@@ -446,7 +446,6 @@
                               </div>
                             </div>
                             
-                      <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Next</button>
                             <button type="button" ng-click="nextTabMemberApp()" ng-disabled="!formData.heardAboutItn || formData.heardAboutItn.radio === false || !formData.sendInfoToRelativeFriendBiz || formData.sendInfoToRelativeFriendBiz.radio === false" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Next</button>
                             <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Previous</button>  
                             
@@ -579,8 +578,7 @@
                               </div>
                             </div>
                             
-                      <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Next</button>
-                            <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.customerInfoGender.$invalid || itnForm.dob.$invalid || itnForm.maritalStatus.$invalid || itnForm.livingArrangement.$inval || itnForm.dwellingArrangement.$invalid || itnForm.languages.$inval || itnForm.currentTransportationMeans.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Next</button>
+                            <button type="button" ng-click="nextTabMemberApp()" ng-disabled="!formData.customerInfo.gender || formData.customerInfo.gender.radio === false || !formData.customerInfo.dateOfBirth || formData.customerInfo.dateOfBirth.radio === false || !formData.customerInfo.livingArrangement || formData.customerInfo.livingArrangement.radio === false || !formData.customerInfo.dwellingArrangement || formData.customerInfo.dwellingArrangement.radio === false || !formData.customerInfo.maritalStatus || formData.customerInfo.maritalStatus.radio === false || !formData.customerInfo.currentTransportationMeans || formData.customerInfo.currentTransportationMeans.radio === false" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Next</button>
                             <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Previous</button>  
                             
                             <p><em>ITNAmerica respects your privacy and will keep all customer information confidential. The following information allows us to provide better service to our customers, and helps us better understand the circumstances that customers face when they apply to use the ITN for rides.</em></p>
@@ -654,7 +652,7 @@
                                 <span ng-if="itnForm.currentTransportationMeans.$error.required && !itnForm.currentTransportationMeans.$pristine" class="help-block">{{errorMessages.required}}</span>
                             </div>
                           
-                            <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.customerInfoGender.$invalid || itnForm.dob.$invalid || itnForm.maritalStatus.$invalid || itnForm.livingArrangement.$inval || itnForm.dwellingArrangement.$invalid || itnForm.languages.$inval || itnForm.currentTransportationMeans.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                            <button type="button" ng-click="nextTabMemberApp()" ng-disabled="!formData.customerInfo.gender || formData.customerInfo.gender.radio === false || !formData.customerInfo.dateOfBirth || formData.customerInfo.dateOfBirth.radio === false || !formData.customerInfo.livingArrangement || formData.customerInfo.livingArrangement.radio === false || !formData.customerInfo.dwellingArrangement || formData.customerInfo.dwellingArrangement.radio === false || !formData.customerInfo.maritalStatus || formData.customerInfo.maritalStatus.radio === false || !formData.customerInfo.currentTransportationMeans || formData.customerInfo.currentTransportationMeans.radio === false" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                             <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
 
                         </div><!--tab4-->
@@ -695,7 +693,7 @@
                           </div>
                           
                       <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Next</button>
-                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.memberOfProfessionalOrgOrUnion.$invalid || itnForm.servedInMilitary.$invalid || itnForm.specialNeeds.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin:-50px">Next</button>
+                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="!formData.memberOfProfessionalOrgOrUnion || formData.memberOfProfessionalOrgOrUnion.radio === false || !formData.customerInfo.servedInMiliary ||  formData.customerInfo.servedInMiliary.radio === false || !formData.customerInfo.specialNeeds || formData.customerInfo.specialNeeds.radio === false" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin:-50px">Next</button>
                           <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Previous</button>  
                           
                           <h2>Civic Engagement</h2>
@@ -748,7 +746,7 @@
                             <span ng-if="itnForm.specialNeeds.$error.required && !itnForm.specialNeeds.$pristine" class="help-block">{{errorMessages.required}}</span>
                           </div>
                           
-                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.memberOfProfessionalOrgOrUnion.$invalid || itnForm.servedInMilitary.$invalid || itnForm.specialNeeds.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="!formData.memberOfProfessionalOrgOrUnion || formData.memberOfProfessionalOrgOrUnion.radio === false || !formData.customerInfo.servedInMiliary ||  formData.customerInfo.servedInMiliary.radio === false || !formData.customerInfo.specialNeeds || formData.customerInfo.specialNeeds.radio === false" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                           <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           
                         </div><!--tab5-->
@@ -789,8 +787,7 @@
                             </div>
                           </div>
                           
-                                                <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Next</button>
-                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.hasLicense.$invalid || itnForm.ownVehicle.$invalid || itnForm.driverImprovementClasses.$invalid || itnForm.drivenLast10Years.$invalid || itnForm.currentlyDrive.$invalid || itnForm.reduceCostWithRideshare.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin:-50px">Next</button>
+                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="!formData.drivingInfo.hasLicense || formData.drivingInfo.hasLicense.radio === false || !formData.drivingInfo.ownVehicle || formData.drivingInfo.ownVehicle.radio === false || !formData.drivingInfo.driverImprovementClasses|| formData.drivingInfo.driverImprovementClasses.radio === false ||  !formData.drivingInfo.drivenLast10Years || formData.drivingInfo.drivenLast10Years.radio === false || !formData.drivingInfo.currentlyDrive || formData.drivingInfo.currentlyDrive.radio === false || !formData.drivingInfo.reduceCostWithRideshare || formData.drivingInfo.reduceCostWithRideshare.radio === false" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin:-50px">Next</button>
                           <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin:-50px 0 30px 2%">Previous</button>  
                           
                           <h2>Driving Information</h2>
@@ -950,7 +947,7 @@
                             <label class="checkbox-inline"><input ng-model="formData.wantInfoOnPrograms.giftCertificate" type="checkbox" value="gift_certificate">Gift Certificate</label>
                           </div>
                           
-                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.hasLicense.$invalid || itnForm.ownVehicle.$invalid || itnForm.driverImprovementClasses.$invalid || itnForm.drivenLast10Years.$invalid || itnForm.currentlyDrive.$invalid || itnForm.reduceCostWithRideshare.$invalid" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
+                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="!formData.drivingInfo.hasLicense || formData.drivingInfo.hasLicense.radio === false || !formData.drivingInfo.ownVehicle || formData.drivingInfo.ownVehicle.radio === false || !formData.drivingInfo.driverImprovementClasses|| formData.drivingInfo.driverImprovementClasses.radio === false ||  !formData.drivingInfo.drivenLast10Years || formData.drivingInfo.drivenLast10Years.radio === false || !formData.drivingInfo.currentlyDrive || formData.drivingInfo.currentlyDrive.radio === false || !formData.drivingInfo.reduceCostWithRideshare || formData.drivingInfo.reduceCostWithRideshare.radio === false" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button>
                           <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           
                           
