@@ -900,7 +900,8 @@
                             </div>
                           </div>
                           
-                          <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Next</button>
+                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="formData.vehicleDescription.vehicleOwner === undefined || !formData.vehicleDescription.make || !formData.vehicleDescription.model || !formData.vehicleDescription.year || !formData.vehicleDescription.registrationPlate || !formData.vehicleDescription.numberOfDoors || !formData.vehicleDescription.registrationExpiration || !formData.vehicleDescription.insuranceCompany || !formData.vehicleDescription.agent || !formData.vehicleDescription.agentEmailAddress || formData.vehicleDescription.canTransportWheelChair === undefined || formData.vehicleDescription.canTransportWalker === undefined || !formData.vehicleDescription.generalCondition || !formData.vehicleDescription.passengerCapacity || formData.vehicleDescription.canTransportPets === undefined || formData.vehicleDescription.hasLargeTrunk === undefined || formData.vehicleDescription.hasCoveredTruckBed === undefined || formData.vehicleDescription.onlyVehicle === undefined || !formData.vehicleDescription.signature || !formData.vehicleDescription.date || formData.vehicleDescription.authorize === undefined" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Next</button>
+                            
                           <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%;margin-top:-50px">Previous</button>  
                           
                           <h2>Vehicle Description Information</h2>
@@ -1029,7 +1030,7 @@
                           
                           <div class="form-group" ng-class="{ 'has-error' : itnForm.passengerCapacity.$invalid && !itnForm.passengerCapacity.$pristine }">
                             <label for="passenger capacity">Passenger capacity: <span style="color:red">*</span></label><br>
-                            <input type="text" class="form-control" id="passengerCapacity" name="passengerCapacity" ng-model="formData.vehicleDescription.passengerCapacity" placeholder="number of people" required>people
+                            <input type="text" class="form-control" id="passengerCapacity" name="passengerCapacity" ng-model="formData.vehicleDescription.passengerCapacity" placeholder="number of people" required>
                             
                             <span ng-if="itnForm.passengerCapacity.$error.required && !itnForm.passengerCapacity.$pristine" class="help-block">{{errorMessages.required}}</span>
                           </div>
@@ -1229,8 +1230,8 @@
                           
                           <div class="ta-center required-warning"><em>Please enter all required fields with an asterik (<span style="color:red">*</span>) before going to the next page.</em></div>
                           
-                          <!-- <button type="button" ng-click="nextTabMemberApp()" ng-disabled="itnForm.vehicleOwner.$invalid || itnForm.make1.$invalid || itnForm.model1.$invalid || itnForm.year1.$invalid || itnForm.registrationPlate1.$invalid || itnForm.numberOfDoors1.$invalid || itnForm.registrationExpiration1.$invalid || itnForm.insuranceCompany1.$invalid || itnForm.agent1.$invalid || itnForm.agentAddress1.$invalid || itnForm.canTransportWalker.$invalid ||  itnForm.canTransportWheelChair.$invalid || itnForm.passengerCapacity.$invalid || itnForm.generalCondition.$invalid || itnForm.canTransportPets.$invalid || itnForm.hasLargeTrunk.$invalid || itnForm.hasCoveredTruckBed.$invalid ||  itnForm.onlyVehicle.$invalid || itnForm.signature4.$invalid || itnForm.date4.$invalid ||  itnForm.agree4.$invalid" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Next</button> -->
-                          <button type="button" ng-click="nextTabMemberApp()" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%;">Next</button>
+                          <button type="button" ng-click="nextTabMemberApp()" ng-disabled="formData.vehicleDescription.vehicleOwner === undefined || !formData.vehicleDescription.make || !formData.vehicleDescription.model || !formData.vehicleDescription.year || !formData.vehicleDescription.registrationPlate || !formData.vehicleDescription.numberOfDoors || !formData.vehicleDescription.registrationExpiration || !formData.vehicleDescription.insuranceCompany || !formData.vehicleDescription.agent || !formData.vehicleDescription.agentEmailAddress || formData.vehicleDescription.canTransportWheelChair === undefined || formData.vehicleDescription.canTransportWalker === undefined || !formData.vehicleDescription.generalCondition || !formData.vehicleDescription.passengerCapacity || formData.vehicleDescription.canTransportPets === undefined || formData.vehicleDescription.hasLargeTrunk === undefined || formData.vehicleDescription.hasCoveredTruckBed === undefined || formData.vehicleDescription.onlyVehicle === undefined || !formData.vehicleDescription.signature || !formData.vehicleDescription.date || formData.vehicleDescription.authorize === undefined" class="next-tab btn btn-lg  btn-primary pull-right itn-green-bg" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg" style="margin-left:2%">Next</button>
+                          
                           <button type="button" ng-click="nextTabMemberApp('prev')" class="next-tab btn btn-lg btn-primary pull-right itn-green-bg"  style="margin-left:2%">Previous</button>  
                           
                         </div><!--tab5-->
