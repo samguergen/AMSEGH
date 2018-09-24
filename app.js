@@ -12,6 +12,7 @@ var env = require(__dirname + '/env-vars.js');
 var gmail_login = env.gmail_login;
 var gmail_pass = env.gmail_pass;
 var db;
+var request = require('request');
 // var router = express.Router();
 
 
@@ -81,7 +82,7 @@ MongoClient.connect('mongodb://itnadmin:itnUser0136!@ds153700.mlab.com:53700/itn
   
   app.get('/getContentFromURL', function(req, res) {
     console.log('params are ', req.query.url)
-    req.get(req.query.url, function(err,result,body) {
+    request.get(req.query.url, function(err,result,body) {
       res.send(result.body)   
     });
   });

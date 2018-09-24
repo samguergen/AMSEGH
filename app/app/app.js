@@ -890,7 +890,7 @@ $scope.checkRequiredFields = function(formType){
   $scope.getContentFromURL = function(url) {
     APIService.getContentFromURL(url).then(function(data){
       console.log('url content data from func is ', data);
-      $scope.ridesData = data;
+      $scope.ridesData = data.data;
     })
   }
   
