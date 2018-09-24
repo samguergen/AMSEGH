@@ -79,6 +79,13 @@ MongoClient.connect('mongodb://itnadmin:itnUser0136!@ds153700.mlab.com:53700/itn
       })
   }); // end of /getAdmin get request
   
+  app.get('/getContentFromURL', function(req, res) {
+    console.log('params are ', req.query.url)
+    req.get(req.query.url, function(err,result,body) {
+      res.send(result.body)   
+    });
+  });
+  
   app.delete('/deleteForm/:formId', function (req,res) {
     console.log('req param', req.params.formId, 'req query', req.query.formType);
       var tableName = req.query.formType;

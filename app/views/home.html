@@ -110,9 +110,10 @@
   </div>
 </div><!--MISSION-->
 
-<div class="jumbotron section progress container" id="progress">
+<div class="jumbotron section progress container" id="progress" ng-init="getContentFromURL('https://www.itnamerica.org/rides')">
   <div class="container">
     <h1>Our Progress</h1>
+    rides data: {{ridesData}}
     <div class="row progress-steps">
       <div class="col-sm-6">
         <div class="numbers" id="rides-given">4031</div>
