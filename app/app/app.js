@@ -878,7 +878,7 @@ $scope.checkRequiredFields = function(formType){
             $scope.base64ToPDF($scope.formType, $scope.formData);
           });
       })
-};
+  };
   
   $scope.showFormPage = function(pageNum) {
       console.log('inside form page, pagenum is ', pageNum);
