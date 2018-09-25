@@ -892,14 +892,14 @@ $scope.checkRequiredFields = function(formType){
       console.log('url content data from func is ', data.data);
       $scope.contentURL = data.data;
     })
-  }
+  };
   
   $scope.getRidesData = function(){
-    APIService.getAllRides().then(function(data){
-      console.log('rides data from func is ', data);
-      $scope.ridesData = data.data;
-    })
-};
+      APIService.getAllRides().then(function(data){
+        console.log('rides data from func is ', data);
+        $scope.ridesData = data.data;
+      })
+  };
   
 }]);
 
