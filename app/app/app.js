@@ -889,10 +889,17 @@ $scope.checkRequiredFields = function(formType){
   
   $scope.getContentFromURL = function(url) {
     APIService.getContentFromURL(url).then(function(data){
-      console.log('url content data from func is ', data);
-      $scope.ridesData = data.data;
+      console.log('url content data from func is ', data.data);
+      $scope.contentURL = data.data;
     })
   }
+  
+  $scope.getRidesData = function(){
+    APIService.getAllRides().then(function(data){
+      console.log('rides data from func is ', data);
+      $scope.ridesData = data.data;
+    })
+};
   
 }]);
 
@@ -1034,11 +1041,15 @@ myApp.service('APIService', function($http){
   this.getContentFromURL = function(url) {
     return $http.get('getContentFromUrl', {params: {url: url}})
       .then(function(data){
-        console.log('response is ', data);
         return data;
       })
   }
-})
+  this.getAllRides = function(){
+    return $http.get('/getAllRides').then(function(data){
+      return data;
+    })
+  }
+});
 
 
 
