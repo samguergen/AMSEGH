@@ -51,6 +51,7 @@ nav .navbar-header img {
 nav .navbar-nav {
   margin-top: 50px;
   margin-right: 2%;
+  width:80%;
 }
 nav .navbar-nav li:hover {
   background: #399eaa;
@@ -73,6 +74,7 @@ nav .navbar-nav a .glyphicon{
   z-index: 1;
   position:absolute;
   opacity:0.4;
+  margin-left: -10%;
 }
 nav .navbar-nav a .fa {
   color: #e96640;
@@ -80,13 +82,15 @@ nav .navbar-nav a .fa {
   z-index:1;
   position:absolute;
   margin-top: -20px;
-  margin-left: -20%;
+  margin-left: -25%;
   opacity:0.4;
 }
 nav .navbar-nav .title {
   z-index:2;
   position:relative;
   color:#002361;
+  font-family: Verdana;
+  font-size: 27px;
 }
   
 nav .dropdown-menu {
@@ -1938,6 +1942,7 @@ h2,h3 {line-height:1.7}
   nav .navbar-nav>li {
    float:none;
    display:inline-block;
+   padding: 0 1%;
   }
   nav .navbar-nav ul .dropdown li a {
         text-align: left !important;
