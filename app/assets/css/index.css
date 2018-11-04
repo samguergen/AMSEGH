@@ -1615,7 +1615,8 @@ form textarea.form-control {font-size:25px}
   margin: auto;
   margin-bottom: 10px;
   color:white;
-  background: #399eaa;
+  background: #e96640;
+  font-weight: bold;
 }
 #footer .container .col-sm-4{
   margin-top:30px;
@@ -1774,7 +1775,8 @@ form textarea.form-control {font-size:25px}
 /* OFFICIAL WIDGETS */
 
 .btn-lg {
-  background: #529ba8;
+  /* background: #529ba8; */
+  background: #e96640;
   border-color: white;
   padding: 16px 20px;
   font-size: 22px;
