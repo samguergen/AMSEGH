@@ -726,22 +726,22 @@ $scope.checkRequiredFields = function(formType){
     if (formType === 'contact' && contactInputsValid){
       console.log('submitting valid contact form');
       formObj = {
-        from: '"ITNLanier Web User" <donotreply@itnamerica.com>',
-        to: 'itnamerica2018@gmail.com',
-        subject: "ITNLanier Contact Form Submitted",
+        from: '"Visiteur Web AMSGH.org" <donotreply@itnamerica.com>',
+        to: 'amsmgr.secretariat@gmail.com',
+        subject: "Nouveau message d'un visiteur web de votre site AMSEGH.org",
         text: $scope.formData,
         html: "<p><strong>Name:</strong>: " + $scope.formData.name + "</p>\n" +
         "<p><strong>Email:</strong>: " + $scope.formData.email + "</p>\n " +
-        "<p><strong>Mobile:</strong>: " + $scope.formData.phone + "</p>\n " +
-        "<p><strong>Subject:</strong>: " + $scope.formData.subject + "</p>\n " +
-        "<p><strong>Message Body:</strong>: " + $scope.formData.messageBody + "</p>\n ",
+        "<p><strong>Numero:</strong>: " + $scope.formData.phone + "</p>\n " +
+        "<p><strong>Sujet:</strong>: " + $scope.formData.subject + "</p>\n " +
+        "<p><strong>Message:</strong>: " + $scope.formData.messageBody + "</p>\n ",
         formType: $scope.formType
       }
     } else if (formType === 'newsletter' && $scope.formData.email){
       console.log('submitting valid newsletter form');
         formObj = {
           from: '"ITNLanier Web User" <donotreply@itnamerica.com>',
-          to: 'itnamerica2018@gmail.com',
+          to: 'amsmgr.secretariat@gmail.com',
           subject: "ITNLanier Request to be added to Newsletter",
           text: $scope.formData,
           html: "<p><strong>Email:</strong>: " + $scope.formData.email + "</p> ",

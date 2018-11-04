@@ -54,7 +54,6 @@ nav .navbar-nav {
   width:80%;
 }
 nav .navbar-nav li:hover {
-  /* background: #399eaa; */
   background: #ef9b33;
   border-radius:5px;
   color:white;
@@ -483,9 +482,9 @@ nav .dropdown-menu li.divider{
 
 
 .contact .first-hero {
-  background-image: url('../images/dark/spanish-woman.png');
+  background-image: url('../images/haiti/dark/photo5.jpg');
   background-attachment: fixed;
-  background-position: center center;
+  background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
   height: 400px;

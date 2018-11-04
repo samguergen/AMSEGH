@@ -7,18 +7,18 @@
 <head>
   
     <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4084855-50"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4084855-50"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'UA-4084855-50');
-  </script>
+  </script> -->
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AMSEGH</title>
+  <title>ACTION ET MISSION SOCIALE POUR LES ENFANTS DE GUERIN EN HAÏTI (AMSEGH) </title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/icons/favicon.ico">
@@ -86,13 +86,13 @@
                 <span class="title">COMPRENDRE</span>
                 <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a ui-sref="what-we-do">A Propos</a></li>
-                <li><a ui-sref="what-we-do">Notre Mission</a></li>
-                <li><a ui-sref="what-we-do">Nos Projets</a></li>
-                <li><a ui-sref="faces">Nos Membres</a></li>
-                <li><a ui-sref="faq">Question-Reponses</a></li>
-                <li><a ui-sref="news">Presse</a></li>
-                <li><a ui-sref="news">Album Photo</a></li>
+                <li><a ui-sref="home({anchor: 'propos'})">A Propos</a></li>
+                <li><a ui-sref="home({anchor: 'mission'})">Notre Mission</a></li>
+                <li><a ui-sref="home({anchor: 'projets'})">Nos Projets</a></li>
+                <li><a ui-sref="membres">Nos Membres</a></li>
+                <li><a ui-sref="faq">Questions Fréquentes</a></li>
+                <li><a ui-sref="presse">Presse</a></li>
+                <li><a ui-sref="photos">Album Photo</a></li>
                 <!-- <li role="separator" class="divider"></li> -->
                 <li><a ui-sref="contact">Nous Contacter</a></li>
               </ul>
@@ -104,9 +104,9 @@
                 <span class="title">AGIR</span>
                 <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a ui-sref="organization">Nous Rejoindre</a></li>
-                <li><a ui-sref="what-we-do">Nos Projets</a></li>
-                <li><a ui-sref="what-we-do">Faire un Don</a></li>
+                <li><a ui-sref="joindre">Nous Joindre</a></li>
+                <li><a ui-sref="home({anchor: 'projets'})">Nos Projets</a></li>
+                <li><a ui-sref="don">Faire un Don</a></li>
                 <!-- <li><a style="margin-left:10%" ui-sref="member-app">Online Member Application</a></li> -->
               </ul>
             </li>
@@ -118,7 +118,7 @@
             </li>
             
             <li>
-              <a ui-sref="pay-online"><span class="glyphicon glyphicon-heart"></span> 
+              <a ui-sref="don"><span class="glyphicon glyphicon-heart"></span> 
                 <span class="title">FAIRE UN DON</span>
               </a>
             </li>
@@ -147,11 +147,13 @@
   <div id="footer">
     <div class="container">
         <div class="col-sm-4">
-          <div class="footer-title">ITN<em>{{affiliate | uppercase}}</em></div>
+          <div class="footer-title">AMSEGH</em></div>
           <hr>
           <ul>
-            <li>(678) 696-0360</li>
-            <li><a ui-sref="contact">Contact Us</a></li>
+            <li>8, rue de Cronstadt, 75015 Paris, France</li>
+            <li>Secrétariat: (06) 67-41-03-91 </li>
+            <li>amsmgr.secretariat@gmail.com</li>
+            <li>R.N.A : W751182419</li>
             <li ng-hide="session"><a ui-sref="login">Login</a></li>
             <li ng-show="session"><a ng-click="logout()">Logout</a></li>
             <li ng-show="session"><a ui-sref="dashboard">Admin Portal</a></li>

@@ -151,7 +151,7 @@ app.post('/sendmail', function(req, res){
         subject: req.body.subject, // Subject line   
         text: JSON.stringify(req.body.text), // plain text body
         html: req.body.html, // html body
-        bcc: 'info@itnlanier.org'
+        bcc: 'samguergen@gmail.com'
     };
   } else {
     console.log('sending email with neither');

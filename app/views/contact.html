@@ -1,41 +1,39 @@
 <div class="contact non-rider">
       
     <div class="jumbotron section first-hero" id="first-hero-contact">
-      <h1>Contact Us</h1>
+      <h1>Contactez-Nous</h1>
     </div><!--first-hero-->
     
-    <div class="jumbotron section" style="background: #c7dfe4">
+    <div class="jumbotron section" style="background: rgba(233, 102, 64, 0.03)">
       
       <div class="container">
-        <h3>Want to learn more about ITN<em>{{affiliate}}</em>? Have questions or comments? Use the form below, or call us at (678) 696-0360. Or visit us at 999 Chestnut St. SE, Gainesville, GA 30501.</h3>
+        <h3>Pour nous contacter par téléphone, veuillez appeler notre secrétariat au <em>(06) 67-41-03-91</em>. En personne, vouz pouvez nous visiter au <em>8, rue de Cronstadt, 75015 Paris</em>, et par email, au <em>amsmgr.secretariat@gmail.com</em> ou en utilisant le formulaire ci-contre.</h3>
         <hr align="center">
         <div class="col-sm-12">
-            <div class="form-area" style="background: #c7dfe4;border:none"> 
+            <div class="form-area" style="background: rgba(233, 102, 64, 0.36);border:none;margin-top:5%"> 
               <form name="itnForm" novalidate ng-submit="submitForm('contact')" role="contact form" ng-model="formData">
-                <br style="clear:both">
-                <h3 style="margin-bottom: 25px; text-align: center">Contact ITN<em>{{affiliate}}</em></h3>
                         
                 <div class="form-group" ng-class="{ 'has-error' : itnForm.name.$invalid && !itnForm.name.$pristine }">
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Name" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.name" required>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Votre nom" ng-minlength="minlength" ng-maxlength="maxlength" ng-model="formData.name" required>
                   <span ng-if="itnForm.name.$error.required && !itnForm.name.$pristine" class="help-block">{{errorMessages.required}}</span>
                   <span ng-if="itnForm.name.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
                   <span ng-if="itnForm.name.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
                 </div>
               
                 <div class="form-group" ng-class="{ 'has-error' : itnForm.email.$invalid && !itnForm.email.$pristine }">
-                  <input type="text" class="form-control" id="email" name="email" ng-pattern="emailPattern" placeholder="Email" ng-model="formData.email" required>
+                  <input type="text" class="form-control" id="email" name="email" ng-pattern="emailPattern" placeholder="Votre email" ng-model="formData.email" required>
                   <span ng-if="itnForm.email.$error.required && !itnForm.email.$pristine" class="help-block">{{errorMessages.required}}</span>
                   <span ng-if="itnForm.email.$error.pattern" class="help-block">{{errorMessages.email}}</span>
                 </div>
               
                 <div class="form-group" ng-class="{ 'has-error' : itnForm.mobile.$invalid && !itnForm.mobile.$pristine }">
-                  <input type="text" class="form-control" id="mobile" name="mobile" ng-pattern="phonePattern" placeholder="Mobile Number. Example: 617-344-9876" ng-model="formData.phone" required>
+                  <input type="text" class="form-control" id="mobile" name="mobile" ng-pattern="phonePattern" placeholder="Votre numéro de téléphone. Example: 617-344-9876" ng-model="formData.phone" required>
                   <span ng-if="itnForm.mobile.$error.required && !itnForm.mobile.$pristine" class="help-block">{{errorMessages.required}}</span>
                   <span ng-if="itnForm.mobile.$error.pattern" class="help-block">{{errorMessages.phone}}</span>
                 </div>
                 
                 <div class="form-group" ng-class="{ 'has-error' : itnForm.subject.$invalid && !itnForm.subject.$pristine }">
-                  <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" ng-model="formData.subject" ng-minlength="minlength" ng-maxlength="maxlength" required>
+                  <input type="text" class="form-control" id="subject" name="subject" placeholder="Sujet" ng-model="formData.subject" ng-minlength="minlength" ng-maxlength="maxlength" required>
                   <span ng-if="itnForm.subject.$error.required && !itnForm.subject.$pristine" class="help-block">{{errorMessages.required}}</span>
                   <span ng-if="itnForm.subject.$error.minlength" class="help-block">{{errorMessages.minlength}}</span>
                   <span ng-if="itnForm.subject.$error.maxlength" class="help-block">{{errorMessages.maxlength}}</span>
@@ -49,9 +47,9 @@
                     <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
                 </div>
                 
-                <p>Note: To subscribe to our newsletter, please click <a ui-sref="news">here</a>.</p>
+                <p>Note: Pour souscrire a notre newsletter, veuillez clicker <a ui-sref="news">ce lien</a>.</p>
                 
-                <p ng-if="loading"><em>Loading. Please wait</em></p>
+                <p ng-if="loading"><em>Veuillez Patienter</em></p>
                 <p style="color:red; margin-top:50px"><strong>{{serverMessage}}</strong></p>
                   
                 <input type="submit" id="submit" class="btn btn-lg btn-primary pull-right itn-green-bg" value="Send" style="margin-left:2%">
@@ -76,13 +74,13 @@
         var max = 2000;
         var len = $(this).val().length;
         if (len >= max) {
-            $('#characterLeft').text('You have reached the limit');
+            $('#characterLeft').text('Vous avez atteint la limite');
             $('#characterLeft').addClass('text-danger');
             $('#submit').addClass('disabled');            
         } 
         else {
             var ch = max - len;
-            $('#characterLeft').text(ch + ' characters left');
+            $('#characterLeft').text(ch + ' characteres restants');
             $('#submit').removeClass('disabled');
             $('#characterLeft').removeClass('red');            
         }
