@@ -90,11 +90,10 @@ nav .navbar-nav .title {
   position:relative;
   color:#002361;
   font-family: Verdana;
-  font-size: 27px;
+  font-size: 20px;
 }
   
 nav .dropdown-menu {
-  /* background: #399eaa; */
   background: #ef9b33;
   color:white;
   font-weight: bold;
@@ -1903,13 +1902,6 @@ h2,h3 {line-height:1.7}
 /* RESPONSIVE */
 
 
-/* @media (max-width: 1521px) {
-  .navbar .navbar-nav {
-      margin-top: 6%;
-  }
-} */
-
-
 @media (max-width: 1210px) {
   .carousel-inner .item, .carousel-inner .item img {height:400px;}
   .family #gift-cert-img1, .family #gift-cert-img2 {visibility:hidden;}
@@ -1938,7 +1930,7 @@ h2,h3 {line-height:1.7}
   }
 }
 
-@media (min-width: 768px) and (max-width: 1533px) {
+@media (min-width: 768px) and (max-width: 1433px) {
   .navbar-header {
     margin-left:auto !important;
     margin-right:auto !important;
