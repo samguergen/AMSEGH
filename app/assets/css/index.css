@@ -67,10 +67,28 @@ nav .navbar-nav a {
 /*nav .navbar-nav a:hover{color: #e05944 !important;}*/
 nav .navbar-nav a:hover { color: white !important}
 nav .navbar-nav a:hover i, nav .navbar-nav a:hover span { color: white !important}
-nav .navbar-nav a .glyphicon{color: #e96640}
-nav .navbar-nav a .fa {color: #e96640}
-
-
+nav .navbar-nav a .glyphicon{
+  color: #e96640;
+  font-size: 60px;
+  z-index: 1;
+  position:absolute;
+  opacity:0.4;
+}
+nav .navbar-nav a .fa {
+  color: #e96640;
+  font-size: 60px;
+  z-index:1;
+  position:absolute;
+  margin-top: -20px;
+  margin-left: -20%;
+  opacity:0.4;
+}
+nav .navbar-nav .title {
+  z-index:2;
+  position:relative;
+  color:#002361;
+}
+  
 nav .dropdown-menu {
   background: #399eaa;
   color:white;
