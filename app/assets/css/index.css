@@ -54,7 +54,8 @@ nav .navbar-nav {
   width:80%;
 }
 nav .navbar-nav li:hover {
-  background: #399eaa;
+  /* background: #399eaa; */
+  background: #ef9b33;
   border-radius:5px;
   color:white;
   font-weight: bold;
@@ -94,7 +95,8 @@ nav .navbar-nav .title {
 }
   
 nav .dropdown-menu {
-  background: #399eaa;
+  /* background: #399eaa; */
+  background: #ef9b33;
   color:white;
   font-weight: bold;
   border-radius:5px;
@@ -1900,6 +1902,13 @@ h2,h3 {line-height:1.7}
 /* RESPONSIVE */
 
 
+/* @media (max-width: 1521px) {
+  .navbar .navbar-nav {
+      margin-top: 6%;
+  }
+} */
+
+
 @media (max-width: 1210px) {
   .carousel-inner .item, .carousel-inner .item img {height:400px;}
   .family #gift-cert-img1, .family #gift-cert-img2 {visibility:hidden;}
@@ -1911,6 +1920,9 @@ h2,h3 {line-height:1.7}
     margin-top: 90px;
     border: 0px;
     text-align: center;
+  }
+  .navbar {
+    height: 170px;
   }
   button.navbar-toggle {
     left: 50%;
@@ -1935,6 +1947,7 @@ h2,h3 {line-height:1.7}
   nav .navbar-nav {
     margin-top:0;
     margin-bottom:25px;
+    margin-top: 6%;
   }
 }
 
