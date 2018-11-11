@@ -8,9 +8,9 @@
       <h5>Photos below</h5>
       
       <div class="photo-wrap ta-center" style="margin:auto">
-        <div ng-repeat="photoUrl in photoUrls" style="border-radius:5px;text-align:center">
-          <img ng-src="{{photoUrl}}" style="float:left;padding:1%;width:300px;height:300px"/>
-        </div>
+          <div class="repeat-img" ng-repeat="photoUrl in photoUrls" style="display:inline">
+            <img ng-src="{{photoUrl}}" style="padding:1%;width:300px;height:300px;border-radius:5px;text-align:center"/>
+          </div>
       </div>
 
 
