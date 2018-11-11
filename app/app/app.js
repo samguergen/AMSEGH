@@ -914,16 +914,14 @@ $scope.checkRequiredFields = function(formType){
   };
   
   $scope.loadAlbumPhotosAsImgSrc = function(){
-    console.log('inside album photos func');
     var photoCount = 10;
     var photoUrl;
     var baseUrl = "assets/images/haiti/photo";
-    for (var i = 1; i<photoCount;i++){
+    for (var i = 1; i <= photoCount;i++){
       photoUrl = baseUrl + i + ".jpg";
-      console.log("each photo url is ", photoUrl);
       $scope.photoUrls.push(photoUrl)
     }
-  }
+  };
   
 }]);
 
