@@ -923,6 +923,11 @@ $scope.checkRequiredFields = function(formType){
     }
   };
   
+  $scope.seeImgFull = function(photoUrl){
+    $scope.showImg = true;
+    $scope.currentPhotoUrl = photoUrl;
+  }
+  
 }]);
 
 

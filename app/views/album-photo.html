@@ -1,20 +1,25 @@
-<div class="album" ng-init="loadAlbumPhotosAsImgSrc()">
+<div class="album" ng-init="loadAlbumPhotosAsImgSrc()" ng-hide="showImg">
   <div class="jumbotron section first-hero" id="first-hero-album">
     <h1>Album Photo</h1>
   </div><!--first-hero-->
   
   <div class="jumbotron section">
     <div class="container ta-center" style="margin:auto;width:80%">
-      <h5>Photos below</h5>
-      
+
       <div class="photo-wrap ta-center" style="margin:auto">
           <div class="repeat-img" ng-repeat="photoUrl in photoUrls" style="display:inline">
-            <img ng-src="{{photoUrl}}"/>
+            <span ng-click="seeImgFull(photoUrl)"><img ng-src="{{photoUrl}}"/></span>
           </div>
       </div>
 
 
     </div>
+  </div>
+</div>
+
+<div class="img-full" ng-show="showImg">
+  <div class="container-fluid">
+    <img ng-src="{{currentPhotoUrl}}" style="height:100%;width:auto"/>
   </div>
 </div>
 
