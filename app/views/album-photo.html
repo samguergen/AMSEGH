@@ -1,0 +1,15 @@
+<div class="album" ng-init="loadAlbumPhotosAsImgSrc()">
+  <div class="jumbotron section first-hero" id="first-hero-album">
+    <h1>Album Photo</h1>
+  </div><!--first-hero-->
+  
+  <div class="jumbotron section">
+    <div class="container">
+      <h5>Photos below</h5>
+      <!-- <div class="row ta-center"> -->
+        <div ng-repeat="photoUrl in photoUrls">
+          <img ng-src="{{photoUrl}}" style="height:400px;width:400px"/>
+        </div>
+    </div>
+  </div>
+</div>

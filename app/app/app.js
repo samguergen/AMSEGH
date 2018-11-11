@@ -136,6 +136,10 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         url: '/ecole',
         templateUrl: viewsPath + 'ecole.html'
       })
+      .state('album-photo', {
+        url: '/album-photo',
+        templateUrl: viewsPath + 'album-photo.html'
+      })
 
   // default fall back route
   $urlRouterProvider.otherwise('/');
@@ -170,6 +174,10 @@ myApp.controller('MainController', ['$scope', '$transitions','$http', '$anchorSc
     $scope.assetsPath = "app/assets";
     $scope.viewsPath = "../app/views";
   };
+
+  $scope.photoUrls = [];
+  
+  
   
   $scope.affiliate = "Lanier";
   $scope.zoomLevel = 1;
@@ -904,6 +912,18 @@ $scope.checkRequiredFields = function(formType){
         $scope.ridesData = data.data;
       })
   };
+  
+  $scope.loadAlbumPhotosAsImgSrc = function(){
+    console.log('inside album photos func');
+    var photoCount = 10;
+    var photoUrl;
+    var baseUrl = "assets/images/haiti/photo";
+    for (var i = 1; i<photoCount;i++){
+      photoUrl = baseUrl + i + ".jpg";
+      console.log("each photo url is ", photoUrl);
+      $scope.photoUrls.push(photoUrl)
+    }
+  }
   
 }]);
 

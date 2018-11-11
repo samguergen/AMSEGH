@@ -1610,6 +1610,20 @@ form textarea.form-control {font-size:25px}
   margin-top:170px !important;
   margin-left: 5% !important;
 }
+.album #first-hero-album {
+  background-image: url('../images/haiti/dark/photo2.jpg') !important;
+  background-attachment: fixed;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  height: 400px !important;
+}
+.album #first-hero-album h1{
+  color:white !important;
+  text-shadow: 2px 2px #529ba8;
+  margin-top:170px !important;
+  margin-left: 5% !important;
+}
 
 
     
